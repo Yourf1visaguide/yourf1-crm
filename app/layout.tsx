@@ -29,7 +29,7 @@ export default function RootLayout({
         manrope.variable,
       )}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="font-sans ">
         {children}
       </body>
     </html>

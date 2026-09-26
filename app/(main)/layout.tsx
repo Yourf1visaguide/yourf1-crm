@@ -1,19 +1,20 @@
-import React from 'react';
 import { ThemeProvider } from "next-themes";
+import DashboardShell from "@/components/layout/DashboardShell";
 
-function layout({children}:{children:React.ReactNode}) {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div>
-      <ThemeProvider 
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-           {children}
-        </ThemeProvider>
-    </div>
-  )
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem
+    >
+      <DashboardShell>
+        {children}
+      </DashboardShell>
+    </ThemeProvider>
+  );
 }
-
-export default layout
