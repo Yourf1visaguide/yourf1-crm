@@ -15,7 +15,7 @@ export default function DashboardShell({
   );
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen bg-sidebar ">
       <AppSidebar />
 
       <div
@@ -28,7 +28,7 @@ export default function DashboardShell({
       >
         <Header />
 
-        <main className="p-4 sm:p-6 lg:p-8  ">
+        <main className="p-4 sm:p-6 lg:p-8 -mt-28 z-50 relative  ">
           {children}
         </main>
       </div>

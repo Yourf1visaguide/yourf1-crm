@@ -61,20 +61,20 @@
   --primary-foreground: #fafbff;
 
   /* Secondary surfaces */
-  --secondary: #fafbff;
+  --secondary: #c6d2ff;
   --secondary-foreground: #0f0c33;
 
   --muted: oklch(0.94 0.015 272);
   --muted-foreground: oklch(0.48 0.035 275);
 
-  --card: #fafbff;
+  --card: #eef2ff;
   --card-foreground: #1e1a4d;
 
   --popover: #fafbff;
   --popover-foreground: #1e1a4d;
 
   /* Hover / selected surfaces */
-  --accent: #c6d2ff;
+  --accent: #a3b3ff;
   --accent-foreground: #1e1a4d;
 
   --destructive: oklch(0.577 0.245 27.325);
@@ -89,7 +89,7 @@
   --sidebar-foreground: #1e1a4d;
 
 
-  --sidebar-border: oklch(0.88 0.025 275);
+  --sidebar-border: oklch(93.275% 0.02927 273.1);
   --sidebar-ring: oklch(0.55 0.22 277);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
@@ -107,11 +107,11 @@
   --foreground: #eef2ff;
 
   /* Brighter violet for dark mode */
-  --primary: #a3b3ff;
-  --primary-foreground: #090728;
+  --primary: #594ba0;
+  --primary-foreground: #eef2ff;
 
   /* Secondary surfaces */
-  --secondary: #211b55;
+  --secondary: #312c85;
   --secondary-foreground: oklch(0.96 0.015 275);
 
   --card: #191447;
@@ -124,7 +124,7 @@
   --muted-foreground: oklch(0.76 0.035 275);
 
   /* Hover / selected surfaces */
-  --accent: #4f39f6;
+  --accent: #432dd7;
   --accent-foreground: #eef2ff;
 
   --destructive: oklch(0.577 0.245 27.325);

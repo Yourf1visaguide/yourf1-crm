@@ -1,27 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Brand({ collapsed }: { collapsed: boolean }) {
   return (
     <Link
       href="/dashboard"
-      className="flex min-h-16 items-center gap-3 px-5"
+      className="flex min-h-16 items-center gap-x-2 px-5"
       aria-label="Your F1 Visa Guide dashboard"
     >
       <div className="flex size-9 shrink-0 items-center justify-center">
         {/* Replace with your actual logo */}
-        <span className="text-2xl font-black tracking-tighter text-primary">
-          F<span className="text-foreground">1</span>
+        <span className="size-9 relative">
+          <Image src="/images/crm/f1-single.png" alt="F1 Logo" fill />
         </span>
       </div>
 
       {!collapsed && (
-        <div className="min-w-0 leading-tight">
-          <p className="text-sm font-bold tracking-[0.13em]">
-            YOUR F1
-          </p>
-          <p className="text-xs font-semibold tracking-[0.16em] text-muted-foreground">
-            VISA GUIDE
-          </p>
+        <div className="w-[80px] h-[28.3687943px] relative">
+          <Image src="/images/crm/f1-text.png" alt="F1 Logo" fill className="block dark:hidden" />
+          <Image src="/images/crm/f1-text-white.png" alt="F1 Logo" fill className=" hidden dark:block " />
+          
         </div>
       )}
     </Link>

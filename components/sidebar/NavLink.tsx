@@ -21,7 +21,7 @@ export default function NavLink({ item, collapsed, onNavigate, }: { item: NavIte
         "text-[15px]  transition-colors duration-200 text-accent-foreground",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ",
         active
-          ? "bg-primary/10 dark:bg-primary/30 font-medium text-primary"
+          ? "bg-secondary/50 text-secondary-foreground font-medium "
           : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
         collapsed ? "justify-center px-0" : "",
       ].join(" ")}
@@ -34,7 +34,7 @@ export default function NavLink({ item, collapsed, onNavigate, }: { item: NavIte
         className={[
           "size-[18px] shrink-0 transition-colors",
           active
-            ? "text-primary"
+            ? " text-secondary-foreground "
             : "text-foreground group-hover:text-foreground",
         ].join(" ")}
         strokeWidth={1.8}

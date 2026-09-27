@@ -154,18 +154,18 @@ export default function SidebarContent({
 
           {onToggle && (
             <Button
-              variant="default"
-              size="xs"
-              onClick={onToggle}
-              className=" size-8 -ml-2 mr-2"
+              variant="secondary"
+              size="icon-lg"
+              onClick={onToggle} 
+              className=" size-9 -ml-4 mr-2 bg-secondary transition-all duration-200  hover:bg-accent/80   "
               aria-label={
                 collapsed ? "Expand sidebar" : "Collapse sidebar"
               }
             >
               {collapsed ? (
-                <ChevronRight className="size-4" />
+                <ChevronRight className="size-5 " />
               ) : (
-                <ChevronLeft className="size-4" />
+                <ChevronLeft className="size-5" />
               )}
             </Button>
           )}
