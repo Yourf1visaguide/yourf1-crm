@@ -19,7 +19,7 @@ export default function NavLink({ item, collapsed, onNavigate, }: { item: NavIte
       className={[
         "group relative flex h-10 items-center gap-3 rounded-lg px-3",
         "text-[15px]  transition-colors duration-200 text-accent-foreground",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring font-semibold ",
         active
           ? "bg-secondary/50 text-secondary-foreground font-medium "
           : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
