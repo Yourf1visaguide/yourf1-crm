@@ -33,6 +33,7 @@ export const ROLES = {
   TEACHER: 'TEACHER',
   FILING: 'FILING',
   FINANCE: 'FINANCE',
+  MARKETING: 'MARKETING',
   HR: 'HR'
 } as const
 

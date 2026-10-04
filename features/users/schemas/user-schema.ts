@@ -8,7 +8,10 @@ export const userAccountSchema = z.object({
   password: z
     .string()
     .min(8, "Password must be at least 8 characters"),
+    role: z.array(z.enum(ROLES)),
+
 });
+
 export type UserAccountInput = z.infer<typeof userAccountSchema>;
 
 
@@ -26,7 +29,6 @@ export const employeeSchema = z.object({
 
   department: z.enum(DEPARTMENT),
 
-  role: z.enum(ROLES),
 
   designation: z.string().trim(),
 

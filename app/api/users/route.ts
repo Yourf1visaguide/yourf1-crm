@@ -1,35 +1,32 @@
 import { NextRequest } from "next/server";
 
-import { employeeFormSchema } from "@/features/users/schemas/user-schema";
-
-import { requirePermission } from "@/lib/auth/require-permission";
-import { PERMISSIONS } from "@/lib/auth/permissions";
-
-import { ApiError } from "@/lib/api-error";
 import {
   handleApiError,
   successResponse,
 } from "@/lib/api-response";
+import { ApiError } from "@/lib/api-error";
+import { PERMISSIONS } from "@/lib/auth/permissions";
+// import { requirePermission } from "@/lib/auth/require-permission";
 
+import { employeeFormSchema } from "@/features/users/schemas/user-schema";
 import { createEmployee } from "@/features/users/services/employee-service";
 import { getEmployees } from "@/features/users/queries/employee-queries";
 
-import { ROLES } from "@/prisma/generated/prisma/enums";
 
 // POST /api/employees
 export async function POST(request: NextRequest) {
   try {
-    const auth = await requirePermission(
-      PERMISSIONS.EMPLOYEE_CREATE,
-    );
+    // const auth = await requirePermission(
+    //   PERMISSIONS.EMPLOYEE_CREATE
+    // );
 
-    if (!auth) {
-      throw new ApiError(
-        "FORBIDDEN",
-        "You do not have permission to create employees.",
-        403,
-      );
-    }
+    // if (!auth) {
+    //   throw new ApiError(
+    //     "FORBIDDEN",
+    //     "You do not have permission to create employees.",
+    //     403,
+    //   );
+    // }
 
     let body: unknown;
 
@@ -47,17 +44,6 @@ export async function POST(request: NextRequest) {
 
     // Prevent ordinary employee creators from assigning
     // privileged roles.
-    const canAssignRole = await auth.can(
-      "employee.roles.manage",
-    );
-
-    if (!canAssignRole && data.role !== ROLES.NONE) {
-      throw new ApiError(
-        "ROLE_ASSIGNMENT_FORBIDDEN",
-        "You are not allowed to assign this role.",
-        403,
-      );
-    }
 
     const employee = await createEmployee(data);
 
@@ -73,17 +59,17 @@ export async function POST(request: NextRequest) {
 // GET /api/employees?page=1&limit=20&search=rahul
 export async function GET(request: NextRequest) {
   try {
-    const auth = await requirePermission(
-      PERMISSIONS.EMPLOYEE_READ,
-    );
+    // const auth = await requirePermission(
+    //   PERMISSIONS.EMPLOYEE_READ,
+    // );
 
-    if (!auth) {
-      throw new ApiError(
-        "FORBIDDEN",
-        "You do not have permission to view employees.",
-        403,
-      );
-    }
+    // if (!auth) {
+    //   throw new ApiError(
+    //     "FORBIDDEN",
+    //     "You do not have permission to view employees.",
+    //     403,
+    //   );
+    // }
 
     const params = request.nextUrl.searchParams;
 

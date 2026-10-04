@@ -11,7 +11,8 @@ export type ApiErrorCode =
   | "INTERNAL_SERVER_ERROR"
   | "INVALID_JSON"
   | "ROLE_ASSIGNMENT_FORBIDDEN"
-  | "BAD_REQUEST";
+  | "BAD_REQUEST"
+  | "EMPLOYEE_ALREADY_EXISTS";
 
 export class ApiError extends Error {
   constructor(

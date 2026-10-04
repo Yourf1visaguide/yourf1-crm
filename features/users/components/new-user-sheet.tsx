@@ -22,8 +22,11 @@ export default function NewUserSheet() {
   async function handleSubmit(
     values: Parameters<typeof mutation.mutateAsync>[0],
   ) {
-    await mutation.mutateAsync(values);
-    onClose();
+    await mutation.mutate(values, {
+      onSuccess:() => {
+        onClose();
+      }
+    });
   }
 
   return (

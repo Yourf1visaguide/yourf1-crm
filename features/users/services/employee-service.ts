@@ -16,14 +16,13 @@ export async function createEmployee(
   data: CreateEmployeeFormValues,
 ) {
   const passwordHash = await bcrypt.hash(data.password, 12);
-
+  console.log(data);
   try {
     const employee = await prisma.employee.create({
       data: {
         employeeCode: data.employeeCode,
         name: data.name,
         department: data.department,
-        role: [data.role],
         designation: data.designation || null,
         joiningDate: dateOnly(data.joiningDate),
         employmentStatus: data.employmentStatus,
@@ -33,6 +32,7 @@ export async function createEmployee(
             email: data.email,
             passwordHash,
             isActive: data.employmentStatus === "ACTIVE",
+            role: data.role,
           },
         },
 
@@ -57,7 +57,6 @@ export async function createEmployee(
         employeeCode: true,
         name: true,
         department: true,
-        role: true,
         designation: true,
         joiningDate: true,
         employmentStatus: true,
@@ -65,6 +64,7 @@ export async function createEmployee(
         user: {
           select: {
             id: true,
+        role: true,
             email: true,
             isActive: true,
           },

@@ -1,17 +1,37 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { DEPARTMENT, EmploymentStatus, ROLES } from "@/prisma/generated/prisma/enums";
+import {
+  DEPARTMENT,
+  EmploymentStatus,
+  ROLES,
+} from "@/prisma/generated/prisma/enums";
+
+import {
+  Combobox,
+  ComboboxChip,
+  ComboboxChips,
+  ComboboxChipsInput,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxValue,
+  useComboboxAnchor,
+} from "@/components/ui/combobox";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { CreateEmployeeFormValues, employeeFormSchema } from "@/features/users/schemas/user-schema";
+import {
+  CreateEmployeeFormValues,
+  employeeFormSchema,
+} from "@/features/users/schemas/user-schema";
 import { todayLocalDate } from "@/lib/utils";
-
+import React from "react";
 
 const inputClassName = "w-full";
 
@@ -20,7 +40,6 @@ type UserFormProps = {
   disabled?: boolean;
   error?: string;
 };
-
 
 export default function UserForm({
   onSubmit,
@@ -37,7 +56,7 @@ export default function UserForm({
       employeeCode: "",
       name: "",
       department: DEPARTMENT.RECEPTION,
-      role: ROLES.RECEPTION,
+      role: [ROLES.RECEPTION],
       designation: "",
       joiningDate: today,
       employmentStatus: "ACTIVE",
@@ -60,6 +79,7 @@ export default function UserForm({
   function fieldError(name: keyof CreateEmployeeFormValues) {
     return errors[name]?.message;
   }
+  const anchor = useComboboxAnchor();
 
   return (
     <form
@@ -72,19 +92,14 @@ export default function UserForm({
         {/* Account information */}
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">
-              Account information
-            </h3>
+            <h3 className="text-sm font-semibold">Account information</h3>
             <p className="text-sm text-muted-foreground">
               Login credentials for the employee.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field
-              label="Email address"
-              error={fieldError("email")}
-            >
+            <Field label="Email address" error={fieldError("email")}>
               <Input
                 type="email"
                 autoComplete="off"
@@ -94,10 +109,7 @@ export default function UserForm({
               />
             </Field>
 
-            <Field
-              label="Password"
-              error={fieldError("password")}
-            >
+            <Field label="Password" error={fieldError("password")}>
               <Input
                 type="password"
                 autoComplete="new-password"
@@ -114,19 +126,14 @@ export default function UserForm({
         {/* Employee information */}
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">
-              Employee information
-            </h3>
+            <h3 className="text-sm font-semibold">Employee information</h3>
             <p className="text-sm text-muted-foreground">
               Employment details and organizational assignment.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field
-              label="Full name"
-              error={fieldError("name")}
-            >
+            <Field label="Full name" error={fieldError("name")}>
               <Input
                 placeholder="Employee name"
                 disabled={isDisabled}
@@ -134,10 +141,7 @@ export default function UserForm({
               />
             </Field>
 
-            <Field
-              label="Employee code"
-              error={fieldError("employeeCode")}
-            >
+            <Field label="Employee code" error={fieldError("employeeCode")}>
               <Input
                 placeholder="EMP-001"
                 disabled={isDisabled}
@@ -145,12 +149,12 @@ export default function UserForm({
               />
             </Field>
 
-            <Field
-              label="Department"
-              error={fieldError("department")}
-            >
+            <Field label="Department" error={fieldError("department")}>
               <select
-                className={inputClassName + " h-9 rounded-md border bg-background px-3 text-sm"}
+                className={
+                  inputClassName +
+                  " h-9 rounded-md border bg-background px-3 text-sm"
+                }
                 disabled={isDisabled}
                 {...register("department")}
               >
@@ -162,27 +166,50 @@ export default function UserForm({
               </select>
             </Field>
 
-            <Field
-              label="Role"
-              error={fieldError("role")}
-            >
-              <select
-                className={inputClassName + " h-9 rounded-md border bg-background px-3 text-sm"}
-                disabled={isDisabled}
-                {...register("role")}
-              >
-                {Object.values(ROLES).map((role) => (
-                  <option key={role} value={role}>
-                    {role.replaceAll("_", " ")}
-                  </option>
-                ))}
-              </select>
-            </Field>
+            <Controller
+              name="role"
+              control={form.control}
+              defaultValue={[]}
+              render={({ field }) => (
+                <Field label="Role" error={fieldError("role")}>
+                  <Combobox
+                    multiple
+                    autoHighlight
+                    items={Object.values(ROLES)}
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  >
+                    <ComboboxChips ref={anchor} className="w-full">
+                      <ComboboxValue>
+                        {(values) => (
+                          <>
+                            {values.map((value: string) => (
+                              <ComboboxChip key={value}>{value}</ComboboxChip>
+                            ))}
 
-            <Field
-              label="Designation"
-              error={fieldError("designation")}
-            >
+                            <ComboboxChipsInput />
+                          </>
+                        )}
+                      </ComboboxValue>
+                    </ComboboxChips>
+
+                    <ComboboxContent anchor={anchor}>
+                      <ComboboxEmpty>No items found.</ComboboxEmpty>
+
+                      <ComboboxList>
+                        {(item) => (
+                          <ComboboxItem key={item} value={item}>
+                            {item}
+                          </ComboboxItem>
+                        )}
+                      </ComboboxList>
+                    </ComboboxContent>
+                  </Combobox>
+                </Field>
+              )}
+            />
+
+            <Field label="Designation" error={fieldError("designation")}>
               <Input
                 placeholder="e.g. Senior Counselor"
                 disabled={isDisabled}
@@ -190,10 +217,7 @@ export default function UserForm({
               />
             </Field>
 
-            <Field
-              label="Joining date"
-              error={fieldError("joiningDate")}
-            >
+            <Field label="Joining date" error={fieldError("joiningDate")}>
               <Input
                 type="date"
                 disabled={isDisabled}
@@ -206,15 +230,21 @@ export default function UserForm({
               error={fieldError("employmentStatus")}
             >
               <select
-                className={inputClassName + " h-9 rounded-md border bg-background px-3 text-sm"}
+                className={
+                  inputClassName +
+                  " h-9 rounded-md border bg-background px-3 text-sm"
+                }
                 disabled={isDisabled}
                 {...register("employmentStatus")}
               >
-                
-                {Object.values(EmploymentStatus).map((item:string, index:number) => (
-                  <option value={item} key={index} > {item}</option>
-                ))}
-                
+                {Object.values(EmploymentStatus).map(
+                  (item: string, index: number) => (
+                    <option value={item} key={index}>
+                      {" "}
+                      {item}
+                    </option>
+                  ),
+                )}
               </select>
             </Field>
           </div>
@@ -225,9 +255,7 @@ export default function UserForm({
         {/* Compensation */}
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">
-              Initial compensation
-            </h3>
+            <h3 className="text-sm font-semibold">Initial compensation</h3>
             <p className="text-sm text-muted-foreground">
               Set the employee&apos;s starting monthly salary.
             </p>
@@ -266,19 +294,14 @@ export default function UserForm({
         {/* Work schedule */}
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">
-              Initial work schedule
-            </h3>
+            <h3 className="text-sm font-semibold">Initial work schedule</h3>
             <p className="text-sm text-muted-foreground">
               Set the employee&apos;s daily working hours.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
-            <Field
-              label="Start time"
-              error={fieldError("startTime")}
-            >
+            <Field label="Start time" error={fieldError("startTime")}>
               <Input
                 type="time"
                 disabled={isDisabled}
@@ -286,10 +309,7 @@ export default function UserForm({
               />
             </Field>
 
-            <Field
-              label="End time"
-              error={fieldError("endTime")}
-            >
+            <Field label="End time" error={fieldError("endTime")}>
               <Input
                 type="time"
                 disabled={isDisabled}
@@ -310,9 +330,9 @@ export default function UserForm({
           </div>
 
           <p className="text-xs text-muted-foreground">
-            This schedule currently stores start and end times only.
-            Working days, breaks, and overnight shifts are not
-            represented in your current schema.
+            This schedule currently stores start and end times only. Working
+            days, breaks, and overnight shifts are not represented in your
+            current schema.
           </p>
         </section>
 
@@ -356,9 +376,7 @@ function Field({ label, error, children }: FieldProps) {
     <div className="min-w-0 space-y-2">
       <Label>{label}</Label>
       {children}
-      {error && (
-        <p className="text-xs text-destructive">{String(error)}</p>
-      )}
+      {error && <p className="text-xs text-destructive">{String(error)}</p>}
     </div>
   );
 }

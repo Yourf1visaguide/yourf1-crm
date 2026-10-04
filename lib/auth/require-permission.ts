@@ -8,7 +8,7 @@ import { ApiError } from "@/lib/api-error";
 import { PERMISSIONS, type Permission } from "./permissions";
 import { ROLES } from "@/prisma/generated/prisma/client";
 
-const ROLE_PERMISSIONS = {
+const ROLE_PERMISSIONS: Record<ROLES, readonly Permission[]>  = {
   [ROLES.ADMIN]: Object.values(PERMISSIONS),
 
   [ROLES.RECEPTION]: [
@@ -109,11 +109,11 @@ export async function requirePermission(
       id: true,
       email: true,
       isActive: true,
+      role: true,
 
       employee: {
         select: {
           id: true,
-          role: true,
         },
       },
     },
@@ -127,7 +127,7 @@ export async function requirePermission(
     );
   }
 
-  const roles = user.employee?.role ?? [];
+  const roles = user?.role ?? [];
 
   const hasPermission = roles.some((role) =>
     ROLE_PERMISSIONS[role].includes(permission)
