@@ -11,3 +11,123 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum DEPARTMENT {
+  ADMIN
+  PARTNER
+  RECEPTION
+  TELECALLING
+  COUNSELLING
+  FILING
+  TEACHING
+  FINANCE
+  MARKETING
+  HR
+}
+enum ROLES {
+  ADMIN
+  RECEPTION
+  TELECALLER
+  COUNSELOR
+  TEACHER
+  FILING
+  FINANCE
+  MARKETING
+  HR
+}
+  
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum EmploymentStatus {
+  ACTIVE
+  INACTIVE
+  TERMINATED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  isActive     Boolean  @default(true)
+  role           ROLES[] @default([])
+
+  employee     Employee?
+}
+
+model Employee {
+  id             String   @id @default(cuid())
+  employeeCode   String   @unique
+  name           String
+  department     DEPARTMENT
+  designation    String?
+  joiningDate    DateTime @db.Date
+  employmentStatus String @default("ACTIVE")
+
+  userId         String   @unique
+  user           User     @relation( fields: [userId], references: [id], onDelete: Restrict )
+
+  compensation   EmployeeCompensation[]
+  schedules      EmployeeWorkSchedule[]
+  payrollEntries   PayrollEntry[]
+}
+
+model EmployeeCompensation {
+  id          String   @id @default(cuid())
+  employeeId  String
+  monthlySalary Decimal @db.Decimal(12, 2)
+  effectiveFrom DateTime @db.Date
+  effectiveTo   DateTime? @db.Date
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  @@index([employeeId, effectiveFrom])
+}
+
+model EmployeeWorkSchedule {
+  id          String   @id @default(cuid())
+  employeeId  String
+  startTime   String
+  endTime     String
+  effectiveFrom DateTime @db.Date
+  effectiveTo   DateTime? @db.Date
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  @@index([employeeId, effectiveFrom])
+}
+
+
+// employe salary calculation table.
+
+enum PayrollStatus {
+  DRAFT
+  APPROVED
+  PAID
+  CANCELLED
+}
+
+model PayrollEntry {
+  id             String       @id @default(cuid())
+  employeeId     String
+  payrollMonth   DateTime     @db.Date
+
+  // Snapshot of the salary rate used for this payroll.
+  monthlySalary  Decimal      @db.Decimal(12, 2)
+
+  grossPay       Decimal      @db.Decimal(12, 2)
+  deductions     Decimal      @default(0) @db.Decimal(12, 2)
+  netPay         Decimal      @db.Decimal(12, 2)
+
+  status         PayrollStatus @default(PAID)
+  paidAt         DateTime?
+  createdAt      DateTime     @default(now())
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  @@unique([employeeId, payrollMonth])
+  @@index([payrollMonth, status])
+}

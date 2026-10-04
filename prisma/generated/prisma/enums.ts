@@ -9,7 +9,59 @@
 * 🟢 You can import this file directly.
 */
 
+export const DEPARTMENT = {
+  ADMIN: 'ADMIN',
+  PARTNER: 'PARTNER',
+  RECEPTION: 'RECEPTION',
+  TELECALLING: 'TELECALLING',
+  COUNSELLING: 'COUNSELLING',
+  FILING: 'FILING',
+  TEACHING: 'TEACHING',
+  FINANCE: 'FINANCE',
+  MARKETING: 'MARKETING',
+  HR: 'HR'
+} as const
+
+export type DEPARTMENT = (typeof DEPARTMENT)[keyof typeof DEPARTMENT]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const ROLES = {
+  ADMIN: 'ADMIN',
+  RECEPTION: 'RECEPTION',
+  TELECALLER: 'TELECALLER',
+  COUNSELOR: 'COUNSELOR',
+  TEACHER: 'TEACHER',
+  FILING: 'FILING',
+  FINANCE: 'FINANCE',
+  HR: 'HR'
+} as const
+
+export type ROLES = (typeof ROLES)[keyof typeof ROLES]
+
+
+export const UserStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  SUSPENDED: 'SUSPENDED'
+} as const
+
+export type UserStatus = (typeof UserStatus)[keyof typeof UserStatus]
+
+
+export const EmploymentStatus = {
+  ACTIVE: 'ACTIVE',
+  INACTIVE: 'INACTIVE',
+  TERMINATED: 'TERMINATED'
+} as const
+
+export type EmploymentStatus = (typeof EmploymentStatus)[keyof typeof EmploymentStatus]
+
+
+export const PayrollStatus = {
+  DRAFT: 'DRAFT',
+  APPROVED: 'APPROVED',
+  PAID: 'PAID',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type PayrollStatus = (typeof PayrollStatus)[keyof typeof PayrollStatus]

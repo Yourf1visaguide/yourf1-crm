@@ -3,6 +3,8 @@ import { Manrope } from "next/font/google";
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import QueryProviders from "@/providers/query-providers";
+import { Toaster } from "@/components/ui/toast"
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -30,7 +32,10 @@ export default function RootLayout({
       )}
     >
       <body className="font-sans ">
-        {children}
+        <QueryProviders>
+          {children}
+        </QueryProviders>
+        <Toaster />
       </body>
     </html>
   );

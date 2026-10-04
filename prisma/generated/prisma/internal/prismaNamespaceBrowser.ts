@@ -51,7 +51,11 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-
+  User: 'User',
+  Employee: 'Employee',
+  EmployeeCompensation: 'EmployeeCompensation',
+  EmployeeWorkSchedule: 'EmployeeWorkSchedule',
+  PayrollEntry: 'PayrollEntry'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -68,4 +72,92 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
+
+
+export const UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  passwordHash: 'passwordHash',
+  isActive: 'isActive',
+  role: 'role'
+} as const
+
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const EmployeeScalarFieldEnum = {
+  id: 'id',
+  employeeCode: 'employeeCode',
+  name: 'name',
+  department: 'department',
+  designation: 'designation',
+  joiningDate: 'joiningDate',
+  employmentStatus: 'employmentStatus',
+  userId: 'userId'
+} as const
+
+export type EmployeeScalarFieldEnum = (typeof EmployeeScalarFieldEnum)[keyof typeof EmployeeScalarFieldEnum]
+
+
+export const EmployeeCompensationScalarFieldEnum = {
+  id: 'id',
+  employeeId: 'employeeId',
+  monthlySalary: 'monthlySalary',
+  effectiveFrom: 'effectiveFrom',
+  effectiveTo: 'effectiveTo'
+} as const
+
+export type EmployeeCompensationScalarFieldEnum = (typeof EmployeeCompensationScalarFieldEnum)[keyof typeof EmployeeCompensationScalarFieldEnum]
+
+
+export const EmployeeWorkScheduleScalarFieldEnum = {
+  id: 'id',
+  employeeId: 'employeeId',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  effectiveFrom: 'effectiveFrom',
+  effectiveTo: 'effectiveTo'
+} as const
+
+export type EmployeeWorkScheduleScalarFieldEnum = (typeof EmployeeWorkScheduleScalarFieldEnum)[keyof typeof EmployeeWorkScheduleScalarFieldEnum]
+
+
+export const PayrollEntryScalarFieldEnum = {
+  id: 'id',
+  employeeId: 'employeeId',
+  payrollMonth: 'payrollMonth',
+  monthlySalary: 'monthlySalary',
+  grossPay: 'grossPay',
+  deductions: 'deductions',
+  netPay: 'netPay',
+  status: 'status',
+  paidAt: 'paidAt',
+  createdAt: 'createdAt'
+} as const
+
+export type PayrollEntryScalarFieldEnum = (typeof PayrollEntryScalarFieldEnum)[keyof typeof PayrollEntryScalarFieldEnum]
+
+
+export const SortOrder = {
+  asc: 'asc',
+  desc: 'desc'
+} as const
+
+export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const QueryMode = {
+  default: 'default',
+  insensitive: 'insensitive'
+} as const
+
+export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

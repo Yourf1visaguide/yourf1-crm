@@ -1,37 +1,37 @@
-"use client";
+import {
+  SidebarProvider,
+  SidebarInset,
+} from "@/components/ui/sidebar";
 
-import AppSidebar from "@/components/sidebar/SideBar";
 import Header from "@/components/header/Header";
-import { useSidebarStore } from "@/stores/sidebar-store";
-import { cn } from "@/lib/utils";
+import AppSidebar from "@/components/app-sidebar/app-sidebar";
+import SliderbarTriggerButton from "../app-sidebar/SliderbarTriggerButton";
 
-export default function DashboardShell({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const isCollapsed = useSidebarStore(
-    (state) => state.isCollapsed
-  );
-
   return (
-    <div className="min-h-screen bg-sidebar ">
+    <SidebarProvider >
       <AppSidebar />
 
-      <div
-        className={cn(
-          "min-h-screen transition-[margin] duration-300",
-          isCollapsed
-            ? "lg:ml-[76px]"
-            : "lg:ml-[260px]"
-        )}
-      >
+      <SidebarInset className="bg-background ">
+        {/* Top row: sidebar trigger */}
+        <div className="relative ">
+          {/* <SidebarTrigger /> */}
+          <SliderbarTriggerButton />
+          
         <Header />
+        </div>
 
-        <main className="p-4 sm:p-6 lg:p-8 -mt-28 z-50 relative  ">
+        {/* Header below the trigger */}
+
+        {/* Page content */}
+        <main className="p-4 sm:p-6 lg:p-8 -mt-28 z-50 relative ">
           {children}
         </main>
-      </div>
-    </div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }

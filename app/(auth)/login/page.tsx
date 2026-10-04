@@ -11,7 +11,8 @@ import LoginRight from "@/components/login/LoginRight";
 
 export default function LoginPage() {
   return (
-    <main className={cn("min-h-dvh  overflow-hidden px-4 pt-6 pb-40 sm:px-6 bg-indigo-50 ")} >
+    <main className={cn("min-h-dvh  overflow-hidden px-4 pt-6 pb-40 sm:px-6 bg-background  ")} >
+      {/* <div className="absolute inset-0 bg-zinc-950 z-50 " /> */}
       <LoginHeader />
       <div className="absolute inset-0  border-zinc-900 z-0">
         {/* <Image
@@ -30,9 +31,9 @@ export default function LoginPage() {
           ))}
         </div> */}
 
-        <div className="absolute top-0 left-[20%] size-80 rounded-full blur-2xl opacity-50 bg-indigo-200 -z-10 " />
-        <div className="absolute top-[30%] right-[10%] size-10 rounded-full opacity-30 bg-indigo-200 -z-10 " />
-        <div className="absolute bottom-[0%] right-[15%] size-80 rounded-full opacity-10 bg-indigo-200 -z-10 " />
+        <div className="absolute top-0 left-[20%] size-80 rounded-full blur-2xl opacity-50 bg-secondary -z-10 " />
+        <div className="absolute top-[30%] right-[10%] size-10 rounded-full opacity-30 bg-secondary -z-10 " />
+        <div className="absolute bottom-[0%] right-[15%] size-80 rounded-full opacity-10 bg-secondary -z-10 " />
         
         {/* <div className="bg-black absolute inset-0 opacity-20" /> */}
       </div>

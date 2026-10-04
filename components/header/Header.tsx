@@ -3,7 +3,6 @@ import { Bell, Search } from "lucide-react";
 
 import DateFilter from "./DateFilter";
 import { Button } from "@/components/ui/button";
-import { MobileSidebar } from "@/components/sidebar/MobileSidebar";
 import { ModeToggle } from "@/components/resuable-components/ModeToggle";
 import HeaderCoverDesign from "./HeaderCoverDesign";
 
@@ -13,7 +12,6 @@ function Header() {
       <HeaderCoverDesign />
       <div className="sticky top-0 flex h-16 items-center justify-between  z-50">
         <div className="flex items-center gap-3">
-          <MobileSidebar />
 
           {/* <div className="hidden text-base font-bold sm:block   py-1.5 rounded-md  text-secondary-foreground">
             <span className=""> Dashboard</span>

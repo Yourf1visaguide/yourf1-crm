@@ -1,5 +1,5 @@
 import React from "react";
-import { columns, Payment } from "@/features/dashboard/components/columns";
+import { columns, Payment } from "@/features/users/components/columns";
 import { DataTable } from "@/components/table/data-table";
 import Container from "@/components/resuable-components/container";
 import { Button } from "@/components/ui/button";

@@ -29,6 +29,7 @@ import { features, type DataTableFeatures } from "./data-table-features";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DataTablePagination } from "./pagination";
+import { useNewUserSheet } from "@/features/users/store/use-new-user-sheet";
 
 interface DataTableProps<TData extends RowData, TValue = unknown> {
   columns: ColumnDef<DataTableFeatures, TData>[];
@@ -65,11 +66,19 @@ export function DataTable<TData extends RowData, TValue = unknown>({
   });
 
   const rows = table.getRowModel().rows;
+  const { onOpen } = useNewUserSheet();
 
   return (
     <>
+    <div>
+          <div className="flex flex-col justify-end items-end mb-8 gap-y-4">
+          <Button variant="default" size="lg" onClick={onOpen}  >Add New User</Button>
+          
+        </div>
+        </div>
       <div className=" md:flex justify-between items-center pb-4">
         {/* Filter box and Delete button */}
+        
         <Input
           type="text"
           placeholder="Search By Name"
