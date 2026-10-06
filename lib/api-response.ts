@@ -36,6 +36,7 @@ export function errorResponse( error: ErrorBody["error"], status: number, ): Res
 }
 
 export function handleApiError(error: unknown): Response {
+  console.log(error);
   if (error instanceof ApiError) {
     return errorResponse(
       {

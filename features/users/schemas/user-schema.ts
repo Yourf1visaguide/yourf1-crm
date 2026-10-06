@@ -8,7 +8,7 @@ export const userAccountSchema = z.object({
   password: z
     .string()
     .min(8, "Password must be at least 8 characters"),
-    role: z.array(z.enum(ROLES)),
+  roles: z.array(z.enum(ROLES)),
 
 });
 

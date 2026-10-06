@@ -1,10 +1,10 @@
 import "server-only";
 
-import bcrypt from "bcryptjs";
 import { Prisma } from "@/prisma/generated/prisma/client";
 
 import { prisma } from "@/lib/prisma";
 import { ApiError } from "@/lib/api-error";
+import { auth } from "@/lib/auth";
 
 import type { CreateEmployeeFormValues } from "@/features/users/schemas/user-schema";
 
@@ -12,11 +12,100 @@ function dateOnly(value: string) {
   return new Date(`${value}T00:00:00.000Z`);
 }
 
-export async function createEmployee(
-  data: CreateEmployeeFormValues,
-) {
-  const passwordHash = await bcrypt.hash(data.password, 12);
-  console.log(data);
+export async function createEmployee(data: CreateEmployeeFormValues) {
+  /*
+   * First check whether the CRM identifiers already exist.
+   */
+  const normalizedEmail = data.email.trim().toLowerCase();
+  const normalizedEmployeeCode = data.employeeCode.trim().toLowerCase();
+
+  const [existingUser, existingEmployee] = await prisma.$transaction([
+    prisma.user.findUnique({
+      where: {
+        email: normalizedEmail,
+      },
+      select: {
+        id: true,
+        employee: {
+          select: {
+            id: true,
+          },
+        },
+      },
+    }),
+
+    prisma.employee.findUnique({
+      where: {
+        employeeCode: data.employeeCode.trim(),
+      },
+      select: {
+        id: true,
+      },
+    }),
+  ]);
+
+  if (existingUser?.employee) {
+    throw new ApiError(
+      "EMPLOYEE_EXISTS",
+      "An employee with this email already exists.",
+      409,
+    );
+  }
+
+  if (existingUser && !existingUser.employee) {
+    throw new ApiError(
+      "EMAIL_ALREADY_EXISTS",
+      "This email address is already associated with another account.",
+      409,
+    );
+  }
+
+  if (existingEmployee) {
+    throw new ApiError(
+      "EMPLOYEE_CODE_EXISTS",
+      "An employee with this employee code already exists.",
+      409,
+    );
+  }
+  /*
+   * Better Auth creates the authentication identity
+   * and handles password hashing.
+   */
+  let authUser;
+
+  try {
+    const result = await auth.api.signUpEmail({
+      body: {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      },
+    });
+
+    if (!result.user) {
+      throw new ApiError(
+        "AUTH_USER_CREATE_FAILED",
+        "Unable to create the employee account.",
+        400,
+      );
+    }
+
+    authUser = result.user;
+  } catch (error) {
+    if (error instanceof ApiError) {
+      throw error;
+    }
+
+    throw new ApiError(
+      "AUTH_USER_CREATE_FAILED",
+      "Unable to create the employee account.",
+      400,
+    );
+  }
+
+  /*
+   * Now create the CRM employee records.
+   */
   try {
     const employee = await prisma.employee.create({
       data: {
@@ -28,11 +117,8 @@ export async function createEmployee(
         employmentStatus: data.employmentStatus,
 
         user: {
-          create: {
-            email: data.email,
-            passwordHash,
-            isActive: data.employmentStatus === "ACTIVE",
-            role: data.role,
+          connect: {
+            id: authUser.id,
           },
         },
 
@@ -64,9 +150,9 @@ export async function createEmployee(
         user: {
           select: {
             id: true,
-        role: true,
             email: true,
             isActive: true,
+            roles: true,
           },
         },
 
@@ -91,19 +177,28 @@ export async function createEmployee(
       },
     });
 
+    /*
+     * Assign CRM roles after the auth user exists.
+     */
+    await prisma.user.update({
+      where: {
+        id: authUser.id,
+      },
+      data: {
+        roles: {
+          set: data.roles,
+        },
+      },
+    });
+
     return employee;
   } catch (error) {
-    if (
-      error instanceof Prisma.PrismaClientKnownRequestError &&
-      error.code === "P2002"
-    ) {
-      throw new ApiError(
-        "EMPLOYEE_ALREADY_EXISTS",
-        "Email or employee code already exists.",
-        409,
-      );
-    }
-
+    /*
+     * IMPORTANT:
+     * The Better Auth user now exists, but CRM creation failed.
+     *
+     * This needs cleanup.
+     */
     throw error;
   }
 }

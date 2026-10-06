@@ -3,7 +3,7 @@
 import "server-only";
 
 import { prisma } from "@/lib/prisma";
-import { getCurrentUserId } from "@/lib/auth/session";
+import { getCurrentUserId } from "./get-user-session";
 import { ApiError } from "@/lib/api-error";
 import { PERMISSIONS, type Permission } from "./permissions";
 import { ROLES } from "@/prisma/generated/prisma/client";
@@ -95,7 +95,7 @@ export async function requirePermission(
   if (!userId) {
     throw new ApiError(
       "UNAUTHENTICATED",
-      "Authentication required",
+      "You do not have permission to create employees.",
       401
     );
   }
@@ -109,7 +109,7 @@ export async function requirePermission(
       id: true,
       email: true,
       isActive: true,
-      role: true,
+      roles: true,
 
       employee: {
         select: {
@@ -127,7 +127,7 @@ export async function requirePermission(
     );
   }
 
-  const roles = user?.role ?? [];
+  const roles = user?.roles ?? [];
 
   const hasPermission = roles.some((role) =>
     ROLE_PERMISSIONS[role].includes(permission)

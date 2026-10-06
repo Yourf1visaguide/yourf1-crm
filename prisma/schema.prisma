@@ -24,6 +24,7 @@ enum DEPARTMENT {
   MARKETING
   HR
 }
+
 enum ROLES {
   ADMIN
   RECEPTION
@@ -35,7 +36,7 @@ enum ROLES {
   MARKETING
   HR
 }
-  
+
 enum UserStatus {
   ACTIVE
   INACTIVE
@@ -49,57 +50,115 @@ enum EmploymentStatus {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
-  passwordHash String
-  isActive     Boolean  @default(true)
-  role           ROLES[] @default([])
+  id       String  @id @default(cuid())
+  email    String  @unique
+  isActive Boolean @default(true)
+  roles     ROLES[] @default([])
 
-  employee     Employee?
+  employee      Employee?
+  name          String
+  emailVerified Boolean   @default(false)
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  username      String?
+  sessions      Session[]
+  accounts      Account[]
+
+  @@unique([username])
+  @@map("user")
+}
+
+
+model Session {
+  id        String   @id
+  expiresAt DateTime
+  token     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token])
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
 }
 
 model Employee {
-  id             String   @id @default(cuid())
-  employeeCode   String   @unique
-  name           String
-  department     DEPARTMENT
-  designation    String?
-  joiningDate    DateTime @db.Date
-  employmentStatus String @default("ACTIVE")
+  id               String     @id @default(cuid())
+  employeeCode     String     @unique
+  name             String
+  department       DEPARTMENT
+  designation      String?
+  joiningDate      DateTime   @db.Date
+  employmentStatus String     @default("ACTIVE")
 
-  userId         String   @unique
-  user           User     @relation( fields: [userId], references: [id], onDelete: Restrict )
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Restrict)
 
   compensation   EmployeeCompensation[]
   schedules      EmployeeWorkSchedule[]
-  payrollEntries   PayrollEntry[]
+  payrollEntries PayrollEntry[]
 }
 
 model EmployeeCompensation {
-  id          String   @id @default(cuid())
-  employeeId  String
-  monthlySalary Decimal @db.Decimal(12, 2)
-  effectiveFrom DateTime @db.Date
+  id            String    @id @default(cuid())
+  employeeId    String
+  monthlySalary Decimal   @db.Decimal(12, 2)
+  effectiveFrom DateTime  @db.Date
   effectiveTo   DateTime? @db.Date
 
-  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
 
   @@index([employeeId, effectiveFrom])
 }
 
 model EmployeeWorkSchedule {
-  id          String   @id @default(cuid())
-  employeeId  String
-  startTime   String
-  endTime     String
-  effectiveFrom DateTime @db.Date
+  id            String    @id @default(cuid())
+  employeeId    String
+  startTime     String
+  endTime       String
+  effectiveFrom DateTime  @db.Date
   effectiveTo   DateTime? @db.Date
 
-  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
 
   @@index([employeeId, effectiveFrom])
 }
-
 
 // employe salary calculation table.
 
@@ -111,23 +170,24 @@ enum PayrollStatus {
 }
 
 model PayrollEntry {
-  id             String       @id @default(cuid())
-  employeeId     String
-  payrollMonth   DateTime     @db.Date
+  id           String   @id @default(cuid())
+  employeeId   String
+  payrollMonth DateTime @db.Date
 
   // Snapshot of the salary rate used for this payroll.
-  monthlySalary  Decimal      @db.Decimal(12, 2)
+  monthlySalary Decimal @db.Decimal(12, 2)
 
-  grossPay       Decimal      @db.Decimal(12, 2)
-  deductions     Decimal      @default(0) @db.Decimal(12, 2)
-  netPay         Decimal      @db.Decimal(12, 2)
+  grossPay   Decimal @db.Decimal(12, 2)
+  deductions Decimal @default(0) @db.Decimal(12, 2)
+  netPay     Decimal @db.Decimal(12, 2)
 
-  status         PayrollStatus @default(PAID)
-  paidAt         DateTime?
-  createdAt      DateTime     @default(now())
+  status    PayrollStatus @default(PAID)
+  paidAt    DateTime?
+  createdAt DateTime      @default(now())
 
-  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
 
   @@unique([employeeId, payrollMonth])
   @@index([payrollMonth, status])
 }
+

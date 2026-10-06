@@ -411,10 +411,6 @@ export type DecimalFieldUpdateOperationsInput = {
   divide?: runtime.Decimal | runtime.DecimalJsLike | number | string
 }
 
-export type NullableDateTimeFieldUpdateOperationsInput = {
-  set?: Date | string | null
-}
-
 export type EmployeeCompensationCreateWithoutEmployeeInput = {
   id?: string
   monthlySalary: runtime.Decimal | runtime.DecimalJsLike | number | string

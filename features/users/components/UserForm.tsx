@@ -56,7 +56,7 @@ export default function UserForm({
       employeeCode: "",
       name: "",
       department: DEPARTMENT.RECEPTION,
-      role: [ROLES.RECEPTION],
+      roles: [ROLES.RECEPTION],
       designation: "",
       joiningDate: today,
       employmentStatus: "ACTIVE",
@@ -167,11 +167,11 @@ export default function UserForm({
             </Field>
 
             <Controller
-              name="role"
+              name="roles"
               control={form.control}
               defaultValue={[]}
               render={({ field }) => (
-                <Field label="Role" error={fieldError("role")}>
+                <Field label="Role" error={fieldError("roles")}>
                   <Combobox
                     multiple
                     autoHighlight

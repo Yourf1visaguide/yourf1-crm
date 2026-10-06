@@ -12,6 +12,10 @@ export type ApiErrorCode =
   | "INVALID_JSON"
   | "ROLE_ASSIGNMENT_FORBIDDEN"
   | "BAD_REQUEST"
+  | "EMPLOYEE_CODE_EXISTS"
+  | "AUTH_USER_CREATE_FAILED"
+  | "EMAIL_ALREADY_EXISTS"
+  | "EMPLOYEE_EXISTS"
   | "EMPLOYEE_ALREADY_EXISTS";
 
 export class ApiError extends Error {

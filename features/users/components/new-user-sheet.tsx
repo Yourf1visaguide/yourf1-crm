@@ -28,7 +28,7 @@ export default function NewUserSheet() {
       }
     });
   }
-
+  console.log(mutation);
   return (
     <Sheet
       open={isOpen}
@@ -79,6 +79,7 @@ export default function NewUserSheet() {
           disabled={mutation.isPending}
           error={mutation.error?.message}
         />
+        
       </SheetContent>
     </Sheet>
   );

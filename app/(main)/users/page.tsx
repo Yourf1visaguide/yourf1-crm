@@ -86,8 +86,6 @@ async function getData(): Promise<Payment[]> {
       email: "m@example.com",
     },
     
-
-    // ...
   ]
 }
 

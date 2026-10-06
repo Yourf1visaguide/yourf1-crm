@@ -440,14 +440,6 @@ export type EnumDEPARTMENTFieldUpdateOperationsInput = {
   set?: $Enums.DEPARTMENT
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
-}
-
 export type EmployeeCreateNestedOneWithoutCompensationInput = {
   create?: Prisma.XOR<Prisma.EmployeeCreateWithoutCompensationInput, Prisma.EmployeeUncheckedCreateWithoutCompensationInput>
   connectOrCreate?: Prisma.EmployeeCreateOrConnectWithoutCompensationInput
