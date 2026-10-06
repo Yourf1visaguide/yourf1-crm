@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, LogOut, Settings, UserRound } from "lucide-react";
+import { ChevronDown, ChevronUp, LogOut, Settings, UserRound } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -64,7 +64,7 @@ export function UserMenu() {
         render={
           <button
             type="button"
-            className=" flex size-9 items-center justify-center rounded-full bg-primary text-md font-semibold text-primary-foreground "
+            className=" flex size-9 items-center justify-center rounded-md bg-primary  text-md font-semibold text-primary-foreground "
           />
         }
       >
@@ -87,11 +87,11 @@ export function UserMenu() {
       <DropdownMenuContent
         align="end"
         side="bottom"
-        sideOffset={4}
-        className=" w-80 rounded-md border border-border bg-background/30 p-2 shadow-2xl backdrop-blur-sm "
+        sideOffset={6}
+        className="w-72 rounded-md ring-0 border border-border shadow-xs bg-background/50 p-2  backdrop-blur-xs "
       >
         <DropdownMenuGroup>
-          <DropdownMenuLabel className="p-0">
+          <DropdownMenuLabel className="p-0 relative  ">
             <div className="flex items-center gap-3 rounded-xl px-2.5 py-3">
               <div className=" flex size-11 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-semibold tracking-wide text-primary ">
                 {initials}
@@ -106,7 +106,7 @@ export function UserMenu() {
                   {user.email}
                 </p>
 
-                <div className="mt-2 flex flex-wrap gap-1">
+                {/* <div className="mt-2 flex flex-wrap gap-1">
                   {user.roles.map((role) => (
                     <span
                       key={role}
@@ -115,34 +115,30 @@ export function UserMenu() {
                       {formatRole(role)}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             </div>
           </DropdownMenuLabel>
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuItem className="h-10 rounded-xl px-3">
+          <DropdownMenuItem className="h-10 rounded-xl px-3 hover:bg-accent focus-within:bg-accent ">
             <UserRound className="size-4 text-muted-foreground" />
             <span>View profile</span>
           </DropdownMenuItem>
+          <DropdownMenuSeparator />
 
-          <DropdownMenuItem className="h-10 rounded-xl px-3">
-            <Settings className="size-4 text-muted-foreground" />
-            <span>Account settings</span>
+          <DropdownMenuItem
+            variant="destructive"
+            className="h-10 rounded-xl px-3"
+            onClick={handleLogout}
+          >
+            <LogOut className="size-4" />
+            <span>Log out</span>
           </DropdownMenuItem>
         </DropdownMenuGroup>
 
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem
-          variant="destructive"
-          className="h-10 rounded-xl px-3"
-          onClick={handleLogout}
-        >
-          <LogOut className="size-4" />
-          <span>Log out</span>
-        </DropdownMenuItem>
+        {/* <DropdownMenuSeparator /> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );
