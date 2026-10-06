@@ -11,17 +11,15 @@ export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+}) { 
   return (
     <SidebarProvider >
       <AppSidebar />
-
       <SidebarInset className="bg-background ">
         {/* Top row: sidebar trigger */}
         <div className="relative ">
           {/* <SidebarTrigger /> */}
           <SliderbarTriggerButton />
-          
         <Header />
         </div>
 
