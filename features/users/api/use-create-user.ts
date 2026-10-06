@@ -13,27 +13,24 @@ type CreateUserResponse = {
   email: string;
 };
 
-async function createUser(
-  values: CreateEmployeeFormValues,
-): Promise<CreateUserResponse> {
-  return await apiFetch("api/users", {
-    method: "post",
-    body: JSON.stringify(values),
-  });
-}
-
 export function useCreateUser() {
   const queryClient = useQueryClient();
-  
 
   return useMutation({
-    mutationFn: createUser,
+    mutationFn: async ( values: CreateEmployeeFormValues, ): Promise<CreateUserResponse> => {
+      const response = await apiFetch<CreateUserResponse>("/api/users", {
+        method: "POST",
+        body: JSON.stringify(values),
+      });
+
+      return response.data;
+    },
     onSuccess: async () => {
       await queryClient.invalidateQueries({
         queryKey: usersKeys.all,
       });
       toast.add({
-        type:"info",
+        type: "info",
         title: "Success",
         description: "User is created successfully.",
       });

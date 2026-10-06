@@ -36,13 +36,14 @@ export function errorResponse( error: ErrorBody["error"], status: number, ): Res
 }
 
 export function handleApiError(error: unknown): Response {
-  console.log(error);
   if (error instanceof ApiError) {
     return errorResponse(
       {
         code: error.code,
         message: error.message,
-        ...(error.details !== undefined ? { details: error.details } : {}),
+        ...(error.details !== undefined
+          ? { details: error.details }
+          : {}),
       },
       error.status,
     );

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 
 // 1. Circular spinner
-export function CircleLoader({
+export default function CircleLoader({
   className,
 }: {
   className?: string;
@@ -96,7 +96,7 @@ export function WorkspaceLoadingLine({
   );
 }
 
-export function FullScreenLoader({
+export function  FullScreenLoader({
   loader,
   text
 }: {

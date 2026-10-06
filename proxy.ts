@@ -1,23 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSessionCookie } from "better-auth/cookies";
 
-export default function middleware(request: NextRequest) {
-  const sessionCookie = request.cookies.get(
-    "better-auth.session_token"
-  );
-
+export function proxy(request: NextRequest) {
+  const sessionCookie = getSessionCookie(request);
   const pathname = request.nextUrl.pathname;
-
+  
   const isAuthPage = pathname === "/login";
-  const isProtectedRoute = pathname === "/";
+  const isProtectedRoute = !isAuthPage;
 
-  // User is not authenticated → send to login
+  // Not authenticated → login
   if (isProtectedRoute && !sessionCookie) {
     return NextResponse.redirect(
       new URL("/login", request.url)
     );
   }
 
-  // User is already authenticated → don't let them visit login
+  // Already authenticated → dashboard
   if (isAuthPage && sessionCookie) {
     return NextResponse.redirect(
       new URL("/", request.url)
@@ -29,7 +27,10 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/",
-    "/login",
+    /*
+     * Run on all application routes except
+     * Next.js internals and API routes.
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
   ],
 };

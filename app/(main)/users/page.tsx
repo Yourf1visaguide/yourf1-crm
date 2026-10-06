@@ -2,13 +2,11 @@ import React from "react";
 import { columns, Payment } from "@/features/users/components/columns";
 import { DataTable } from "@/components/table/data-table";
 import Container from "@/components/resuable-components/container";
-import { Button } from "@/components/ui/button";
 import Heading from "@/components/resuable-components/heading";
 import { DataShowingCard } from "@/components/resuable-components/data-showing-card";
 import { PiggyBank, TrendingDown, TrendingUp } from "lucide-react";
 
-import { useNewUserSheet } from "@/features/users/store/use-new-user-sheet";
-import Loader, { CircleLoader, LineLoader, WorkspaceLoader, WorkspaceLoadingLine } from "@/components/resuable-components/loader";
+
 
 
 async function getData(): Promise<Payment[]> {

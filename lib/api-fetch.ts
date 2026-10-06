@@ -15,10 +15,7 @@ export type ApiSuccessResponse<T> = {
   data: T;
 };
 
-export async function apiFetch<T>(
-  input: RequestInfo | URL,
-  init?: RequestInit,
-): Promise<ApiSuccessResponse<T>> {
+export async function apiFetch<T>( input: RequestInfo | URL, init?: RequestInit, ): Promise<ApiSuccessResponse<T>> {
   const response = await fetch(input, {
     ...init,
     headers: {

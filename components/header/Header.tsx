@@ -5,6 +5,7 @@ import DateFilter from "./DateFilter";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/resuable-components/ModeToggle";
 import HeaderCoverDesign from "./HeaderCoverDesign";
+import { UserMenu } from "./user-menu";
 
 function Header() {
   return (
@@ -27,10 +28,8 @@ function Header() {
           </Button>
 
           <ModeToggle />
+            <UserMenu />
 
-          <div className="flex size-9 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
-            AS
-          </div>
         </div>
       </div>
       <div className="pt-10 flex md:justify-between md:items-center items-start justify-start flex-col md:flex-row gap-y-3 ">

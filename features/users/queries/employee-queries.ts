@@ -52,7 +52,6 @@ export async function getEmployees({
         employeeCode: true,
         name: true,
         department: true,
-        role: true,
         designation: true,
         joiningDate: true,
         employmentStatus: true,
@@ -62,6 +61,7 @@ export async function getEmployees({
             id: true,
             email: true,
             isActive: true,
+            roles:true
           },
         },
       },

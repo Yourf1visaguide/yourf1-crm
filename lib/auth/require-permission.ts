@@ -1,91 +1,11 @@
-// lib/auth/require-permission.ts
-
 import "server-only";
 
 import { prisma } from "@/lib/prisma";
-import { getCurrentUserId } from "./get-user-session";
+import { getCurrentUserId } from "./get-current-user-id";
 import { ApiError } from "@/lib/api-error";
-import { PERMISSIONS, type Permission } from "./permissions";
-import { ROLES } from "@/prisma/generated/prisma/client";
+import {  type Permission } from "./permissions";
+import { ROLE_PERMISSIONS } from "./role-permissino-mapping";
 
-const ROLE_PERMISSIONS: Record<ROLES, readonly Permission[]>  = {
-  [ROLES.ADMIN]: Object.values(PERMISSIONS),
-
-  [ROLES.RECEPTION]: [
-    PERMISSIONS.LEAD_READ_ASSIGNED,
-    PERMISSIONS.EMPLOYEE_READ,
-  ],
-
-  [ROLES.TELECALLER]: [
-    PERMISSIONS.LEAD_READ_ASSIGNED,
-    PERMISSIONS.LEAD_CREATE,
-    PERMISSIONS.LEAD_UPDATE,
-  ],
-
-  [ROLES.COUNSELOR]: [
-    PERMISSIONS.LEAD_READ_ASSIGNED,
-    PERMISSIONS.LEAD_UPDATE,
-    PERMISSIONS.APPLICATION_READ_ASSIGNED,
-    PERMISSIONS.APPLICATION_UPDATE,
-  ],
-
-  [ROLES.TEACHER]: [
-    PERMISSIONS.APPLICATION_READ_ASSIGNED,
-    PERMISSIONS.APPLICATION_UPDATE,
-  ],
-
-  [ROLES.FILING]: [
-    PERMISSIONS.APPLICATION_READ_ASSIGNED,
-    PERMISSIONS.APPLICATION_UPDATE,
-    PERMISSIONS.DOCUMENT_READ,
-    PERMISSIONS.DOCUMENT_UPLOAD,
-    PERMISSIONS.CREDENTIAL_READ,
-  ],
-
-  [ROLES.FINANCE]: [
-    PERMISSIONS.INVOICE_READ,
-    PERMISSIONS.INVOICE_CREATE,
-    PERMISSIONS.INVOICE_UPDATE,
-
-    PERMISSIONS.PAYMENT_READ,
-    PERMISSIONS.PAYMENT_CREATE,
-
-    PERMISSIONS.EXPENSE_READ,
-    PERMISSIONS.EXPENSE_CREATE,
-
-    PERMISSIONS.FINANCE_REPORT_READ,
-    PERMISSIONS.COMMISSION_READ,
-  ],
-
-  [ROLES.MARKETING]: [
-    PERMISSIONS.LEAD_READ_ALL,
-    PERMISSIONS.LEAD_CREATE,
-    PERMISSIONS.LEAD_UPDATE,
-  ],
-
-  [ROLES.HR]: [
-    // Employee management
-    PERMISSIONS.EMPLOYEE_READ,
-    PERMISSIONS.EMPLOYEE_CREATE,
-    PERMISSIONS.EMPLOYEE_UPDATE,
-    PERMISSIONS.EMPLOYEE_ROLE_MANAGE,
-
-    // Salary
-    PERMISSIONS.SALARY_READ,
-    PERMISSIONS.SALARY_UPDATE,
-
-    // Attendance
-    PERMISSIONS.ATTENDANCE_READ,
-    PERMISSIONS.ATTENDANCE_UPDATE,
-
-    // HR
-    PERMISSIONS.HR_READ,
-    PERMISSIONS.HR_CREATE,
-
-    // Employee commissions
-    PERMISSIONS.COMMISSION_READ,
-  ],
-} satisfies Record<ROLES, readonly Permission[]>;
 
 export async function requirePermission(
   permission: Permission
