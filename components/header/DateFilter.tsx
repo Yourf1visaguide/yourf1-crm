@@ -168,10 +168,9 @@ function DateFilter() {
 
         <div className="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
           <Button variant="outline" onClick={() => setOpen(false)}>
-            Cancel
+            Cancel 
           </Button>
-
-          <Button
+<Button
             disabled={!selectedDate?.from}
             onClick={() => updateUrl(selectedDate)}
           >
@@ -182,5 +181,4 @@ function DateFilter() {
     </Popover>
   );
 }
-
 export default DateFilter;
