@@ -1,4 +1,4 @@
-import { ROLE_PERMISSIONS } from "./role-permissino-mapping";
+import { ROLE_PERMISSIONS } from "./role-permission-mapping";
 import { type Permission } from "./permissions";
 import { ROLES } from "@/prisma/generated/prisma/client";
 
@@ -10,3 +10,18 @@ export function hasPermission(
     ROLE_PERMISSIONS[role].includes(permission)
   );
 }
+
+
+
+// const canCreateEmployee = hasPermission(
+//   currentUser.roles,
+//   PERMISSIONS.EMPLOYEE_CREATE
+// );
+
+// return (
+//   <>
+//     {canCreateEmployee && (
+//       <Button>Create employee</Button>
+//     )}
+//   </>
+// );

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getCurrentUserId } from "./get-current-user-id";
 import { ApiError } from "@/lib/api-error";
 import {  type Permission } from "./permissions";
-import { ROLE_PERMISSIONS } from "./role-permissino-mapping";
+import { ROLE_PERMISSIONS } from "./role-permission-mapping";
 
 
 export async function requirePermission(

@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react";
 import { Calendar as CalendarIcon, ChevronDown } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import qs from "query-string";
+import { format, subDays, startOfMonth, endOfMonth, subMonths } from "date-fns";
+import type { DateRange } from "react-day-picker";
+
 import {
   Popover,
   PopoverContent,
@@ -11,85 +13,75 @@ import {
 } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
-import { format, subDays } from "date-fns";
-import type { DateRange } from "react-day-picker";
 
 function DateFilter() {
   const params = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
 
-  const [mounted, setMounted] = useState(false);
-  const [calendarState, setCalendarState] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const defaultTo = new Date();
-  const defaultFrom = subDays(defaultTo, 30);
+  const today = new Date();
 
-  const from = params.get("from");
-  const to = params.get("to");
-  const accountId = params.get("accountId") || "";
+  const defaultFrom = subDays(today, 30);
+  const defaultTo = today;
 
-  const period: DateRange = {
-    from: from ? new Date(from) : defaultFrom,
-    to: to ? new Date(to) : defaultTo,
+  const fromParam = params.get("from");
+  const toParam = params.get("to");
+
+  const initialRange: DateRange = {
+    from: fromParam ? new Date(`${fromParam}T00:00:00`) : defaultFrom,
+
+    to: toParam ? new Date(`${toParam}T00:00:00`) : defaultTo,
   };
 
   const [selectedDate, setSelectedDate] = useState<DateRange | undefined>(
-    period,
+    initialRange,
   );
 
-  // Run only once after mounting.
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setSelectedDate({
+      from: fromParam ? new Date(`${fromParam}T00:00:00`) : defaultFrom,
 
-  // Sync the selected range when URL parameters change.
-  useEffect(() => {
-    setSelectedDate(period);
-  }, [from, to]);
+      to: toParam ? new Date(`${toParam}T00:00:00`) : defaultTo,
+    });
+  }, [fromParam, toParam]);
 
-  if (!mounted) return null;
+  function updateUrl(range: DateRange | undefined) {
+    const from = range?.from ?? defaultFrom;
+    const to = range?.to ?? range?.from ?? defaultTo;
 
-  const onCancel = () => {
-    setCalendarState(false);
-  };
+    const searchParams = new URLSearchParams();
 
-  const onApply = (date: DateRange | undefined) => {
-    const fromDate = format(date?.from || defaultFrom, "yyyy-MM-dd");
+    searchParams.set("from", format(from, "yyyy-MM-dd"));
 
-    const toDate = format(date?.to || date?.from || defaultTo, "yyyy-MM-dd");
+    searchParams.set("to", format(to, "yyyy-MM-dd"));
 
-    const url = qs.stringifyUrl(
-      {
-        url: pathname,
-        query: {
-          from: fromDate,
-          to: toDate,
-          accountId,
-        },
-      },
-      {
-        skipEmptyString: true,
-        skipNull: true,
-      },
-    );
+    router.push(`${pathname}?${searchParams.toString()}`);
 
-    router.push(url);
-    onCancel();
-  };
+    setOpen(false);
+  }
+
+  function selectPreset(from: Date, to: Date = today) {
+    const range = {
+      from,
+      to,
+    };
+
+    setSelectedDate(range);
+    updateUrl(range);
+  }
 
   const dateLabel =
     selectedDate?.from && selectedDate?.to
-      ? `${format(selectedDate.from, "dd MMM")} - ${format(
-          selectedDate.to,
+      ? `${format(selectedDate?.from, "dd MMM")} – ${format(
+          selectedDate?.to,
           "dd MMM yyyy",
         )}`
-      : selectedDate?.from
-        ? format(selectedDate.from, "dd MMM yyyy")
-        : "Select date range";
+      : "Select date range";
 
   return (
-    <Popover open={calendarState} onOpenChange={setCalendarState}>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger
         render={
           <Button
@@ -98,7 +90,9 @@ function DateFilter() {
             className="flex items-center gap-3 border border-foreground/20 shadow-xs"
           >
             <CalendarIcon className="size-5" />
+
             <span>{dateLabel}</span>
+
             <ChevronDown className="size-5" />
           </Button>
         }
@@ -106,21 +100,83 @@ function DateFilter() {
 
       <PopoverContent
         align="end"
-        className="mt-2 w-auto border-border bg-popover p-3 text-popover-foreground"
+        className="w-auto border-border bg-popover p-3 text-popover-foreground"
       >
+        <div className="grid grid-cols-2 gap-2 pb-3 sm:grid-cols-3">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => selectPreset(today)}
+          >
+            Today
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              const yesterday = subDays(today, 1);
+              selectPreset(yesterday, yesterday);
+            }}
+          >
+            Yesterday
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => selectPreset(subDays(today, 6))}
+          >
+            Last 7 days
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => selectPreset(subDays(today, 30))}
+          >
+            Last 30 days
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => selectPreset(startOfMonth(today), today)}
+          >
+            This month
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => {
+              const lastMonth = subMonths(today, 1);
+
+              selectPreset(startOfMonth(lastMonth), endOfMonth(lastMonth));
+            }}
+          >
+            Last month
+          </Button>
+        </div>
+
         <Calendar
           mode="range"
           selected={selectedDate}
-          onSelect={setSelectedDate}
+          onSelect={(range) => setSelectedDate(range)}
           numberOfMonths={2}
         />
 
-        <div className="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end sm:gap-3">
-          <Button variant="outline" onClick={onCancel}>
+        <div className="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+          <Button variant="outline" onClick={() => setOpen(false)}>
             Cancel
           </Button>
 
-          <Button onClick={() => onApply(selectedDate)}>Apply</Button>
+          <Button
+            disabled={!selectedDate?.from}
+            onClick={() => updateUrl(selectedDate)}
+          >
+            Apply
+          </Button>
         </div>
       </PopoverContent>
     </Popover>

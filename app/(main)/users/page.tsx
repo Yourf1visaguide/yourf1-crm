@@ -1,133 +1,58 @@
-import React from "react";
-import { columns, Payment } from "@/features/users/components/columns";
-import { DataTable } from "@/components/table/data-table";
 import Container from "@/components/resuable-components/container";
 import Heading from "@/components/resuable-components/heading";
-import { DataShowingCard } from "@/components/resuable-components/data-showing-card";
-import { PiggyBank, TrendingDown, TrendingUp } from "lucide-react";
+import { UsersTable } from "@/features/users/components/users-table";
 
+import { format, subDays } from "date-fns";
 
+import { getUserDashboard } from "@/features/dashboard/queries/user-dashboard-queries";
+import { UserSummaryCards } from "@/features/dashboard/components/user-summary-cards";
 
+type DashboardPageProps = {
+  searchParams: Promise<{
+    from?: string;
+    to?: string;
+  }>;
+};
 
-async function getData(): Promise<Payment[]> {
-  return [
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    {
-      id: "728ed52f",
-      amount: 100,
-      status: "pending",
-      email: "m@example.com",
-    },
-    
-  ]
-}
+async function UserPage({
+  searchParams,
+}: DashboardPageProps) {
+  const params = await searchParams;
 
-async function UserPage() {
+  const defaultTo = new Date();
+  const defaultFrom = subDays(defaultTo, 30);
 
-   const data = await getData()
+  const from = params.from
+    ? new Date(`${params.from}T00:00:00.000Z`)
+    : new Date(`${format(defaultFrom, "yyyy-MM-dd")}T00:00:00.000Z`);
 
-   const metrics = [
-  {
-    title: "Remaining",
-    dateRange: "28 Aug – 27 Sep 2026",
-    value: "₹0.00",
-    change: "0% from last period",
-    icon: PiggyBank,
-    variant: "primary" as const,
-  },
-  {
-    title: "Income",
-    dateRange: "28 Aug – 27 Sep 2026",
-    value: "₹0.00",
-    change: "0% from last period",
-    icon: TrendingUp,
-    variant: "success" as const,
-  },
-  {
-    title: "Expenses",
-    dateRange: "28 Aug – 27 Sep 2026",
-    value: "₹0.00",
-    change: "0% from last period",
-    icon: TrendingDown,
-    variant: "danger" as const,
-  },
-];
+  const selectedTo = params.to
+    ? new Date(`${params.to}T00:00:00.000Z`)
+    : new Date(`${format(defaultTo, "yyyy-MM-dd")}T00:00:00.000Z`);
+
+  const toExclusive = new Date(selectedTo.getTime() + 24 * 60 * 60 * 1000);
+
+  const data = await getUserDashboard({
+    from,
+    toExclusive,
+  });
+
+  const dateRangeLabel = `${format(from, "dd MMM")} – ${format(
+    new Date(toExclusive.getTime() - 1),
+    "dd MMM yyyy",
+  )}`;
   return (
     <div>
-      <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
-      {metrics.map((metric) => (
-        <DataShowingCard key={metric.title} {...metric} />
-      ))}
-    </section>
+      <section className="">
+        <UserSummaryCards data={data} dateRangeLabel={dateRangeLabel} />
+
+        {/* rest of dashboard */}
+      </section>
+
       <Container>
-        <Heading text="Dashboard" />
-        
-        <DataTable columns={columns} data={data} />
+        <Heading text="Users" />
+
+        <UsersTable />
       </Container>
     </div>
   );

@@ -2,6 +2,10 @@ import "server-only";
 
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/prisma/generated/prisma/client";
+import "server-only";
+
+import type { EmployeeListQuery } from "@/features/users/schemas/employee-list-schema";
+
 
 type GetEmployeesParams = {
   page: number;
@@ -9,23 +13,69 @@ type GetEmployeesParams = {
   search?: string;
 };
 
+
+
+
+
+function getOrderBy(
+  sortBy: EmployeeListQuery["sortBy"],
+  sortOrder: EmployeeListQuery["sortOrder"],
+): Prisma.EmployeeOrderByWithRelationInput {
+  switch (sortBy) {
+    case "employeeCode":
+      return {
+        employeeCode: sortOrder,
+      };
+
+    case "department":
+      return {
+        department: sortOrder,
+      };
+
+    case "designation":
+      return {
+        designation: sortOrder,
+      };
+
+    case "joiningDate":
+      return {
+        joiningDate: sortOrder,
+      };
+
+    case "employmentStatus":
+      return {
+        employmentStatus: sortOrder,
+      };
+
+    case "name":
+    default:
+      return {
+        name: sortOrder,
+      };
+  }
+}
+
 export async function getEmployees({
   page,
   limit,
   search,
-}: GetEmployeesParams) {
-  const where: Prisma.EmployeeWhereInput = search
+  sortBy,
+  sortOrder,
+}: EmployeeListQuery) {
+  const normalizedSearch = search?.trim();
+
+  const where: Prisma.EmployeeWhereInput = normalizedSearch
     ? {
         OR: [
           {
             name: {
-              contains: search,
+              contains: normalizedSearch,
               mode: "insensitive",
             },
           },
           {
             employeeCode: {
-              contains: search,
+              contains: normalizedSearch,
               mode: "insensitive",
             },
           },
@@ -33,7 +83,7 @@ export async function getEmployees({
             user: {
               is: {
                 email: {
-                  contains: search,
+                  contains: normalizedSearch,
                   mode: "insensitive",
                 },
               },
@@ -42,6 +92,8 @@ export async function getEmployees({
         ],
       }
     : {};
+
+  const orderBy = getOrderBy(sortBy, sortOrder);
 
   const [employees, total] = await prisma.$transaction([
     prisma.employee.findMany({
@@ -61,14 +113,17 @@ export async function getEmployees({
             id: true,
             email: true,
             isActive: true,
-            roles:true
+            roles: true,
           },
         },
       },
 
-      orderBy: {
-        name: "asc",
-      },
+      orderBy: [
+        orderBy,
+        {
+          id: "asc",
+        },
+      ],
 
       skip: (page - 1) * limit,
       take: limit,
@@ -81,6 +136,7 @@ export async function getEmployees({
 
   return {
     employees,
+
     pagination: {
       page,
       limit,

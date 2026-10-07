@@ -38,6 +38,7 @@ export async function getCurrentUser() {
       },
     },
   });
+  
 
   if (!user || !user.isActive) {
     return null;

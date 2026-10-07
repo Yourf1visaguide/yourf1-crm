@@ -1,6 +1,7 @@
-import { ThemeProvider } from "next-themes";
-import DashboardShell from "@/components/layout/DashboardShell";
 import { redirect } from "next/navigation";
+import { ThemeProvider } from "next-themes";
+
+import DashboardShell from "@/components/layout/DashboardShell";
 import { getCurrentUser } from "@/lib/auth/get-current-user-server-side";
 
 export default async function DashboardLayout({
@@ -9,18 +10,18 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const user = await getCurrentUser();
-  console.log(user);
-  
-  if(!user){
-    redirect("/login")
+
+  if (!user) {
+    redirect("/login");
   }
+
   return (
     <ThemeProvider
       attribute="class"
       defaultTheme="dark"
       enableSystem
     >
-      <DashboardShell>
+      <DashboardShell user={user}>
         {children}
       </DashboardShell>
     </ThemeProvider>

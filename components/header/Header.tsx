@@ -7,39 +7,70 @@ import { ModeToggle } from "@/components/resuable-components/ModeToggle";
 import HeaderCoverDesign from "./HeaderCoverDesign";
 import { UserMenu } from "./user-menu";
 
-function Header() {
-  return (
-    <header className=" relative  z-30 sm:px-8 px-4  backdrop-blur-md bg-linear-to-b from-primary/10 to-primary/20 pb-44  border-border/40 overflow-hidden border-b ">
-      <HeaderCoverDesign />
-      <div className="sticky top-0 flex h-16 items-center justify-between  z-50">
-        <div className="flex items-center gap-3">
+import type { getCurrentUser } from "@/lib/auth/get-current-user-server-side";
 
-          {/* <div className="hidden text-base font-bold sm:block   py-1.5 rounded-md  text-secondary-foreground">
-            <span className=""> Dashboard</span>
-          </div> */}
-        </div>
+type CurrentUser = NonNullable<
+  Awaited<ReturnType<typeof getCurrentUser>>
+>;
+
+type HeaderProps = {
+  user: CurrentUser;
+};
+
+function Header({ user }: HeaderProps) {
+  const today = new Intl.DateTimeFormat("en-IN", {
+    weekday: "long",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    timeZone: "Asia/Kolkata",
+  }).format(new Date());
+
+  return (
+    <header className="relative z-30 overflow-hidden border-b border-border/40 bg-linear-to-b from-primary/10 to-primary/20 px-4 pb-44 backdrop-blur-md sm:px-8">
+      <HeaderCoverDesign />
+
+      <div className="sticky top-0 z-50 flex h-16 items-center justify-between">
+        <div className="flex items-center gap-3" />
 
         <div className="flex items-center gap-x-4">
-          <Button variant="outline" size="icon-lg" aria-label="Notifications">
+          <Button
+            variant="outline"
+            size="icon-lg"
+            aria-label="Search"
+          >
             <Search className="size-5" />
           </Button>
-          <Button variant="outline" size="icon-lg" aria-label="Notifications">
+
+          <Button
+            variant="outline"
+            size="icon-lg"
+            aria-label="Notifications"
+          >
             <Bell className="size-5" />
           </Button>
 
           <ModeToggle />
-            <UserMenu />
 
+          <UserMenu />
         </div>
       </div>
-      <div className="pt-10 flex md:justify-between md:items-center items-start justify-start flex-col md:flex-row gap-y-3 ">
-        <div className="text-muted-foreground ">
-          <div className="pb-1 text-sm tracking-wider">Sunday, 28 Aug 2026</div>
-          <div className="text-2xl text-foreground   ">
-            Welcome , <span className="font-semibold">Amardeep Singh</span>
+
+      <div className="flex flex-col items-start justify-start gap-y-3 pt-10 md:flex-row md:items-center md:justify-between">
+        <div className="text-muted-foreground">
+          <div className="pb-1 text-sm tracking-wider">
+            {today}
+          </div>
+
+          <div className="text-2xl text-foreground">
+            Welcome,{" "}
+            <span className="font-semibold">
+              {user.name}
+            </span>
           </div>
         </div>
-        <Suspense fallback="Loading">
+
+        <Suspense fallback={null}>
           <DateFilter />
         </Suspense>
       </div>

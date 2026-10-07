@@ -6,12 +6,20 @@ import {
 import Header from "@/components/header/Header";
 import AppSidebar from "@/components/app-sidebar/app-sidebar";
 import SliderbarTriggerButton from "../app-sidebar/SliderbarTriggerButton";
+import { ConfirmDialog } from "../resuable-components/confirm-dialog";
+import { getCurrentUser } from "@/lib/auth/get-current-user-server-side";
 
-export default function DashboardLayout({
+type CurrentUser = NonNullable<
+  Awaited<ReturnType<typeof getCurrentUser>>
+>;
+
+export default function DashboardShell({
   children,
+  user,
 }: {
   children: React.ReactNode;
-}) { 
+  user: CurrentUser;
+}) {
   return (
     <SidebarProvider >
       <AppSidebar />
@@ -20,7 +28,7 @@ export default function DashboardLayout({
         <div className="relative ">
           {/* <SidebarTrigger /> */}
           <SliderbarTriggerButton />
-        <Header />
+        <Header user={user} />
         </div>
 
         {/* Header below the trigger */}
@@ -30,6 +38,7 @@ export default function DashboardLayout({
           {children}
         </main>
       </SidebarInset>
+      <ConfirmDialog   />
     </SidebarProvider>
   );
 }

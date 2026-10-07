@@ -1,10 +1,21 @@
 "use client";
 
-import { ArrowUpDown,  MoreVertical } from "lucide-react";
+import {
+  ArrowUpDown,
+  MoreVertical,
+} from "lucide-react";
 
 import { createColumnHelper } from "@tanstack/react-table";
-import { type DataTableFeatures } from "@/components/table/data-table-features";
-import { Checkbox } from "@/components/ui/checkbox"
+
+import {
+  type DataTableFeatures,
+} from "@/components/table/data-table-features";
+
+import type {
+  EmployeeListItem,
+} from "@/features/users/types";
+
+import { Checkbox } from "@/components/ui/checkbox";
 
 import {
   DropdownMenu,
@@ -15,115 +26,153 @@ import {
   DropdownMenuTrigger,
   DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu";
+
 import { Button } from "@/components/ui/button";
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type Payment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
-};
-
-// Use `accessor` for data columns and `display` for columns without one.
-const columnHelper = createColumnHelper<DataTableFeatures, Payment>();
+const columnHelper =
+  createColumnHelper<DataTableFeatures, EmployeeListItem>();
 
 export const columns = columnHelper.columns([
   columnHelper.display({
     id: "select",
+
     header: ({ table }) => (
-      <div className="w-8 ">
-        <Checkbox
-      className=""
+      <Checkbox
         checked={table.getIsAllPageRowsSelected()}
         indeterminate={
-          table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
+          table.getIsSomePageRowsSelected() &&
+          !table.getIsAllPageRowsSelected()
         }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        onCheckedChange={(value) =>
+          table.toggleAllPageRowsSelected(!!value)
+        }
         aria-label="Select all"
       />
-      </div>
     ),
+
     cell: ({ row }) => (
-      <div className="w-6">
-        <Checkbox
+      <Checkbox
         checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        onCheckedChange={(value) =>
+          row.toggleSelected(!!value)
+        }
         aria-label="Select row"
       />
-      </div>
-      
     ),
+
     enableSorting: false,
     enableHiding: false,
   }),
-  columnHelper.accessor("status", {
-    header: ({column}) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Status
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-  }),
-  columnHelper.accessor("email", {
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Email
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-  }),
-  columnHelper.accessor("amount", {
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
 
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+  columnHelper.accessor("employeeCode", {
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() =>
+          column.toggleSorting(
+            column.getIsSorted() === "asc",
+          )
+        }
+      >
+        Employee ID
+        <ArrowUpDown className="ml-2 size-4" />
+      </Button>
+    ),
   }),
+
+  columnHelper.accessor("name", {
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() =>
+          column.toggleSorting(
+            column.getIsSorted() === "asc",
+          )
+        }
+      >
+        Name
+        <ArrowUpDown className="ml-2 size-4" />
+      </Button>
+    ),
+  }),
+
+  columnHelper.accessor("department", {
+    header: "Department",
+  }),
+
+  columnHelper.accessor("designation", {
+    header: "Designation",
+    cell: ({ row }) =>
+      row.original.designation ?? "—",
+  }),
+
+  columnHelper.accessor("user.email", {
+    id: "email",
+    header: "Email",
+    enableSorting: false,
+    cell: ({ row }) =>
+      row.original.user.email,
+  }),
+
+  columnHelper.accessor("employmentStatus", {
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() =>
+          column.toggleSorting(
+            column.getIsSorted() === "asc",
+          )
+        }
+      >
+        Status
+        <ArrowUpDown className="ml-2 size-4" />
+      </Button>
+    ),
+  }),
+
   columnHelper.display({
-    header: () => <div className="text-center">Action</div>,
     id: "actions",
+    header: "Action",
+
     cell: ({ row }) => {
-      const payment = row.original;
+      const employee = row.original;
 
       return (
         <DropdownMenu>
           <DropdownMenuTrigger
-            render={<Button variant="ghost" className="h-8 w-8 p-0" />}
+            render={
+              <Button
+                variant="ghost"
+                className="size-8 p-0"
+              />
+            }
           >
-            <span className="sr-only">Open menu</span>
-            <MoreVertical className="h-4 w-4" />
+            <span className="sr-only">
+              Open menu
+            </span>
+
+            <MoreVertical className="size-4" />
           </DropdownMenuTrigger>
 
           <DropdownMenuContent align="end">
             <DropdownMenuGroup>
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DropdownMenuLabel>
+                Actions
+              </DropdownMenuLabel>
 
-              <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(payment.id)}
-              >
-                Copy payment ID
+              <DropdownMenuItem>
+                View profile
               </DropdownMenuItem>
 
-              <DropdownMenuItem>View customer</DropdownMenuItem>
+              <DropdownMenuItem>
+                Edit employee
+              </DropdownMenuItem>
 
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
+              <DropdownMenuSeparator />
+
+              <DropdownMenuItem>
+                Copy employee ID
+              </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>

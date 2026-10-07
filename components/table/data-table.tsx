@@ -7,6 +7,9 @@ import {
   type SortingState,
   type ColumnFiltersState,
   type ColumnVisibilityState,
+  type PaginationState,
+  type RowSelectionState,
+  type OnChangeFn,
 } from "@tanstack/react-table";
 
 import {
@@ -34,35 +37,136 @@ import { useNewUserSheet } from "@/features/users/store/use-new-user-sheet";
 interface DataTableProps<TData extends RowData, TValue = unknown> {
   columns: ColumnDef<DataTableFeatures, TData>[];
   data: TData[];
-  emptyMessage?: string;
-}
 
+  emptyMessage?: string;
+
+  manualPagination?: boolean;
+  rowCount?: number;
+
+  pagination?: {
+    pageIndex: number;
+    pageSize: number;
+  };
+
+  onPaginationChange?: (
+    updater:
+      | {
+          pageIndex: number;
+          pageSize: number;
+        }
+      | ((previous: { pageIndex: number; pageSize: number }) => {
+          pageIndex: number;
+          pageSize: number;
+        }),
+  ) => void;
+
+  isFetching?: boolean;
+  search?: string;
+  onSearchChange?: (value: string) => void;
+  sorting?: SortingState;
+
+  onSortingChange?: (
+    updater: SortingState | ((old: SortingState) => SortingState),
+  ) => void;
+  rowSelection?: RowSelectionState;
+
+  onRowSelectionChange?: OnChangeFn<RowSelectionState>;
+
+  getRowId?: (row: TData) => string;
+
+  onDeleteSelected?: (rows: TData[]) => void;
+
+  deleteLabel?: string;
+}
 export function DataTable<TData extends RowData, TValue = unknown>({
   columns,
   data,
   emptyMessage = "No results found.",
+
+  manualPagination = false,
+  rowCount,
+
+  pagination,
+  onPaginationChange,
+
+  sorting,
+  onSortingChange,
+
+  search = "",
+  onSearchChange,
+
+  rowSelection,
+  onRowSelectionChange,
+
+  getRowId,
+
+  onDeleteSelected,
+  deleteLabel = "Delete",
+
+  isFetching = false,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = React.useState<SortingState>([]);
+  // const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [localSorting, setLocalSorting] = React.useState<SortingState>([]);
+
+  const resolvedSorting = sorting ?? localSorting;
+
+  const resolvedSortingChange = onSortingChange ?? setLocalSorting;
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   );
+  const [localPagination, setLocalPagination] = React.useState<PaginationState>(
+    {
+      pageIndex: 0,
+      pageSize: 10,
+    },
+  );
+
+  const resolvedPagination = pagination ?? localPagination;
+
+  const resolvedPaginationChange = onPaginationChange ?? setLocalPagination;
   const [columnVisibility, setColumnVisibility] =
     React.useState<ColumnVisibilityState>({});
-  const [rowSelection, setRowSelection] = React.useState({});
+  const [localRowSelection, setLocalRowSelection] =
+    React.useState<RowSelectionState>({});
+
+  const resolvedRowSelection = rowSelection ?? localRowSelection;
+
+  const resolvedRowSelectionChange =
+    onRowSelectionChange ?? setLocalRowSelection;
   const table = useTable({
     features,
+
     data,
     columns,
-    onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
-    onColumnVisibilityChange: setColumnVisibility,
-    onRowSelectionChange: setRowSelection,
+
+    getRowId,
+
     state: {
-      sorting,
+      sorting: resolvedSorting,
       columnFilters,
       columnVisibility,
-      rowSelection,
+
+      rowSelection: resolvedRowSelection,
+
+      pagination: resolvedPagination,
     },
+
+    onSortingChange: resolvedSortingChange,
+
+    onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
+
+    onRowSelectionChange: resolvedRowSelectionChange,
+
+    onPaginationChange: resolvedPaginationChange,
+
+    manualPagination,
+
+    ...(manualPagination
+      ? {
+          rowCount: rowCount ?? 0,
+        }
+      : {}),
   });
 
   const rows = table.getRowModel().rows;
@@ -70,22 +174,27 @@ export function DataTable<TData extends RowData, TValue = unknown>({
 
   return (
     <>
-    <div>
-          <div className="flex flex-col justify-end items-end mb-8 gap-y-4">
-          <Button variant="default" size="lg" onClick={onOpen}  >Add New User</Button>
-          
+      <div>
+        <div className="flex flex-col justify-end items-end mb-8 gap-y-4">
+          <Button variant="default" size="lg" onClick={onOpen}>
+            Add New User
+          </Button>
         </div>
-        </div>
+      </div>
       <div className=" md:flex justify-between items-center pb-4">
         {/* Filter box and Delete button */}
-        
+
         <Input
           type="text"
-          placeholder="Search By Name"
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
+          placeholder="Type anything to Search..."
+          value={search}
+          onChange={(event) => {
+            onSearchChange?.(event.target.value);
+
+            if (manualPagination) {
+              table.setPageIndex(0);
+            }
+          }}
           className="max-w-sm shadow-sm"
         />
 
@@ -97,7 +206,7 @@ export function DataTable<TData extends RowData, TValue = unknown>({
             >
               Columns
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="w-full ">
               {table
                 .getAllColumns()
                 .filter((column) => column.getCanHide())
@@ -111,7 +220,7 @@ export function DataTable<TData extends RowData, TValue = unknown>({
                         column.toggleVisibility(!!value)
                       }
                     >
-                      {column.id}
+                      <span className="pr-8">{column.id}</span>
                     </DropdownMenuCheckboxItem>
                   );
                 })}
@@ -119,12 +228,22 @@ export function DataTable<TData extends RowData, TValue = unknown>({
           </DropdownMenu>
 
           {/* Delete Button */}
-          
-          <Button>
-            Delete {table.getFilteredSelectedRowModel().rows.length}{" "}
-            {table.getFilteredSelectedRowModel().rows.length > 1
-              ? "rows"
-              : "row"}{" "}
+
+          <Button
+            variant="destructive"
+            disabled={table.getSelectedRowModel().rows.length === 0}
+            onClick={() => {
+              const selectedRows = table
+                .getSelectedRowModel()
+                .rows.map((row) => row.original);
+
+              onDeleteSelected?.(selectedRows);
+            }}
+          >
+            {deleteLabel}
+
+            {table.getSelectedRowModel().rows.length > 0 &&
+              ` (${table.getSelectedRowModel().rows.length})`}
           </Button>
         </div>
       </div>
