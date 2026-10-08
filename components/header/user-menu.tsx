@@ -1,6 +1,8 @@
 "use client";
 
-import { ChevronDown, ChevronUp, LogOut, Settings, UserRound } from "lucide-react";
+import { BriefcaseBusiness, LogOut, Settings, UserRound } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
 
 import {
   DropdownMenu,
@@ -14,9 +16,8 @@ import {
 
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { authClient } from "@/lib/auth-client";
-import { useQueryClient } from "@tanstack/react-query";
 import { usersKeys } from "@/features/users/api/users-keys";
-import { useRouter } from "next/navigation";
+import { cn } from "cn";
 
 export function UserMenu() {
   const { data: user, isLoading } = useCurrentUser();
@@ -24,19 +25,7 @@ export function UserMenu() {
   const router = useRouter();
 
   if (isLoading) {
-    return (
-      <div
-        className="
-          h-11
-          w-36
-          animate-pulse
-          rounded-xl
-          border
-          border-white/10
-          bg-white/[0.04]
-        "
-      />
-    );
+    return <div className="size-10 animate-pulse rounded-xl bg-primary/10" />;
   }
 
   if (!user) {
@@ -44,16 +33,22 @@ export function UserMenu() {
   }
 
   const initials = getInitials(user.name);
-  const primaryRole = user.roles[0] ?? "User";
+  const primaryRole = formatRole(user.roles[0] ?? "User");
+  const department = user.employee?.department
+    ? formatRole(user.employee.department)
+    : null;
 
   async function handleLogout() {
     await authClient.signOut();
+
     queryClient.removeQueries({
       queryKey: usersKeys.all,
     });
+
     queryClient.removeQueries({
       queryKey: ["current-user"],
     });
+
     router.replace("/login");
     router.refresh();
   }
@@ -87,67 +82,116 @@ export function UserMenu() {
       <DropdownMenuContent
         align="end"
         side="bottom"
-        sideOffset={6}
-        className="w-72 rounded-md ring-0 border border-border shadow-xs bg-background/50 p-2  backdrop-blur-xs "
+        sideOffset={10}
+        className="
+          w-[320px]
+          overflow-hidden
+          rounded-md
+          border border-border/70
+          bg-popover/95
+          p-1.5
+          shadow-2xl
+          backdrop-blur-md
+          ring-0
+        "
       >
         <DropdownMenuGroup>
-          <DropdownMenuLabel className="p-0 relative  ">
-            <div className="flex items-center gap-3 rounded-xl px-2.5 py-3">
-              <div className=" flex size-11 shrink-0 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-sm font-semibold tracking-wide text-primary ">
-                {initials}
-              </div>
+          {/* Identity */}
+          <DropdownMenuLabel className="p-0">
+            <div className="px-3 pb-3 pt-3">
+              <div className="flex items-start gap-3">
+                <div
+                  className="
+                  flex size-12 shrink-0 items-center justify-center
+                  rounded-xl
+                  border border-primary/20
+                  bg-primary/10
+                  text-sm font-semibold
+                  tracking-wide
+                  text-primary
+                "
+                >
+                  {initials}
+                </div>
 
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-semibold leading-5 text-foreground">
-                  {user.name}
-                </p>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-semibold text-foreground">
+                    {user.name}
+                  </p>
 
-                <p className="mt-0.5 truncate text-xs leading-4 text-muted-foreground">
-                  {user.email}
-                </p>
+                  <p className="mt-0.5 truncate text-xs text-muted-foreground">
+                    {user.email}
+                  </p>
 
-                {/* <div className="mt-2 flex flex-wrap gap-1">
-                  {user.roles.map((role) => (
-                    <span
-                      key={role}
-                      className=" inline-flex items-center rounded-md border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-medium leading-4 text-primary "
-                    >
-                      {formatRole(role)}
+                  <div className="mt-1.5 flex items-center gap-2">
+                    <span className="text-[11px] font-medium text-primary">
+                      {primaryRole}
                     </span>
-                  ))}
-                </div> */}
+
+                    <span className="text-muted-foreground/40">•</span>
+
+                    <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                      <span className={cn("size-1.5 rounded-full ", user.isActive ? "bg-emerald-500" : "bg-red-600")} />
+                      {user.isActive ? "Active" : "Inactive" }
+                    </span>
+                  </div>
+                </div>
               </div>
+
+              {department && (
+                <div className="mt-3 flex items-center gap-2 border-t border-border/50 pt-3 text-xs text-muted-foreground">
+                  <BriefcaseBusiness className="size-3.5" />
+                  <span>{department}</span>
+
+                  {user.employee?.designation && (
+                    <>
+                      <span className="text-muted-foreground/30">/</span>
+                      <span className="truncate">
+                        {user.employee.designation}
+                      </span>
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           </DropdownMenuLabel>
 
-          <DropdownMenuSeparator />
+          <DropdownMenuSeparator className="mx-2" />
 
-          <DropdownMenuItem className="h-10 rounded-xl px-3 hover:bg-accent focus-within:bg-accent ">
-            <UserRound className="size-4 text-muted-foreground" />
-            <span>View profile</span>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
+          {/* Account */}
+          <div className="p-1">
+            <DropdownMenuItem className="h-10 rounded-lg px-3">
+              <UserRound className="size-4 text-muted-foreground" />
+              <span>Profile</span>
+            </DropdownMenuItem>
 
-          <DropdownMenuItem
-            variant="destructive"
-            className="h-10 rounded-xl px-3"
-            onClick={handleLogout}
-          >
-            <LogOut className="size-4" />
-            <span>Log out</span>
-          </DropdownMenuItem>
+            <DropdownMenuItem className="h-10 rounded-lg px-3">
+              <Settings className="size-4 text-muted-foreground" />
+              <span>Settings</span>
+            </DropdownMenuItem>
+          </div>
+
+          <DropdownMenuSeparator className="mx-2" />
+
+          {/* Logout */}
+          <div className="p-1">
+            <DropdownMenuItem
+              variant="destructive"
+              className="h-10 rounded-lg px-3"
+              onClick={handleLogout}
+            >
+              <LogOut className="size-4" />
+              <span>Sign out</span>
+            </DropdownMenuItem>
+          </div>
         </DropdownMenuGroup>
-
-        {/* <DropdownMenuSeparator /> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );
 }
 
 function getInitials(name: string | null) {
-  if (!name) {
-    return "U";
-  }
+  if (!name) return "U";
 
   return name
     .trim()
@@ -158,8 +202,8 @@ function getInitials(name: string | null) {
     .toUpperCase();
 }
 
-function formatRole(role: string) {
-  return role
+function formatRole(value: string) {
+  return value
     .toLowerCase()
     .replace(/_/g, " ")
     .replace(/\b\w/g, (char) => char.toUpperCase());

@@ -14,9 +14,7 @@ type DashboardPageProps = {
   }>;
 };
 
-async function UserPage({
-  searchParams,
-}: DashboardPageProps) {
+async function UserPage({ searchParams }: DashboardPageProps) {
   const params = await searchParams;
 
   const defaultTo = new Date();
@@ -50,7 +48,7 @@ async function UserPage({
       </section>
 
       <Container>
-        <Heading text="Users" />
+        <Heading text="Employee" />
 
         <UsersTable />
       </Container>

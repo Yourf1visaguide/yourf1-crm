@@ -40,7 +40,7 @@ export function UserSummaryCards({
   return (
     <section className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
       <DataShowingCard
-        title="Total Users"
+        title="Total Employee"
         dateRange="Current"
         value={data.totalUsers.toLocaleString()}
         change={`${data.activeUsers} active accounts`}
@@ -49,7 +49,7 @@ export function UserSummaryCards({
       />
 
       <DataShowingCard
-        title="Active Users"
+        title="Active Employee"
         dateRange="Current"
         value={data.activeUsers.toLocaleString()}
         change={`${activePercentage}% of all accounts`}
@@ -58,7 +58,7 @@ export function UserSummaryCards({
       />
 
       <DataShowingCard
-        title="New Users"
+        title="New Employee"
         dateRange={dateRangeLabel}
         value={data.newUsers.current.toLocaleString()}
         change={formatPercentage(
