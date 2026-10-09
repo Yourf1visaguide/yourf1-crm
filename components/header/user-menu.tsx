@@ -131,8 +131,13 @@ export function UserMenu() {
                     <span className="text-muted-foreground/40">•</span>
 
                     <span className="flex items-center gap-1 text-[11px] text-muted-foreground">
-                      <span className={cn("size-1.5 rounded-full ", user.isActive ? "bg-emerald-500" : "bg-red-600")} />
-                      {user.isActive ? "Active" : "Inactive" }
+                      <span
+                        className={cn(
+                          "size-1.5 rounded-full ",
+                          user.isActive ? "bg-emerald-500" : "bg-red-600",
+                        )}
+                      />
+                      {user.isActive ? "Active" : "Inactive"}
                     </span>
                   </div>
                 </div>
@@ -160,7 +165,10 @@ export function UserMenu() {
 
           {/* Account */}
           <div className="p-1">
-            <DropdownMenuItem className="h-10 rounded-lg px-3">
+            <DropdownMenuItem
+              className="h-10 rounded-lg px-3"
+              onClick={() => router.push("/profile")}
+            >
               <UserRound className="size-4 text-muted-foreground" />
               <span>Profile</span>
             </DropdownMenuItem>
