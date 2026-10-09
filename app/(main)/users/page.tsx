@@ -42,7 +42,7 @@ async function UserPage({ searchParams }: DashboardPageProps) {
   return (
     <div>
       <section className="">
-        {/* <UserSummaryCards data={data} dateRangeLabel={dateRangeLabel} /> */}
+        <UserSummaryCards data={data} dateRangeLabel={dateRangeLabel} />
 
         {/* rest of dashboard */}
       </section>
