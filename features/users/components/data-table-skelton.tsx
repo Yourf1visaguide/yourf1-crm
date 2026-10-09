@@ -24,7 +24,7 @@ export function DataTableSkeleton({
         </div>
       </div>
 
-      {/* Table */}
+      {/* Table  */}
       <div className="w-full overflow-hidden rounded-md border border-border/70 bg-card shadow-sm">
         <div className="w-full overflow-x-auto">
           <div className="min-w-[720px]">

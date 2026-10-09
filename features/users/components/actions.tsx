@@ -43,8 +43,7 @@ export default function EmployeeActions({
             <DropdownMenuGroup>
               <DropdownMenuLabel className="px-2.5 pb-1.5 pt-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground/70">
                 Manage
-              </DropdownMenuLabel>
-
+              </DropdownMenuLabel> 
               <DropdownMenuItem className="gap-2.5 rounded-lg px-2.5 py-2">
                 <Pencil className="size-4 text-muted-foreground" />
                 <span>Edit employee</span>
