@@ -27,12 +27,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import { SearchX } from "lucide-react";
+import { Loader2, Search, SearchX, SlidersHorizontal } from "lucide-react";
 import { features, type DataTableFeatures } from "./data-table-features";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { DataTablePagination } from "./pagination";
-import { useNewUserSheet } from "@/features/users/store/use-new-user-sheet";
 
 interface DataTableProps<TData extends RowData, TValue = unknown> {
   columns: ColumnDef<DataTableFeatures, TData>[];
@@ -170,65 +169,105 @@ export function DataTable<TData extends RowData, TValue = unknown>({
   });
 
   const rows = table.getRowModel().rows;
-  const { onOpen } = useNewUserSheet();
 
   return (
     <>
-      <div>
-        <div className="flex flex-col justify-end items-end mb-8 gap-y-4">
-          <Button variant="default" size="lg" onClick={onOpen}>
-            Add New User
-          </Button>
+      {/* ===================================================== */}
+      {/* TOOLBAR */}
+      {/* ===================================================== */}
+
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
+        {/* Search */}
+        <div className="relative w-full sm:max-w-sm">
+          <Search
+            className="
+              pointer-events-none
+              absolute
+              left-3
+              top-1/2
+              size-4
+              -translate-y-1/2
+              text-muted-foreground
+            "
+          />
+
+          <Input
+            type="text"
+            placeholder="Search employees..."
+            value={search}
+            onChange={(event) => {
+              onSearchChange?.(event.target.value);
+
+              if (manualPagination) {
+                table.setPageIndex(0);
+              }
+            }}
+            className="
+              h-10
+              bg-background
+              pl-9
+              shadow-sm
+              focus-visible:ring-1
+            "
+          />
         </div>
-      </div>
-      <div className=" md:flex justify-between items-center pb-4">
-        {/* Filter box and Delete button */}
 
-        <Input
-          type="text"
-          placeholder="Type anything to Search..."
-          value={search}
-          onChange={(event) => {
-            onSearchChange?.(event.target.value);
+        {/* Actions */}
+        <div className="flex items-center gap-2 ">
+          {/* Updating indicator */}
+          {isFetching && (
+            <div
+              className="
+                mr-1
+                hidden
+                items-center
+                gap-1.5
+                text-xs
+                text-muted-foreground
+                sm:flex
+              "
+              aria-live="polite"
+            >
+              <Loader2 className="size-3.5 animate-spin" />
+              Updating
+            </div>
+          )}
 
-            if (manualPagination) {
-              table.setPageIndex(0);
-            }
-          }}
-          className="max-w-sm shadow-sm"
-        />
-
-        {/* columns and delete button */}
-        <div className="flex gap-x-4">
+          {/* Columns */}
           <DropdownMenu>
             <DropdownMenuTrigger
-              render={<Button variant="outline" className="ml-auto" />}
+              render={
+                <Button variant="outline" size="default" className="gap-2" />
+              }
             >
+              <SlidersHorizontal className="size-4" />
               Columns
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-full ">
+
+            <DropdownMenuContent align="end" className="w-48">
+              <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+                Show columns
+              </div>
+
               {table
                 .getAllColumns()
                 .filter((column) => column.getCanHide())
-                .map((column) => {
-                  return (
-                    <DropdownMenuCheckboxItem
-                      key={column.id}
-                      className="capitalize"
-                      checked={column.getIsVisible()}
-                      onCheckedChange={(value) =>
-                        column.toggleVisibility(!!value)
-                      }
-                    >
-                      <span className="pr-8">{column.id}</span>
-                    </DropdownMenuCheckboxItem>
-                  );
-                })}
+                .map((column) => (
+                  <DropdownMenuCheckboxItem
+                    key={column.id}
+                    checked={column.getIsVisible()}
+                    onCheckedChange={(value) =>
+                      column.toggleVisibility(!!value)
+                    }
+                    className="capitalize"
+                  >
+                    {column.id}
+                  </DropdownMenuCheckboxItem>
+                ))}
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* Delete Button */}
-
+          {/* Deactivate */}
           <Button
             variant="destructive"
             disabled={table.getSelectedRowModel().rows.length === 0}
@@ -249,7 +288,7 @@ export function DataTable<TData extends RowData, TValue = unknown>({
       </div>
 
       {/* //Table */}
-      <div className="w-full overflow-hidden rounded-md border border-border/70 bg-card shadow-sm">
+      <div className="w-full overflow-hidden  rounded-md border border-border/70 bg-card shadow-sm">
         <div className="w-full overflow-x-auto">
           <Table className="min-w-[720px]">
             {/* Table header */}

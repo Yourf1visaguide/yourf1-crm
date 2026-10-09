@@ -52,7 +52,7 @@ export function DataShowingCard({
         className={`absolute inset-x-0 top-0 h-[2px] ${colors.accent} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
       />
 
-      <div className="flex min-h-[176px] flex-col justify-between p-5 sm:p-6">
+      <div className="flex min-h-[176px]  flex-col justify-between p-5 sm:p-6">
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 space-y-1.5">

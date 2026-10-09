@@ -12,6 +12,11 @@ import type { RowSelectionState } from "@tanstack/react-table";
 
 import { useConfirmDialog } from "@/hooks/use-confirm-dialog";
 import { useDeactivateUsers } from "../api/use-deactivate-users";
+import { Skeleton } from "@/components/ui/skeleton";
+import { AlertCircle, RefreshCw } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DataTableSkeleton } from "./data-table-skelton";
+import { useNewUserSheet } from "../store/use-new-user-sheet";
 
 export function UsersTable() {
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
@@ -32,7 +37,7 @@ export function UsersTable() {
 
   const sortOrder = sort?.desc ? "desc" : "asc";
 
-  const { data, isPending, isFetching, isError } = useEmployees({
+  const { data, isPending, isFetching, isError, refetch } = useEmployees({
     pageIndex: pagination.pageIndex,
     pageSize: pagination.pageSize,
     search,
@@ -68,79 +73,113 @@ export function UsersTable() {
       },
     });
   }
+  const { onOpen } = useNewUserSheet();
 
   if (isPending) {
-    return (
-      <div className="rounded-md border p-10 text-center text-sm text-muted-foreground">
-        Loading employees...
-      </div>
-    );
+    return <DataTableSkeleton />;
   }
 
   if (isError) {
     return (
-      <div className="rounded-md border p-10 text-center text-sm text-destructive">
-        Failed to load employees.
+      <div className="flex min-h-[320px] items-center justify-center rounded-xl border bg-card ">
+        <div className="flex max-w-sm flex-col items-center px-6 py-10 text-center">
+          <div className="mb-4 flex size-11 items-center justify-center rounded-full bg-destructive/10">
+            <AlertCircle className="size-5 text-destructive" />
+          </div>
+
+          <h3 className="text-sm font-semibold text-foreground">
+            Unable to load employees
+          </h3>
+
+          <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
+            We couldn't retrieve the employee list. Please try again.
+          </p>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-5"
+            onClick={() => refetch()}
+          >
+            <RefreshCw className="mr-2 size-4" />
+            Try again
+          </Button>
+        </div>
       </div>
     );
   }
 
   return (
-    <DataTable
-      columns={columns}
-      data={data?.employees ?? []}
+    <div className="">
+      <div className="flex flex-col gap-4 my-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="space-y-1">
+          <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+            Employees
+          </h1>
 
-      rowSelection={rowSelection}
-      onRowSelectionChange={setRowSelection}
+          <p className="text-sm text-muted-foreground">"Manage employees, roles, schedules and access."</p>
+        </div>
 
-      getRowId={(row) => row.id}
+        <Button size="default" onClick={onOpen} className="w-full sm:w-auto">
+          Add Employee
+        </Button>
+      </div>
+      <DataTable
+        columns={columns}
+        data={data?.employees ?? []}
 
-      onDeleteSelected={handleDeactivateSelected}
-      deleteLabel="Deactivate"
+        rowSelection={rowSelection}
+        onRowSelectionChange={setRowSelection}
 
-      manualPagination
-      rowCount={data?.pagination.total ?? 0}
+        getRowId={(row) => row.id}
 
-      pagination={pagination}
+        onDeleteSelected={handleDeactivateSelected}
+        deleteLabel="Deactivate"
 
-      onPaginationChange={(updater) => {
-        setPagination((previous) =>
-          updater instanceof Function ? updater(previous) : updater,
-        );
+        manualPagination
+        rowCount={data?.pagination.total ?? 0}
 
-        // Selection is page-local.
-        setRowSelection({});
-      }}
+        pagination={pagination}
 
-      sorting={sorting}
+        onPaginationChange={(updater) => {
+          setPagination((previous) =>
+            updater instanceof Function ? updater(previous) : updater,
+          );
 
-      onSortingChange={(updater) => {
-        setSorting((previous) =>
-          updater instanceof Function ? updater(previous) : updater,
-        );
+          // Selection is page-local.
+          setRowSelection({});
+        }}
 
-        setPagination((previous) => ({
-          ...previous,
-          pageIndex: 0,
-        }));
+        sorting={sorting}
 
-        setRowSelection({});
-      }}
+        onSortingChange={(updater) => {
+          setSorting((previous) =>
+            updater instanceof Function ? updater(previous) : updater,
+          );
 
-      search={search}
+          setPagination((previous) => ({
+            ...previous,
+            pageIndex: 0,
+          }));
 
-      onSearchChange={(value) => {
-        setSearch(value);
+          setRowSelection({});
+        }}
 
-        setPagination((previous) => ({
-          ...previous,
-          pageIndex: 0,
-        }));
+        search={search}
 
-        setRowSelection({});
-      }}
+        onSearchChange={(value) => {
+          setSearch(value);
 
-      isFetching={isFetching}
-    />
+          setPagination((previous) => ({
+            ...previous,
+            pageIndex: 0,
+          }));
+
+          setRowSelection({});
+        }}
+
+        isFetching={isFetching}
+      />
+    </div>
   );
 }

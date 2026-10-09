@@ -34,7 +34,7 @@ export default function DashboardShell({
         {/* Header below the trigger */}
 
         {/* Page content */}
-        <main className="p-4 sm:p-6 lg:p-8 -mt-28 z-50 relative ">
+        <main className="p-4 sm:p-6 lg:p-8 -mt-28 z-50  relative ">
           {children}
         </main>
       </SidebarInset>
