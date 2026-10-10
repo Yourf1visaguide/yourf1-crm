@@ -33,12 +33,12 @@ export async function getCurrentUser() {
           employeeCode: true,
           department: true,
           designation: true,
+          joiningDate: true,
           employmentStatus: true,
         },
       },
     },
   });
-  
 
   if (!user || !user.isActive) {
     return null;

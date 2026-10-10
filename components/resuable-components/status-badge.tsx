@@ -4,6 +4,7 @@ import {
   CircleMinus,
   CircleX,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -13,14 +14,13 @@ type StatusBadgeProps = {
   className?: string;
 };
 
-const statusConfig: Record<
-  string,
-  {
-    label: string;
-    icon: typeof CircleCheck;
-    className: string;
-  }
-> = {
+type StatusConfig = {
+  label: string;
+  icon: LucideIcon;
+  className: string;
+};
+
+const statusConfig: Record<string, StatusConfig> = {
   ACTIVE: {
     label: "Active",
     icon: CircleCheck,
@@ -50,19 +50,23 @@ const statusConfig: Record<
   },
 };
 
+const fallbackStatus: StatusConfig = {
+  label: "Unknown",
+  icon: CircleAlert,
+  className:
+    "border-border bg-muted/70 text-muted-foreground",
+};
+
 export function StatusBadge({
   status,
   className,
 }: StatusBadgeProps) {
   const normalizedStatus = status?.trim().toUpperCase();
 
-  const config =
-    (normalizedStatus && statusConfig[normalizedStatus]) ?? {
-      label: formatStatus(status),
-      icon: CircleAlert,
-      className:
-        "border-border bg-muted/70 text-muted-foreground",
-    };
+  const config: StatusConfig =
+    (normalizedStatus
+      ? statusConfig[normalizedStatus]
+      : undefined) ?? fallbackStatus;
 
   const Icon = config.icon;
 
@@ -83,16 +87,4 @@ export function StatusBadge({
       <span>{config.label}</span>
     </Badge>
   );
-}
-
-function formatStatus(status: string | null | undefined) {
-  if (!status) {
-    return "Unknown";
-  }
-
-  return status
-    .trim()
-    .toLowerCase()
-    .replaceAll("_", " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
 }

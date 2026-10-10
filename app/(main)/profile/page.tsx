@@ -3,8 +3,11 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth/get-current-user-server-side";
 import {
   EmployeeProfile,
-  type EmployeeProfileData,
 } from "@/features/users/components/employee-profile";
+
+import type {
+  EmployeeProfileData,
+} from "@/features/users/queries/employee-profile-queries";
 
 export default async function ProfilePage() {
   const user = await getCurrentUser();
