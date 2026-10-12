@@ -171,7 +171,6 @@ const managementNavigation: NavItem[] = [
 
 export default function AppSidebar() {
   const { setOpenMobile, openMobile, state } = useSidebar();
-  console.log(state);
   return (
     <Sidebar collapsible="icon" variant="sidebar">
       <SidebarHeader className="p-0 ">

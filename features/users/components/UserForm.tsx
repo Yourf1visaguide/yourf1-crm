@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -24,14 +25,14 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import {
   CreateEmployeeFormValues,
   employeeFormSchema,
 } from "@/features/users/schemas/user-schema";
 import { todayLocalDate } from "@/lib/utils";
-import React from "react";
+import Field from "@/components/resuable-components/form-field";
+import FormSubHeading from "@/components/resuable-components/form-subheading";
 
 const inputClassName = "w-full";
 
@@ -91,12 +92,8 @@ export default function UserForm({
       <div className="flex-1 space-y-7 overflow-y-auto px-6 py-6">
         {/* Account information */}
         <section className="space-y-4">
-          <div>
-            <h3 className="text-sm font-semibold">Account information</h3>
-            <p className="text-sm text-muted-foreground">
-              Login credentials for the employee.
-            </p>
-          </div>
+          <FormSubHeading title="Account information" description="Login credentials for the employee." />
+          
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Email address" error={fieldError("email")}>
@@ -124,11 +121,12 @@ export default function UserForm({
         <Separator />
 
         {/* Employee information */}
+        <FormSubHeading title="Employee information" description="Employment details and organizational assignment." />
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">Employee information</h3>
+            <h3 className="text-sm font-semibold"></h3>
             <p className="text-sm text-muted-foreground">
-              Employment details and organizational assignment.
+              
             </p>
           </div>
 
@@ -253,13 +251,9 @@ export default function UserForm({
         <Separator />
 
         {/* Compensation */}
+        <FormSubHeading title="Initial compensation" description="Set the employee&apos;s starting monthly salary." />
         <section className="space-y-4">
-          <div>
-            <h3 className="text-sm font-semibold">Initial compensation</h3>
-            <p className="text-sm text-muted-foreground">
-              Set the employee&apos;s starting monthly salary.
-            </p>
-          </div>
+          
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field
@@ -292,11 +286,12 @@ export default function UserForm({
         <Separator />
 
         {/* Work schedule */}
+        <FormSubHeading title="Initial work schedule" description="Set the employee&apos;s daily working hours." />
         <section className="space-y-4">
           <div>
-            <h3 className="text-sm font-semibold">Initial work schedule</h3>
+            <h3 className="text-sm font-semibold"></h3>
             <p className="text-sm text-muted-foreground">
-              Set the employee&apos;s daily working hours.
+              
             </p>
           </div>
 
@@ -365,18 +360,4 @@ export default function UserForm({
   );
 }
 
-type FieldProps = {
-  label: string;
-  error?: string;
-  children: React.ReactNode;
-};
 
-function Field({ label, error, children }: FieldProps) {
-  return (
-    <div className="min-w-0 space-y-2">
-      <Label>{label}</Label>
-      {children}
-      {error && <p className="text-xs text-destructive">{String(error)}</p>}
-    </div>
-  );
-}

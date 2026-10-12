@@ -6,3 +6,4 @@ export const usersKeys = {
   details: () => [...usersKeys.all, "detail"] as const,
   detail: (id: string) => [...usersKeys.details(), id] as const,
 };
+

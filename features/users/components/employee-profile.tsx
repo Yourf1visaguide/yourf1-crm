@@ -13,7 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
-import type { EmployeeProfileData } from "../queries/employee-profile-queries";
+import type { EmployeeProfileData } from "@/features/users/queries/employee-profile-queries";
 
 type EmployeeProfileProps = {
   employee: EmployeeProfileData;

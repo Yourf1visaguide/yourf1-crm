@@ -9,6 +9,10 @@ export const userAccountSchema = z.object({
     .string()
     .min(8, "Password must be at least 8 characters"),
   roles: z.array(z.enum(ROLES)),
+  name:z
+    .string()
+    .trim()
+    .min(1, "Name is required"),
 
 });
 
@@ -21,11 +25,6 @@ export const employeeSchema = z.object({
     .string()
     .trim()
     .min(1, "Employee code is required"),
-
-  name: z
-    .string()
-    .trim()
-    .min(1, "Name is required"),
 
   department: z.enum(DEPARTMENT),
 
@@ -92,4 +91,10 @@ export type CreateEmployeeFormValues = z.infer<
 >;
 
 
+export const editEmployeeFormSchema = z.object({
+   ...userAccountSchema.shape,
+  ...employeeSchema.shape,
+})
 
+
+export type EditEmployeeFormValues = z.infer<typeof editEmployeeFormSchema>

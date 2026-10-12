@@ -9,24 +9,7 @@ import { type DataTableFeatures } from "@/components/table/data-table-features";
 import type { EmployeeListItem } from "@/features/users/types";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  CalendarClock,
-  Copy,
-  Pencil,
-  UserRound,
-  UserX,
-  WalletCards,
-} from "lucide-react";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-  DropdownMenuGroup,
-} from "@/components/ui/dropdown-menu";
 
 import { Button } from "@/components/ui/button";
 import { StatusBadge } from "@/components/resuable-components/status-badge";

@@ -16,7 +16,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DataTableSkeleton } from "./data-table-skelton";
-import { useNewUserSheet } from "../store/use-new-user-sheet";
+import { useUserSheet } from "../store/use-user-sheet";
 
 export function UsersTable() {
   const [rowSelection, setRowSelection] = React.useState<RowSelectionState>({});
@@ -73,7 +73,7 @@ export function UsersTable() {
       },
     });
   }
-  const { onOpen } = useNewUserSheet();
+  const onOpen = useUserSheet((state) => state.onOpen);
 
   if (isPending) {
     return <DataTableSkeleton />;
@@ -120,7 +120,7 @@ export function UsersTable() {
           <p className="text-sm text-muted-foreground">"Manage employees, roles, schedules and access."</p>
         </div>
 
-        <Button size="default" onClick={onOpen} className="w-full sm:w-auto">
+        <Button size="default" onClick={() => onOpen("new")} className="w-full sm:w-auto">
           Add Employee
         </Button>
       </div>

@@ -13,7 +13,6 @@ export async function GET() {
     const session = await auth.api.getSession({
       headers: await headers(),
     });
-    console.log(session);
     if (!session) {
       throw new ApiError(
         "UNAUTHENTICATED",
@@ -45,7 +44,6 @@ export async function GET() {
         },
       },
     });
-    console.log(user);
     if (!user) {
       throw new ApiError(
         "UNAUTHENTICATED",
