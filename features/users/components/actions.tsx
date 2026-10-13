@@ -20,11 +20,12 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useUserSheet } from "@/features/users/store/use-user-sheet";
+import { EmployeeListItem } from "../types";
 
 export default function EmployeeActions({
-  employeeId,
+  employee,
 }: {
-  employeeId: string;
+  employee: EmployeeListItem;
 }) {
   const router = useRouter();
   const onOpen = useUserSheet((state) => state.onOpen )
@@ -47,7 +48,7 @@ export default function EmployeeActions({
         {/* Primary */}
         <DropdownMenuGroup>
           <DropdownMenuItem
-            onClick={() => router.push(`/users/${employeeId}`)}
+            onClick={() => router.push(`/users/${employee.id}`)}
             className="gap-2.5 rounded-lg px-2.5 py-2.5 text-sm"
           >
             <UserRound className="size-4 text-muted-foreground" />
@@ -63,20 +64,20 @@ export default function EmployeeActions({
             Manage
           </DropdownMenuLabel>
           <DropdownMenuItem className="gap-2.5 rounded-lg px-2.5 py-2"
-          onClick={() => onOpen("edit")}
+          onClick={() => onOpen("edit", employee)}
           >
             <Pencil className="size-4 text-muted-foreground" />
             <span>Edit employee</span>
           </DropdownMenuItem>
 
           <DropdownMenuItem className="gap-2.5 rounded-lg px-2.5 py-2"
-          onClick={() => onOpen("salary")}
+          onClick={() => onOpen("salary", employee)}
             >
             <WalletCards className="size-4 text-muted-foreground" />
             <span>Change salary</span>
           </DropdownMenuItem>
 
-          <DropdownMenuItem className="gap-2.5 rounded-lg px-2.5 py-2" onClick={() => onOpen("schedule")}>
+          <DropdownMenuItem className="gap-2.5 rounded-lg px-2.5 py-2" onClick={() => onOpen("schedule", employee)}>
             <CalendarClock className="size-4 text-muted-foreground" />
             <span>Change schedule</span>
           </DropdownMenuItem>
@@ -87,7 +88,7 @@ export default function EmployeeActions({
         {/* Utility */}
         <DropdownMenuItem
           className="gap-2.5 rounded-lg px-2.5 py-2"
-          onClick={() => navigator.clipboard.writeText(employeeId)}
+          onClick={() => navigator.clipboard.writeText(employee.id)}
         >
           <Copy className="size-4 text-muted-foreground" />
           <span>Copy employee ID</span>

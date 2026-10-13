@@ -31,7 +31,6 @@ export async function getEmployeeProfile(
     select: {
       id: true,
       employeeCode: true,
-      name: true,
       department: true,
       designation: true,
       joiningDate: true,
@@ -44,6 +43,7 @@ export async function getEmployeeProfile(
           username: true,
           isActive: true,
           roles: true,
+          name: true,
         },
       },
     },
@@ -57,7 +57,7 @@ export async function getEmployeeProfile(
     employeeId: employee.id,
     userId: employee.user.id,
 
-    name: employee.name,
+    name: employee.user.name,
     email: employee.user.email,
     username: employee.user.username,
 

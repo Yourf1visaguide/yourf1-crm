@@ -1,4 +1,4 @@
-import type { DEPARTMENT, ROLES } from "@/prisma/generated/prisma/client";
+import type { DEPARTMENT, ROLES, EmploymentStatus } from "@/prisma/generated/prisma/client";
 
 export type EmployeeListItem = {
   id: string;
@@ -7,7 +7,7 @@ export type EmployeeListItem = {
   department: DEPARTMENT;
   designation: string | null;
   joiningDate: string;
-  employmentStatus: string;
+  employmentStatus: EmploymentStatus ;
 
   user: {
     id: string;

@@ -155,6 +155,13 @@ export type EnumDEPARTMENTFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel> | $Enums.DEPARTMENT
 }
 
+export type EnumEmploymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.EmploymentStatus | Prisma.EnumEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel> | $Enums.EmploymentStatus
+}
+
 export type EnumDEPARTMENTWithAggregatesFilter<$PrismaModel = never> = {
   equals?: $Enums.DEPARTMENT | Prisma.EnumDEPARTMENTFieldRefInput<$PrismaModel>
   in?: $Enums.DEPARTMENT[] | Prisma.ListEnumDEPARTMENTFieldRefInput<$PrismaModel>
@@ -163,6 +170,16 @@ export type EnumDEPARTMENTWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel>
   _max?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel>
+}
+
+export type EnumEmploymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EmploymentStatus | Prisma.EnumEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEmploymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.EmploymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel>
 }
 
 export type DecimalFilter<$PrismaModel = never> = {
@@ -363,6 +380,13 @@ export type NestedEnumDEPARTMENTFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel> | $Enums.DEPARTMENT
 }
 
+export type NestedEnumEmploymentStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.EmploymentStatus | Prisma.EnumEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel> | $Enums.EmploymentStatus
+}
+
 export type NestedEnumDEPARTMENTWithAggregatesFilter<$PrismaModel = never> = {
   equals?: $Enums.DEPARTMENT | Prisma.EnumDEPARTMENTFieldRefInput<$PrismaModel>
   in?: $Enums.DEPARTMENT[] | Prisma.ListEnumDEPARTMENTFieldRefInput<$PrismaModel>
@@ -371,6 +395,16 @@ export type NestedEnumDEPARTMENTWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel>
   _max?: Prisma.NestedEnumDEPARTMENTFilter<$PrismaModel>
+}
+
+export type NestedEnumEmploymentStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EmploymentStatus | Prisma.EnumEmploymentStatusFieldRefInput<$PrismaModel>
+  in?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  notIn?: $Enums.EmploymentStatus[] | Prisma.ListEnumEmploymentStatusFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumEmploymentStatusWithAggregatesFilter<$PrismaModel> | $Enums.EmploymentStatus
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumEmploymentStatusFilter<$PrismaModel>
 }
 
 export type NestedDecimalFilter<$PrismaModel = never> = {

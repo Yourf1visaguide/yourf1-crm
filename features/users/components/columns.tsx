@@ -12,7 +12,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 
 import { Button } from "@/components/ui/button";
-import { StatusBadge } from "@/components/resuable-components/status-badge";
+import  StatusBadge  from "@/features/users/components/status-badge";
 import EmployeeActions from "./actions";
 
 const columnHelper = createColumnHelper<DataTableFeatures, EmployeeListItem>();
@@ -119,6 +119,6 @@ export const columns = columnHelper.columns([
     id: "actions",
     header: "Action",
 
-    cell: ({ row }) => <EmployeeActions employeeId={row.original.id} />,
+    cell: ({ row }) => <EmployeeActions employee={row.original} />,
   }),
 ]);

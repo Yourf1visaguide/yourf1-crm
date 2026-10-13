@@ -1119,7 +1119,6 @@ export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[k
 export const EmployeeScalarFieldEnum = {
   id: 'id',
   employeeCode: 'employeeCode',
-  name: 'name',
   department: 'department',
   designation: 'designation',
   joiningDate: 'joiningDate',
@@ -1259,6 +1258,20 @@ export type EnumDEPARTMENTFieldRefInput<$PrismaModel> = FieldRefInputType<$Prism
  * Reference to a field of type 'DEPARTMENT[]'
  */
 export type ListEnumDEPARTMENTFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DEPARTMENT[]'>
+    
+
+
+/**
+ * Reference to a field of type 'EmploymentStatus'
+ */
+export type EnumEmploymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmploymentStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'EmploymentStatus[]'
+ */
+export type ListEnumEmploymentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmploymentStatus[]'>
     
 
 

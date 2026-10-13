@@ -5,23 +5,39 @@ import { UserRound, Users } from "lucide-react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 
 import { useUserSheet } from "@/features/users/store/use-user-sheet";
-import { useCreateUser } from "@/features/users/api/use-create-user";
+import { useEditEmployeeDetail } from "@/features/users/api/use-edit-employee-detail";
 import UserForm from "./UserForm";
 import { FormHeading } from "@/components/resuable-components/form-heading";
+import type { EditEmployeeFormValues } from "../../schemas/user-schema";
 
 export default function EditUserSheet() {
   const isOpen = useUserSheet((state) => state.isOpen);
   const onClose = useUserSheet((state) => state.onClose);
-  const mutation = useCreateUser();
-
+  const mutation = useEditEmployeeDetail();
+  const employee = useUserSheet((state) => state.employee);
+    if (!employee) {
+    return null;
+  }
+  const updatedEmployee:EditEmployeeFormValues = {
+    email: employee.user.email,
+    employeeCode: employee.employeeCode,
+    name: employee.name,
+    department: employee.department,
+    roles: employee.user.roles,
+    designation: employee.designation ?? "",
+    joiningDate: employee.joiningDate.slice(0, 10),
+    employmentStatus: employee.employmentStatus,
+    password:""
+  }
   async function handleSubmit(
-    // values: Parameters<typeof mutation.mutateAsync>[0],
+    values: EditEmployeeFormValues,
   ) {
-    // await mutation.mutate(values, {
-    //   onSuccess: () => {
-    //     onClose();
-    //   },
-    // });
+    await mutation.mutate({
+      employeeId: employee?.id,
+      data: values,
+    });
+
+    onClose();
   }
   return (
     <Sheet
@@ -45,6 +61,7 @@ export default function EditUserSheet() {
         />
 
         <UserForm
+          employee={updatedEmployee}
           onSubmit={handleSubmit}
           disabled={mutation.isPending}
           error={mutation.error?.message}

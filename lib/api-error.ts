@@ -17,6 +17,7 @@ export type ApiErrorCode =
   | "EMAIL_ALREADY_EXISTS"
   | "EMPLOYEE_EXISTS"
   | "SELF_DEACTIVATION_NOT_ALLOWED"
+  | "EMPLOYEE_CREATE_FAILED"
   | "EMPLOYEE_ALREADY_EXISTS";
 
 export class ApiError extends Error {

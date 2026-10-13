@@ -121,11 +121,10 @@ model Verification {
 model Employee {
   id               String     @id @default(cuid())
   employeeCode     String     @unique
-  name             String
   department       DEPARTMENT
   designation      String?
   joiningDate      DateTime   @db.Date
-  employmentStatus String     @default("ACTIVE")
+  employmentStatus EmploymentStatus @default(ACTIVE)
 
   userId String @unique
   user   User   @relation(fields: [userId], references: [id], onDelete: Restrict)

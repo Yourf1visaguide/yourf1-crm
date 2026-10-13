@@ -1,31 +1,38 @@
 import { create } from "zustand";
 
-export type UserSheet =
-  | "edit"
-  | "new"
-  | "salary"
-  | "schedule";
+import type { EmployeeListItem } from "../types";
+
+export type UserSheet = | "new" | "edit" | "salary" | "schedule"; 
 
 type UserSheetState = {
   type: UserSheet | null;
+  employee: EmployeeListItem | null;
   isOpen: boolean;
-  onOpen: (type: UserSheet) => void;
+
+  onOpen: (
+    type: UserSheet,
+    employee?: EmployeeListItem,
+  ) => void;
+
   onClose: () => void;
 };
 
 export const useUserSheet = create<UserSheetState>((set) => ({
   type: null,
+  employee: null,
   isOpen: false,
 
-  onOpen: (type) =>
+  onOpen: (type, employee) =>
     set({
       type,
+      employee: employee ?? null,
       isOpen: true,
     }),
 
   onClose: () =>
     set({
-      isOpen: false,
       type: null,
+      employee: null,
+      isOpen: false,
     }),
 }));

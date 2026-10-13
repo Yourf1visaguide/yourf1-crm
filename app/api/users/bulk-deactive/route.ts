@@ -25,7 +25,7 @@ const deactivateUsersSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const currentUser = await requirePermission(
-      "EMPLOYEE_DELETE",
+      "EMPLOYEE_DEACTIVE",
     );
 
     let body: unknown;

@@ -6,10 +6,7 @@ import {
   type Permission,
 } from "./permissions";
 
-export const ROLE_PERMISSIONS: Record<
-  ROLES,
-  readonly Permission[]
-> = {
+export const ROLE_PERMISSIONS: Record< ROLES, readonly Permission[] > = {
   [ROLES.ADMIN]: Object.values(PERMISSIONS),
 
   [ROLES.RECEPTION]: [
@@ -69,6 +66,7 @@ export const ROLE_PERMISSIONS: Record<
     PERMISSIONS.EMPLOYEE_CREATE,
     PERMISSIONS.EMPLOYEE_UPDATE,
     PERMISSIONS.EMPLOYEE_ROLE_MANAGE,
+    PERMISSIONS.EMPLOYEE_DEACTIVE,
 
     PERMISSIONS.SALARY_READ,
     PERMISSIONS.SALARY_UPDATE,

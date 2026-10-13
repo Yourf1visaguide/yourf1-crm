@@ -6,16 +6,11 @@ import "server-only";
 
 import type { EmployeeListQuery } from "@/features/users/schemas/employee-list-schema";
 
-
 type GetEmployeesParams = {
   page: number;
   limit: number;
   search?: string;
 };
-
-
-
-
 
 function getOrderBy(
   sortBy: EmployeeListQuery["sortBy"],
@@ -50,7 +45,9 @@ function getOrderBy(
     case "name":
     default:
       return {
-        name: sortOrder,
+        user: {
+          name: sortOrder,
+        },
       };
   }
 }
@@ -67,12 +64,6 @@ export async function getEmployees({
   const where: Prisma.EmployeeWhereInput = normalizedSearch
     ? {
         OR: [
-          {
-            name: {
-              contains: normalizedSearch,
-              mode: "insensitive",
-            },
-          },
           {
             employeeCode: {
               contains: normalizedSearch,
@@ -102,7 +93,6 @@ export async function getEmployees({
       select: {
         id: true,
         employeeCode: true,
-        name: true,
         department: true,
         designation: true,
         joiningDate: true,
@@ -114,6 +104,7 @@ export async function getEmployees({
             email: true,
             isActive: true,
             roles: true,
+            name: true,
           },
         },
       },
@@ -135,7 +126,22 @@ export async function getEmployees({
   ]);
 
   return {
-    employees,
+    employees: employees.map((employee) => ({
+      id: employee.id,
+      employeeCode: employee.employeeCode,
+      name: employee.user.name,
+      department: employee.department,
+      designation: employee.designation,
+      joiningDate: employee.joiningDate,
+      employmentStatus: employee.employmentStatus,
+
+      user: {
+        id: employee.user.id,
+        email: employee.user.email,
+        isActive: employee.user.isActive,
+        roles: employee.user.roles,
+      },
+    })),
 
     pagination: {
       page,

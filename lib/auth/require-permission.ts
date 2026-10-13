@@ -53,6 +53,7 @@ export async function requirePermission(
     ROLE_PERMISSIONS[role].includes(permission)
   );
 
+
   if (!hasPermission) {
     throw new ApiError(
       "FORBIDDEN",
