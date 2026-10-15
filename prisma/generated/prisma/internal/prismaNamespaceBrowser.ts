@@ -58,7 +58,9 @@ export const ModelName = {
   Employee: 'Employee',
   EmployeeCompensation: 'EmployeeCompensation',
   EmployeeWorkSchedule: 'EmployeeWorkSchedule',
-  PayrollEntry: 'PayrollEntry'
+  PayrollEntry: 'PayrollEntry',
+  OfficeDailyReport: 'OfficeDailyReport',
+  OfficeDailyReportCheck: 'OfficeDailyReportCheck'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -188,6 +190,36 @@ export const PayrollEntryScalarFieldEnum = {
 } as const
 
 export type PayrollEntryScalarFieldEnum = (typeof PayrollEntryScalarFieldEnum)[keyof typeof PayrollEntryScalarFieldEnum]
+
+
+export const OfficeDailyReportScalarFieldEnum = {
+  id: 'id',
+  reportDate: 'reportDate',
+  status: 'status',
+  generalNotes: 'generalNotes',
+  createdById: 'createdById',
+  finalizedAt: 'finalizedAt',
+  finalizedById: 'finalizedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OfficeDailyReportScalarFieldEnum = (typeof OfficeDailyReportScalarFieldEnum)[keyof typeof OfficeDailyReportScalarFieldEnum]
+
+
+export const OfficeDailyReportCheckScalarFieldEnum = {
+  id: 'id',
+  itemKey: 'itemKey',
+  category: 'category',
+  label: 'label',
+  status: 'status',
+  issueNote: 'issueNote',
+  actionTaken: 'actionTaken',
+  followUpRequired: 'followUpRequired',
+  reportId: 'reportId'
+} as const
+
+export type OfficeDailyReportCheckScalarFieldEnum = (typeof OfficeDailyReportCheckScalarFieldEnum)[keyof typeof OfficeDailyReportCheckScalarFieldEnum]
 
 
 export const SortOrder = {

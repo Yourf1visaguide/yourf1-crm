@@ -1,11 +1,11 @@
 "use client";
 
-import { UserRound, Users } from "lucide-react";
+import { UserRound } from "lucide-react";
 
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 
 import { useUserSheet } from "@/features/users/store/use-user-sheet";
-import { useEditEmployeeDetail } from "@/features/users/api/use-edit-employee-detail";
+import { useEditEmployee } from "@/features/users/api/use-edit-employee-detail";
 import UserForm from "./UserForm";
 import { FormHeading } from "@/components/resuable-components/form-heading";
 import type { EditEmployeeFormValues } from "../../schemas/user-schema";
@@ -13,11 +13,13 @@ import type { EditEmployeeFormValues } from "../../schemas/user-schema";
 export default function EditUserSheet() {
   const isOpen = useUserSheet((state) => state.isOpen);
   const onClose = useUserSheet((state) => state.onClose);
-  const mutation = useEditEmployeeDetail();
+  const mutation = useEditEmployee();
   const employee = useUserSheet((state) => state.employee);
-    if (!employee) {
+  if (!employee) {
     return null;
   }
+
+  const employeeId = employee.id;
   const updatedEmployee:EditEmployeeFormValues = {
     email: employee.user.email,
     employeeCode: employee.employeeCode,
@@ -29,15 +31,19 @@ export default function EditUserSheet() {
     employmentStatus: employee.employmentStatus,
     password:""
   }
-  async function handleSubmit(
+  
+  function handleSubmit(
     values: EditEmployeeFormValues,
   ) {
-    await mutation.mutate({
-      employeeId: employee?.id,
+    mutation.mutate({
+      employeeId: employeeId,
       data: values,
+    }, {
+      onSuccess:() => {
+        onClose();
+      }
     });
 
-    onClose();
   }
   return (
     <Sheet

@@ -66,3 +66,21 @@ export const PayrollStatus = {
 } as const
 
 export type PayrollStatus = (typeof PayrollStatus)[keyof typeof PayrollStatus]
+
+
+export const OFFICEREPORTSTATUS = {
+  DRAFT: 'DRAFT',
+  FINAL: 'FINAL'
+} as const
+
+export type OFFICEREPORTSTATUS = (typeof OFFICEREPORTSTATUS)[keyof typeof OFFICEREPORTSTATUS]
+
+
+export const OFFICEREPORTCHECKSTATUS = {
+  NA: 'NA',
+  ISSUE: 'ISSUE',
+  OK: 'OK',
+  NOT_CHECKED: 'NOT_CHECKED'
+} as const
+
+export type OFFICEREPORTCHECKSTATUS = (typeof OFFICEREPORTCHECKSTATUS)[keyof typeof OFFICEREPORTCHECKSTATUS]

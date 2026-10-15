@@ -226,6 +226,40 @@ export type EnumPayrollStatusWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumPayrollStatusFilter<$PrismaModel>
 }
 
+export type EnumOFFICEREPORTSTATUSFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTSTATUS | Prisma.EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel> | $Enums.OFFICEREPORTSTATUS
+}
+
+export type EnumOFFICEREPORTSTATUSWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTSTATUS | Prisma.EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTSTATUSWithAggregatesFilter<$PrismaModel> | $Enums.OFFICEREPORTSTATUS
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel>
+}
+
+export type EnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTCHECKSTATUS | Prisma.EnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel> | $Enums.OFFICEREPORTCHECKSTATUS
+}
+
+export type EnumOFFICEREPORTCHECKSTATUSWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTCHECKSTATUS | Prisma.EnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSWithAggregatesFilter<$PrismaModel> | $Enums.OFFICEREPORTCHECKSTATUS
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel>
+}
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>
@@ -449,6 +483,40 @@ export type NestedEnumPayrollStatusWithAggregatesFilter<$PrismaModel = never> = 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumPayrollStatusFilter<$PrismaModel>
   _max?: Prisma.NestedEnumPayrollStatusFilter<$PrismaModel>
+}
+
+export type NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTSTATUS | Prisma.EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel> | $Enums.OFFICEREPORTSTATUS
+}
+
+export type NestedEnumOFFICEREPORTSTATUSWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTSTATUS | Prisma.EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTSTATUS[] | Prisma.ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTSTATUSWithAggregatesFilter<$PrismaModel> | $Enums.OFFICEREPORTSTATUS
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOFFICEREPORTSTATUSFilter<$PrismaModel>
+}
+
+export type NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTCHECKSTATUS | Prisma.EnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel> | $Enums.OFFICEREPORTCHECKSTATUS
+}
+
+export type NestedEnumOFFICEREPORTCHECKSTATUSWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.OFFICEREPORTCHECKSTATUS | Prisma.EnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  in?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  notIn?: $Enums.OFFICEREPORTCHECKSTATUS[] | Prisma.ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSWithAggregatesFilter<$PrismaModel> | $Enums.OFFICEREPORTCHECKSTATUS
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumOFFICEREPORTCHECKSTATUSFilter<$PrismaModel>
 }
 
 

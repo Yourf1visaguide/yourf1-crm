@@ -404,7 +404,9 @@ export const ModelName = {
   Employee: 'Employee',
   EmployeeCompensation: 'EmployeeCompensation',
   EmployeeWorkSchedule: 'EmployeeWorkSchedule',
-  PayrollEntry: 'PayrollEntry'
+  PayrollEntry: 'PayrollEntry',
+  OfficeDailyReport: 'OfficeDailyReport',
+  OfficeDailyReportCheck: 'OfficeDailyReportCheck'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -420,7 +422,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry"
+    modelProps: "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry" | "officeDailyReport" | "officeDailyReportCheck"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1016,6 +1018,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    OfficeDailyReport: {
+      payload: Prisma.$OfficeDailyReportPayload<ExtArgs>
+      fields: Prisma.OfficeDailyReportFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OfficeDailyReportFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OfficeDailyReportFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        findFirst: {
+          args: Prisma.OfficeDailyReportFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OfficeDailyReportFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        findMany: {
+          args: Prisma.OfficeDailyReportFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>[]
+        }
+        create: {
+          args: Prisma.OfficeDailyReportCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        createMany: {
+          args: Prisma.OfficeDailyReportCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OfficeDailyReportCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>[]
+        }
+        delete: {
+          args: Prisma.OfficeDailyReportDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        update: {
+          args: Prisma.OfficeDailyReportUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        deleteMany: {
+          args: Prisma.OfficeDailyReportDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OfficeDailyReportUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OfficeDailyReportUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>[]
+        }
+        upsert: {
+          args: Prisma.OfficeDailyReportUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportPayload>
+        }
+        aggregate: {
+          args: Prisma.OfficeDailyReportAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOfficeDailyReport>
+        }
+        groupBy: {
+          args: Prisma.OfficeDailyReportGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OfficeDailyReportGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OfficeDailyReportCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OfficeDailyReportCountAggregateOutputType> | number
+        }
+      }
+    }
+    OfficeDailyReportCheck: {
+      payload: Prisma.$OfficeDailyReportCheckPayload<ExtArgs>
+      fields: Prisma.OfficeDailyReportCheckFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.OfficeDailyReportCheckFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.OfficeDailyReportCheckFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        findFirst: {
+          args: Prisma.OfficeDailyReportCheckFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.OfficeDailyReportCheckFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        findMany: {
+          args: Prisma.OfficeDailyReportCheckFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>[]
+        }
+        create: {
+          args: Prisma.OfficeDailyReportCheckCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        createMany: {
+          args: Prisma.OfficeDailyReportCheckCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.OfficeDailyReportCheckCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>[]
+        }
+        delete: {
+          args: Prisma.OfficeDailyReportCheckDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        update: {
+          args: Prisma.OfficeDailyReportCheckUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        deleteMany: {
+          args: Prisma.OfficeDailyReportCheckDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.OfficeDailyReportCheckUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.OfficeDailyReportCheckUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>[]
+        }
+        upsert: {
+          args: Prisma.OfficeDailyReportCheckUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$OfficeDailyReportCheckPayload>
+        }
+        aggregate: {
+          args: Prisma.OfficeDailyReportCheckAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOfficeDailyReportCheck>
+        }
+        groupBy: {
+          args: Prisma.OfficeDailyReportCheckGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OfficeDailyReportCheckGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.OfficeDailyReportCheckCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OfficeDailyReportCheckCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1168,6 +1318,36 @@ export const PayrollEntryScalarFieldEnum = {
 export type PayrollEntryScalarFieldEnum = (typeof PayrollEntryScalarFieldEnum)[keyof typeof PayrollEntryScalarFieldEnum]
 
 
+export const OfficeDailyReportScalarFieldEnum = {
+  id: 'id',
+  reportDate: 'reportDate',
+  status: 'status',
+  generalNotes: 'generalNotes',
+  createdById: 'createdById',
+  finalizedAt: 'finalizedAt',
+  finalizedById: 'finalizedById',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type OfficeDailyReportScalarFieldEnum = (typeof OfficeDailyReportScalarFieldEnum)[keyof typeof OfficeDailyReportScalarFieldEnum]
+
+
+export const OfficeDailyReportCheckScalarFieldEnum = {
+  id: 'id',
+  itemKey: 'itemKey',
+  category: 'category',
+  label: 'label',
+  status: 'status',
+  issueNote: 'issueNote',
+  actionTaken: 'actionTaken',
+  followUpRequired: 'followUpRequired',
+  reportId: 'reportId'
+} as const
+
+export type OfficeDailyReportCheckScalarFieldEnum = (typeof OfficeDailyReportCheckScalarFieldEnum)[keyof typeof OfficeDailyReportCheckScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1300,6 +1480,34 @@ export type EnumPayrollStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
  * Reference to a field of type 'PayrollStatus[]'
  */
 export type ListEnumPayrollStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PayrollStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OFFICEREPORTSTATUS'
+ */
+export type EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTSTATUS'>
+    
+
+
+/**
+ * Reference to a field of type 'OFFICEREPORTSTATUS[]'
+ */
+export type ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTSTATUS[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OFFICEREPORTCHECKSTATUS'
+ */
+export type EnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTCHECKSTATUS'>
+    
+
+
+/**
+ * Reference to a field of type 'OFFICEREPORTCHECKSTATUS[]'
+ */
+export type ListEnumOFFICEREPORTCHECKSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTCHECKSTATUS[]'>
     
 
 
@@ -1475,6 +1683,8 @@ export type GlobalOmitConfig = {
   employeeCompensation?: Prisma.EmployeeCompensationOmit
   employeeWorkSchedule?: Prisma.EmployeeWorkScheduleOmit
   payrollEntry?: Prisma.PayrollEntryOmit
+  officeDailyReport?: Prisma.OfficeDailyReportOmit
+  officeDailyReportCheck?: Prisma.OfficeDailyReportCheckOmit
 }
 
 /* Types for Logging */

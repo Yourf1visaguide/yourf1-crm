@@ -8,7 +8,7 @@
 //   const { ROLES, DEPARTMENT, EmploymentStatus } =
 //     await import("../prisma/generated/prisma/enums");
 
-//   const email = "admin@gmail.com";
+//   const email = "admin3@gmail.com";
 //   const password = "admin1234";
 //   const name = "Admin";
 
@@ -57,7 +57,7 @@
 
 //       return tx.employee.create({
 //         data: {
-//           employeeCode: "EMP-ADMIN-002",
+//           employeeCode: "EMP-ADMIN-001",
 //           department: DEPARTMENT.ADMIN,
 //           designation: "Administrator",
 //           joiningDate: new Date(),

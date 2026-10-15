@@ -49,6 +49,8 @@ enum EmploymentStatus {
   TERMINATED
 }
 
+
+
 model User {
   id       String  @id @default(cuid())
   email    String  @unique
@@ -64,7 +66,7 @@ model User {
   username      String?
   sessions      Session[]
   accounts      Account[]
-
+  officeReportsCreated OfficeDailyReport[] @relation("OfficeReportCreatedBy")
   @@unique([username])
   @@map("user")
 }
@@ -190,3 +192,47 @@ model PayrollEntry {
   @@index([payrollMonth, status])
 }
 
+
+// Reports releted tables and enums
+
+
+enum OFFICEREPORTCHECKSTATUS {
+  NA
+  ISSUE
+  OK
+  NOT_CHECKED  
+}
+model OfficeDailyReport {
+  id           String   @id @default(cuid())
+  reportDate   DateTime @db.Date
+  generalNotes String?
+
+  createdById String
+  createdBy   User   @relation("OfficeReportCreatedBy", fields: [createdById], references: [id], onDelete: Restrict)
+
+  checks OfficeDailyReportCheck[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([reportDate])
+  @@index([reportDate])
+}
+
+model OfficeDailyReportCheck {
+  id String @id @default(cuid())
+
+  itemKey          String
+  category         String
+  label            String
+  status           OFFICEREPORTCHECKSTATUS @default(NOT_CHECKED)
+  issueNote        String?
+  actionTaken      String?
+  followUpRequired Boolean @default(false)
+
+  reportId String
+  report   OfficeDailyReport @relation(fields: [reportId], references: [id], onDelete: Cascade)
+
+  @@unique([reportId, itemKey])
+  @@index([reportId, status])
+}

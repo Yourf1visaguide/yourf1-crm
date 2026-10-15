@@ -1,12 +1,20 @@
 import "server-only";
 
-import { Prisma } from "@/prisma/generated/prisma/client";
+import { Prisma, ROLES } from "@/prisma/generated/prisma/client";
 
 import { prisma } from "@/lib/prisma";
 import { ApiError } from "@/lib/api-error";
 import { auth } from "@/lib/auth";
 
-import type { CreateEmployeeFormValues } from "@/features/users/schemas/user-schema";
+import type { CompensationInput, CreateEmployeeFormValues, WorkScheduleInput } from "@/features/users/schemas/user-schema";
+import { hashPassword } from "better-auth/crypto";
+
+import type {
+  EditEmployeeFormValues,
+} from "@/features/users/schemas/user-schema";
+import { ROLE_PERMISSIONS } from "@/lib/auth/role-permission-mapping";
+
+
 
 function dateOnly(value: string) {
   return new Date(`${value}T00:00:00.000Z`);
@@ -278,3 +286,416 @@ export async function createEmployee(data: CreateEmployeeFormValues) {
   }
 }
 
+type EmployeeActor = {
+  id: string;
+  employeeId: string | null;
+  roles: ROLES[];
+};
+
+export async function updateEmployee(
+  employeeId: string,
+  data: EditEmployeeFormValues,
+  actor: EmployeeActor,
+) {
+  const email = data.email.trim().toLowerCase();
+  const name = data.name.trim();
+  const employeeCode =
+    data.employeeCode.trim().toUpperCase();
+
+  return prisma.$transaction(async (tx) => {
+    const employee = await tx.employee.findUnique({
+      where: {
+        id: employeeId,
+      },
+
+      select: {
+        id: true,
+        userId: true,
+        employmentStatus: true,
+
+        user: {
+          select: {
+            email: true,
+            isActive: true,
+            roles: true,
+          },
+        },
+      },
+    });
+
+    if (!employee) {
+      throw new ApiError(
+        "NOT_FOUND",
+        "Employee not found.",
+        404,
+      );
+    }
+
+    /*
+     * Role changes require the stronger permission.
+     */
+    const rolesChanged =
+      JSON.stringify([...employee.user.roles].sort()) !==
+      JSON.stringify([...data.roles].sort());
+
+    if (
+      rolesChanged &&
+      !actor.roles.some((role) =>
+        ROLE_PERMISSIONS[role].includes(
+          "EMPLOYEE_ROLE_MANAGE",
+        ),
+      )
+    ) {
+      throw new ApiError(
+        "ROLE_ASSIGNMENT_FORBIDDEN",
+        "You do not have permission to manage employee roles.",
+        403,
+      );
+    }
+
+    /*
+     * Password changes require credential-management permission.
+     */
+    if (
+      data.password &&
+      !actor.roles.some((role) =>
+        ROLE_PERMISSIONS[role].includes(
+          "EMPLOYEE_CREDENTIAL_MANAGE",
+        ),
+      )
+    ) {
+      throw new ApiError(
+        "FORBIDDEN",
+        "You do not have permission to change employee passwords.",
+        403,
+      );
+    }
+
+    /*
+     * Do not allow someone to change their own account
+     * into an inactive/terminated state through this form.
+     */
+    if (
+      actor.employeeId === employeeId &&
+      data.employmentStatus !==
+        employee.employmentStatus
+    ) {
+      throw new ApiError(
+        "SELF_DEACTIVATION_NOT_ALLOWED",
+        "You cannot change your own employment status.",
+        403,
+      );
+    }
+
+    /*
+     * Email uniqueness.
+     */
+    if (email !== employee.user.email) {
+      const existingUser =
+        await tx.user.findUnique({
+          where: {
+            email,
+          },
+          select: {
+            id: true,
+          },
+        });
+
+      if (
+        existingUser &&
+        existingUser.id !== employee.userId
+      ) {
+        throw new ApiError(
+          "EMAIL_ALREADY_EXISTS",
+          "This email address is already associated with another account.",
+          409,
+        );
+      }
+    }
+
+    /*
+     * Update User + Employee as one logical transaction.
+     */
+    await tx.user.update({
+      where: {
+        id: employee.userId,
+      },
+
+      data: {
+        name,
+        email,
+        roles: {
+          set: data.roles,
+        },
+      },
+    });
+
+    await tx.employee.update({
+      where: {
+        id: employeeId,
+      },
+
+      data: {
+        employeeCode,
+        department: data.department,
+        designation:
+          data.designation.trim() || null,
+        joiningDate: dateOnly(data.joiningDate),
+        employmentStatus:
+          data.employmentStatus,
+      },
+    });
+
+    /*
+     * Optional password update.
+     */
+    if (data.password) {
+      const passwordHash = await hashPassword(
+        data.password,
+      );
+
+      const credentialAccount =
+        await tx.account.findFirst({
+          where: {
+            userId: employee.userId,
+            providerId: "credential",
+          },
+
+          select: {
+            id: true,
+          },
+        });
+
+      if (!credentialAccount) {
+        throw new ApiError(
+          "BAD_REQUEST",
+          "This account does not have a password credential.",
+          400,
+        );
+      }
+
+      await tx.account.update({
+        where: {
+          id: credentialAccount.id,
+        },
+
+        data: {
+          password: passwordHash,
+        },
+      });
+
+      /*
+       * A password reset should invalidate existing sessions.
+       */
+      await tx.session.deleteMany({
+        where: {
+          userId: employee.userId,
+        },
+      });
+    }
+
+    return tx.employee.findUniqueOrThrow({
+      where: {
+        id: employeeId,
+      },
+
+      select: {
+        id: true,
+        employeeCode: true,
+        department: true,
+        designation: true,
+        joiningDate: true,
+        employmentStatus: true,
+
+        user: {
+          select: {
+            id: true,
+            name: true,
+            email: true,
+            isActive: true,
+            roles: true,
+          },
+        },
+      },
+    });
+  });
+}
+
+export async function changeEmployeeSalary(
+  employeeId: string,
+  data: CompensationInput,
+) {
+  const effectiveFrom = dateOnly(
+    data.salaryEffectiveFrom,
+  );
+
+  return prisma.$transaction(async (tx) => {
+    const employee =
+      await tx.employee.findUnique({
+        where: {
+          id: employeeId,
+        },
+        select: {
+          id: true,
+        },
+      });
+
+    if (!employee) {
+      throw new ApiError(
+        "NOT_FOUND",
+        "Employee not found.",
+        404,
+      );
+    }
+
+    const latest =
+      await tx.employeeCompensation.findFirst({
+        where: {
+          employeeId,
+        },
+
+        orderBy: {
+          effectiveFrom: "desc",
+        },
+      });
+
+    if (
+      latest &&
+      effectiveFrom <= latest.effectiveFrom
+    ) {
+      throw new ApiError(
+        "CONFLICT",
+        "The new salary effective date must be later than the current salary record.",
+        409,
+      );
+    }
+
+    if (latest) {
+      const effectiveTo =
+        new Date(effectiveFrom);
+
+      effectiveTo.setUTCDate(
+        effectiveTo.getUTCDate() - 1,
+      );
+
+      await tx.employeeCompensation.update({
+        where: {
+          id: latest.id,
+        },
+
+        data: {
+          effectiveTo,
+        },
+      });
+    }
+
+    return tx.employeeCompensation.create({
+      data: {
+        employeeId,
+
+        monthlySalary:
+          new Prisma.Decimal(
+            data.monthlySalary,
+          ),
+
+        effectiveFrom,
+      },
+
+      select: {
+        id: true,
+        monthlySalary: true,
+        effectiveFrom: true,
+        effectiveTo: true,
+      },
+    });
+  });
+}
+
+
+export async function changeEmployeeSchedule(
+  employeeId: string,
+  data: WorkScheduleInput,
+) {
+  const effectiveFrom = dateOnly(
+    data.scheduleEffectiveFrom,
+  );
+
+  return prisma.$transaction(async (tx) => {
+    const employee =
+      await tx.employee.findUnique({
+        where: {
+          id: employeeId,
+        },
+
+        select: {
+          id: true,
+        },
+      });
+
+    if (!employee) {
+      throw new ApiError(
+        "NOT_FOUND",
+        "Employee not found.",
+        404,
+      );
+    }
+
+    const latest =
+      await tx.employeeWorkSchedule.findFirst({
+        where: {
+          employeeId,
+        },
+
+        orderBy: {
+          effectiveFrom: "desc",
+        },
+      });
+
+    if (
+      latest &&
+      effectiveFrom <= latest.effectiveFrom
+    ) {
+      throw new ApiError(
+        "CONFLICT",
+        "The new schedule effective date must be later than the current schedule record.",
+        409,
+      );
+    }
+
+    if (latest) {
+      const effectiveTo =
+        new Date(effectiveFrom);
+
+      effectiveTo.setUTCDate(
+        effectiveTo.getUTCDate() - 1,
+      );
+
+      await tx.employeeWorkSchedule.update({
+        where: {
+          id: latest.id,
+        },
+
+        data: {
+          effectiveTo,
+        },
+      });
+    }
+
+    return tx.employeeWorkSchedule.create({
+      data: {
+        employeeId,
+        startTime: data.startTime,
+        endTime: data.endTime,
+        effectiveFrom,
+      },
+
+      select: {
+        id: true,
+        startTime: true,
+        endTime: true,
+        effectiveFrom: true,
+        effectiveTo: true,
+      },
+    });
+  });
+}

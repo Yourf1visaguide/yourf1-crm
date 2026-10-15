@@ -57,3 +57,13 @@ export type EmployeeWorkSchedule = Prisma.EmployeeWorkScheduleModel
  * 
  */
 export type PayrollEntry = Prisma.PayrollEntryModel
+/**
+ * Model OfficeDailyReport
+ * 
+ */
+export type OfficeDailyReport = Prisma.OfficeDailyReportModel
+/**
+ * Model OfficeDailyReportCheck
+ * 
+ */
+export type OfficeDailyReportCheck = Prisma.OfficeDailyReportCheckModel

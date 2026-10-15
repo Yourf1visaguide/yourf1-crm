@@ -5,23 +5,23 @@ import { Clock3, Users } from "lucide-react";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 
 import { useUserSheet } from "@/features/users/store/use-user-sheet";
-import { useCreateUser } from "@/features/users/api/use-create-user";
 import UserForm from "./UserForm";
 import { FormHeading } from "@/components/resuable-components/form-heading";
+import { useChangeSchedule } from "@/features/users/api/use-edit-employee-schedule";
 
 export default function EditUserSheet() {
   const isOpen = useUserSheet((state) => state.isOpen);
   const onClose = useUserSheet((state) => state.onClose);
-  const mutation = useCreateUser();
+  const mutation = useChangeSchedule();
 
   async function handleSubmit(
-    // values: Parameters<typeof mutation.mutateAsync>[0],
+    values: Parameters<typeof mutation.mutate>[0],
   ) {
-    // await mutation.mutate(values, {
-    //   onSuccess: () => {
-    //     onClose();
-    //   },
-    // });
+    await mutation.mutate(values, {
+      onSuccess: () => {
+        onClose();
+      },
+    });
   }
   return (
     <Sheet

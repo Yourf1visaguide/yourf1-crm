@@ -154,7 +154,7 @@ const managementNavigation: NavItem[] = [
   },
   {
     title: "Reports",
-    href: "/dashboard/reports",
+    href: "/reports",
     icon: BarChart3,
   },
   {

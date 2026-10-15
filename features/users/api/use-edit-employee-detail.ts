@@ -1,28 +1,48 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { EditEmployeeFormValues } from "../schemas/user-schema";
+"use client";
+
+import {
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
+
 import { apiFetch } from "@/lib/api-fetch";
+import { toast } from "@/components/ui/toast";
+import { usersKeys } from "./users-keys";
 
-export function useEditEmployeeDetail(){
+import type {
+  EditEmployeeFormValues,
+} from "@/features/users/schemas/user-schema";
 
-  // async ( values: CreateEmployeeFormValues, ): Promise<CreateUserResponse> => {
-  //       const response = await apiFetch<CreateUserResponse>("/api/users", {
-  //         method: "POST",
-  //         body: JSON.stringify(values),
-  //       });
-  
-  //       return response.data;
-  //     },
+export function useEditEmployee() {
   const queryClient = useQueryClient();
-  useMutation({
-     mutationFn: async (values:EditEmployeeFormValues) => {
-      const response= await apiFetch("/api/users", {
-        method:"patch",
-        body:JSON.stringify(values)
-      })
-     },
-    onSuccess: () => {
-      // Automatically refresh the UI by invalidating the cached data list
-      queryClient.invalidateQueries({ queryKey: ['todos'] });
+
+  return useMutation({
+    mutationFn: async ({ employeeId, data, }: { employeeId: string ; data: EditEmployeeFormValues; }) => {
+      const response =
+        await apiFetch( `/api/users/${employeeId}`, { method: "PATCH", body: JSON.stringify(data), }, );
+
+      return response.data;
     },
-  })
+
+    onSuccess: async (_, variables) => {
+      await Promise.all([
+        queryClient.invalidateQueries({
+          queryKey: usersKeys.lists(),
+        }),
+
+        queryClient.invalidateQueries({
+          queryKey: usersKeys.detail(
+            variables.employeeId,
+          ),
+        }),
+      ]);
+
+      toast.add({
+        type: "info",
+        title: "Employee updated",
+        description:
+          "Employee information has been updated successfully.",
+      });
+    },
+  });
 }

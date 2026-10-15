@@ -33,8 +33,6 @@ import {
 import { todayLocalDate } from "@/lib/utils";
 import Field from "@/components/resuable-components/form-field";
 import FormSubHeading from "@/components/resuable-components/form-subheading";
-import { useUserSheet } from "../../store/use-user-sheet";
-import { EmployeeListItem } from "../../types";
 
 const inputClassName = "w-full";
 
@@ -57,14 +55,14 @@ export default function UserForm({
   const form = useForm<EditEmployeeFormValues>({
     resolver: zodResolver(editEmployeeFormSchema),
     defaultValues: {
-      email:"" ,
-      employeeCode: "",
+      email:employee.email ,
+      employeeCode: employee.employeeCode,
       name: employee.name,
       department: employee.department,
-      roles: [ROLES.RECEPTION],
-      designation: "",
-      joiningDate: today,
-      employmentStatus: "ACTIVE",
+      roles:employee.roles ,
+      designation: employee.designation ?? "",
+      joiningDate: employee.joiningDate,
+      employmentStatus: employee.employmentStatus,
     },
   });
 
@@ -271,7 +269,7 @@ export default function UserForm({
         </Button>
 
         <Button type="submit" disabled={isDisabled}>
-          {isDisabled ? "Creating employee..." : "Create employee"}
+          {isDisabled ? "Updating employee..." : "Update employee"}
         </Button>
       </div>
     </form>
