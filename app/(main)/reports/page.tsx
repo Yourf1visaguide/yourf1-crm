@@ -7,13 +7,11 @@ function page() {
     <div>
       <section className="">
         {/* <UserSummaryCards data={data} dateRangeLabel={dateRangeLabel} /> */}
-
         {/* rest of dashboard */}
       </section>
 
       <Container>
         {/* <Heading text="Employee" /> */}
-
         <OfficeReportsTable />
       </Container>
     </div>

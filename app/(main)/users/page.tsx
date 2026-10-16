@@ -49,7 +49,6 @@ async function UserPage({ searchParams }: DashboardPageProps) {
 
       <Container>
         {/* <Heading text="Employee" /> */}
-
         <UsersTable />
       </Container>
     </div>

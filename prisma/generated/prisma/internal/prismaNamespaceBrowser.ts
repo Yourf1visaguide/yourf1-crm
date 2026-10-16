@@ -195,11 +195,8 @@ export type PayrollEntryScalarFieldEnum = (typeof PayrollEntryScalarFieldEnum)[k
 export const OfficeDailyReportScalarFieldEnum = {
   id: 'id',
   reportDate: 'reportDate',
-  status: 'status',
   generalNotes: 'generalNotes',
   createdById: 'createdById',
-  finalizedAt: 'finalizedAt',
-  finalizedById: 'finalizedById',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

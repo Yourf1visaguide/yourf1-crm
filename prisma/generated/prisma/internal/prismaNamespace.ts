@@ -1321,11 +1321,8 @@ export type PayrollEntryScalarFieldEnum = (typeof PayrollEntryScalarFieldEnum)[k
 export const OfficeDailyReportScalarFieldEnum = {
   id: 'id',
   reportDate: 'reportDate',
-  status: 'status',
   generalNotes: 'generalNotes',
   createdById: 'createdById',
-  finalizedAt: 'finalizedAt',
-  finalizedById: 'finalizedById',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1480,20 +1477,6 @@ export type EnumPayrollStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
  * Reference to a field of type 'PayrollStatus[]'
  */
 export type ListEnumPayrollStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'PayrollStatus[]'>
-    
-
-
-/**
- * Reference to a field of type 'OFFICEREPORTSTATUS'
- */
-export type EnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTSTATUS'>
-    
-
-
-/**
- * Reference to a field of type 'OFFICEREPORTSTATUS[]'
- */
-export type ListEnumOFFICEREPORTSTATUSFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OFFICEREPORTSTATUS[]'>
     
 
 

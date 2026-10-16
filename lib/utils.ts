@@ -1,5 +1,4 @@
-export { cn } from "cn"
-
+export { cn } from "cn";
 
 export function todayLocalDate() {
   const date = new Date();
@@ -10,14 +9,8 @@ export function todayLocalDate() {
   return `${year}-${month}-${day}`;
 }
 
-
-export function dateToInputValue(
-  value: Date | string,
-) {
-  const date =
-    typeof value === "string"
-      ? new Date(value)
-      : value;
+export function dateToInputValue(value: Date | string) {
+  const date = typeof value === "string" ? new Date(value) : value;
 
   if (Number.isNaN(date.getTime())) {
     return "";
@@ -31,17 +24,16 @@ export function dateToInputValue(
 }
 
 export function dateOnlyUTC(value: string) {
-  return new Date(`${value}T00:00:00.000Z`);
+  const dateOnlyString = value.split("T")[0];
+
+  return new Date(`${dateOnlyString}T00:00:00.000Z`);
 }
 
 export function formatDate(
   value: Date | string,
   options?: Intl.DateTimeFormatOptions,
 ) {
-  const date =
-    typeof value === "string"
-      ? new Date(value)
-      : value;
+  const date = typeof value === "string" ? new Date(value) : value;
 
   if (Number.isNaN(date.getTime())) {
     return "—";
@@ -55,4 +47,19 @@ export function formatDate(
       year: "numeric",
     },
   ).format(date);
+}
+
+
+export function todayOfficeDate(): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+
+function dateOnly(value: string) {
+  return new Date(`${value}T00:00:00.000Z`);
 }

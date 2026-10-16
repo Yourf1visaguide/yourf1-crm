@@ -1,12 +1,7 @@
 import { z } from "zod";
 
-import {
-  OFFICEREPORTCHECKSTATUS,
-} from "@/prisma/generated/prisma/enums";
-
-import {
-  OFFICE_REPORT_ITEM_KEYS,
-} from "../constants/office-report-checklist";
+import { OFFICEREPORTCHECKSTATUS } from "@/prisma/generated/prisma/enums";
+import { OFFICE_REPORT_ITEM_KEYS } from "../constants/office-report-checklist";
 
 /* -------------------------------------------------------------------------- */
 /* Shared                                                                     */
@@ -17,15 +12,23 @@ const dateOnlySchema = z
   .regex(
     /^\d{4}-\d{2}-\d{2}$/,
     "Date must be in YYYY-MM-DD format",
-  );
+  )
+  .refine((value) => {
+    const [year, month, day] = value.split("-").map(Number);
+
+    const date = new Date(0);
+    date.setUTCHours(0, 0, 0, 0);
+    date.setUTCFullYear(year, month - 1, day);
+
+    return (
+      date.getUTCFullYear() === year &&
+      date.getUTCMonth() === month - 1 &&
+      date.getUTCDate() === day
+    );
+  }, "Enter a valid calendar date");
 
 const optionalText = (max: number) =>
-  z
-    .string()
-    .trim()
-    .max(max)
-    .optional()
-    .or(z.literal(""));
+  z.string().trim().max(max).optional().or(z.literal(""));
 
 /* -------------------------------------------------------------------------- */
 /* Report check input                                                         */
@@ -52,6 +55,22 @@ export const officeReportCheckInputSchema = z
         message: "Issue note is required when status is ISSUE.",
       });
     }
+
+    if (check.status === "OK" && check.issueNote) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["issueNote"],
+        message: "Issue notes are not allowed when status is OK.",
+      });
+    }
+
+    if (check.status === "OK" && check.followUpRequired) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["followUpRequired"],
+        message: "Follow-up can only be required when status is ISSUE.",
+      });
+    }
   });
 
 export type OfficeReportCheckInput = z.infer<
@@ -64,7 +83,7 @@ export type OfficeReportCheckInput = z.infer<
 
 export const createOfficeReportSchema = z
   .object({
-    reportDate: dateOnlySchema,
+    // reportDate: dateOnlySchema,
 
     generalNotes: optionalText(2000),
 
@@ -114,9 +133,7 @@ export const createOfficeReportSchema = z
     }
   });
 
-export type CreateOfficeReportInput = z.infer<
-  typeof createOfficeReportSchema
->;
+export type CreateOfficeReportInput = z.infer<typeof createOfficeReportSchema>;
 
 /* -------------------------------------------------------------------------- */
 /* API response: actor                                                        */
@@ -129,9 +146,7 @@ export const officeReportActorSchema = z
   })
   .strict();
 
-export type OfficeReportActor = z.infer<
-  typeof officeReportActorSchema
->;
+export type OfficeReportActor = z.infer<typeof officeReportActorSchema>;
 
 /* -------------------------------------------------------------------------- */
 /* API response: check                                                        */
@@ -158,9 +173,7 @@ export const officeReportCheckResponseSchema = z
   })
   .strict();
 
-export type OfficeReportCheck = z.infer<
-  typeof officeReportCheckResponseSchema
->;
+export type OfficeReportCheck = z.infer<typeof officeReportCheckResponseSchema>;
 
 /* -------------------------------------------------------------------------- */
 /* API response: report                                                       */
@@ -182,9 +195,7 @@ export const officeReportSchema = z
   })
   .strict();
 
-export type OfficeReport = z.infer<
-  typeof officeReportSchema
->;
+export type OfficeReport = z.infer<typeof officeReportSchema>;
 
 /* -------------------------------------------------------------------------- */
 /* API response: list item                                                    */
@@ -204,9 +215,7 @@ export const officeReportListItemSchema = z
   })
   .strict();
 
-export type OfficeReportListItem = z.infer<
-  typeof officeReportListItemSchema
->;
+export type OfficeReportListItem = z.infer<typeof officeReportListItemSchema>;
 
 /* -------------------------------------------------------------------------- */
 /* API response: paginated list                                               */
@@ -244,6 +253,4 @@ export const officeReportSummarySchema = z
   })
   .strict();
 
-export type OfficeReportSummary = z.infer<
-  typeof officeReportSummarySchema
->;
+export type OfficeReportSummary = z.infer<typeof officeReportSummarySchema>;

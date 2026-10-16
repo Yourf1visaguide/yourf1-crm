@@ -12,7 +12,6 @@ import type { RowSelectionState } from "@tanstack/react-table";
 
 import { useConfirmDialog } from "@/hooks/use-confirm-dialog";
 import { useDeactivateUsers } from "../api/use-deactivate-users";
-import { Skeleton } from "@/components/ui/skeleton";
 import { AlertCircle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DataTableSkeleton } from "./data-table-skelton";

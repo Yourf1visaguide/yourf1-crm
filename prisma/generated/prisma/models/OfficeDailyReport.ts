@@ -27,11 +27,8 @@ export type AggregateOfficeDailyReport = {
 export type OfficeDailyReportMinAggregateOutputType = {
   id: string | null
   reportDate: Date | null
-  status: $Enums.OFFICEREPORTSTATUS | null
   generalNotes: string | null
   createdById: string | null
-  finalizedAt: Date | null
-  finalizedById: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -39,11 +36,8 @@ export type OfficeDailyReportMinAggregateOutputType = {
 export type OfficeDailyReportMaxAggregateOutputType = {
   id: string | null
   reportDate: Date | null
-  status: $Enums.OFFICEREPORTSTATUS | null
   generalNotes: string | null
   createdById: string | null
-  finalizedAt: Date | null
-  finalizedById: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -51,11 +45,8 @@ export type OfficeDailyReportMaxAggregateOutputType = {
 export type OfficeDailyReportCountAggregateOutputType = {
   id: number
   reportDate: number
-  status: number
   generalNotes: number
   createdById: number
-  finalizedAt: number
-  finalizedById: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -65,11 +56,8 @@ export type OfficeDailyReportCountAggregateOutputType = {
 export type OfficeDailyReportMinAggregateInputType = {
   id?: true
   reportDate?: true
-  status?: true
   generalNotes?: true
   createdById?: true
-  finalizedAt?: true
-  finalizedById?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -77,11 +65,8 @@ export type OfficeDailyReportMinAggregateInputType = {
 export type OfficeDailyReportMaxAggregateInputType = {
   id?: true
   reportDate?: true
-  status?: true
   generalNotes?: true
   createdById?: true
-  finalizedAt?: true
-  finalizedById?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -89,11 +74,8 @@ export type OfficeDailyReportMaxAggregateInputType = {
 export type OfficeDailyReportCountAggregateInputType = {
   id?: true
   reportDate?: true
-  status?: true
   generalNotes?: true
   createdById?: true
-  finalizedAt?: true
-  finalizedById?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -174,11 +156,8 @@ export type OfficeDailyReportGroupByArgs<ExtArgs extends runtime.Types.Extension
 export type OfficeDailyReportGroupByOutputType = {
   id: string
   reportDate: Date
-  status: $Enums.OFFICEREPORTSTATUS
   generalNotes: string | null
   createdById: string
-  finalizedAt: Date | null
-  finalizedById: string | null
   createdAt: Date
   updatedAt: Date
   _count: OfficeDailyReportCountAggregateOutputType | null
@@ -207,30 +186,22 @@ export type OfficeDailyReportWhereInput = {
   NOT?: Prisma.OfficeDailyReportWhereInput | Prisma.OfficeDailyReportWhereInput[]
   id?: Prisma.StringFilter<"OfficeDailyReport"> | string
   reportDate?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFilter<"OfficeDailyReport"> | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdById?: Prisma.StringFilter<"OfficeDailyReport"> | string
-  finalizedAt?: Prisma.DateTimeNullableFilter<"OfficeDailyReport"> | Date | string | null
-  finalizedById?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  finalizedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   checks?: Prisma.OfficeDailyReportCheckListRelationFilter
 }
 
 export type OfficeDailyReportOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   reportDate?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   generalNotes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdById?: Prisma.SortOrder
-  finalizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  finalizedById?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   createdBy?: Prisma.UserOrderByWithRelationInput
-  finalizedBy?: Prisma.UserOrderByWithRelationInput
   checks?: Prisma.OfficeDailyReportCheckOrderByRelationAggregateInput
 }
 
@@ -240,26 +211,19 @@ export type OfficeDailyReportWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.OfficeDailyReportWhereInput | Prisma.OfficeDailyReportWhereInput[]
   OR?: Prisma.OfficeDailyReportWhereInput[]
   NOT?: Prisma.OfficeDailyReportWhereInput | Prisma.OfficeDailyReportWhereInput[]
-  status?: Prisma.EnumOFFICEREPORTSTATUSFilter<"OfficeDailyReport"> | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdById?: Prisma.StringFilter<"OfficeDailyReport"> | string
-  finalizedAt?: Prisma.DateTimeNullableFilter<"OfficeDailyReport"> | Date | string | null
-  finalizedById?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
   createdBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  finalizedBy?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   checks?: Prisma.OfficeDailyReportCheckListRelationFilter
 }, "id" | "reportDate">
 
 export type OfficeDailyReportOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   reportDate?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   generalNotes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdById?: Prisma.SortOrder
-  finalizedAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  finalizedById?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.OfficeDailyReportCountOrderByAggregateInput
@@ -273,11 +237,8 @@ export type OfficeDailyReportScalarWhereWithAggregatesInput = {
   NOT?: Prisma.OfficeDailyReportScalarWhereWithAggregatesInput | Prisma.OfficeDailyReportScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"OfficeDailyReport"> | string
   reportDate?: Prisma.DateTimeWithAggregatesFilter<"OfficeDailyReport"> | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSWithAggregatesFilter<"OfficeDailyReport"> | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.StringNullableWithAggregatesFilter<"OfficeDailyReport"> | string | null
   createdById?: Prisma.StringWithAggregatesFilter<"OfficeDailyReport"> | string
-  finalizedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"OfficeDailyReport"> | Date | string | null
-  finalizedById?: Prisma.StringNullableWithAggregatesFilter<"OfficeDailyReport"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"OfficeDailyReport"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"OfficeDailyReport"> | Date | string
 }
@@ -285,24 +246,18 @@ export type OfficeDailyReportScalarWhereWithAggregatesInput = {
 export type OfficeDailyReportCreateInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
-  finalizedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   createdBy: Prisma.UserCreateNestedOneWithoutOfficeReportsCreatedInput
-  finalizedBy?: Prisma.UserCreateNestedOneWithoutOfficeReportsFinalizedInput
   checks?: Prisma.OfficeDailyReportCheckCreateNestedManyWithoutReportInput
 }
 
 export type OfficeDailyReportUncheckedCreateInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
   createdById: string
-  finalizedAt?: Date | string | null
-  finalizedById?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   checks?: Prisma.OfficeDailyReportCheckUncheckedCreateNestedManyWithoutReportInput
@@ -311,24 +266,18 @@ export type OfficeDailyReportUncheckedCreateInput = {
 export type OfficeDailyReportUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdBy?: Prisma.UserUpdateOneRequiredWithoutOfficeReportsCreatedNestedInput
-  finalizedBy?: Prisma.UserUpdateOneWithoutOfficeReportsFinalizedNestedInput
   checks?: Prisma.OfficeDailyReportCheckUpdateManyWithoutReportNestedInput
 }
 
 export type OfficeDailyReportUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finalizedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   checks?: Prisma.OfficeDailyReportCheckUncheckedUpdateManyWithoutReportNestedInput
@@ -337,11 +286,8 @@ export type OfficeDailyReportUncheckedUpdateInput = {
 export type OfficeDailyReportCreateManyInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
   createdById: string
-  finalizedAt?: Date | string | null
-  finalizedById?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -349,9 +295,7 @@ export type OfficeDailyReportCreateManyInput = {
 export type OfficeDailyReportUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -359,11 +303,8 @@ export type OfficeDailyReportUpdateManyMutationInput = {
 export type OfficeDailyReportUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finalizedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -381,11 +322,8 @@ export type OfficeDailyReportOrderByRelationAggregateInput = {
 export type OfficeDailyReportCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   reportDate?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   generalNotes?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
-  finalizedAt?: Prisma.SortOrder
-  finalizedById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -393,11 +331,8 @@ export type OfficeDailyReportCountOrderByAggregateInput = {
 export type OfficeDailyReportMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   reportDate?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   generalNotes?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
-  finalizedAt?: Prisma.SortOrder
-  finalizedById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -405,11 +340,8 @@ export type OfficeDailyReportMaxOrderByAggregateInput = {
 export type OfficeDailyReportMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   reportDate?: Prisma.SortOrder
-  status?: Prisma.SortOrder
   generalNotes?: Prisma.SortOrder
   createdById?: Prisma.SortOrder
-  finalizedAt?: Prisma.SortOrder
-  finalizedById?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -426,24 +358,10 @@ export type OfficeDailyReportCreateNestedManyWithoutCreatedByInput = {
   connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
 }
 
-export type OfficeDailyReportCreateNestedManyWithoutFinalizedByInput = {
-  create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput> | Prisma.OfficeDailyReportCreateWithoutFinalizedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput[]
-  connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput[]
-  createMany?: Prisma.OfficeDailyReportCreateManyFinalizedByInputEnvelope
-  connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-}
-
 export type OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput = {
   create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutCreatedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutCreatedByInput> | Prisma.OfficeDailyReportCreateWithoutCreatedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutCreatedByInput[]
   connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutCreatedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutCreatedByInput[]
   createMany?: Prisma.OfficeDailyReportCreateManyCreatedByInputEnvelope
-  connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-}
-
-export type OfficeDailyReportUncheckedCreateNestedManyWithoutFinalizedByInput = {
-  create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput> | Prisma.OfficeDailyReportCreateWithoutFinalizedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput[]
-  connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput[]
-  createMany?: Prisma.OfficeDailyReportCreateManyFinalizedByInputEnvelope
   connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
 }
 
@@ -461,20 +379,6 @@ export type OfficeDailyReportUpdateManyWithoutCreatedByNestedInput = {
   deleteMany?: Prisma.OfficeDailyReportScalarWhereInput | Prisma.OfficeDailyReportScalarWhereInput[]
 }
 
-export type OfficeDailyReportUpdateManyWithoutFinalizedByNestedInput = {
-  create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput> | Prisma.OfficeDailyReportCreateWithoutFinalizedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput[]
-  connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput[]
-  upsert?: Prisma.OfficeDailyReportUpsertWithWhereUniqueWithoutFinalizedByInput | Prisma.OfficeDailyReportUpsertWithWhereUniqueWithoutFinalizedByInput[]
-  createMany?: Prisma.OfficeDailyReportCreateManyFinalizedByInputEnvelope
-  set?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  disconnect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  delete?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  update?: Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutFinalizedByInput | Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutFinalizedByInput[]
-  updateMany?: Prisma.OfficeDailyReportUpdateManyWithWhereWithoutFinalizedByInput | Prisma.OfficeDailyReportUpdateManyWithWhereWithoutFinalizedByInput[]
-  deleteMany?: Prisma.OfficeDailyReportScalarWhereInput | Prisma.OfficeDailyReportScalarWhereInput[]
-}
-
 export type OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput = {
   create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutCreatedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutCreatedByInput> | Prisma.OfficeDailyReportCreateWithoutCreatedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutCreatedByInput[]
   connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutCreatedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutCreatedByInput[]
@@ -487,24 +391,6 @@ export type OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput = {
   update?: Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutCreatedByInput | Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutCreatedByInput[]
   updateMany?: Prisma.OfficeDailyReportUpdateManyWithWhereWithoutCreatedByInput | Prisma.OfficeDailyReportUpdateManyWithWhereWithoutCreatedByInput[]
   deleteMany?: Prisma.OfficeDailyReportScalarWhereInput | Prisma.OfficeDailyReportScalarWhereInput[]
-}
-
-export type OfficeDailyReportUncheckedUpdateManyWithoutFinalizedByNestedInput = {
-  create?: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput> | Prisma.OfficeDailyReportCreateWithoutFinalizedByInput[] | Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput[]
-  connectOrCreate?: Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput | Prisma.OfficeDailyReportCreateOrConnectWithoutFinalizedByInput[]
-  upsert?: Prisma.OfficeDailyReportUpsertWithWhereUniqueWithoutFinalizedByInput | Prisma.OfficeDailyReportUpsertWithWhereUniqueWithoutFinalizedByInput[]
-  createMany?: Prisma.OfficeDailyReportCreateManyFinalizedByInputEnvelope
-  set?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  disconnect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  delete?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  connect?: Prisma.OfficeDailyReportWhereUniqueInput | Prisma.OfficeDailyReportWhereUniqueInput[]
-  update?: Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutFinalizedByInput | Prisma.OfficeDailyReportUpdateWithWhereUniqueWithoutFinalizedByInput[]
-  updateMany?: Prisma.OfficeDailyReportUpdateManyWithWhereWithoutFinalizedByInput | Prisma.OfficeDailyReportUpdateManyWithWhereWithoutFinalizedByInput[]
-  deleteMany?: Prisma.OfficeDailyReportScalarWhereInput | Prisma.OfficeDailyReportScalarWhereInput[]
-}
-
-export type EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput = {
-  set?: $Enums.OFFICEREPORTSTATUS
 }
 
 export type OfficeDailyReportCreateNestedOneWithoutChecksInput = {
@@ -524,22 +410,16 @@ export type OfficeDailyReportUpdateOneRequiredWithoutChecksNestedInput = {
 export type OfficeDailyReportCreateWithoutCreatedByInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
-  finalizedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  finalizedBy?: Prisma.UserCreateNestedOneWithoutOfficeReportsFinalizedInput
   checks?: Prisma.OfficeDailyReportCheckCreateNestedManyWithoutReportInput
 }
 
 export type OfficeDailyReportUncheckedCreateWithoutCreatedByInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
-  finalizedAt?: Date | string | null
-  finalizedById?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   checks?: Prisma.OfficeDailyReportCheckUncheckedCreateNestedManyWithoutReportInput
@@ -552,40 +432,6 @@ export type OfficeDailyReportCreateOrConnectWithoutCreatedByInput = {
 
 export type OfficeDailyReportCreateManyCreatedByInputEnvelope = {
   data: Prisma.OfficeDailyReportCreateManyCreatedByInput | Prisma.OfficeDailyReportCreateManyCreatedByInput[]
-  skipDuplicates?: boolean
-}
-
-export type OfficeDailyReportCreateWithoutFinalizedByInput = {
-  id?: string
-  reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
-  generalNotes?: string | null
-  finalizedAt?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  createdBy: Prisma.UserCreateNestedOneWithoutOfficeReportsCreatedInput
-  checks?: Prisma.OfficeDailyReportCheckCreateNestedManyWithoutReportInput
-}
-
-export type OfficeDailyReportUncheckedCreateWithoutFinalizedByInput = {
-  id?: string
-  reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
-  generalNotes?: string | null
-  createdById: string
-  finalizedAt?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  checks?: Prisma.OfficeDailyReportCheckUncheckedCreateNestedManyWithoutReportInput
-}
-
-export type OfficeDailyReportCreateOrConnectWithoutFinalizedByInput = {
-  where: Prisma.OfficeDailyReportWhereUniqueInput
-  create: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput>
-}
-
-export type OfficeDailyReportCreateManyFinalizedByInputEnvelope = {
-  data: Prisma.OfficeDailyReportCreateManyFinalizedByInput | Prisma.OfficeDailyReportCreateManyFinalizedByInput[]
   skipDuplicates?: boolean
 }
 
@@ -611,51 +457,26 @@ export type OfficeDailyReportScalarWhereInput = {
   NOT?: Prisma.OfficeDailyReportScalarWhereInput | Prisma.OfficeDailyReportScalarWhereInput[]
   id?: Prisma.StringFilter<"OfficeDailyReport"> | string
   reportDate?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFilter<"OfficeDailyReport"> | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdById?: Prisma.StringFilter<"OfficeDailyReport"> | string
-  finalizedAt?: Prisma.DateTimeNullableFilter<"OfficeDailyReport"> | Date | string | null
-  finalizedById?: Prisma.StringNullableFilter<"OfficeDailyReport"> | string | null
   createdAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"OfficeDailyReport"> | Date | string
-}
-
-export type OfficeDailyReportUpsertWithWhereUniqueWithoutFinalizedByInput = {
-  where: Prisma.OfficeDailyReportWhereUniqueInput
-  update: Prisma.XOR<Prisma.OfficeDailyReportUpdateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedUpdateWithoutFinalizedByInput>
-  create: Prisma.XOR<Prisma.OfficeDailyReportCreateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedCreateWithoutFinalizedByInput>
-}
-
-export type OfficeDailyReportUpdateWithWhereUniqueWithoutFinalizedByInput = {
-  where: Prisma.OfficeDailyReportWhereUniqueInput
-  data: Prisma.XOR<Prisma.OfficeDailyReportUpdateWithoutFinalizedByInput, Prisma.OfficeDailyReportUncheckedUpdateWithoutFinalizedByInput>
-}
-
-export type OfficeDailyReportUpdateManyWithWhereWithoutFinalizedByInput = {
-  where: Prisma.OfficeDailyReportScalarWhereInput
-  data: Prisma.XOR<Prisma.OfficeDailyReportUpdateManyMutationInput, Prisma.OfficeDailyReportUncheckedUpdateManyWithoutFinalizedByInput>
 }
 
 export type OfficeDailyReportCreateWithoutChecksInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
-  finalizedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
   createdBy: Prisma.UserCreateNestedOneWithoutOfficeReportsCreatedInput
-  finalizedBy?: Prisma.UserCreateNestedOneWithoutOfficeReportsFinalizedInput
 }
 
 export type OfficeDailyReportUncheckedCreateWithoutChecksInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
   createdById: string
-  finalizedAt?: Date | string | null
-  finalizedById?: string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -679,23 +500,17 @@ export type OfficeDailyReportUpdateToOneWithWhereWithoutChecksInput = {
 export type OfficeDailyReportUpdateWithoutChecksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   createdBy?: Prisma.UserUpdateOneRequiredWithoutOfficeReportsCreatedNestedInput
-  finalizedBy?: Prisma.UserUpdateOneWithoutOfficeReportsFinalizedNestedInput
 }
 
 export type OfficeDailyReportUncheckedUpdateWithoutChecksInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdById?: Prisma.StringFieldUpdateOperationsInput | string
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finalizedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -703,21 +518,7 @@ export type OfficeDailyReportUncheckedUpdateWithoutChecksInput = {
 export type OfficeDailyReportCreateManyCreatedByInput = {
   id?: string
   reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
   generalNotes?: string | null
-  finalizedAt?: Date | string | null
-  finalizedById?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-}
-
-export type OfficeDailyReportCreateManyFinalizedByInput = {
-  id?: string
-  reportDate: Date | string
-  status?: $Enums.OFFICEREPORTSTATUS
-  generalNotes?: string | null
-  createdById: string
-  finalizedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -725,22 +526,16 @@ export type OfficeDailyReportCreateManyFinalizedByInput = {
 export type OfficeDailyReportUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  finalizedBy?: Prisma.UserUpdateOneWithoutOfficeReportsFinalizedNestedInput
   checks?: Prisma.OfficeDailyReportCheckUpdateManyWithoutReportNestedInput
 }
 
 export type OfficeDailyReportUncheckedUpdateWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finalizedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   checks?: Prisma.OfficeDailyReportCheckUncheckedUpdateManyWithoutReportNestedInput
@@ -749,45 +544,7 @@ export type OfficeDailyReportUncheckedUpdateWithoutCreatedByInput = {
 export type OfficeDailyReportUncheckedUpdateManyWithoutCreatedByInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
   generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  finalizedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-}
-
-export type OfficeDailyReportUpdateWithoutFinalizedByInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
-  generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  createdBy?: Prisma.UserUpdateOneRequiredWithoutOfficeReportsCreatedNestedInput
-  checks?: Prisma.OfficeDailyReportCheckUpdateManyWithoutReportNestedInput
-}
-
-export type OfficeDailyReportUncheckedUpdateWithoutFinalizedByInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
-  generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdById?: Prisma.StringFieldUpdateOperationsInput | string
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  checks?: Prisma.OfficeDailyReportCheckUncheckedUpdateManyWithoutReportNestedInput
-}
-
-export type OfficeDailyReportUncheckedUpdateManyWithoutFinalizedByInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  reportDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  status?: Prisma.EnumOFFICEREPORTSTATUSFieldUpdateOperationsInput | $Enums.OFFICEREPORTSTATUS
-  generalNotes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdById?: Prisma.StringFieldUpdateOperationsInput | string
-  finalizedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -826,15 +583,11 @@ export type OfficeDailyReportCountOutputTypeCountChecksArgs<ExtArgs extends runt
 export type OfficeDailyReportSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   reportDate?: boolean
-  status?: boolean
   generalNotes?: boolean
   createdById?: boolean
-  finalizedAt?: boolean
-  finalizedById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
   checks?: boolean | Prisma.OfficeDailyReport$checksArgs<ExtArgs>
   _count?: boolean | Prisma.OfficeDailyReportCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["officeDailyReport"]>
@@ -842,74 +595,56 @@ export type OfficeDailyReportSelect<ExtArgs extends runtime.Types.Extensions.Int
 export type OfficeDailyReportSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   reportDate?: boolean
-  status?: boolean
   generalNotes?: boolean
   createdById?: boolean
-  finalizedAt?: boolean
-  finalizedById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
 }, ExtArgs["result"]["officeDailyReport"]>
 
 export type OfficeDailyReportSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   reportDate?: boolean
-  status?: boolean
   generalNotes?: boolean
   createdById?: boolean
-  finalizedAt?: boolean
-  finalizedById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
 }, ExtArgs["result"]["officeDailyReport"]>
 
 export type OfficeDailyReportSelectScalar = {
   id?: boolean
   reportDate?: boolean
-  status?: boolean
   generalNotes?: boolean
   createdById?: boolean
-  finalizedAt?: boolean
-  finalizedById?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type OfficeDailyReportOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "reportDate" | "status" | "generalNotes" | "createdById" | "finalizedAt" | "finalizedById" | "createdAt" | "updatedAt", ExtArgs["result"]["officeDailyReport"]>
+export type OfficeDailyReportOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "reportDate" | "generalNotes" | "createdById" | "createdAt" | "updatedAt", ExtArgs["result"]["officeDailyReport"]>
 export type OfficeDailyReportInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
   checks?: boolean | Prisma.OfficeDailyReport$checksArgs<ExtArgs>
   _count?: boolean | Prisma.OfficeDailyReportCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type OfficeDailyReportIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
 }
 export type OfficeDailyReportIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   createdBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  finalizedBy?: boolean | Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>
 }
 
 export type $OfficeDailyReportPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "OfficeDailyReport"
   objects: {
     createdBy: Prisma.$UserPayload<ExtArgs>
-    finalizedBy: Prisma.$UserPayload<ExtArgs> | null
     checks: Prisma.$OfficeDailyReportCheckPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     reportDate: Date
-    status: $Enums.OFFICEREPORTSTATUS
     generalNotes: string | null
     createdById: string
-    finalizedAt: Date | null
-    finalizedById: string | null
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["officeDailyReport"]>
@@ -1307,7 +1042,6 @@ readonly fields: OfficeDailyReportFieldRefs;
 export interface Prisma__OfficeDailyReportClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   createdBy<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  finalizedBy<T extends Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.OfficeDailyReport$finalizedByArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   checks<T extends Prisma.OfficeDailyReport$checksArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.OfficeDailyReport$checksArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OfficeDailyReportCheckPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1340,11 +1074,8 @@ export interface Prisma__OfficeDailyReportClient<T, Null = never, ExtArgs extend
 export interface OfficeDailyReportFieldRefs {
   readonly id: Prisma.FieldRef<"OfficeDailyReport", 'String'>
   readonly reportDate: Prisma.FieldRef<"OfficeDailyReport", 'DateTime'>
-  readonly status: Prisma.FieldRef<"OfficeDailyReport", 'OFFICEREPORTSTATUS'>
   readonly generalNotes: Prisma.FieldRef<"OfficeDailyReport", 'String'>
   readonly createdById: Prisma.FieldRef<"OfficeDailyReport", 'String'>
-  readonly finalizedAt: Prisma.FieldRef<"OfficeDailyReport", 'DateTime'>
-  readonly finalizedById: Prisma.FieldRef<"OfficeDailyReport", 'String'>
   readonly createdAt: Prisma.FieldRef<"OfficeDailyReport", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"OfficeDailyReport", 'DateTime'>
 }
@@ -1745,25 +1476,6 @@ export type OfficeDailyReportDeleteManyArgs<ExtArgs extends runtime.Types.Extens
    * Limit how many OfficeDailyReports to delete.
    */
   limit?: number
-}
-
-/**
- * OfficeDailyReport.finalizedBy
- */
-export type OfficeDailyReport$finalizedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
 }
 
 /**
