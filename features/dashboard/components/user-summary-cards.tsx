@@ -65,7 +65,7 @@ export function UserSummaryCards({
           data.newUsers.changePercent,
         )}
         icon={UserPlus}
-        variant="success"
+        variant="warning"
       />
     </section>
   );

@@ -14,18 +14,18 @@ const badgeVariants = cva(
         secondary:
           "border-transparent bg-secondary text-secondary-foreground",
         destructive:
-          "border-transparent bg-destructive text-destructive-foreground",
+          "border-transparent bg-red-700 text-red-100",
         outline:
           "border-border text-foreground",
 
         success:
-          "border-emerald-500/25 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
+          "border-emerald-500/25 bg-emerald-600/20 text-emerald-700 dark:text-emerald-400",
         warning:
-          "border-amber-500/25 bg-amber-500/10 text-amber-700 dark:text-amber-400",
+          "border-amber-500/25 bg-amber-500/20 text-amber-700 dark:text-amber-400",
         info:
-          "border-blue-500/25 bg-blue-500/10 text-blue-700 dark:text-blue-400",
+          "border-blue-500/25 bg-blue-500/20 text-blue-700 dark:text-blue-400",
         danger:
-          "border-rose-500/25 bg-rose-500/10 text-rose-700 dark:text-rose-400",
+          "border-rose-500/25 bg-rose-500/20 text-rose-700 dark:text-rose-400",
         neutral:
           "border-border bg-muted/70 text-muted-foreground",
       },

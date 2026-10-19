@@ -10,11 +10,18 @@ const NewOfficeReportSheet = dynamic(() => import("@/features/office-reports/com
   )
 })
 
+const OfficeReportViewSheet = dynamic(() => import("@/features/office-reports/components/office-report-view-sheet"), {
+  loading:() => (<FullScreenLoader loader={<LineLoader />} text="Loading full report." />)
+})
+
+
 function OfficeReportSheetProvider() {
   const isOpen = useOfficeReportSheet((state) => state.isOpen)
+  const type = useOfficeReportSheet((state) => state.type)
   return (
     <>
-    {isOpen && <NewOfficeReportSheet />}
+    {isOpen && type === "new" && <NewOfficeReportSheet />}
+    {isOpen && type === "view" &&  <OfficeReportViewSheet />}
     </>
   )
 }

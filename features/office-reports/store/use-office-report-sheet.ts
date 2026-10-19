@@ -1,14 +1,41 @@
 import { create } from "zustand";
 
-type OfficeReportSheetType = {
-  isOpen:boolean;
-  onOpen:() => void;
-  onClose:() => void;
-}
+import type {
+  OfficeReportListItem,
+} from "../schemas/office-reports-schema";
 
+export type OfficeReportSheet = "view" | "new";
 
-export const useOfficeReportSheet = create<OfficeReportSheetType>((set) => ({
-isOpen:false,
-onOpen: () => set({isOpen:true}),
-onClose: () => set({isOpen:false}),
-}))
+type OfficeReportSheetState = {
+  type: OfficeReportSheet | null;
+  report: OfficeReportListItem | null;
+  isOpen: boolean;
+
+  onOpen: (
+    type: OfficeReportSheet,
+    report?: OfficeReportListItem,
+  ) => void;
+
+  onClose: () => void;
+};
+
+export const useOfficeReportSheet =
+  create<OfficeReportSheetState>((set) => ({
+    type: null,
+    report: null,
+    isOpen: false,
+
+    onOpen: (type, report) =>
+      set({
+        type,
+        report: report ?? null,
+        isOpen: true,
+      }),
+
+    onClose: () =>
+      set({
+        type: null,
+        report: null,
+        isOpen: false,
+      }),
+  }));

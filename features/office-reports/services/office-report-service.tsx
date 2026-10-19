@@ -13,6 +13,7 @@ import {
   OFFICE_REPORT_CHECKLIST,
 } from "@/features/office-reports/constants/office-report-checklist";
 import { todayOfficeDate } from "@/lib/utils-server";
+import { dateToInputValue } from "@/lib/utils";
 
 function dateOnly(value: string) {
   return new Date(`${value}T00:00:00.000Z`);
@@ -183,4 +184,70 @@ export async function createOfficeReport(
       500,
     );
   }
+}
+
+
+export async function getOfficeReportById(
+  reportId: string,
+) {
+  const report =
+    await prisma.officeDailyReport.findUnique({
+      where: {
+        id: reportId,
+      },
+
+      select: {
+        id: true,
+        reportDate: true,
+        generalNotes: true,
+        createdAt: true,
+
+        createdBy: {
+          select: {
+            id: true,
+            name: true,
+          },
+        },
+
+        checks: {
+          select: {
+            id: true,
+            itemKey: true,
+            category: true,
+            label: true,
+            status: true,
+            issueNote: true,
+            actionTaken: true,
+            followUpRequired: true,
+          },
+        },
+      },
+    });
+
+  if (!report) {
+    throw new ApiError(
+      "NOT_FOUND",
+      "Office report not found.",
+      404,
+    );
+  }
+
+  return {
+    id: report.id,
+
+    reportDate: dateToInputValue(
+      report.reportDate,
+    ),
+
+    generalNotes: report.generalNotes,
+
+    createdAt: report.createdAt.toISOString(),
+
+    createdBy: {
+      id: report.createdBy.id,
+      name: report.createdBy.name,
+    },
+
+    checks: report.checks,
+  };
 }

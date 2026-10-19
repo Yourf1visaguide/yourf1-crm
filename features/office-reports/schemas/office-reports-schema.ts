@@ -7,7 +7,7 @@ import { OFFICE_REPORT_ITEM_KEYS } from "../constants/office-report-checklist";
 /* Shared                                                                     */
 /* -------------------------------------------------------------------------- */
 
-const dateOnlySchema = z
+export const dateOnlySchema = z
   .string()
   .regex(
     /^\d{4}-\d{2}-\d{2}$/,
@@ -209,6 +209,10 @@ export const officeReportListItemSchema = z
 
     generalNotes: z.string().nullable(),
 
+    okChecks: z.number(),
+    issueChecks: z.number(),
+    naChecks: z.number(),
+    followUpRequired:z.number(),
     createdAt: z.string(),
 
     createdBy: officeReportActorSchema,
@@ -244,13 +248,45 @@ export type OfficeReportListResponse = z.infer<
 /* API response: dashboard summary                                            */
 /* -------------------------------------------------------------------------- */
 
+
 export const officeReportSummarySchema = z
   .object({
     reportsCreated: z.number(),
+
+    reportDays: z.number(),
+
     issuesReported: z.number(),
+
+    issueReportDays: z.number(),
+
+    applicableChecks: z.number(),
+
+    issueRatePercent: z.number(),
+
     cleanDays: z.number(),
+
     followUps: z.number(),
+
+    followUpDays: z.number(),
+
+    topIssueCategory: z
+      .object({
+        category: z.string(),
+        count: z.number(),
+      })
+      .nullable(),
+
+    topIssueItem: z
+      .object({
+        itemKey: z.string(),
+        label: z.string(),
+        count: z.number(),
+      })
+      .nullable(),
   })
   .strict();
 
-export type OfficeReportSummary = z.infer<typeof officeReportSummarySchema>;
+export type OfficeReportSummary = z.infer<
+  typeof officeReportSummarySchema
+>;
+

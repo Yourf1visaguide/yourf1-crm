@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpDown, MoreVertical } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 
 import { createColumnHelper } from "@tanstack/react-table";
 

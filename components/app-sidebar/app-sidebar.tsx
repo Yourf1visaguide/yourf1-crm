@@ -154,7 +154,7 @@ const managementNavigation: NavItem[] = [
   },
   {
     title: "Reports",
-    href: "/reports",
+    href: "/office-reports",
     icon: BarChart3,
   },
   {

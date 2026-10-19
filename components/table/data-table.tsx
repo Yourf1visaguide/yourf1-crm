@@ -60,13 +60,17 @@ interface DataTableProps<TData extends RowData, TValue = unknown> {
   ) => void;
 
   isFetching?: boolean;
+
   search?: string;
   onSearchChange?: (value: string) => void;
+  searchPlaceholder?: string;
+
   sorting?: SortingState;
 
   onSortingChange?: (
     updater: SortingState | ((old: SortingState) => SortingState),
   ) => void;
+
   rowSelection?: RowSelectionState;
 
   onRowSelectionChange?: OnChangeFn<RowSelectionState>;
@@ -76,6 +80,10 @@ interface DataTableProps<TData extends RowData, TValue = unknown> {
   onDeleteSelected?: (rows: TData[]) => void;
 
   deleteLabel?: string;
+
+  showSearch?: boolean;
+  showColumns?: boolean;
+  showDeleteAction?: boolean;
 }
 export function DataTable<TData extends RowData, TValue = unknown>({
   columns,
@@ -93,6 +101,7 @@ export function DataTable<TData extends RowData, TValue = unknown>({
 
   search = "",
   onSearchChange,
+  searchPlaceholder = "Search employees...",
 
   rowSelection,
   onRowSelectionChange,
@@ -103,6 +112,10 @@ export function DataTable<TData extends RowData, TValue = unknown>({
   deleteLabel = "Delete",
 
   isFetching = false,
+
+  showSearch = true,
+  showColumns = true,
+  showDeleteAction = true,
 }: DataTableProps<TData, TValue>) {
   // const [sorting, setSorting] = React.useState<SortingState>([]);
   const [localSorting, setLocalSorting] = React.useState<SortingState>([]);
@@ -176,116 +189,131 @@ export function DataTable<TData extends RowData, TValue = unknown>({
       {/* TOOLBAR */}
       {/* ===================================================== */}
 
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
-        {/* Search */}
-        <div className="relative w-full sm:max-w-sm">
-          <Search
-            className="
-              pointer-events-none
-              absolute
-              left-3
-              top-1/2
-              size-4
-              -translate-y-1/2
-              text-muted-foreground
-            "
-          />
+      {/* ===================================================== */}
+      {/* TOOLBAR */}
+      {/* ===================================================== */}
 
-          <Input
-            type="text"
-            placeholder="Search employees..."
-            value={search}
-            onChange={(event) => {
-              onSearchChange?.(event.target.value);
+      {(showSearch || showColumns || showDeleteAction || isFetching) && (
+        <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          {/* Search */}
+          {showSearch ? (
+            <div className="relative w-full sm:max-w-sm">
+              <Search
+                className="
+            pointer-events-none
+            absolute
+            left-3
+            top-1/2
+            size-4
+            -translate-y-1/2
+            text-muted-foreground
+          "
+              />
 
-              if (manualPagination) {
-                table.setPageIndex(0);
-              }
-            }}
-            className="
-              h-10
-              bg-background
-              pl-9
-              shadow-sm
-              focus-visible:ring-1
-            "
-          />
-        </div>
+              <Input
+                type="text"
+                placeholder={searchPlaceholder}
+                value={search}
+                onChange={(event) => {
+                  onSearchChange?.(event.target.value);
 
-        {/* Actions */}
-        <div className="flex items-center gap-2 ">
-          {/* Updating indicator */}
-          {isFetching && (
-            <div
-              className="
-                mr-1
-                hidden
-                items-center
-                gap-1.5
-                text-xs
-                text-muted-foreground
-                sm:flex
-              "
-              aria-live="polite"
-            >
-              <Loader2 className="size-3.5 animate-spin" />
-              Updating
+                  if (manualPagination) {
+                    table.setPageIndex(0);
+                  }
+                }}
+                className="
+            h-10
+            bg-background
+            pl-9
+            shadow-sm
+            focus-visible:ring-1
+          "
+              />
             </div>
+          ) : (
+            <div />
           )}
 
-          {/* Columns */}
-          <DropdownMenu>
-            <DropdownMenuTrigger
-              render={
-                <Button variant="outline" size="default" className="gap-2" />
-              }
-            >
-              <SlidersHorizontal className="size-4" />
-              Columns
-            </DropdownMenuTrigger>
-
-            <DropdownMenuContent align="end" className="w-48">
-              <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
-                Show columns
+          {/* Actions */}
+          <div className="flex items-center gap-2">
+            {isFetching && (
+              <div
+                className="
+            mr-1
+            hidden
+            items-center
+            gap-1.5
+            text-xs
+            text-muted-foreground
+            sm:flex
+          "
+                aria-live="polite"
+              >
+                <Loader2 className="size-3.5 animate-spin" />
+                Updating
               </div>
+            )}
 
-              {table
-                .getAllColumns()
-                .filter((column) => column.getCanHide())
-                .map((column) => (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                    className="capitalize"
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+            {showColumns && (
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  render={
+                    <Button
+                      variant="outline"
+                      size="default"
+                      className="gap-2"
+                    />
+                  }
+                >
+                  <SlidersHorizontal className="size-4" />
+                  Columns
+                </DropdownMenuTrigger>
 
-          {/* Deactivate */}
-          <Button
-            variant="destructive"
-            disabled={table.getSelectedRowModel().rows.length === 0}
-            onClick={() => {
-              const selectedRows = table
-                .getSelectedRowModel()
-                .rows.map((row) => row.original);
+                <DropdownMenuContent align="end" className="w-48">
+                  <div className="px-2 py-1.5 text-xs font-medium text-muted-foreground">
+                    Show columns
+                  </div>
 
-              onDeleteSelected?.(selectedRows);
-            }}
-          >
-            {deleteLabel}
+                  {table
+                    .getAllColumns()
+                    .filter((column) => column.getCanHide())
+                    .map((column) => (
+                      <DropdownMenuCheckboxItem
+                        key={column.id}
+                        checked={column.getIsVisible()}
+                        onCheckedChange={(value) =>
+                          column.toggleVisibility(!!value)
+                        }
+                        className="capitalize"
+                      >
+                        {column.id}
+                      </DropdownMenuCheckboxItem>
+                    ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            )}
 
-            {table.getSelectedRowModel().rows.length > 0 &&
-              ` (${table.getSelectedRowModel().rows.length})`}
-          </Button>
+            {showDeleteAction && (
+              <Button
+                variant="destructive"
+                disabled={table.getSelectedRowModel().rows.length === 0}
+                onClick={() => {
+                  const selectedRows = table
+                    .getSelectedRowModel()
+                    .rows.map((row) => row.original);
+
+                  onDeleteSelected?.(selectedRows);
+                }}
+              >
+                {deleteLabel}
+
+                {table.getSelectedRowModel().rows.length > 0 &&
+                  ` (${table.getSelectedRowModel().rows.length})`}
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* //Table */}
       <div className="w-full overflow-hidden  rounded-md border border-border/70 bg-card shadow-sm">
