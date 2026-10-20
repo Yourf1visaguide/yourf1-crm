@@ -236,3 +236,285 @@ model OfficeDailyReportCheck {
   @@unique([reportId, itemKey])
   @@index([reportId, status])
 }
+
+
+
+enum ClientGender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWED
+  OTHER
+}
+
+enum Country {
+  INDIA
+  UNITED_STATES
+  CANADA
+  UNITED_KINGDOM
+  AUSTRALIA
+  NEW_ZEALAND
+  IRELAND
+  GERMANY
+  FRANCE
+  ITALY
+  SPAIN
+  PORTUGAL
+  POLAND
+  NETHERLANDS
+  BELGIUM
+  SWITZERLAND
+  SWEDEN
+  NORWAY
+  DENMARK
+  FINLAND
+  AUSTRIA
+  CZECH_REPUBLIC
+  HUNGARY
+  ROMANIA
+  JAPAN
+  SOUTH_KOREA
+  CHINA
+  SINGAPORE
+  MALAYSIA
+  THAILAND
+  UAE
+  SAUDI_ARABIA
+  QATAR
+  OMAN
+  KUWAIT
+  BAHRAIN
+  PAKISTAN
+  BANGLADESH
+  NEPAL
+  SRI_LANKA
+  AFGHANISTAN
+  SOUTH_AFRICA
+  NIGERIA
+  KENYA
+  GHANA
+  EGYPT
+  BRAZIL
+  MEXICO
+  ARGENTINA
+  CHILE
+  OTHER
+}
+model Client {
+  id                  String   @id @default(cuid())
+  clientCode          String   @unique
+
+  givenName           String
+  middleName          String?
+  surname             String?
+
+  email               String?
+  communicationEmail  String?
+
+  phone               String
+  alternatePhone      String?
+
+  dateOfBirth         DateTime? @db.Date
+  gender              ClientGender?
+  maritalStatus       MaritalStatus?
+
+  nationality         Country
+
+  nationalId          String?
+
+  addresses ClientAddress[]
+  familyMembers ClientFamilyMember[]
+  educationRecords ClientEducation[]
+  tests ClientTest[]
+  workExperiences ClientWorkExperience[]
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+}
+
+
+
+enum ClientAddressType {
+  PERMANENT
+  CURRENT
+}
+
+model ClientAddress {
+  id            String            @id @default(cuid())
+  clientId      String
+
+  type          ClientAddressType
+
+  addressLine1  String
+  addressLine2  String?
+  city          String
+  state         String
+  postalCode    String?
+  country       Country
+  countryOther  String?
+
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  client        Client            @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  // Only one CURRENT and one PERMANENT address per client.
+  @@unique([clientId, type])
+  @@index([clientId])
+}
+
+
+enum ClientFamilyRelationship {
+  FATHER
+  MOTHER
+  SPOUSE
+  CHILD
+  SIBLING
+}
+
+model ClientFamilyMember {
+  id String @id @default(cuid())
+
+  clientId String
+
+  relationship ClientFamilyRelationship
+
+  name         String
+  phone        String?
+  email        String?
+  dateOfBirth  DateTime? @db.Date
+  occupation   String?
+
+  // Sensitive government identity information
+  aadhaarUid   String?
+
+  address      String?
+  otherDetails String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  client Client @relation( fields: [clientId], references: [id], onDelete: Cascade )
+
+  @@index([clientId])
+  @@index([clientId, relationship])
+}
+
+enum ClientEducationLevel {
+  TENTH
+  TWELFTH
+  DIPLOMA
+  BACHELOR
+  MASTER
+  DOCTORATE
+  OTHER
+}
+
+model ClientEducation {
+  id       String @id @default(cuid())
+  clientId String
+
+  level ClientEducationLevel
+
+  institutionName String?
+  boardUniversity String?
+  qualification   String?
+  stream          String?
+
+  percentage   Decimal? @db.Decimal(5, 2)
+  cgpa         Decimal? @db.Decimal(5, 2)
+  medium       String?
+  englishMarks Decimal? @db.Decimal(5, 2)
+
+  passingYear Int?
+  resultDate  DateTime? @db.Date
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  client Client @relation( fields: [clientId], references: [id], onDelete: Cascade )
+
+  @@index([clientId])
+  @@index([clientId, level])
+}
+
+
+enum ClientTestType {
+  IELTS
+  TOEFL
+  PTE
+  GRE
+  GMAT
+  SAT
+  DUOLINGO
+  OTHER
+}
+
+model ClientTest {
+  id       String @id @default(cuid())
+  clientId String
+
+  testType ClientTestType
+  testDate DateTime? @db.Date
+
+  // Overall / main score
+  overallScore Decimal? @db.Decimal(6, 2)
+
+  // English test components
+  listening Decimal? @db.Decimal(6, 2)
+  reading   Decimal? @db.Decimal(6, 2)
+  writing   Decimal? @db.Decimal(6, 2)
+  speaking  Decimal? @db.Decimal(6, 2)
+
+  // GRE
+  verbal           Decimal? @db.Decimal(6, 2)
+  quantitative     Decimal? @db.Decimal(6, 2)
+  analyticalWriting Decimal? @db.Decimal(6, 2)
+
+  // SAT
+  math                       Decimal? @db.Decimal(6, 2)
+  evidenceBasedReadingWriting Decimal? @db.Decimal(6, 2)
+
+  // For an uncommon test / manually entered result
+  otherScore Decimal? @db.Decimal(6, 2)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  client Client @relation( fields: [clientId], references: [id], onDelete: Cascade )
+
+  @@index([clientId])
+  @@index([clientId, testType])
+}
+
+
+model ClientWorkExperience {
+  id       String @id @default(cuid())
+  clientId String
+
+  companyName String
+  jobTitle    String
+
+  currentlyWorking Boolean @default(false)
+
+  startDate DateTime  @db.Date
+  endDate   DateTime? @db.Date
+
+  salaryDescription String?
+  otherDetails     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  client Client @relation( fields: [clientId], references: [id], onDelete: Cascade )
+
+  @@index([clientId])
+  @@index([clientId, startDate])
+}
