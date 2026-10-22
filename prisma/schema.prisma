@@ -733,7 +733,7 @@ model Registration {
   registeredBy User @relation( "RegistrationCreatedBy", fields: [registeredById], references: [id], onDelete: Restrict )
 
   cancelledBy User? @relation( "RegistrationCancelledBy", fields: [cancelledById], references: [id], onDelete: Restrict )
-
+  
   applications Application[]  @relation("ApplicationToRegistration")
   invoices Invoice[]
   commissions CommissionEntry[]
@@ -1076,8 +1076,6 @@ model Payment {
 
   receivedBy User @relation( "PaymentReceivedBy", fields: [receivedById], references: [id], onDelete: Restrict )
 
-  refunds Refund[]
-
   @@index([invoiceId])
   @@index([receivedAt])
 }
@@ -1098,3 +1096,8 @@ model Refund {
   @@index([refundedById])
   @@index([refundedAt])
 }
+
+
+
+//second part
+
