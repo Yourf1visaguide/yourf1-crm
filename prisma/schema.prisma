@@ -102,6 +102,21 @@ model User {
   whatsappConversationsClosed WhatsAppConversation[] @relation("WhatsAppConversationClosedBy")
 
   whatsappMessagesSent WhatsAppMessage[] @relation("WhatsAppMessageSentBy")
+
+    teachingEnrollments TeachingEnrollment[] @relation("TeachingEnrollmentTeacher")
+
+  teachingExamBookings TeachingEnrollment[] @relation("TeachingExamBookedBy")
+
+  teachingDailyRecords TeachingDailyRecord[] @relation("TeachingDailyRecordRecordedBy")
+
+  teacherDailyProgress TeacherDailyProgress[] @relation("TeacherDailyProgressTeacher")
+
+   touristPrepsCompleted TouristPrep[] @relation("TouristPrepCompletedBy")
+    touristPrepsCreated TouristPrep[] @relation("TouristPrepTeacher")
+
+  employeeAttendancesRecorded EmployeeAttendance[] @relation("EmployeeAttendanceRecordedBy")
+
+  salaryAdvancesRecorded EmployeeSalaryAdvance[] @relation("SalaryAdvanceRecordedBy")
   @@unique([username])
   @@map("user")
 }
@@ -167,8 +182,10 @@ model Employee {
 
   compensation   EmployeeCompensation[]
   schedules      EmployeeWorkSchedule[]
-  payrollEntries PayrollEntry[]
+  payrollEntries PayrollEntry[] 
   commissions    CommissionEntry[]
+  attendanceRecords EmployeeAttendance[]
+  salaryAdvances   EmployeeSalaryAdvance[]
 }
 
 model EmployeeCompensation {
@@ -204,29 +221,125 @@ enum PayrollStatus {
   PAID
   CANCELLED
 }
-
 model PayrollEntry {
   id           String   @id @default(cuid())
   employeeId   String
   payrollMonth DateTime @db.Date
 
-  // Snapshot of the salary rate used for this payroll.
   monthlySalary Decimal @db.Decimal(12, 2)
 
-  grossPay   Decimal @db.Decimal(12, 2)
+  grossPay Decimal @db.Decimal(12, 2)
+
+  lateFine        Decimal @default(0) @db.Decimal(12, 2)
+  advanceDeduction Decimal @default(0) @db.Decimal(12, 2)
+
   deductions Decimal @default(0) @db.Decimal(12, 2)
   netPay     Decimal @db.Decimal(12, 2)
 
-  status    PayrollStatus @default(PAID)
-  paidAt    DateTime?
-  createdAt DateTime      @default(now())
+  status PayrollStatus @default(PAID)
 
-  employee Employee @relation(fields: [employeeId], references: [id], onDelete: Restrict)
+  paidAt    DateTime?
+  createdAt DateTime @default(now())
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  salaryAdvances EmployeeSalaryAdvance[] @relation("PayrollAdvanceDeductions")
 
   @@unique([employeeId, payrollMonth])
   @@index([payrollMonth, status])
 }
 
+
+enum EmployeeAttendanceStatus {
+  PRESENT
+  ABSENT
+}
+
+enum EmployeeAttendanceSource {
+  BIOMETRIC
+  MANUAL
+}
+
+model EmployeeAttendance {
+  id String @id @default(cuid())
+
+  employeeId String
+
+  attendanceDate DateTime @db.Date
+
+  status EmployeeAttendanceStatus
+
+  source EmployeeAttendanceSource @default(BIOMETRIC)
+
+  // Biometric data
+  externalRecordId String?
+
+  firstCheckInAt DateTime?
+  lastCheckOutAt DateTime?
+
+  // Snapshot calculated from the employee's shift.
+  lateMinutes Int @default(0)
+  lateFine    Decimal @default(0) @db.Decimal(12, 2)
+
+  recordedById String?
+
+  notes String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  recordedBy User? @relation( "EmployeeAttendanceRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict )
+
+  @@unique([employeeId, attendanceDate])
+  @@unique([externalRecordId])
+  @@index([attendanceDate])
+  @@index([employeeId, attendanceDate])
+  @@index([status, attendanceDate])
+}
+
+
+enum SalaryAdvanceStatus {
+  OPEN
+  DEDUCTED
+  CANCELLED
+}
+
+model EmployeeSalaryAdvance {
+  id String @id @default(cuid())
+
+  employeeId String
+
+  amount Decimal @db.Decimal(12, 2)
+
+  advanceDate DateTime @db.Date
+
+  // Payroll month from which the advance should be deducted.
+  deductionPayrollMonth DateTime? @db.Date
+
+  status SalaryAdvanceStatus @default(OPEN)
+
+  notes String?
+
+  recordedById String
+
+  recordedAt DateTime @default(now())
+
+  deductedAt DateTime?
+
+  deductedPayrollId String?
+
+  employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
+
+  recordedBy User @relation( "SalaryAdvanceRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict )
+
+  deductedPayroll PayrollEntry? @relation( "PayrollAdvanceDeductions", fields: [deductedPayrollId], references: [id], onDelete: SetNull )
+
+  @@index([employeeId, status])
+  @@index([deductionPayrollMonth])
+  @@index([advanceDate])
+}
 // Reports releted tables and enums
 
 enum OFFICEREPORTCHECKSTATUS {
@@ -685,6 +798,9 @@ model Application {
   client                 Client                  @relation(fields: [clientId], references: [id], onDelete: Restrict)
   registration           Registration?           @relation("ApplicationToRegistration", fields: [registrationId], references: [id], onDelete: SetNull)
 
+   teachingEnrollment TeachingEnrollment?
+   touristPrep TouristPrep?
+
   @@index([clientId])
   @@index([registrationId])
   @@index([clientId, type])
@@ -800,6 +916,7 @@ enum TaskType {
   DOCUMENT_FOLLOW_UP
   TEACHING_URGENT_PREP
   PAYMENT_COLLECTION
+  TEACHING_PARENT_CONTACT
   OTHER
 }
 
@@ -1416,4 +1533,161 @@ model WhatsAppMessage {
   @@index([status])
   @@index([sentById])
   @@index([entityType, entityId])
+}
+
+
+enum LanguageCourseType {
+  IELTS
+  PTE
+}
+
+enum TeachingEnrollmentStatus {
+  ACTIVE
+  COMPLETED
+  CANCELLED
+}
+
+enum TeachingAttendanceStatus {
+  PRESENT
+  ABSENT
+}
+
+enum TeachingDeliveryMode {
+  ONLINE
+  OFFLINE
+}
+
+enum TeachingStudyMode {
+  GROUP
+  SPECIAL_ATTENTION
+}
+
+model TeachingEnrollment {
+  id String @id @default(cuid())
+
+  applicationId String @unique
+  teacherId     String
+
+  courseType LanguageCourseType
+
+  status TeachingEnrollmentStatus @default(ACTIVE)
+
+  // Inclusive 10-day free language sprint.
+  startDate DateTime @db.Date
+  endDate   DateTime @db.Date
+
+  // Final exam booking
+  finalExamType LanguageCourseType?
+  finalExamDate DateTime? @db.Date
+  examBookedAt  DateTime?
+  examBookedById String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  application Application @relation( fields: [applicationId], references: [id], onDelete: Cascade )
+
+  teacher User @relation( "TeachingEnrollmentTeacher", fields: [teacherId], references: [id], onDelete: Restrict )
+
+  examBookedBy User? @relation( "TeachingExamBookedBy", fields: [examBookedById], references: [id], onDelete: Restrict )
+
+  dailyRecords TeachingDailyRecord[]
+  progressLogs TeacherDailyProgress[]
+
+  @@index([teacherId, status])
+  @@index([startDate, endDate])
+  @@index([finalExamDate])
+}
+
+model TeachingDailyRecord {
+  id String @id @default(cuid())
+
+  enrollmentId String
+  recordDate   DateTime @db.Date
+
+  attendance   TeachingAttendanceStatus
+  deliveryMode TeachingDeliveryMode
+  studyMode    TeachingStudyMode
+
+  // One-click discipline flag
+  disciplineFlaggedAt DateTime?
+  disciplineNote     String?
+
+  recordedById String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  enrollment TeachingEnrollment @relation( fields: [enrollmentId], references: [id], onDelete: Cascade )
+
+  recordedBy User @relation( "TeachingDailyRecordRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict )
+
+  @@unique([enrollmentId, recordDate])
+  @@index([enrollmentId, recordDate])
+  @@index([attendance, recordDate])
+  @@index([recordedById])
+}
+
+model TeacherDailyProgress {
+  id String @id @default(cuid())
+
+  enrollmentId String
+  teacherId    String
+  recordDate   DateTime @db.Date
+
+  strategyNotes      String?
+  strongAreas        String?
+  weakAreas          String?
+  estimatedDaysToTest Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  enrollment TeachingEnrollment @relation( fields: [enrollmentId], references: [id], onDelete: Cascade )
+
+  teacher User @relation( "TeacherDailyProgressTeacher", fields: [teacherId], references: [id], onDelete: Restrict )
+
+  @@unique([enrollmentId, recordDate])
+  @@index([teacherId, recordDate])
+  @@index([enrollmentId, recordDate])
+}
+
+enum TouristPrepStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+model TouristPrep {
+  id String @id @default(cuid())
+
+  applicationId String @unique
+  teacherId     String
+
+  status TouristPrepStatus @default(NOT_STARTED)
+
+  // Teacher worksheet
+  itinerary   Json?
+  interviewQa String?
+
+  // Finalized itinerary attachment
+  finalItineraryStorageKey String?
+  finalItineraryFileName   String?
+  finalItineraryMimeType   String?
+
+  completedAt   DateTime?
+  completedById String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  application Application @relation( fields: [applicationId], references: [id], onDelete: Cascade )
+
+  teacher User @relation( "TouristPrepTeacher", fields: [teacherId], references: [id], onDelete: Restrict )
+
+  completedBy User? @relation( "TouristPrepCompletedBy", fields: [completedById], references: [id], onDelete: Restrict )
+
+  @@index([teacherId, status])
+  @@index([status])
 }
