@@ -299,7 +299,7 @@ model Lead {
   updatedAt DateTime @updatedAt
 
   assignments LeadAssignment[]
-  registeration Registration?
+  registration Registration?
   @@index([source])
   @@index([status])
   @@index([clientId])
@@ -431,7 +431,7 @@ model Client {
   leads               Lead[]
   applications        Application[]
   invoices            Invoice[]
-  registeration       Registration[]
+  registrations       Registration[]
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
 }
