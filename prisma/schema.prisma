@@ -12,6 +12,48 @@ datasource db {
   provider = "postgresql"
 }
 
+
+
+
+model Branch {
+  id String @id @default(cuid())
+
+  branchCode String @unique
+  name       String
+
+  phone   String?
+  email   String?
+
+  addressLine1 String?
+  addressLine2 String?
+  city         String?
+  state        String?
+  postalCode   String?
+
+  isActive Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  employees Employee[]
+
+  leads              Lead[]
+  registrations      Registration[]
+  applications       Application[]
+  invoices           Invoice[]
+  expenses           Expense[]
+  financialEntries   FinancialEntry[]
+  whatsappConversations WhatsAppConversation[]
+  tasks              Task[]
+  // officeReports      OfficeDailyReport[]
+  teachingEnrollments TeachingEnrollment[]
+  employeeAttendance EmployeeAttendance[]
+  payrollEntries     PayrollEntry[]
+
+  @@index([isActive])
+}
+
+
 enum DEPARTMENT {
   ADMIN
   PARTNER
@@ -179,7 +221,8 @@ model Employee {
 
   userId String @unique
   user   User   @relation(fields: [userId], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   compensation   EmployeeCompensation[]
   schedules      EmployeeWorkSchedule[]
   payrollEntries PayrollEntry[] 
@@ -244,7 +287,8 @@ model PayrollEntry {
   employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
 
   salaryAdvances EmployeeSalaryAdvance[] @relation("PayrollAdvanceDeductions")
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   @@unique([employeeId, payrollMonth])
   @@index([payrollMonth, status])
 }
@@ -289,7 +333,8 @@ model EmployeeAttendance {
   updatedAt DateTime @updatedAt
 
   employee Employee @relation( fields: [employeeId], references: [id], onDelete: Restrict )
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   recordedBy User? @relation( "EmployeeAttendanceRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict )
 
   @@unique([employeeId, attendanceDate])
@@ -413,7 +458,8 @@ model Lead {
 
   clientId String
   client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -798,6 +844,9 @@ model Application {
   client                 Client                  @relation(fields: [clientId], references: [id], onDelete: Restrict)
   registration           Registration?           @relation("ApplicationToRegistration", fields: [registrationId], references: [id], onDelete: SetNull)
 
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
+
    teachingEnrollment TeachingEnrollment?
    touristPrep TouristPrep?
 
@@ -867,7 +916,8 @@ model Registration {
   registeredBy User @relation("RegistrationCreatedBy", fields: [registeredById], references: [id], onDelete: Restrict)
 
   cancelledBy User? @relation("RegistrationCancelledBy", fields: [cancelledById], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   applications Application[]     @relation("ApplicationToRegistration")
   invoices     Invoice[]
   commissions  CommissionEntry[]
@@ -961,7 +1011,8 @@ model Task {
   assignee User @relation("TaskAssignedTo", fields: [assigneeId], references: [id], onDelete: Restrict)
 
   createdBy User? @relation("TaskCreatedBy", fields: [createdById], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   notifications Notification[]
 
   @@index([assigneeId, status])
@@ -1158,7 +1209,8 @@ model Invoice {
   registration Registration? @relation(fields: [registrationId], references: [id], onDelete: Restrict)
 
   application Application? @relation(fields: [applicationId], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   payments Payment[]
   refunds  Refund[]
 
@@ -1278,7 +1330,8 @@ model Expense {
   voidedAt   DateTime?
 
   recordedBy User @relation("ExpenseRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict)
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   voidedBy User? @relation("ExpenseVoidedBy", fields: [voidedById], references: [id], onDelete: Restrict)
 
   @@index([category])
@@ -1339,7 +1392,8 @@ model FinancialEntry {
   recordedBy User @relation( "FinancialEntryRecordedBy", fields: [recordedById], references: [id], onDelete: Restrict )
 
   voidedBy User? @relation( "FinancialEntryVoidedBy", fields: [voidedById], references: [id], onDelete: Restrict )
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   @@index([kind])
   @@index([type])
   @@index([status])
@@ -1440,7 +1494,8 @@ model WhatsAppConversation {
   assignedTo User? @relation( "WhatsAppConversationAssignedTo", fields: [assignedToId], references: [id], onDelete: SetNull )
 
   closedBy User? @relation( "WhatsAppConversationClosedBy", fields: [closedById], references: [id], onDelete: SetNull )
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   messages WhatsAppMessage[]
 
   @@unique([contactWaId])
@@ -1590,7 +1645,8 @@ model TeachingEnrollment {
   teacher User @relation( "TeachingEnrollmentTeacher", fields: [teacherId], references: [id], onDelete: Restrict )
 
   examBookedBy User? @relation( "TeachingExamBookedBy", fields: [examBookedById], references: [id], onDelete: Restrict )
-
+  branchId String 
+  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
   dailyRecords TeachingDailyRecord[]
   progressLogs TeacherDailyProgress[]
 
