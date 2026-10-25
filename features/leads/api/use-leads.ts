@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  keepPreviousData,
-  useQuery,
-} from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 import { getLeads } from "./get-leads";
 import { leadKeys } from "./lead-query-keys";
@@ -17,6 +14,7 @@ export type UseLeadsParams = {
   status?: string;
   applicationType?: string;
   preferredCountry?: string;
+  assignmentScope?: "ALL" | "ASSIGNED" | "UNASSIGNED";
   sortBy?: string;
   sortOrder?: "asc" | "desc";
 };
@@ -30,6 +28,7 @@ export function useLeads({
   status,
   applicationType,
   preferredCountry,
+  assignmentScope = "ALL",
   sortBy = "createdAt",
   sortOrder = "desc",
 }: UseLeadsParams) {
@@ -43,6 +42,7 @@ export function useLeads({
       status: status ?? null,
       applicationType: applicationType ?? null,
       preferredCountry: preferredCountry ?? null,
+      assignmentScope,
       sortBy,
       sortOrder,
     }),
@@ -57,6 +57,7 @@ export function useLeads({
         status,
         applicationType,
         preferredCountry,
+        assignmentScope,
         sortBy,
         sortOrder,
       }),

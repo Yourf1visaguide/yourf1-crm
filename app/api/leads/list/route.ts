@@ -1,18 +1,11 @@
 import { NextRequest } from "next/server";
 
-import {
-  handleApiError,
-  successResponse,
-} from "@/lib/api-response";
+import { handleApiError, successResponse } from "@/lib/api-response";
 import { ApiError } from "@/lib/api-error";
 import { requirePermission } from "@/lib/auth/require-permission";
 
-import {
-  leadListQuerySchema,
-} from "@/features/leads/schemas/lead-list-schema";
-import {
-  getLeads,
-} from "@/features/leads/queries/lead-queries";
+import { leadListQuerySchema } from "@/features/leads/schemas/lead-list-schema";
+import { getLeads } from "@/features/leads/queries/lead-queries";
 
 async function requireLeadReadAccess() {
   try {
@@ -51,11 +44,9 @@ export async function GET(request: NextRequest) {
       search: searchParams.get("search") ?? undefined,
 
       status: searchParams.get("status") ?? undefined,
-      applicationType:
-        searchParams.get("applicationType") ?? undefined,
-      preferredCountry:
-        searchParams.get("preferredCountry") ?? undefined,
-
+      applicationType: searchParams.get("applicationType") ?? undefined,
+      preferredCountry: searchParams.get("preferredCountry") ?? undefined,
+      assignmentScope: searchParams.get("assignmentScope") ?? undefined,
       sortBy: searchParams.get("sortBy") ?? undefined,
       sortOrder: searchParams.get("sortOrder") ?? undefined,
     });
