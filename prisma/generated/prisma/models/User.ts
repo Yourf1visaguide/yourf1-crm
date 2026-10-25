@@ -222,6 +222,35 @@ export type UserWhereInput = {
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
   officeReportsCreated?: Prisma.OfficeDailyReportListRelationFilter
+  leadAssignedTo?: Prisma.LeadAssignmentListRelationFilter
+  leadAssignedBy?: Prisma.LeadAssignmentListRelationFilter
+  registrations?: Prisma.RegistrationListRelationFilter
+  registrationsCancelled?: Prisma.RegistrationListRelationFilter
+  paymentsReceived?: Prisma.PaymentListRelationFilter
+  refundsProcessed?: Prisma.RefundListRelationFilter
+  tasksAssigned?: Prisma.TaskListRelationFilter
+  tasksCreated?: Prisma.TaskListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
+  notificationsResolved?: Prisma.NotificationListRelationFilter
+  auditLogs?: Prisma.AuditLogListRelationFilter
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentListRelationFilter
+  expensesRecorded?: Prisma.ExpenseListRelationFilter
+  expensesVoided?: Prisma.ExpenseListRelationFilter
+  financialEntriesRecorded?: Prisma.FinancialEntryListRelationFilter
+  financialEntriesVoided?: Prisma.FinancialEntryListRelationFilter
+  postVisaTasksCompleted?: Prisma.PostVisaTaskListRelationFilter
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationListRelationFilter
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationListRelationFilter
+  whatsappMessagesSent?: Prisma.WhatsAppMessageListRelationFilter
+  teachingEnrollments?: Prisma.TeachingEnrollmentListRelationFilter
+  teachingExamBookings?: Prisma.TeachingEnrollmentListRelationFilter
+  teachingDailyRecords?: Prisma.TeachingDailyRecordListRelationFilter
+  teacherDailyProgress?: Prisma.TeacherDailyProgressListRelationFilter
+  touristPrepsCompleted?: Prisma.TouristPrepListRelationFilter
+  touristPrepsCreated?: Prisma.TouristPrepListRelationFilter
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceListRelationFilter
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceListRelationFilter
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -239,6 +268,35 @@ export type UserOrderByWithRelationInput = {
   sessions?: Prisma.SessionOrderByRelationAggregateInput
   accounts?: Prisma.AccountOrderByRelationAggregateInput
   officeReportsCreated?: Prisma.OfficeDailyReportOrderByRelationAggregateInput
+  leadAssignedTo?: Prisma.LeadAssignmentOrderByRelationAggregateInput
+  leadAssignedBy?: Prisma.LeadAssignmentOrderByRelationAggregateInput
+  registrations?: Prisma.RegistrationOrderByRelationAggregateInput
+  registrationsCancelled?: Prisma.RegistrationOrderByRelationAggregateInput
+  paymentsReceived?: Prisma.PaymentOrderByRelationAggregateInput
+  refundsProcessed?: Prisma.RefundOrderByRelationAggregateInput
+  tasksAssigned?: Prisma.TaskOrderByRelationAggregateInput
+  tasksCreated?: Prisma.TaskOrderByRelationAggregateInput
+  notifications?: Prisma.NotificationOrderByRelationAggregateInput
+  notificationsResolved?: Prisma.NotificationOrderByRelationAggregateInput
+  auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentOrderByRelationAggregateInput
+  expensesRecorded?: Prisma.ExpenseOrderByRelationAggregateInput
+  expensesVoided?: Prisma.ExpenseOrderByRelationAggregateInput
+  financialEntriesRecorded?: Prisma.FinancialEntryOrderByRelationAggregateInput
+  financialEntriesVoided?: Prisma.FinancialEntryOrderByRelationAggregateInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskOrderByRelationAggregateInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationOrderByRelationAggregateInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationOrderByRelationAggregateInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageOrderByRelationAggregateInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentOrderByRelationAggregateInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentOrderByRelationAggregateInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordOrderByRelationAggregateInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressOrderByRelationAggregateInput
+  touristPrepsCompleted?: Prisma.TouristPrepOrderByRelationAggregateInput
+  touristPrepsCreated?: Prisma.TouristPrepOrderByRelationAggregateInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceOrderByRelationAggregateInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceOrderByRelationAggregateInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -259,6 +317,35 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   sessions?: Prisma.SessionListRelationFilter
   accounts?: Prisma.AccountListRelationFilter
   officeReportsCreated?: Prisma.OfficeDailyReportListRelationFilter
+  leadAssignedTo?: Prisma.LeadAssignmentListRelationFilter
+  leadAssignedBy?: Prisma.LeadAssignmentListRelationFilter
+  registrations?: Prisma.RegistrationListRelationFilter
+  registrationsCancelled?: Prisma.RegistrationListRelationFilter
+  paymentsReceived?: Prisma.PaymentListRelationFilter
+  refundsProcessed?: Prisma.RefundListRelationFilter
+  tasksAssigned?: Prisma.TaskListRelationFilter
+  tasksCreated?: Prisma.TaskListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
+  notificationsResolved?: Prisma.NotificationListRelationFilter
+  auditLogs?: Prisma.AuditLogListRelationFilter
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentListRelationFilter
+  expensesRecorded?: Prisma.ExpenseListRelationFilter
+  expensesVoided?: Prisma.ExpenseListRelationFilter
+  financialEntriesRecorded?: Prisma.FinancialEntryListRelationFilter
+  financialEntriesVoided?: Prisma.FinancialEntryListRelationFilter
+  postVisaTasksCompleted?: Prisma.PostVisaTaskListRelationFilter
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationListRelationFilter
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationListRelationFilter
+  whatsappMessagesSent?: Prisma.WhatsAppMessageListRelationFilter
+  teachingEnrollments?: Prisma.TeachingEnrollmentListRelationFilter
+  teachingExamBookings?: Prisma.TeachingEnrollmentListRelationFilter
+  teachingDailyRecords?: Prisma.TeachingDailyRecordListRelationFilter
+  teacherDailyProgress?: Prisma.TeacherDailyProgressListRelationFilter
+  touristPrepsCompleted?: Prisma.TouristPrepListRelationFilter
+  touristPrepsCreated?: Prisma.TouristPrepListRelationFilter
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceListRelationFilter
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceListRelationFilter
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryListRelationFilter
 }, "id" | "email" | "username">
 
 export type UserOrderByWithAggregationInput = {
@@ -308,6 +395,35 @@ export type UserCreateInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -325,6 +441,35 @@ export type UserUncheckedCreateInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUpdateInput = {
@@ -342,6 +487,35 @@ export type UserUpdateInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -359,6 +533,35 @@ export type UserUncheckedUpdateInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -450,29 +653,18 @@ export type UserScalarRelationFilter = {
   isNot?: Prisma.UserWhereInput
 }
 
+export type UserNullableScalarRelationFilter = {
+  is?: Prisma.UserWhereInput | null
+  isNot?: Prisma.UserWhereInput | null
+}
+
 export type UserCreaterolesInput = {
   set: $Enums.ROLES[]
-}
-
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
-export type BoolFieldUpdateOperationsInput = {
-  set?: boolean
 }
 
 export type UserUpdaterolesInput = {
   set?: $Enums.ROLES[]
   push?: $Enums.ROLES | $Enums.ROLES[]
-}
-
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
 }
 
 export type UserCreateNestedOneWithoutSessionsInput = {
@@ -517,6 +709,36 @@ export type UserUpdateOneRequiredWithoutEmployeeNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutEmployeeInput, Prisma.UserUpdateWithoutEmployeeInput>, Prisma.UserUncheckedUpdateWithoutEmployeeInput>
 }
 
+export type UserCreateNestedOneWithoutEmployeeAttendancesRecordedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedCreateWithoutEmployeeAttendancesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEmployeeAttendancesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutEmployeeAttendancesRecordedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedCreateWithoutEmployeeAttendancesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutEmployeeAttendancesRecordedInput
+  upsert?: Prisma.UserUpsertWithoutEmployeeAttendancesRecordedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutEmployeeAttendancesRecordedInput, Prisma.UserUpdateWithoutEmployeeAttendancesRecordedInput>, Prisma.UserUncheckedUpdateWithoutEmployeeAttendancesRecordedInput>
+}
+
+export type UserCreateNestedOneWithoutSalaryAdvancesRecordedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedCreateWithoutSalaryAdvancesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSalaryAdvancesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutSalaryAdvancesRecordedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedCreateWithoutSalaryAdvancesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSalaryAdvancesRecordedInput
+  upsert?: Prisma.UserUpsertWithoutSalaryAdvancesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSalaryAdvancesRecordedInput, Prisma.UserUpdateWithoutSalaryAdvancesRecordedInput>, Prisma.UserUncheckedUpdateWithoutSalaryAdvancesRecordedInput>
+}
+
 export type UserCreateNestedOneWithoutOfficeReportsCreatedInput = {
   create?: Prisma.XOR<Prisma.UserCreateWithoutOfficeReportsCreatedInput, Prisma.UserUncheckedCreateWithoutOfficeReportsCreatedInput>
   connectOrCreate?: Prisma.UserCreateOrConnectWithoutOfficeReportsCreatedInput
@@ -529,6 +751,412 @@ export type UserUpdateOneRequiredWithoutOfficeReportsCreatedNestedInput = {
   upsert?: Prisma.UserUpsertWithoutOfficeReportsCreatedInput
   connect?: Prisma.UserWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutOfficeReportsCreatedInput, Prisma.UserUpdateWithoutOfficeReportsCreatedInput>, Prisma.UserUncheckedUpdateWithoutOfficeReportsCreatedInput>
+}
+
+export type UserCreateNestedOneWithoutLeadStatusHistoryChangedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedCreateWithoutLeadStatusHistoryChangedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadStatusHistoryChangedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutLeadStatusHistoryChangedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedCreateWithoutLeadStatusHistoryChangedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadStatusHistoryChangedInput
+  upsert?: Prisma.UserUpsertWithoutLeadStatusHistoryChangedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLeadStatusHistoryChangedInput, Prisma.UserUpdateWithoutLeadStatusHistoryChangedInput>, Prisma.UserUncheckedUpdateWithoutLeadStatusHistoryChangedInput>
+}
+
+export type UserCreateNestedOneWithoutLeadAssignedToInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedToInput, Prisma.UserUncheckedCreateWithoutLeadAssignedToInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadAssignedToInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutLeadAssignedByInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedByInput, Prisma.UserUncheckedCreateWithoutLeadAssignedByInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadAssignedByInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutLeadAssignedToNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedToInput, Prisma.UserUncheckedCreateWithoutLeadAssignedToInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadAssignedToInput
+  upsert?: Prisma.UserUpsertWithoutLeadAssignedToInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLeadAssignedToInput, Prisma.UserUpdateWithoutLeadAssignedToInput>, Prisma.UserUncheckedUpdateWithoutLeadAssignedToInput>
+}
+
+export type UserUpdateOneRequiredWithoutLeadAssignedByNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedByInput, Prisma.UserUncheckedCreateWithoutLeadAssignedByInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutLeadAssignedByInput
+  upsert?: Prisma.UserUpsertWithoutLeadAssignedByInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutLeadAssignedByInput, Prisma.UserUpdateWithoutLeadAssignedByInput>, Prisma.UserUncheckedUpdateWithoutLeadAssignedByInput>
+}
+
+export type UserCreateNestedOneWithoutRegistrationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsInput, Prisma.UserUncheckedCreateWithoutRegistrationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRegistrationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutRegistrationsCancelledInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedCreateWithoutRegistrationsCancelledInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRegistrationsCancelledInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutRegistrationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsInput, Prisma.UserUncheckedCreateWithoutRegistrationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRegistrationsInput
+  upsert?: Prisma.UserUpsertWithoutRegistrationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutRegistrationsInput, Prisma.UserUpdateWithoutRegistrationsInput>, Prisma.UserUncheckedUpdateWithoutRegistrationsInput>
+}
+
+export type UserUpdateOneWithoutRegistrationsCancelledNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedCreateWithoutRegistrationsCancelledInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRegistrationsCancelledInput
+  upsert?: Prisma.UserUpsertWithoutRegistrationsCancelledInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutRegistrationsCancelledInput, Prisma.UserUpdateWithoutRegistrationsCancelledInput>, Prisma.UserUncheckedUpdateWithoutRegistrationsCancelledInput>
+}
+
+export type UserCreateNestedOneWithoutTasksAssignedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTasksAssignedInput, Prisma.UserUncheckedCreateWithoutTasksAssignedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTasksAssignedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutTasksCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTasksCreatedInput, Prisma.UserUncheckedCreateWithoutTasksCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTasksCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTasksAssignedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTasksAssignedInput, Prisma.UserUncheckedCreateWithoutTasksAssignedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTasksAssignedInput
+  upsert?: Prisma.UserUpsertWithoutTasksAssignedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTasksAssignedInput, Prisma.UserUpdateWithoutTasksAssignedInput>, Prisma.UserUncheckedUpdateWithoutTasksAssignedInput>
+}
+
+export type UserUpdateOneWithoutTasksCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTasksCreatedInput, Prisma.UserUncheckedCreateWithoutTasksCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTasksCreatedInput
+  upsert?: Prisma.UserUpsertWithoutTasksCreatedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTasksCreatedInput, Prisma.UserUpdateWithoutTasksCreatedInput>, Prisma.UserUncheckedUpdateWithoutTasksCreatedInput>
+}
+
+export type UserCreateNestedOneWithoutNotificationsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutNotificationsInput, Prisma.UserUncheckedCreateWithoutNotificationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNotificationsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutNotificationsResolvedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutNotificationsResolvedInput, Prisma.UserUncheckedCreateWithoutNotificationsResolvedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNotificationsResolvedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutNotificationsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutNotificationsInput, Prisma.UserUncheckedCreateWithoutNotificationsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNotificationsInput
+  upsert?: Prisma.UserUpsertWithoutNotificationsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutNotificationsInput, Prisma.UserUpdateWithoutNotificationsInput>, Prisma.UserUncheckedUpdateWithoutNotificationsInput>
+}
+
+export type UserUpdateOneWithoutNotificationsResolvedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutNotificationsResolvedInput, Prisma.UserUncheckedCreateWithoutNotificationsResolvedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutNotificationsResolvedInput
+  upsert?: Prisma.UserUpsertWithoutNotificationsResolvedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutNotificationsResolvedInput, Prisma.UserUpdateWithoutNotificationsResolvedInput>, Prisma.UserUncheckedUpdateWithoutNotificationsResolvedInput>
+}
+
+export type UserCreateNestedOneWithoutAuditLogsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAuditLogsInput, Prisma.UserUncheckedCreateWithoutAuditLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAuditLogsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutAuditLogsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAuditLogsInput, Prisma.UserUncheckedCreateWithoutAuditLogsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAuditLogsInput
+  upsert?: Prisma.UserUpsertWithoutAuditLogsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAuditLogsInput, Prisma.UserUpdateWithoutAuditLogsInput>, Prisma.UserUncheckedUpdateWithoutAuditLogsInput>
+}
+
+export type UserCreateNestedOneWithoutApplicationDocumentsUploadedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedCreateWithoutApplicationDocumentsUploadedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutApplicationDocumentsUploadedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutApplicationDocumentsUploadedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedCreateWithoutApplicationDocumentsUploadedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutApplicationDocumentsUploadedInput
+  upsert?: Prisma.UserUpsertWithoutApplicationDocumentsUploadedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutApplicationDocumentsUploadedInput, Prisma.UserUpdateWithoutApplicationDocumentsUploadedInput>, Prisma.UserUncheckedUpdateWithoutApplicationDocumentsUploadedInput>
+}
+
+export type UserCreateNestedOneWithoutPaymentsReceivedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPaymentsReceivedInput, Prisma.UserUncheckedCreateWithoutPaymentsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPaymentsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutPaymentsReceivedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPaymentsReceivedInput, Prisma.UserUncheckedCreateWithoutPaymentsReceivedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPaymentsReceivedInput
+  upsert?: Prisma.UserUpsertWithoutPaymentsReceivedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPaymentsReceivedInput, Prisma.UserUpdateWithoutPaymentsReceivedInput>, Prisma.UserUncheckedUpdateWithoutPaymentsReceivedInput>
+}
+
+export type UserCreateNestedOneWithoutRefundsProcessedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRefundsProcessedInput, Prisma.UserUncheckedCreateWithoutRefundsProcessedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRefundsProcessedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutRefundsProcessedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutRefundsProcessedInput, Prisma.UserUncheckedCreateWithoutRefundsProcessedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutRefundsProcessedInput
+  upsert?: Prisma.UserUpsertWithoutRefundsProcessedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutRefundsProcessedInput, Prisma.UserUpdateWithoutRefundsProcessedInput>, Prisma.UserUncheckedUpdateWithoutRefundsProcessedInput>
+}
+
+export type UserCreateNestedOneWithoutExpensesRecordedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExpensesRecordedInput, Prisma.UserUncheckedCreateWithoutExpensesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExpensesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutExpensesVoidedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExpensesVoidedInput, Prisma.UserUncheckedCreateWithoutExpensesVoidedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExpensesVoidedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutExpensesRecordedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExpensesRecordedInput, Prisma.UserUncheckedCreateWithoutExpensesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExpensesRecordedInput
+  upsert?: Prisma.UserUpsertWithoutExpensesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutExpensesRecordedInput, Prisma.UserUpdateWithoutExpensesRecordedInput>, Prisma.UserUncheckedUpdateWithoutExpensesRecordedInput>
+}
+
+export type UserUpdateOneWithoutExpensesVoidedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutExpensesVoidedInput, Prisma.UserUncheckedCreateWithoutExpensesVoidedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutExpensesVoidedInput
+  upsert?: Prisma.UserUpsertWithoutExpensesVoidedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutExpensesVoidedInput, Prisma.UserUpdateWithoutExpensesVoidedInput>, Prisma.UserUncheckedUpdateWithoutExpensesVoidedInput>
+}
+
+export type UserCreateNestedOneWithoutFinancialEntriesRecordedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFinancialEntriesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutFinancialEntriesVoidedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesVoidedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFinancialEntriesVoidedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFinancialEntriesRecordedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesRecordedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFinancialEntriesRecordedInput
+  upsert?: Prisma.UserUpsertWithoutFinancialEntriesRecordedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFinancialEntriesRecordedInput, Prisma.UserUpdateWithoutFinancialEntriesRecordedInput>, Prisma.UserUncheckedUpdateWithoutFinancialEntriesRecordedInput>
+}
+
+export type UserUpdateOneWithoutFinancialEntriesVoidedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesVoidedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFinancialEntriesVoidedInput
+  upsert?: Prisma.UserUpsertWithoutFinancialEntriesVoidedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFinancialEntriesVoidedInput, Prisma.UserUpdateWithoutFinancialEntriesVoidedInput>, Prisma.UserUncheckedUpdateWithoutFinancialEntriesVoidedInput>
+}
+
+export type UserCreateNestedOneWithoutPostVisaTasksCompletedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedCreateWithoutPostVisaTasksCompletedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPostVisaTasksCompletedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutPostVisaTasksCompletedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedCreateWithoutPostVisaTasksCompletedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutPostVisaTasksCompletedInput
+  upsert?: Prisma.UserUpsertWithoutPostVisaTasksCompletedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutPostVisaTasksCompletedInput, Prisma.UserUpdateWithoutPostVisaTasksCompletedInput>, Prisma.UserUncheckedUpdateWithoutPostVisaTasksCompletedInput>
+}
+
+export type UserCreateNestedOneWithoutWhatsappConversationsAssignedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsAssignedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappConversationsAssignedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutWhatsappConversationsClosedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsClosedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappConversationsClosedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutWhatsappConversationsAssignedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsAssignedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappConversationsAssignedInput
+  upsert?: Prisma.UserUpsertWithoutWhatsappConversationsAssignedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWhatsappConversationsAssignedInput, Prisma.UserUpdateWithoutWhatsappConversationsAssignedInput>, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsAssignedInput>
+}
+
+export type UserUpdateOneWithoutWhatsappConversationsClosedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsClosedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappConversationsClosedInput
+  upsert?: Prisma.UserUpsertWithoutWhatsappConversationsClosedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWhatsappConversationsClosedInput, Prisma.UserUpdateWithoutWhatsappConversationsClosedInput>, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsClosedInput>
+}
+
+export type UserCreateNestedOneWithoutWhatsappMessagesSentInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedCreateWithoutWhatsappMessagesSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappMessagesSentInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutWhatsappMessagesSentNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedCreateWithoutWhatsappMessagesSentInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutWhatsappMessagesSentInput
+  upsert?: Prisma.UserUpsertWithoutWhatsappMessagesSentInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWhatsappMessagesSentInput, Prisma.UserUpdateWithoutWhatsappMessagesSentInput>, Prisma.UserUncheckedUpdateWithoutWhatsappMessagesSentInput>
+}
+
+export type UserCreateNestedOneWithoutTeachingEnrollmentsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedCreateWithoutTeachingEnrollmentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingEnrollmentsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutTeachingExamBookingsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedCreateWithoutTeachingExamBookingsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingExamBookingsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTeachingEnrollmentsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedCreateWithoutTeachingEnrollmentsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingEnrollmentsInput
+  upsert?: Prisma.UserUpsertWithoutTeachingEnrollmentsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTeachingEnrollmentsInput, Prisma.UserUpdateWithoutTeachingEnrollmentsInput>, Prisma.UserUncheckedUpdateWithoutTeachingEnrollmentsInput>
+}
+
+export type UserUpdateOneWithoutTeachingExamBookingsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedCreateWithoutTeachingExamBookingsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingExamBookingsInput
+  upsert?: Prisma.UserUpsertWithoutTeachingExamBookingsInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTeachingExamBookingsInput, Prisma.UserUpdateWithoutTeachingExamBookingsInput>, Prisma.UserUncheckedUpdateWithoutTeachingExamBookingsInput>
+}
+
+export type UserCreateNestedOneWithoutTeachingDailyRecordsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedCreateWithoutTeachingDailyRecordsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingDailyRecordsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTeachingDailyRecordsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedCreateWithoutTeachingDailyRecordsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeachingDailyRecordsInput
+  upsert?: Prisma.UserUpsertWithoutTeachingDailyRecordsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTeachingDailyRecordsInput, Prisma.UserUpdateWithoutTeachingDailyRecordsInput>, Prisma.UserUncheckedUpdateWithoutTeachingDailyRecordsInput>
+}
+
+export type UserCreateNestedOneWithoutTeacherDailyProgressInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedCreateWithoutTeacherDailyProgressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeacherDailyProgressInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTeacherDailyProgressNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedCreateWithoutTeacherDailyProgressInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTeacherDailyProgressInput
+  upsert?: Prisma.UserUpsertWithoutTeacherDailyProgressInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTeacherDailyProgressInput, Prisma.UserUpdateWithoutTeacherDailyProgressInput>, Prisma.UserUncheckedUpdateWithoutTeacherDailyProgressInput>
+}
+
+export type UserCreateNestedOneWithoutTouristPrepsCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTouristPrepsCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutTouristPrepsCompletedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCompletedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTouristPrepsCompletedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutTouristPrepsCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTouristPrepsCreatedInput
+  upsert?: Prisma.UserUpsertWithoutTouristPrepsCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTouristPrepsCreatedInput, Prisma.UserUpdateWithoutTouristPrepsCreatedInput>, Prisma.UserUncheckedUpdateWithoutTouristPrepsCreatedInput>
+}
+
+export type UserUpdateOneWithoutTouristPrepsCompletedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCompletedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutTouristPrepsCompletedInput
+  upsert?: Prisma.UserUpsertWithoutTouristPrepsCompletedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutTouristPrepsCompletedInput, Prisma.UserUpdateWithoutTouristPrepsCompletedInput>, Prisma.UserUncheckedUpdateWithoutTouristPrepsCompletedInput>
 }
 
 export type UserCreateWithoutSessionsInput = {
@@ -545,6 +1173,35 @@ export type UserCreateWithoutSessionsInput = {
   employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -561,6 +1218,35 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -593,6 +1279,35 @@ export type UserUpdateWithoutSessionsInput = {
   employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -609,6 +1324,35 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserCreateWithoutAccountsInput = {
@@ -625,6 +1369,35 @@ export type UserCreateWithoutAccountsInput = {
   employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUncheckedCreateWithoutAccountsInput = {
@@ -641,6 +1414,35 @@ export type UserUncheckedCreateWithoutAccountsInput = {
   employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
 }
 
 export type UserCreateOrConnectWithoutAccountsInput = {
@@ -673,6 +1475,35 @@ export type UserUpdateWithoutAccountsInput = {
   employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -689,6 +1520,35 @@ export type UserUncheckedUpdateWithoutAccountsInput = {
   employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserCreateWithoutEmployeeInput = {
@@ -705,6 +1565,35 @@ export type UserCreateWithoutEmployeeInput = {
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUncheckedCreateWithoutEmployeeInput = {
@@ -721,6 +1610,35 @@ export type UserUncheckedCreateWithoutEmployeeInput = {
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
 }
 
 export type UserCreateOrConnectWithoutEmployeeInput = {
@@ -753,6 +1671,35 @@ export type UserUpdateWithoutEmployeeInput = {
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEmployeeInput = {
@@ -769,6 +1716,427 @@ export type UserUncheckedUpdateWithoutEmployeeInput = {
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
   officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutEmployeeAttendancesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutEmployeeAttendancesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutEmployeeAttendancesRecordedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedCreateWithoutEmployeeAttendancesRecordedInput>
+}
+
+export type UserUpsertWithoutEmployeeAttendancesRecordedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedUpdateWithoutEmployeeAttendancesRecordedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedCreateWithoutEmployeeAttendancesRecordedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutEmployeeAttendancesRecordedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutEmployeeAttendancesRecordedInput, Prisma.UserUncheckedUpdateWithoutEmployeeAttendancesRecordedInput>
+}
+
+export type UserUpdateWithoutEmployeeAttendancesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutEmployeeAttendancesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutSalaryAdvancesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutSalaryAdvancesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutSalaryAdvancesRecordedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedCreateWithoutSalaryAdvancesRecordedInput>
+}
+
+export type UserUpsertWithoutSalaryAdvancesRecordedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedUpdateWithoutSalaryAdvancesRecordedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedCreateWithoutSalaryAdvancesRecordedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutSalaryAdvancesRecordedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutSalaryAdvancesRecordedInput, Prisma.UserUncheckedUpdateWithoutSalaryAdvancesRecordedInput>
+}
+
+export type UserUpdateWithoutSalaryAdvancesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutSalaryAdvancesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserCreateWithoutOfficeReportsCreatedInput = {
@@ -785,6 +2153,35 @@ export type UserCreateWithoutOfficeReportsCreatedInput = {
   employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
 }
 
 export type UserUncheckedCreateWithoutOfficeReportsCreatedInput = {
@@ -801,6 +2198,35 @@ export type UserUncheckedCreateWithoutOfficeReportsCreatedInput = {
   employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
   sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
   accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
 }
 
 export type UserCreateOrConnectWithoutOfficeReportsCreatedInput = {
@@ -833,6 +2259,35 @@ export type UserUpdateWithoutOfficeReportsCreatedInput = {
   employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOfficeReportsCreatedInput = {
@@ -849,6 +2304,5327 @@ export type UserUncheckedUpdateWithoutOfficeReportsCreatedInput = {
   employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
   sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
   accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutLeadStatusHistoryChangedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+}
+
+export type UserUncheckedCreateWithoutLeadStatusHistoryChangedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+}
+
+export type UserCreateOrConnectWithoutLeadStatusHistoryChangedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedCreateWithoutLeadStatusHistoryChangedInput>
+}
+
+export type UserUpsertWithoutLeadStatusHistoryChangedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedUpdateWithoutLeadStatusHistoryChangedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedCreateWithoutLeadStatusHistoryChangedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLeadStatusHistoryChangedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLeadStatusHistoryChangedInput, Prisma.UserUncheckedUpdateWithoutLeadStatusHistoryChangedInput>
+}
+
+export type UserUpdateWithoutLeadStatusHistoryChangedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLeadStatusHistoryChangedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+}
+
+export type UserCreateWithoutLeadAssignedToInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutLeadAssignedToInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutLeadAssignedToInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedToInput, Prisma.UserUncheckedCreateWithoutLeadAssignedToInput>
+}
+
+export type UserCreateWithoutLeadAssignedByInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutLeadAssignedByInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutLeadAssignedByInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedByInput, Prisma.UserUncheckedCreateWithoutLeadAssignedByInput>
+}
+
+export type UserUpsertWithoutLeadAssignedToInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLeadAssignedToInput, Prisma.UserUncheckedUpdateWithoutLeadAssignedToInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedToInput, Prisma.UserUncheckedCreateWithoutLeadAssignedToInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLeadAssignedToInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLeadAssignedToInput, Prisma.UserUncheckedUpdateWithoutLeadAssignedToInput>
+}
+
+export type UserUpdateWithoutLeadAssignedToInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLeadAssignedToInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutLeadAssignedByInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutLeadAssignedByInput, Prisma.UserUncheckedUpdateWithoutLeadAssignedByInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutLeadAssignedByInput, Prisma.UserUncheckedCreateWithoutLeadAssignedByInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutLeadAssignedByInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutLeadAssignedByInput, Prisma.UserUncheckedUpdateWithoutLeadAssignedByInput>
+}
+
+export type UserUpdateWithoutLeadAssignedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutLeadAssignedByInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutRegistrationsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutRegistrationsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutRegistrationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsInput, Prisma.UserUncheckedCreateWithoutRegistrationsInput>
+}
+
+export type UserCreateWithoutRegistrationsCancelledInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutRegistrationsCancelledInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutRegistrationsCancelledInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedCreateWithoutRegistrationsCancelledInput>
+}
+
+export type UserUpsertWithoutRegistrationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutRegistrationsInput, Prisma.UserUncheckedUpdateWithoutRegistrationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsInput, Prisma.UserUncheckedCreateWithoutRegistrationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutRegistrationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutRegistrationsInput, Prisma.UserUncheckedUpdateWithoutRegistrationsInput>
+}
+
+export type UserUpdateWithoutRegistrationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutRegistrationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutRegistrationsCancelledInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedUpdateWithoutRegistrationsCancelledInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedCreateWithoutRegistrationsCancelledInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutRegistrationsCancelledInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutRegistrationsCancelledInput, Prisma.UserUncheckedUpdateWithoutRegistrationsCancelledInput>
+}
+
+export type UserUpdateWithoutRegistrationsCancelledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutRegistrationsCancelledInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutTasksAssignedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTasksAssignedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTasksAssignedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTasksAssignedInput, Prisma.UserUncheckedCreateWithoutTasksAssignedInput>
+}
+
+export type UserCreateWithoutTasksCreatedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTasksCreatedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTasksCreatedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTasksCreatedInput, Prisma.UserUncheckedCreateWithoutTasksCreatedInput>
+}
+
+export type UserUpsertWithoutTasksAssignedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTasksAssignedInput, Prisma.UserUncheckedUpdateWithoutTasksAssignedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTasksAssignedInput, Prisma.UserUncheckedCreateWithoutTasksAssignedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTasksAssignedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTasksAssignedInput, Prisma.UserUncheckedUpdateWithoutTasksAssignedInput>
+}
+
+export type UserUpdateWithoutTasksAssignedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTasksAssignedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutTasksCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTasksCreatedInput, Prisma.UserUncheckedUpdateWithoutTasksCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTasksCreatedInput, Prisma.UserUncheckedCreateWithoutTasksCreatedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTasksCreatedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTasksCreatedInput, Prisma.UserUncheckedUpdateWithoutTasksCreatedInput>
+}
+
+export type UserUpdateWithoutTasksCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTasksCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutNotificationsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutNotificationsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutNotificationsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutNotificationsInput, Prisma.UserUncheckedCreateWithoutNotificationsInput>
+}
+
+export type UserCreateWithoutNotificationsResolvedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutNotificationsResolvedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutNotificationsResolvedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutNotificationsResolvedInput, Prisma.UserUncheckedCreateWithoutNotificationsResolvedInput>
+}
+
+export type UserUpsertWithoutNotificationsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutNotificationsInput, Prisma.UserUncheckedUpdateWithoutNotificationsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutNotificationsInput, Prisma.UserUncheckedCreateWithoutNotificationsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutNotificationsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutNotificationsInput, Prisma.UserUncheckedUpdateWithoutNotificationsInput>
+}
+
+export type UserUpdateWithoutNotificationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutNotificationsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutNotificationsResolvedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutNotificationsResolvedInput, Prisma.UserUncheckedUpdateWithoutNotificationsResolvedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutNotificationsResolvedInput, Prisma.UserUncheckedCreateWithoutNotificationsResolvedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutNotificationsResolvedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutNotificationsResolvedInput, Prisma.UserUncheckedUpdateWithoutNotificationsResolvedInput>
+}
+
+export type UserUpdateWithoutNotificationsResolvedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutNotificationsResolvedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutAuditLogsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutAuditLogsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutAuditLogsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAuditLogsInput, Prisma.UserUncheckedCreateWithoutAuditLogsInput>
+}
+
+export type UserUpsertWithoutAuditLogsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAuditLogsInput, Prisma.UserUncheckedUpdateWithoutAuditLogsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAuditLogsInput, Prisma.UserUncheckedCreateWithoutAuditLogsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAuditLogsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAuditLogsInput, Prisma.UserUncheckedUpdateWithoutAuditLogsInput>
+}
+
+export type UserUpdateWithoutAuditLogsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAuditLogsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutApplicationDocumentsUploadedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutApplicationDocumentsUploadedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutApplicationDocumentsUploadedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedCreateWithoutApplicationDocumentsUploadedInput>
+}
+
+export type UserUpsertWithoutApplicationDocumentsUploadedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedUpdateWithoutApplicationDocumentsUploadedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedCreateWithoutApplicationDocumentsUploadedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutApplicationDocumentsUploadedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutApplicationDocumentsUploadedInput, Prisma.UserUncheckedUpdateWithoutApplicationDocumentsUploadedInput>
+}
+
+export type UserUpdateWithoutApplicationDocumentsUploadedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutApplicationDocumentsUploadedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutPaymentsReceivedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutPaymentsReceivedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutPaymentsReceivedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPaymentsReceivedInput, Prisma.UserUncheckedCreateWithoutPaymentsReceivedInput>
+}
+
+export type UserUpsertWithoutPaymentsReceivedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPaymentsReceivedInput, Prisma.UserUncheckedUpdateWithoutPaymentsReceivedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPaymentsReceivedInput, Prisma.UserUncheckedCreateWithoutPaymentsReceivedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPaymentsReceivedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPaymentsReceivedInput, Prisma.UserUncheckedUpdateWithoutPaymentsReceivedInput>
+}
+
+export type UserUpdateWithoutPaymentsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPaymentsReceivedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutRefundsProcessedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutRefundsProcessedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutRefundsProcessedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutRefundsProcessedInput, Prisma.UserUncheckedCreateWithoutRefundsProcessedInput>
+}
+
+export type UserUpsertWithoutRefundsProcessedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutRefundsProcessedInput, Prisma.UserUncheckedUpdateWithoutRefundsProcessedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutRefundsProcessedInput, Prisma.UserUncheckedCreateWithoutRefundsProcessedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutRefundsProcessedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutRefundsProcessedInput, Prisma.UserUncheckedUpdateWithoutRefundsProcessedInput>
+}
+
+export type UserUpdateWithoutRefundsProcessedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutRefundsProcessedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutExpensesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutExpensesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutExpensesRecordedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutExpensesRecordedInput, Prisma.UserUncheckedCreateWithoutExpensesRecordedInput>
+}
+
+export type UserCreateWithoutExpensesVoidedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutExpensesVoidedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutExpensesVoidedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutExpensesVoidedInput, Prisma.UserUncheckedCreateWithoutExpensesVoidedInput>
+}
+
+export type UserUpsertWithoutExpensesRecordedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutExpensesRecordedInput, Prisma.UserUncheckedUpdateWithoutExpensesRecordedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutExpensesRecordedInput, Prisma.UserUncheckedCreateWithoutExpensesRecordedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutExpensesRecordedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutExpensesRecordedInput, Prisma.UserUncheckedUpdateWithoutExpensesRecordedInput>
+}
+
+export type UserUpdateWithoutExpensesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutExpensesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutExpensesVoidedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutExpensesVoidedInput, Prisma.UserUncheckedUpdateWithoutExpensesVoidedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutExpensesVoidedInput, Prisma.UserUncheckedCreateWithoutExpensesVoidedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutExpensesVoidedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutExpensesVoidedInput, Prisma.UserUncheckedUpdateWithoutExpensesVoidedInput>
+}
+
+export type UserUpdateWithoutExpensesVoidedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutExpensesVoidedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutFinancialEntriesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutFinancialEntriesRecordedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutFinancialEntriesRecordedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesRecordedInput>
+}
+
+export type UserCreateWithoutFinancialEntriesVoidedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutFinancialEntriesVoidedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutFinancialEntriesVoidedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesVoidedInput>
+}
+
+export type UserUpsertWithoutFinancialEntriesRecordedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedUpdateWithoutFinancialEntriesRecordedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesRecordedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFinancialEntriesRecordedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFinancialEntriesRecordedInput, Prisma.UserUncheckedUpdateWithoutFinancialEntriesRecordedInput>
+}
+
+export type UserUpdateWithoutFinancialEntriesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFinancialEntriesRecordedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutFinancialEntriesVoidedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedUpdateWithoutFinancialEntriesVoidedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedCreateWithoutFinancialEntriesVoidedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFinancialEntriesVoidedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFinancialEntriesVoidedInput, Prisma.UserUncheckedUpdateWithoutFinancialEntriesVoidedInput>
+}
+
+export type UserUpdateWithoutFinancialEntriesVoidedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFinancialEntriesVoidedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutPostVisaTasksCompletedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutPostVisaTasksCompletedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutPostVisaTasksCompletedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedCreateWithoutPostVisaTasksCompletedInput>
+}
+
+export type UserUpsertWithoutPostVisaTasksCompletedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedUpdateWithoutPostVisaTasksCompletedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedCreateWithoutPostVisaTasksCompletedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutPostVisaTasksCompletedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutPostVisaTasksCompletedInput, Prisma.UserUncheckedUpdateWithoutPostVisaTasksCompletedInput>
+}
+
+export type UserUpdateWithoutPostVisaTasksCompletedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutPostVisaTasksCompletedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutWhatsappConversationsAssignedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutWhatsappConversationsAssignedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutWhatsappConversationsAssignedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsAssignedInput>
+}
+
+export type UserCreateWithoutWhatsappConversationsClosedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutWhatsappConversationsClosedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutWhatsappConversationsClosedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsClosedInput>
+}
+
+export type UserUpsertWithoutWhatsappConversationsAssignedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsAssignedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsAssignedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWhatsappConversationsAssignedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappConversationsAssignedInput, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsAssignedInput>
+}
+
+export type UserUpdateWithoutWhatsappConversationsAssignedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWhatsappConversationsAssignedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutWhatsappConversationsClosedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsClosedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedCreateWithoutWhatsappConversationsClosedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWhatsappConversationsClosedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappConversationsClosedInput, Prisma.UserUncheckedUpdateWithoutWhatsappConversationsClosedInput>
+}
+
+export type UserUpdateWithoutWhatsappConversationsClosedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWhatsappConversationsClosedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutWhatsappMessagesSentInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutWhatsappMessagesSentInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutWhatsappMessagesSentInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedCreateWithoutWhatsappMessagesSentInput>
+}
+
+export type UserUpsertWithoutWhatsappMessagesSentInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedUpdateWithoutWhatsappMessagesSentInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedCreateWithoutWhatsappMessagesSentInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutWhatsappMessagesSentInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutWhatsappMessagesSentInput, Prisma.UserUncheckedUpdateWithoutWhatsappMessagesSentInput>
+}
+
+export type UserUpdateWithoutWhatsappMessagesSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutWhatsappMessagesSentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutTeachingEnrollmentsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTeachingEnrollmentsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTeachingEnrollmentsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedCreateWithoutTeachingEnrollmentsInput>
+}
+
+export type UserCreateWithoutTeachingExamBookingsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTeachingExamBookingsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTeachingExamBookingsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedCreateWithoutTeachingExamBookingsInput>
+}
+
+export type UserUpsertWithoutTeachingEnrollmentsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedUpdateWithoutTeachingEnrollmentsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedCreateWithoutTeachingEnrollmentsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTeachingEnrollmentsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTeachingEnrollmentsInput, Prisma.UserUncheckedUpdateWithoutTeachingEnrollmentsInput>
+}
+
+export type UserUpdateWithoutTeachingEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTeachingEnrollmentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutTeachingExamBookingsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedUpdateWithoutTeachingExamBookingsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedCreateWithoutTeachingExamBookingsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTeachingExamBookingsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTeachingExamBookingsInput, Prisma.UserUncheckedUpdateWithoutTeachingExamBookingsInput>
+}
+
+export type UserUpdateWithoutTeachingExamBookingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTeachingExamBookingsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutTeachingDailyRecordsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTeachingDailyRecordsInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTeachingDailyRecordsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedCreateWithoutTeachingDailyRecordsInput>
+}
+
+export type UserUpsertWithoutTeachingDailyRecordsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedUpdateWithoutTeachingDailyRecordsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedCreateWithoutTeachingDailyRecordsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTeachingDailyRecordsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTeachingDailyRecordsInput, Prisma.UserUncheckedUpdateWithoutTeachingDailyRecordsInput>
+}
+
+export type UserUpdateWithoutTeachingDailyRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTeachingDailyRecordsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutTeacherDailyProgressInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTeacherDailyProgressInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTeacherDailyProgressInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedCreateWithoutTeacherDailyProgressInput>
+}
+
+export type UserUpsertWithoutTeacherDailyProgressInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedUpdateWithoutTeacherDailyProgressInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedCreateWithoutTeacherDailyProgressInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTeacherDailyProgressInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTeacherDailyProgressInput, Prisma.UserUncheckedUpdateWithoutTeacherDailyProgressInput>
+}
+
+export type UserUpdateWithoutTeacherDailyProgressInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTeacherDailyProgressInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserCreateWithoutTouristPrepsCreatedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepCreateNestedManyWithoutCompletedByInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTouristPrepsCreatedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutCompletedByInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTouristPrepsCreatedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCreatedInput>
+}
+
+export type UserCreateWithoutTouristPrepsCompletedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressCreateNestedManyWithoutTeacherInput
+  touristPrepsCreated?: Prisma.TouristPrepCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryCreateNestedManyWithoutChangedByInput
+}
+
+export type UserUncheckedCreateWithoutTouristPrepsCompletedInput = {
+  id?: string
+  email: string
+  isActive?: boolean
+  roles?: Prisma.UserCreaterolesInput | $Enums.ROLES[]
+  name: string
+  emailVerified?: boolean
+  image?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  username?: string | null
+  employee?: Prisma.EmployeeUncheckedCreateNestedOneWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  accounts?: Prisma.AccountUncheckedCreateNestedManyWithoutUserInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedCreateNestedManyWithoutCreatedByInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedToInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedCreateNestedManyWithoutAssignedByInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutRegisteredByInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedCreateNestedManyWithoutCancelledByInput
+  paymentsReceived?: Prisma.PaymentUncheckedCreateNestedManyWithoutReceivedByInput
+  refundsProcessed?: Prisma.RefundUncheckedCreateNestedManyWithoutRefundedByInput
+  tasksAssigned?: Prisma.TaskUncheckedCreateNestedManyWithoutAssigneeInput
+  tasksCreated?: Prisma.TaskUncheckedCreateNestedManyWithoutCreatedByInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  notificationsResolved?: Prisma.NotificationUncheckedCreateNestedManyWithoutResolvedByInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutUploadedByInput
+  expensesRecorded?: Prisma.ExpenseUncheckedCreateNestedManyWithoutRecordedByInput
+  expensesVoided?: Prisma.ExpenseUncheckedCreateNestedManyWithoutVoidedByInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutRecordedByInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutVoidedByInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutCompletedByInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutAssignedToInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutClosedByInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutSentByInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutTeacherInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutExamBookedByInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedCreateNestedManyWithoutRecordedByInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedCreateNestedManyWithoutTeacherInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedCreateNestedManyWithoutTeacherInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutRecordedByInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedCreateNestedManyWithoutRecordedByInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedCreateNestedManyWithoutChangedByInput
+}
+
+export type UserCreateOrConnectWithoutTouristPrepsCompletedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCompletedInput>
+}
+
+export type UserUpsertWithoutTouristPrepsCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedUpdateWithoutTouristPrepsCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCreatedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTouristPrepsCreatedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTouristPrepsCreatedInput, Prisma.UserUncheckedUpdateWithoutTouristPrepsCreatedInput>
+}
+
+export type UserUpdateWithoutTouristPrepsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUpdateManyWithoutCompletedByNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTouristPrepsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCompleted?: Prisma.TouristPrepUncheckedUpdateManyWithoutCompletedByNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUpsertWithoutTouristPrepsCompletedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedUpdateWithoutTouristPrepsCompletedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedCreateWithoutTouristPrepsCompletedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutTouristPrepsCompletedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutTouristPrepsCompletedInput, Prisma.UserUncheckedUpdateWithoutTouristPrepsCompletedInput>
+}
+
+export type UserUpdateWithoutTouristPrepsCompletedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUpdateManyWithoutTeacherNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUpdateManyWithoutChangedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutTouristPrepsCompletedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  roles?: Prisma.UserUpdaterolesInput | $Enums.ROLES[]
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  employee?: Prisma.EmployeeUncheckedUpdateOneWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  accounts?: Prisma.AccountUncheckedUpdateManyWithoutUserNestedInput
+  officeReportsCreated?: Prisma.OfficeDailyReportUncheckedUpdateManyWithoutCreatedByNestedInput
+  leadAssignedTo?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedToNestedInput
+  leadAssignedBy?: Prisma.LeadAssignmentUncheckedUpdateManyWithoutAssignedByNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutRegisteredByNestedInput
+  registrationsCancelled?: Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput
+  paymentsReceived?: Prisma.PaymentUncheckedUpdateManyWithoutReceivedByNestedInput
+  refundsProcessed?: Prisma.RefundUncheckedUpdateManyWithoutRefundedByNestedInput
+  tasksAssigned?: Prisma.TaskUncheckedUpdateManyWithoutAssigneeNestedInput
+  tasksCreated?: Prisma.TaskUncheckedUpdateManyWithoutCreatedByNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  notificationsResolved?: Prisma.NotificationUncheckedUpdateManyWithoutResolvedByNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  applicationDocumentsUploaded?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutUploadedByNestedInput
+  expensesRecorded?: Prisma.ExpenseUncheckedUpdateManyWithoutRecordedByNestedInput
+  expensesVoided?: Prisma.ExpenseUncheckedUpdateManyWithoutVoidedByNestedInput
+  financialEntriesRecorded?: Prisma.FinancialEntryUncheckedUpdateManyWithoutRecordedByNestedInput
+  financialEntriesVoided?: Prisma.FinancialEntryUncheckedUpdateManyWithoutVoidedByNestedInput
+  postVisaTasksCompleted?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutCompletedByNestedInput
+  whatsappConversationsAssigned?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutAssignedToNestedInput
+  whatsappConversationsClosed?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput
+  whatsappMessagesSent?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutSentByNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutTeacherNestedInput
+  teachingExamBookings?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutExamBookedByNestedInput
+  teachingDailyRecords?: Prisma.TeachingDailyRecordUncheckedUpdateManyWithoutRecordedByNestedInput
+  teacherDailyProgress?: Prisma.TeacherDailyProgressUncheckedUpdateManyWithoutTeacherNestedInput
+  touristPrepsCreated?: Prisma.TouristPrepUncheckedUpdateManyWithoutTeacherNestedInput
+  employeeAttendancesRecorded?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  salaryAdvancesRecorded?: Prisma.EmployeeSalaryAdvanceUncheckedUpdateManyWithoutRecordedByNestedInput
+  leadStatusHistoryChanged?: Prisma.LeadStatusHistoryUncheckedUpdateManyWithoutChangedByNestedInput
 }
 
 
@@ -860,12 +7636,70 @@ export type UserCountOutputType = {
   sessions: number
   accounts: number
   officeReportsCreated: number
+  leadAssignedTo: number
+  leadAssignedBy: number
+  registrations: number
+  registrationsCancelled: number
+  paymentsReceived: number
+  refundsProcessed: number
+  tasksAssigned: number
+  tasksCreated: number
+  notifications: number
+  notificationsResolved: number
+  auditLogs: number
+  applicationDocumentsUploaded: number
+  expensesRecorded: number
+  expensesVoided: number
+  financialEntriesRecorded: number
+  financialEntriesVoided: number
+  postVisaTasksCompleted: number
+  whatsappConversationsAssigned: number
+  whatsappConversationsClosed: number
+  whatsappMessagesSent: number
+  teachingEnrollments: number
+  teachingExamBookings: number
+  teachingDailyRecords: number
+  teacherDailyProgress: number
+  touristPrepsCompleted: number
+  touristPrepsCreated: number
+  employeeAttendancesRecorded: number
+  salaryAdvancesRecorded: number
+  leadStatusHistoryChanged: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   sessions?: boolean | UserCountOutputTypeCountSessionsArgs
   accounts?: boolean | UserCountOutputTypeCountAccountsArgs
   officeReportsCreated?: boolean | UserCountOutputTypeCountOfficeReportsCreatedArgs
+  leadAssignedTo?: boolean | UserCountOutputTypeCountLeadAssignedToArgs
+  leadAssignedBy?: boolean | UserCountOutputTypeCountLeadAssignedByArgs
+  registrations?: boolean | UserCountOutputTypeCountRegistrationsArgs
+  registrationsCancelled?: boolean | UserCountOutputTypeCountRegistrationsCancelledArgs
+  paymentsReceived?: boolean | UserCountOutputTypeCountPaymentsReceivedArgs
+  refundsProcessed?: boolean | UserCountOutputTypeCountRefundsProcessedArgs
+  tasksAssigned?: boolean | UserCountOutputTypeCountTasksAssignedArgs
+  tasksCreated?: boolean | UserCountOutputTypeCountTasksCreatedArgs
+  notifications?: boolean | UserCountOutputTypeCountNotificationsArgs
+  notificationsResolved?: boolean | UserCountOutputTypeCountNotificationsResolvedArgs
+  auditLogs?: boolean | UserCountOutputTypeCountAuditLogsArgs
+  applicationDocumentsUploaded?: boolean | UserCountOutputTypeCountApplicationDocumentsUploadedArgs
+  expensesRecorded?: boolean | UserCountOutputTypeCountExpensesRecordedArgs
+  expensesVoided?: boolean | UserCountOutputTypeCountExpensesVoidedArgs
+  financialEntriesRecorded?: boolean | UserCountOutputTypeCountFinancialEntriesRecordedArgs
+  financialEntriesVoided?: boolean | UserCountOutputTypeCountFinancialEntriesVoidedArgs
+  postVisaTasksCompleted?: boolean | UserCountOutputTypeCountPostVisaTasksCompletedArgs
+  whatsappConversationsAssigned?: boolean | UserCountOutputTypeCountWhatsappConversationsAssignedArgs
+  whatsappConversationsClosed?: boolean | UserCountOutputTypeCountWhatsappConversationsClosedArgs
+  whatsappMessagesSent?: boolean | UserCountOutputTypeCountWhatsappMessagesSentArgs
+  teachingEnrollments?: boolean | UserCountOutputTypeCountTeachingEnrollmentsArgs
+  teachingExamBookings?: boolean | UserCountOutputTypeCountTeachingExamBookingsArgs
+  teachingDailyRecords?: boolean | UserCountOutputTypeCountTeachingDailyRecordsArgs
+  teacherDailyProgress?: boolean | UserCountOutputTypeCountTeacherDailyProgressArgs
+  touristPrepsCompleted?: boolean | UserCountOutputTypeCountTouristPrepsCompletedArgs
+  touristPrepsCreated?: boolean | UserCountOutputTypeCountTouristPrepsCreatedArgs
+  employeeAttendancesRecorded?: boolean | UserCountOutputTypeCountEmployeeAttendancesRecordedArgs
+  salaryAdvancesRecorded?: boolean | UserCountOutputTypeCountSalaryAdvancesRecordedArgs
+  leadStatusHistoryChanged?: boolean | UserCountOutputTypeCountLeadStatusHistoryChangedArgs
 }
 
 /**
@@ -899,6 +7733,209 @@ export type UserCountOutputTypeCountOfficeReportsCreatedArgs<ExtArgs extends run
   where?: Prisma.OfficeDailyReportWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLeadAssignedToArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LeadAssignmentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLeadAssignedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LeadAssignmentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountRegistrationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RegistrationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountRegistrationsCancelledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RegistrationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPaymentsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PaymentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountRefundsProcessedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.RefundWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTasksAssignedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TaskWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTasksCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TaskWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountNotificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NotificationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountNotificationsResolvedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NotificationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AuditLogWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountApplicationDocumentsUploadedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ApplicationDocumentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountExpensesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExpenseWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountExpensesVoidedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExpenseWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFinancialEntriesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FinancialEntryWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFinancialEntriesVoidedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FinancialEntryWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountPostVisaTasksCompletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostVisaTaskWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWhatsappConversationsAssignedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WhatsAppConversationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWhatsappConversationsClosedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WhatsAppConversationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountWhatsappMessagesSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WhatsAppMessageWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTeachingEnrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeachingEnrollmentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTeachingExamBookingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeachingEnrollmentWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTeachingDailyRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeachingDailyRecordWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTeacherDailyProgressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TeacherDailyProgressWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTouristPrepsCompletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TouristPrepWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTouristPrepsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TouristPrepWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountEmployeeAttendancesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EmployeeAttendanceWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSalaryAdvancesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EmployeeSalaryAdvanceWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLeadStatusHistoryChangedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LeadStatusHistoryWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -915,6 +7952,35 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   officeReportsCreated?: boolean | Prisma.User$officeReportsCreatedArgs<ExtArgs>
+  leadAssignedTo?: boolean | Prisma.User$leadAssignedToArgs<ExtArgs>
+  leadAssignedBy?: boolean | Prisma.User$leadAssignedByArgs<ExtArgs>
+  registrations?: boolean | Prisma.User$registrationsArgs<ExtArgs>
+  registrationsCancelled?: boolean | Prisma.User$registrationsCancelledArgs<ExtArgs>
+  paymentsReceived?: boolean | Prisma.User$paymentsReceivedArgs<ExtArgs>
+  refundsProcessed?: boolean | Prisma.User$refundsProcessedArgs<ExtArgs>
+  tasksAssigned?: boolean | Prisma.User$tasksAssignedArgs<ExtArgs>
+  tasksCreated?: boolean | Prisma.User$tasksCreatedArgs<ExtArgs>
+  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
+  notificationsResolved?: boolean | Prisma.User$notificationsResolvedArgs<ExtArgs>
+  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
+  applicationDocumentsUploaded?: boolean | Prisma.User$applicationDocumentsUploadedArgs<ExtArgs>
+  expensesRecorded?: boolean | Prisma.User$expensesRecordedArgs<ExtArgs>
+  expensesVoided?: boolean | Prisma.User$expensesVoidedArgs<ExtArgs>
+  financialEntriesRecorded?: boolean | Prisma.User$financialEntriesRecordedArgs<ExtArgs>
+  financialEntriesVoided?: boolean | Prisma.User$financialEntriesVoidedArgs<ExtArgs>
+  postVisaTasksCompleted?: boolean | Prisma.User$postVisaTasksCompletedArgs<ExtArgs>
+  whatsappConversationsAssigned?: boolean | Prisma.User$whatsappConversationsAssignedArgs<ExtArgs>
+  whatsappConversationsClosed?: boolean | Prisma.User$whatsappConversationsClosedArgs<ExtArgs>
+  whatsappMessagesSent?: boolean | Prisma.User$whatsappMessagesSentArgs<ExtArgs>
+  teachingEnrollments?: boolean | Prisma.User$teachingEnrollmentsArgs<ExtArgs>
+  teachingExamBookings?: boolean | Prisma.User$teachingExamBookingsArgs<ExtArgs>
+  teachingDailyRecords?: boolean | Prisma.User$teachingDailyRecordsArgs<ExtArgs>
+  teacherDailyProgress?: boolean | Prisma.User$teacherDailyProgressArgs<ExtArgs>
+  touristPrepsCompleted?: boolean | Prisma.User$touristPrepsCompletedArgs<ExtArgs>
+  touristPrepsCreated?: boolean | Prisma.User$touristPrepsCreatedArgs<ExtArgs>
+  employeeAttendancesRecorded?: boolean | Prisma.User$employeeAttendancesRecordedArgs<ExtArgs>
+  salaryAdvancesRecorded?: boolean | Prisma.User$salaryAdvancesRecordedArgs<ExtArgs>
+  leadStatusHistoryChanged?: boolean | Prisma.User$leadStatusHistoryChangedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -963,6 +8029,35 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
   accounts?: boolean | Prisma.User$accountsArgs<ExtArgs>
   officeReportsCreated?: boolean | Prisma.User$officeReportsCreatedArgs<ExtArgs>
+  leadAssignedTo?: boolean | Prisma.User$leadAssignedToArgs<ExtArgs>
+  leadAssignedBy?: boolean | Prisma.User$leadAssignedByArgs<ExtArgs>
+  registrations?: boolean | Prisma.User$registrationsArgs<ExtArgs>
+  registrationsCancelled?: boolean | Prisma.User$registrationsCancelledArgs<ExtArgs>
+  paymentsReceived?: boolean | Prisma.User$paymentsReceivedArgs<ExtArgs>
+  refundsProcessed?: boolean | Prisma.User$refundsProcessedArgs<ExtArgs>
+  tasksAssigned?: boolean | Prisma.User$tasksAssignedArgs<ExtArgs>
+  tasksCreated?: boolean | Prisma.User$tasksCreatedArgs<ExtArgs>
+  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
+  notificationsResolved?: boolean | Prisma.User$notificationsResolvedArgs<ExtArgs>
+  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
+  applicationDocumentsUploaded?: boolean | Prisma.User$applicationDocumentsUploadedArgs<ExtArgs>
+  expensesRecorded?: boolean | Prisma.User$expensesRecordedArgs<ExtArgs>
+  expensesVoided?: boolean | Prisma.User$expensesVoidedArgs<ExtArgs>
+  financialEntriesRecorded?: boolean | Prisma.User$financialEntriesRecordedArgs<ExtArgs>
+  financialEntriesVoided?: boolean | Prisma.User$financialEntriesVoidedArgs<ExtArgs>
+  postVisaTasksCompleted?: boolean | Prisma.User$postVisaTasksCompletedArgs<ExtArgs>
+  whatsappConversationsAssigned?: boolean | Prisma.User$whatsappConversationsAssignedArgs<ExtArgs>
+  whatsappConversationsClosed?: boolean | Prisma.User$whatsappConversationsClosedArgs<ExtArgs>
+  whatsappMessagesSent?: boolean | Prisma.User$whatsappMessagesSentArgs<ExtArgs>
+  teachingEnrollments?: boolean | Prisma.User$teachingEnrollmentsArgs<ExtArgs>
+  teachingExamBookings?: boolean | Prisma.User$teachingExamBookingsArgs<ExtArgs>
+  teachingDailyRecords?: boolean | Prisma.User$teachingDailyRecordsArgs<ExtArgs>
+  teacherDailyProgress?: boolean | Prisma.User$teacherDailyProgressArgs<ExtArgs>
+  touristPrepsCompleted?: boolean | Prisma.User$touristPrepsCompletedArgs<ExtArgs>
+  touristPrepsCreated?: boolean | Prisma.User$touristPrepsCreatedArgs<ExtArgs>
+  employeeAttendancesRecorded?: boolean | Prisma.User$employeeAttendancesRecordedArgs<ExtArgs>
+  salaryAdvancesRecorded?: boolean | Prisma.User$salaryAdvancesRecordedArgs<ExtArgs>
+  leadStatusHistoryChanged?: boolean | Prisma.User$leadStatusHistoryChangedArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -975,6 +8070,35 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     sessions: Prisma.$SessionPayload<ExtArgs>[]
     accounts: Prisma.$AccountPayload<ExtArgs>[]
     officeReportsCreated: Prisma.$OfficeDailyReportPayload<ExtArgs>[]
+    leadAssignedTo: Prisma.$LeadAssignmentPayload<ExtArgs>[]
+    leadAssignedBy: Prisma.$LeadAssignmentPayload<ExtArgs>[]
+    registrations: Prisma.$RegistrationPayload<ExtArgs>[]
+    registrationsCancelled: Prisma.$RegistrationPayload<ExtArgs>[]
+    paymentsReceived: Prisma.$PaymentPayload<ExtArgs>[]
+    refundsProcessed: Prisma.$RefundPayload<ExtArgs>[]
+    tasksAssigned: Prisma.$TaskPayload<ExtArgs>[]
+    tasksCreated: Prisma.$TaskPayload<ExtArgs>[]
+    notifications: Prisma.$NotificationPayload<ExtArgs>[]
+    notificationsResolved: Prisma.$NotificationPayload<ExtArgs>[]
+    auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
+    applicationDocumentsUploaded: Prisma.$ApplicationDocumentPayload<ExtArgs>[]
+    expensesRecorded: Prisma.$ExpensePayload<ExtArgs>[]
+    expensesVoided: Prisma.$ExpensePayload<ExtArgs>[]
+    financialEntriesRecorded: Prisma.$FinancialEntryPayload<ExtArgs>[]
+    financialEntriesVoided: Prisma.$FinancialEntryPayload<ExtArgs>[]
+    postVisaTasksCompleted: Prisma.$PostVisaTaskPayload<ExtArgs>[]
+    whatsappConversationsAssigned: Prisma.$WhatsAppConversationPayload<ExtArgs>[]
+    whatsappConversationsClosed: Prisma.$WhatsAppConversationPayload<ExtArgs>[]
+    whatsappMessagesSent: Prisma.$WhatsAppMessagePayload<ExtArgs>[]
+    teachingEnrollments: Prisma.$TeachingEnrollmentPayload<ExtArgs>[]
+    teachingExamBookings: Prisma.$TeachingEnrollmentPayload<ExtArgs>[]
+    teachingDailyRecords: Prisma.$TeachingDailyRecordPayload<ExtArgs>[]
+    teacherDailyProgress: Prisma.$TeacherDailyProgressPayload<ExtArgs>[]
+    touristPrepsCompleted: Prisma.$TouristPrepPayload<ExtArgs>[]
+    touristPrepsCreated: Prisma.$TouristPrepPayload<ExtArgs>[]
+    employeeAttendancesRecorded: Prisma.$EmployeeAttendancePayload<ExtArgs>[]
+    salaryAdvancesRecorded: Prisma.$EmployeeSalaryAdvancePayload<ExtArgs>[]
+    leadStatusHistoryChanged: Prisma.$LeadStatusHistoryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1385,6 +8509,35 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   accounts<T extends Prisma.User$accountsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   officeReportsCreated<T extends Prisma.User$officeReportsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$officeReportsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OfficeDailyReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  leadAssignedTo<T extends Prisma.User$leadAssignedToArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$leadAssignedToArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LeadAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  leadAssignedBy<T extends Prisma.User$leadAssignedByArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$leadAssignedByArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LeadAssignmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  registrations<T extends Prisma.User$registrationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$registrationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegistrationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  registrationsCancelled<T extends Prisma.User$registrationsCancelledArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$registrationsCancelledArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RegistrationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  paymentsReceived<T extends Prisma.User$paymentsReceivedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$paymentsReceivedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PaymentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  refundsProcessed<T extends Prisma.User$refundsProcessedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$refundsProcessedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$RefundPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  tasksAssigned<T extends Prisma.User$tasksAssignedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$tasksAssignedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  tasksCreated<T extends Prisma.User$tasksCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$tasksCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notifications<T extends Prisma.User$notificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notificationsResolved<T extends Prisma.User$notificationsResolvedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationsResolvedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  auditLogs<T extends Prisma.User$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  applicationDocumentsUploaded<T extends Prisma.User$applicationDocumentsUploadedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$applicationDocumentsUploadedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApplicationDocumentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  expensesRecorded<T extends Prisma.User$expensesRecordedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$expensesRecordedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExpensePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  expensesVoided<T extends Prisma.User$expensesVoidedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$expensesVoidedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExpensePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  financialEntriesRecorded<T extends Prisma.User$financialEntriesRecordedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$financialEntriesRecordedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FinancialEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  financialEntriesVoided<T extends Prisma.User$financialEntriesVoidedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$financialEntriesVoidedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FinancialEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  postVisaTasksCompleted<T extends Prisma.User$postVisaTasksCompletedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$postVisaTasksCompletedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostVisaTaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  whatsappConversationsAssigned<T extends Prisma.User$whatsappConversationsAssignedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$whatsappConversationsAssignedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WhatsAppConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  whatsappConversationsClosed<T extends Prisma.User$whatsappConversationsClosedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$whatsappConversationsClosedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WhatsAppConversationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  whatsappMessagesSent<T extends Prisma.User$whatsappMessagesSentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$whatsappMessagesSentArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WhatsAppMessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  teachingEnrollments<T extends Prisma.User$teachingEnrollmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$teachingEnrollmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeachingEnrollmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  teachingExamBookings<T extends Prisma.User$teachingExamBookingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$teachingExamBookingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeachingEnrollmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  teachingDailyRecords<T extends Prisma.User$teachingDailyRecordsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$teachingDailyRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeachingDailyRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  teacherDailyProgress<T extends Prisma.User$teacherDailyProgressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$teacherDailyProgressArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherDailyProgressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  touristPrepsCompleted<T extends Prisma.User$touristPrepsCompletedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$touristPrepsCompletedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TouristPrepPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  touristPrepsCreated<T extends Prisma.User$touristPrepsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$touristPrepsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TouristPrepPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  employeeAttendancesRecorded<T extends Prisma.User$employeeAttendancesRecordedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$employeeAttendancesRecordedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeeAttendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  salaryAdvancesRecorded<T extends Prisma.User$salaryAdvancesRecordedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$salaryAdvancesRecordedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeeSalaryAdvancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  leadStatusHistoryChanged<T extends Prisma.User$leadStatusHistoryChangedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$leadStatusHistoryChangedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LeadStatusHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1905,6 +9058,702 @@ export type User$officeReportsCreatedArgs<ExtArgs extends runtime.Types.Extensio
   take?: number
   skip?: number
   distinct?: Prisma.OfficeDailyReportScalarFieldEnum | Prisma.OfficeDailyReportScalarFieldEnum[]
+}
+
+/**
+ * User.leadAssignedTo
+ */
+export type User$leadAssignedToArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LeadAssignment
+   */
+  select?: Prisma.LeadAssignmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LeadAssignment
+   */
+  omit?: Prisma.LeadAssignmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LeadAssignmentInclude<ExtArgs> | null
+  where?: Prisma.LeadAssignmentWhereInput
+  orderBy?: Prisma.LeadAssignmentOrderByWithRelationInput | Prisma.LeadAssignmentOrderByWithRelationInput[]
+  cursor?: Prisma.LeadAssignmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LeadAssignmentScalarFieldEnum | Prisma.LeadAssignmentScalarFieldEnum[]
+}
+
+/**
+ * User.leadAssignedBy
+ */
+export type User$leadAssignedByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LeadAssignment
+   */
+  select?: Prisma.LeadAssignmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LeadAssignment
+   */
+  omit?: Prisma.LeadAssignmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LeadAssignmentInclude<ExtArgs> | null
+  where?: Prisma.LeadAssignmentWhereInput
+  orderBy?: Prisma.LeadAssignmentOrderByWithRelationInput | Prisma.LeadAssignmentOrderByWithRelationInput[]
+  cursor?: Prisma.LeadAssignmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LeadAssignmentScalarFieldEnum | Prisma.LeadAssignmentScalarFieldEnum[]
+}
+
+/**
+ * User.registrations
+ */
+export type User$registrationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Registration
+   */
+  select?: Prisma.RegistrationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Registration
+   */
+  omit?: Prisma.RegistrationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RegistrationInclude<ExtArgs> | null
+  where?: Prisma.RegistrationWhereInput
+  orderBy?: Prisma.RegistrationOrderByWithRelationInput | Prisma.RegistrationOrderByWithRelationInput[]
+  cursor?: Prisma.RegistrationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RegistrationScalarFieldEnum | Prisma.RegistrationScalarFieldEnum[]
+}
+
+/**
+ * User.registrationsCancelled
+ */
+export type User$registrationsCancelledArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Registration
+   */
+  select?: Prisma.RegistrationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Registration
+   */
+  omit?: Prisma.RegistrationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RegistrationInclude<ExtArgs> | null
+  where?: Prisma.RegistrationWhereInput
+  orderBy?: Prisma.RegistrationOrderByWithRelationInput | Prisma.RegistrationOrderByWithRelationInput[]
+  cursor?: Prisma.RegistrationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RegistrationScalarFieldEnum | Prisma.RegistrationScalarFieldEnum[]
+}
+
+/**
+ * User.paymentsReceived
+ */
+export type User$paymentsReceivedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Payment
+   */
+  select?: Prisma.PaymentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Payment
+   */
+  omit?: Prisma.PaymentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PaymentInclude<ExtArgs> | null
+  where?: Prisma.PaymentWhereInput
+  orderBy?: Prisma.PaymentOrderByWithRelationInput | Prisma.PaymentOrderByWithRelationInput[]
+  cursor?: Prisma.PaymentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PaymentScalarFieldEnum | Prisma.PaymentScalarFieldEnum[]
+}
+
+/**
+ * User.refundsProcessed
+ */
+export type User$refundsProcessedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Refund
+   */
+  select?: Prisma.RefundSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Refund
+   */
+  omit?: Prisma.RefundOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.RefundInclude<ExtArgs> | null
+  where?: Prisma.RefundWhereInput
+  orderBy?: Prisma.RefundOrderByWithRelationInput | Prisma.RefundOrderByWithRelationInput[]
+  cursor?: Prisma.RefundWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.RefundScalarFieldEnum | Prisma.RefundScalarFieldEnum[]
+}
+
+/**
+ * User.tasksAssigned
+ */
+export type User$tasksAssignedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Task
+   */
+  select?: Prisma.TaskSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Task
+   */
+  omit?: Prisma.TaskOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TaskInclude<ExtArgs> | null
+  where?: Prisma.TaskWhereInput
+  orderBy?: Prisma.TaskOrderByWithRelationInput | Prisma.TaskOrderByWithRelationInput[]
+  cursor?: Prisma.TaskWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TaskScalarFieldEnum | Prisma.TaskScalarFieldEnum[]
+}
+
+/**
+ * User.tasksCreated
+ */
+export type User$tasksCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Task
+   */
+  select?: Prisma.TaskSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Task
+   */
+  omit?: Prisma.TaskOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TaskInclude<ExtArgs> | null
+  where?: Prisma.TaskWhereInput
+  orderBy?: Prisma.TaskOrderByWithRelationInput | Prisma.TaskOrderByWithRelationInput[]
+  cursor?: Prisma.TaskWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TaskScalarFieldEnum | Prisma.TaskScalarFieldEnum[]
+}
+
+/**
+ * User.notifications
+ */
+export type User$notificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Notification
+   */
+  select?: Prisma.NotificationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Notification
+   */
+  omit?: Prisma.NotificationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NotificationInclude<ExtArgs> | null
+  where?: Prisma.NotificationWhereInput
+  orderBy?: Prisma.NotificationOrderByWithRelationInput | Prisma.NotificationOrderByWithRelationInput[]
+  cursor?: Prisma.NotificationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NotificationScalarFieldEnum | Prisma.NotificationScalarFieldEnum[]
+}
+
+/**
+ * User.notificationsResolved
+ */
+export type User$notificationsResolvedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Notification
+   */
+  select?: Prisma.NotificationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Notification
+   */
+  omit?: Prisma.NotificationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NotificationInclude<ExtArgs> | null
+  where?: Prisma.NotificationWhereInput
+  orderBy?: Prisma.NotificationOrderByWithRelationInput | Prisma.NotificationOrderByWithRelationInput[]
+  cursor?: Prisma.NotificationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NotificationScalarFieldEnum | Prisma.NotificationScalarFieldEnum[]
+}
+
+/**
+ * User.auditLogs
+ */
+export type User$auditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AuditLog
+   */
+  select?: Prisma.AuditLogSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AuditLog
+   */
+  omit?: Prisma.AuditLogOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AuditLogInclude<ExtArgs> | null
+  where?: Prisma.AuditLogWhereInput
+  orderBy?: Prisma.AuditLogOrderByWithRelationInput | Prisma.AuditLogOrderByWithRelationInput[]
+  cursor?: Prisma.AuditLogWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
+}
+
+/**
+ * User.applicationDocumentsUploaded
+ */
+export type User$applicationDocumentsUploadedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ApplicationDocument
+   */
+  select?: Prisma.ApplicationDocumentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ApplicationDocument
+   */
+  omit?: Prisma.ApplicationDocumentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ApplicationDocumentInclude<ExtArgs> | null
+  where?: Prisma.ApplicationDocumentWhereInput
+  orderBy?: Prisma.ApplicationDocumentOrderByWithRelationInput | Prisma.ApplicationDocumentOrderByWithRelationInput[]
+  cursor?: Prisma.ApplicationDocumentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ApplicationDocumentScalarFieldEnum | Prisma.ApplicationDocumentScalarFieldEnum[]
+}
+
+/**
+ * User.expensesRecorded
+ */
+export type User$expensesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Expense
+   */
+  select?: Prisma.ExpenseSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Expense
+   */
+  omit?: Prisma.ExpenseOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExpenseInclude<ExtArgs> | null
+  where?: Prisma.ExpenseWhereInput
+  orderBy?: Prisma.ExpenseOrderByWithRelationInput | Prisma.ExpenseOrderByWithRelationInput[]
+  cursor?: Prisma.ExpenseWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExpenseScalarFieldEnum | Prisma.ExpenseScalarFieldEnum[]
+}
+
+/**
+ * User.expensesVoided
+ */
+export type User$expensesVoidedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Expense
+   */
+  select?: Prisma.ExpenseSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Expense
+   */
+  omit?: Prisma.ExpenseOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExpenseInclude<ExtArgs> | null
+  where?: Prisma.ExpenseWhereInput
+  orderBy?: Prisma.ExpenseOrderByWithRelationInput | Prisma.ExpenseOrderByWithRelationInput[]
+  cursor?: Prisma.ExpenseWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExpenseScalarFieldEnum | Prisma.ExpenseScalarFieldEnum[]
+}
+
+/**
+ * User.financialEntriesRecorded
+ */
+export type User$financialEntriesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FinancialEntry
+   */
+  select?: Prisma.FinancialEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FinancialEntry
+   */
+  omit?: Prisma.FinancialEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FinancialEntryInclude<ExtArgs> | null
+  where?: Prisma.FinancialEntryWhereInput
+  orderBy?: Prisma.FinancialEntryOrderByWithRelationInput | Prisma.FinancialEntryOrderByWithRelationInput[]
+  cursor?: Prisma.FinancialEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FinancialEntryScalarFieldEnum | Prisma.FinancialEntryScalarFieldEnum[]
+}
+
+/**
+ * User.financialEntriesVoided
+ */
+export type User$financialEntriesVoidedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FinancialEntry
+   */
+  select?: Prisma.FinancialEntrySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FinancialEntry
+   */
+  omit?: Prisma.FinancialEntryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FinancialEntryInclude<ExtArgs> | null
+  where?: Prisma.FinancialEntryWhereInput
+  orderBy?: Prisma.FinancialEntryOrderByWithRelationInput | Prisma.FinancialEntryOrderByWithRelationInput[]
+  cursor?: Prisma.FinancialEntryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FinancialEntryScalarFieldEnum | Prisma.FinancialEntryScalarFieldEnum[]
+}
+
+/**
+ * User.postVisaTasksCompleted
+ */
+export type User$postVisaTasksCompletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PostVisaTask
+   */
+  select?: Prisma.PostVisaTaskSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PostVisaTask
+   */
+  omit?: Prisma.PostVisaTaskOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PostVisaTaskInclude<ExtArgs> | null
+  where?: Prisma.PostVisaTaskWhereInput
+  orderBy?: Prisma.PostVisaTaskOrderByWithRelationInput | Prisma.PostVisaTaskOrderByWithRelationInput[]
+  cursor?: Prisma.PostVisaTaskWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PostVisaTaskScalarFieldEnum | Prisma.PostVisaTaskScalarFieldEnum[]
+}
+
+/**
+ * User.whatsappConversationsAssigned
+ */
+export type User$whatsappConversationsAssignedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the WhatsAppConversation
+   */
+  select?: Prisma.WhatsAppConversationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the WhatsAppConversation
+   */
+  omit?: Prisma.WhatsAppConversationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.WhatsAppConversationInclude<ExtArgs> | null
+  where?: Prisma.WhatsAppConversationWhereInput
+  orderBy?: Prisma.WhatsAppConversationOrderByWithRelationInput | Prisma.WhatsAppConversationOrderByWithRelationInput[]
+  cursor?: Prisma.WhatsAppConversationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.WhatsAppConversationScalarFieldEnum | Prisma.WhatsAppConversationScalarFieldEnum[]
+}
+
+/**
+ * User.whatsappConversationsClosed
+ */
+export type User$whatsappConversationsClosedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the WhatsAppConversation
+   */
+  select?: Prisma.WhatsAppConversationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the WhatsAppConversation
+   */
+  omit?: Prisma.WhatsAppConversationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.WhatsAppConversationInclude<ExtArgs> | null
+  where?: Prisma.WhatsAppConversationWhereInput
+  orderBy?: Prisma.WhatsAppConversationOrderByWithRelationInput | Prisma.WhatsAppConversationOrderByWithRelationInput[]
+  cursor?: Prisma.WhatsAppConversationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.WhatsAppConversationScalarFieldEnum | Prisma.WhatsAppConversationScalarFieldEnum[]
+}
+
+/**
+ * User.whatsappMessagesSent
+ */
+export type User$whatsappMessagesSentArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the WhatsAppMessage
+   */
+  select?: Prisma.WhatsAppMessageSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the WhatsAppMessage
+   */
+  omit?: Prisma.WhatsAppMessageOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.WhatsAppMessageInclude<ExtArgs> | null
+  where?: Prisma.WhatsAppMessageWhereInput
+  orderBy?: Prisma.WhatsAppMessageOrderByWithRelationInput | Prisma.WhatsAppMessageOrderByWithRelationInput[]
+  cursor?: Prisma.WhatsAppMessageWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.WhatsAppMessageScalarFieldEnum | Prisma.WhatsAppMessageScalarFieldEnum[]
+}
+
+/**
+ * User.teachingEnrollments
+ */
+export type User$teachingEnrollmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeachingEnrollment
+   */
+  select?: Prisma.TeachingEnrollmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeachingEnrollment
+   */
+  omit?: Prisma.TeachingEnrollmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeachingEnrollmentInclude<ExtArgs> | null
+  where?: Prisma.TeachingEnrollmentWhereInput
+  orderBy?: Prisma.TeachingEnrollmentOrderByWithRelationInput | Prisma.TeachingEnrollmentOrderByWithRelationInput[]
+  cursor?: Prisma.TeachingEnrollmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeachingEnrollmentScalarFieldEnum | Prisma.TeachingEnrollmentScalarFieldEnum[]
+}
+
+/**
+ * User.teachingExamBookings
+ */
+export type User$teachingExamBookingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeachingEnrollment
+   */
+  select?: Prisma.TeachingEnrollmentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeachingEnrollment
+   */
+  omit?: Prisma.TeachingEnrollmentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeachingEnrollmentInclude<ExtArgs> | null
+  where?: Prisma.TeachingEnrollmentWhereInput
+  orderBy?: Prisma.TeachingEnrollmentOrderByWithRelationInput | Prisma.TeachingEnrollmentOrderByWithRelationInput[]
+  cursor?: Prisma.TeachingEnrollmentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeachingEnrollmentScalarFieldEnum | Prisma.TeachingEnrollmentScalarFieldEnum[]
+}
+
+/**
+ * User.teachingDailyRecords
+ */
+export type User$teachingDailyRecordsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeachingDailyRecord
+   */
+  select?: Prisma.TeachingDailyRecordSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeachingDailyRecord
+   */
+  omit?: Prisma.TeachingDailyRecordOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeachingDailyRecordInclude<ExtArgs> | null
+  where?: Prisma.TeachingDailyRecordWhereInput
+  orderBy?: Prisma.TeachingDailyRecordOrderByWithRelationInput | Prisma.TeachingDailyRecordOrderByWithRelationInput[]
+  cursor?: Prisma.TeachingDailyRecordWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeachingDailyRecordScalarFieldEnum | Prisma.TeachingDailyRecordScalarFieldEnum[]
+}
+
+/**
+ * User.teacherDailyProgress
+ */
+export type User$teacherDailyProgressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherDailyProgress
+   */
+  select?: Prisma.TeacherDailyProgressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherDailyProgress
+   */
+  omit?: Prisma.TeacherDailyProgressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherDailyProgressInclude<ExtArgs> | null
+  where?: Prisma.TeacherDailyProgressWhereInput
+  orderBy?: Prisma.TeacherDailyProgressOrderByWithRelationInput | Prisma.TeacherDailyProgressOrderByWithRelationInput[]
+  cursor?: Prisma.TeacherDailyProgressWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeacherDailyProgressScalarFieldEnum | Prisma.TeacherDailyProgressScalarFieldEnum[]
+}
+
+/**
+ * User.touristPrepsCompleted
+ */
+export type User$touristPrepsCompletedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TouristPrep
+   */
+  select?: Prisma.TouristPrepSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TouristPrep
+   */
+  omit?: Prisma.TouristPrepOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TouristPrepInclude<ExtArgs> | null
+  where?: Prisma.TouristPrepWhereInput
+  orderBy?: Prisma.TouristPrepOrderByWithRelationInput | Prisma.TouristPrepOrderByWithRelationInput[]
+  cursor?: Prisma.TouristPrepWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TouristPrepScalarFieldEnum | Prisma.TouristPrepScalarFieldEnum[]
+}
+
+/**
+ * User.touristPrepsCreated
+ */
+export type User$touristPrepsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TouristPrep
+   */
+  select?: Prisma.TouristPrepSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TouristPrep
+   */
+  omit?: Prisma.TouristPrepOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TouristPrepInclude<ExtArgs> | null
+  where?: Prisma.TouristPrepWhereInput
+  orderBy?: Prisma.TouristPrepOrderByWithRelationInput | Prisma.TouristPrepOrderByWithRelationInput[]
+  cursor?: Prisma.TouristPrepWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TouristPrepScalarFieldEnum | Prisma.TouristPrepScalarFieldEnum[]
+}
+
+/**
+ * User.employeeAttendancesRecorded
+ */
+export type User$employeeAttendancesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the EmployeeAttendance
+   */
+  select?: Prisma.EmployeeAttendanceSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the EmployeeAttendance
+   */
+  omit?: Prisma.EmployeeAttendanceOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EmployeeAttendanceInclude<ExtArgs> | null
+  where?: Prisma.EmployeeAttendanceWhereInput
+  orderBy?: Prisma.EmployeeAttendanceOrderByWithRelationInput | Prisma.EmployeeAttendanceOrderByWithRelationInput[]
+  cursor?: Prisma.EmployeeAttendanceWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EmployeeAttendanceScalarFieldEnum | Prisma.EmployeeAttendanceScalarFieldEnum[]
+}
+
+/**
+ * User.salaryAdvancesRecorded
+ */
+export type User$salaryAdvancesRecordedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the EmployeeSalaryAdvance
+   */
+  select?: Prisma.EmployeeSalaryAdvanceSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the EmployeeSalaryAdvance
+   */
+  omit?: Prisma.EmployeeSalaryAdvanceOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.EmployeeSalaryAdvanceInclude<ExtArgs> | null
+  where?: Prisma.EmployeeSalaryAdvanceWhereInput
+  orderBy?: Prisma.EmployeeSalaryAdvanceOrderByWithRelationInput | Prisma.EmployeeSalaryAdvanceOrderByWithRelationInput[]
+  cursor?: Prisma.EmployeeSalaryAdvanceWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.EmployeeSalaryAdvanceScalarFieldEnum | Prisma.EmployeeSalaryAdvanceScalarFieldEnum[]
+}
+
+/**
+ * User.leadStatusHistoryChanged
+ */
+export type User$leadStatusHistoryChangedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LeadStatusHistory
+   */
+  select?: Prisma.LeadStatusHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LeadStatusHistory
+   */
+  omit?: Prisma.LeadStatusHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LeadStatusHistoryInclude<ExtArgs> | null
+  where?: Prisma.LeadStatusHistoryWhereInput
+  orderBy?: Prisma.LeadStatusHistoryOrderByWithRelationInput | Prisma.LeadStatusHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.LeadStatusHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LeadStatusHistoryScalarFieldEnum | Prisma.LeadStatusHistoryScalarFieldEnum[]
 }
 
 /**

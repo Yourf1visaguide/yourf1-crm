@@ -8,19 +8,23 @@ import { useUserSheet } from "@/features/users/store/use-user-sheet";
 import { useEditEmployee } from "@/features/users/api/use-edit-employee-detail";
 import UserForm from "./UserForm";
 import { FormHeading } from "@/components/resuable-components/form-heading";
+
 import type { EditEmployeeFormValues } from "../../schemas/user-schema";
 
 export default function EditUserSheet() {
   const isOpen = useUserSheet((state) => state.isOpen);
   const onClose = useUserSheet((state) => state.onClose);
+
   const mutation = useEditEmployee();
   const employee = useUserSheet((state) => state.employee);
+
   if (!employee) {
     return null;
   }
 
   const employeeId = employee.id;
-  const updatedEmployee:EditEmployeeFormValues = {
+
+  const updatedEmployee: EditEmployeeFormValues = {
     email: employee.user.email,
     employeeCode: employee.employeeCode,
     name: employee.name,
@@ -29,22 +33,20 @@ export default function EditUserSheet() {
     designation: employee.designation ?? "",
     joiningDate: employee.joiningDate.slice(0, 10),
     employmentStatus: employee.employmentStatus,
-    password:""
-  }
-  
-  function handleSubmit(
+    password: "",
+  };
+
+  async function handleSubmit(
     values: EditEmployeeFormValues,
   ) {
-    mutation.mutate({
-      employeeId: employeeId,
+    await mutation.mutateAsync({
+      employeeId,
       data: values,
-    }, {
-      onSuccess:() => {
-        onClose();
-      }
     });
 
+    onClose();
   }
+
   return (
     <Sheet
       open={isOpen}
@@ -56,7 +58,7 @@ export default function EditUserSheet() {
     >
       <SheetContent
         side="right"
-        className="flex  flex-col gap-0 overflow-hidden border-l border-border/70 bg-background p-0 data-[side=right]:max-w-4xl"
+        className="flex flex-col gap-0 overflow-hidden border-l border-border/70 bg-background p-0 data-[side=right]:max-w-4xl"
       >
         <FormHeading
           icon={<UserRound className="size-5" />}

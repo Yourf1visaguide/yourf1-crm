@@ -35,7 +35,7 @@ model Branch {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  employees Employee[]
+  // employees Employee[]
 
   leads              Lead[]
   registrations      Registration[]
@@ -49,6 +49,7 @@ model Branch {
   teachingEnrollments TeachingEnrollment[]
   employeeAttendance EmployeeAttendance[]
   payrollEntries     PayrollEntry[]
+  clients Client[]
 
   @@index([isActive])
 }
@@ -159,6 +160,8 @@ model User {
   employeeAttendancesRecorded EmployeeAttendance[] @relation("EmployeeAttendanceRecordedBy")
 
   salaryAdvancesRecorded EmployeeSalaryAdvance[] @relation("SalaryAdvanceRecordedBy")
+
+  leadStatusHistoryChanged LeadStatusHistory[] @relation("LeadStatusHistoryChangedBy")
   @@unique([username])
   @@map("user")
 }
@@ -221,8 +224,7 @@ model Employee {
 
   userId String @unique
   user   User   @relation(fields: [userId], references: [id], onDelete: Restrict)
-  branchId String 
-  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
+  
   compensation   EmployeeCompensation[]
   schedules      EmployeeWorkSchedule[]
   payrollEntries PayrollEntry[] 
@@ -449,6 +451,19 @@ enum LeadStatus {
   CONVERTED
 }
 
+enum LeadRejectionReason {
+  FAKE
+  DUPLICATE
+  WRONG_NUMBER
+  OUT_OF_SCOPE
+  NOT_ELIGIBLE
+  OTHER
+}
+
+enum LeadStatusChangeSource {
+  USER
+  SYSTEM
+}
 model Lead {
   id       String @id @default(cuid())
   leadCode String @unique
@@ -456,20 +471,49 @@ model Lead {
   source LeadSource
   status LeadStatus @default(NEW)
 
+  rejectionReason LeadRejectionReason?
+
+  branchId String?
+  branch   Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
+
   clientId String
   client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
-  branchId String 
-  branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  assignments  LeadAssignment[]
-  registration Registration?
-    whatsappConversations WhatsAppConversation[]
+  assignments       LeadAssignment[]
+  statusHistory     LeadStatusHistory[]
+  registration      Registration?
+  whatsappConversations WhatsAppConversation[]
 
   @@index([source])
   @@index([status])
   @@index([clientId])
+  @@index([branchId])
+}
+
+model LeadStatusHistory {
+  id String @id @default(cuid())
+
+  leadId String
+  lead   Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  fromStatus LeadStatus?
+  toStatus   LeadStatus
+
+  changedById String?
+  changedBy   User? @relation( "LeadStatusHistoryChangedBy", fields: [changedById], references: [id], onDelete: Restrict )
+
+  source LeadStatusChangeSource @default(USER)
+
+  reason String?
+
+  changedAt DateTime @default(now())
+
+  @@index([leadId, changedAt])
+  @@index([changedById])
+  @@index([toStatus])
 }
 
 model LeadAssignment {
@@ -589,6 +633,10 @@ model Client {
   isPreviousVisaRefusal      Boolean @default(false)
   previousVisaRefusalDetails String?
 
+
+  branchId String?
+  branch   Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
+
   addresses        ClientAddress[]
   familyMembers    ClientFamilyMember[]
   educationRecords ClientEducation[]
@@ -599,8 +647,8 @@ model Client {
   applications     Application[]
   invoices         Invoice[]
   registrations    Registration[]
-financialEntries FinancialEntry[] @relation("FinancialEntryClient")
- whatsappConversations WhatsAppConversation[]
+  financialEntries FinancialEntry[] @relation("FinancialEntryClient")
+  whatsappConversations WhatsAppConversation[]
   createdAt        DateTime               @default(now())
   updatedAt        DateTime               @updatedAt
 }

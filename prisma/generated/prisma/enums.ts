@@ -68,6 +68,31 @@ export const PayrollStatus = {
 export type PayrollStatus = (typeof PayrollStatus)[keyof typeof PayrollStatus]
 
 
+export const EmployeeAttendanceStatus = {
+  PRESENT: 'PRESENT',
+  ABSENT: 'ABSENT'
+} as const
+
+export type EmployeeAttendanceStatus = (typeof EmployeeAttendanceStatus)[keyof typeof EmployeeAttendanceStatus]
+
+
+export const EmployeeAttendanceSource = {
+  BIOMETRIC: 'BIOMETRIC',
+  MANUAL: 'MANUAL'
+} as const
+
+export type EmployeeAttendanceSource = (typeof EmployeeAttendanceSource)[keyof typeof EmployeeAttendanceSource]
+
+
+export const SalaryAdvanceStatus = {
+  OPEN: 'OPEN',
+  DEDUCTED: 'DEDUCTED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type SalaryAdvanceStatus = (typeof SalaryAdvanceStatus)[keyof typeof SalaryAdvanceStatus]
+
+
 export const OFFICEREPORTCHECKSTATUS = {
   NA: 'NA',
   ISSUE: 'ISSUE',
@@ -76,3 +101,510 @@ export const OFFICEREPORTCHECKSTATUS = {
 } as const
 
 export type OFFICEREPORTCHECKSTATUS = (typeof OFFICEREPORTCHECKSTATUS)[keyof typeof OFFICEREPORTCHECKSTATUS]
+
+
+export const LeadSource = {
+  IVR: 'IVR',
+  WALK_IN: 'WALK_IN',
+  WHATSAPP: 'WHATSAPP',
+  REFERRAL: 'REFERRAL',
+  WEBSITE: 'WEBSITE',
+  INSTAGRAM: 'INSTAGRAM',
+  FACEBOOK: 'FACEBOOK',
+  PARTNER: 'PARTNER',
+  OTHER: 'OTHER'
+} as const
+
+export type LeadSource = (typeof LeadSource)[keyof typeof LeadSource]
+
+
+export const LeadStatus = {
+  NEW: 'NEW',
+  NOT_PICKED: 'NOT_PICKED',
+  NOT_INTERESTED: 'NOT_INTERESTED',
+  JUST_INFO: 'JUST_INFO',
+  CONVERTED: 'CONVERTED'
+} as const
+
+export type LeadStatus = (typeof LeadStatus)[keyof typeof LeadStatus]
+
+
+export const LeadRejectionReason = {
+  FAKE: 'FAKE',
+  DUPLICATE: 'DUPLICATE',
+  WRONG_NUMBER: 'WRONG_NUMBER',
+  OUT_OF_SCOPE: 'OUT_OF_SCOPE',
+  NOT_ELIGIBLE: 'NOT_ELIGIBLE',
+  OTHER: 'OTHER'
+} as const
+
+export type LeadRejectionReason = (typeof LeadRejectionReason)[keyof typeof LeadRejectionReason]
+
+
+export const LeadStatusChangeSource = {
+  USER: 'USER',
+  SYSTEM: 'SYSTEM'
+} as const
+
+export type LeadStatusChangeSource = (typeof LeadStatusChangeSource)[keyof typeof LeadStatusChangeSource]
+
+
+export const ClientGender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER',
+  PREFER_NOT_TO_SAY: 'PREFER_NOT_TO_SAY'
+} as const
+
+export type ClientGender = (typeof ClientGender)[keyof typeof ClientGender]
+
+
+export const MaritalStatus = {
+  SINGLE: 'SINGLE',
+  MARRIED: 'MARRIED',
+  DIVORCED: 'DIVORCED',
+  WIDOWED: 'WIDOWED',
+  OTHER: 'OTHER'
+} as const
+
+export type MaritalStatus = (typeof MaritalStatus)[keyof typeof MaritalStatus]
+
+
+export const Country = {
+  INDIA: 'INDIA',
+  UNITED_STATES: 'UNITED_STATES',
+  CANADA: 'CANADA',
+  UNITED_KINGDOM: 'UNITED_KINGDOM',
+  AUSTRALIA: 'AUSTRALIA',
+  NEW_ZEALAND: 'NEW_ZEALAND',
+  IRELAND: 'IRELAND',
+  GERMANY: 'GERMANY',
+  FRANCE: 'FRANCE',
+  ITALY: 'ITALY',
+  SPAIN: 'SPAIN',
+  PORTUGAL: 'PORTUGAL',
+  POLAND: 'POLAND',
+  NETHERLANDS: 'NETHERLANDS',
+  BELGIUM: 'BELGIUM',
+  SWITZERLAND: 'SWITZERLAND',
+  SWEDEN: 'SWEDEN',
+  NORWAY: 'NORWAY',
+  DENMARK: 'DENMARK',
+  FINLAND: 'FINLAND',
+  AUSTRIA: 'AUSTRIA',
+  CZECH_REPUBLIC: 'CZECH_REPUBLIC',
+  HUNGARY: 'HUNGARY',
+  ROMANIA: 'ROMANIA',
+  JAPAN: 'JAPAN',
+  SOUTH_KOREA: 'SOUTH_KOREA',
+  CHINA: 'CHINA',
+  SINGAPORE: 'SINGAPORE',
+  MALAYSIA: 'MALAYSIA',
+  THAILAND: 'THAILAND',
+  UAE: 'UAE',
+  SAUDI_ARABIA: 'SAUDI_ARABIA',
+  QATAR: 'QATAR',
+  OMAN: 'OMAN',
+  KUWAIT: 'KUWAIT',
+  BAHRAIN: 'BAHRAIN',
+  PAKISTAN: 'PAKISTAN',
+  BANGLADESH: 'BANGLADESH',
+  NEPAL: 'NEPAL',
+  SRI_LANKA: 'SRI_LANKA',
+  AFGHANISTAN: 'AFGHANISTAN',
+  SOUTH_AFRICA: 'SOUTH_AFRICA',
+  NIGERIA: 'NIGERIA',
+  KENYA: 'KENYA',
+  GHANA: 'GHANA',
+  EGYPT: 'EGYPT',
+  BRAZIL: 'BRAZIL',
+  MEXICO: 'MEXICO',
+  ARGENTINA: 'ARGENTINA',
+  CHILE: 'CHILE',
+  OTHER: 'OTHER'
+} as const
+
+export type Country = (typeof Country)[keyof typeof Country]
+
+
+export const ClientAddressType = {
+  PERMANENT: 'PERMANENT',
+  CURRENT: 'CURRENT'
+} as const
+
+export type ClientAddressType = (typeof ClientAddressType)[keyof typeof ClientAddressType]
+
+
+export const ClientFamilyRelationship = {
+  FATHER: 'FATHER',
+  MOTHER: 'MOTHER',
+  SPOUSE: 'SPOUSE',
+  CHILD: 'CHILD',
+  SIBLING: 'SIBLING'
+} as const
+
+export type ClientFamilyRelationship = (typeof ClientFamilyRelationship)[keyof typeof ClientFamilyRelationship]
+
+
+export const ClientEducationLevel = {
+  TENTH: 'TENTH',
+  TWELFTH: 'TWELFTH',
+  DIPLOMA: 'DIPLOMA',
+  BACHELOR: 'BACHELOR',
+  MASTER: 'MASTER',
+  DOCTORATE: 'DOCTORATE',
+  OTHER: 'OTHER'
+} as const
+
+export type ClientEducationLevel = (typeof ClientEducationLevel)[keyof typeof ClientEducationLevel]
+
+
+export const ClientTestType = {
+  IELTS: 'IELTS',
+  TOEFL: 'TOEFL',
+  PTE: 'PTE',
+  GRE: 'GRE',
+  GMAT: 'GMAT',
+  SAT: 'SAT',
+  DUOLINGO: 'DUOLINGO',
+  OTHER: 'OTHER'
+} as const
+
+export type ClientTestType = (typeof ClientTestType)[keyof typeof ClientTestType]
+
+
+export const ApplicationType = {
+  STUDY: 'STUDY',
+  TOURIST: 'TOURIST'
+} as const
+
+export type ApplicationType = (typeof ApplicationType)[keyof typeof ApplicationType]
+
+
+export const ApplicationStatus = {
+  INTAKE: 'INTAKE',
+  IN_PROGRESS: 'IN_PROGRESS',
+  READY_FOR_SUBMISSION: 'READY_FOR_SUBMISSION',
+  SUBMITTED: 'SUBMITTED',
+  VISA_STAMPED: 'VISA_STAMPED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type ApplicationStatus = (typeof ApplicationStatus)[keyof typeof ApplicationStatus]
+
+
+export const ApplicationCredentialType = {
+  STUDENT_EMAIL: 'STUDENT_EMAIL',
+  STUDENT_EMAIL_PASSWORD: 'STUDENT_EMAIL_PASSWORD',
+  VFS_PASSWORD: 'VFS_PASSWORD',
+  VISA_FORM_PASSWORD: 'VISA_FORM_PASSWORD',
+  CGI_USERNAME: 'CGI_USERNAME',
+  CGI_PASSWORD: 'CGI_PASSWORD',
+  DS160_USERNAME: 'DS160_USERNAME',
+  DS160_PASSWORD: 'DS160_PASSWORD',
+  EMAIL_2: 'EMAIL_2',
+  EMAIL_3: 'EMAIL_3',
+  OTHER: 'OTHER'
+} as const
+
+export type ApplicationCredentialType = (typeof ApplicationCredentialType)[keyof typeof ApplicationCredentialType]
+
+
+export const RegistrationStatus = {
+  ACTIVE: 'ACTIVE',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type RegistrationStatus = (typeof RegistrationStatus)[keyof typeof RegistrationStatus]
+
+
+export const CommissionType = {
+  COUNSELOR_REGISTRATION: 'COUNSELOR_REGISTRATION',
+  TELECALLER_REGISTRATION: 'TELECALLER_REGISTRATION'
+} as const
+
+export type CommissionType = (typeof CommissionType)[keyof typeof CommissionType]
+
+
+export const CommissionStatus = {
+  EARNED: 'EARNED',
+  REVERSED: 'REVERSED',
+  PAID: 'PAID'
+} as const
+
+export type CommissionStatus = (typeof CommissionStatus)[keyof typeof CommissionStatus]
+
+
+export const TaskType = {
+  LEAD_FOLLOW_UP: 'LEAD_FOLLOW_UP',
+  DOCUMENT_FOLLOW_UP: 'DOCUMENT_FOLLOW_UP',
+  TEACHING_URGENT_PREP: 'TEACHING_URGENT_PREP',
+  PAYMENT_COLLECTION: 'PAYMENT_COLLECTION',
+  TEACHING_PARENT_CONTACT: 'TEACHING_PARENT_CONTACT',
+  OTHER: 'OTHER'
+} as const
+
+export type TaskType = (typeof TaskType)[keyof typeof TaskType]
+
+
+export const TaskStatus = {
+  OPEN: 'OPEN',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type TaskStatus = (typeof TaskStatus)[keyof typeof TaskStatus]
+
+
+export const TaskPriority = {
+  LOW: 'LOW',
+  NORMAL: 'NORMAL',
+  HIGH: 'HIGH',
+  URGENT: 'URGENT'
+} as const
+
+export type TaskPriority = (typeof TaskPriority)[keyof typeof TaskPriority]
+
+
+export const NotificationPriority = {
+  LOW: 'LOW',
+  NORMAL: 'NORMAL',
+  HIGH: 'HIGH',
+  URGENT: 'URGENT'
+} as const
+
+export type NotificationPriority = (typeof NotificationPriority)[keyof typeof NotificationPriority]
+
+
+export const NotificationSurface = {
+  BELL: 'BELL',
+  DASHBOARD: 'DASHBOARD',
+  SIDEBAR: 'SIDEBAR'
+} as const
+
+export type NotificationSurface = (typeof NotificationSurface)[keyof typeof NotificationSurface]
+
+
+export const ApplicationDocumentStatus = {
+  PENDING: 'PENDING',
+  MISSING: 'MISSING',
+  RECEIVED: 'RECEIVED',
+  VERIFIED: 'VERIFIED',
+  NOT_REQUIRED: 'NOT_REQUIRED'
+} as const
+
+export type ApplicationDocumentStatus = (typeof ApplicationDocumentStatus)[keyof typeof ApplicationDocumentStatus]
+
+
+export const InvoiceType = {
+  REGISTRATION: 'REGISTRATION',
+  POST_VISA_SERVICE: 'POST_VISA_SERVICE'
+} as const
+
+export type InvoiceType = (typeof InvoiceType)[keyof typeof InvoiceType]
+
+
+export const InvoiceStatus = {
+  ISSUED: 'ISSUED',
+  PARTIALLY_PAID: 'PARTIALLY_PAID',
+  PAID: 'PAID',
+  PARTIALLY_REFUNDED: 'PARTIALLY_REFUNDED',
+  REFUNDED: 'REFUNDED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type InvoiceStatus = (typeof InvoiceStatus)[keyof typeof InvoiceStatus]
+
+
+export const PaymentMethod = {
+  CASH: 'CASH',
+  UPI: 'UPI',
+  BANK_TRANSFER: 'BANK_TRANSFER',
+  CARD: 'CARD',
+  CHEQUE: 'CHEQUE',
+  OTHER: 'OTHER'
+} as const
+
+export type PaymentMethod = (typeof PaymentMethod)[keyof typeof PaymentMethod]
+
+
+export const PaymentStatus = {
+  CONFIRMED: 'CONFIRMED',
+  VOIDED: 'VOIDED'
+} as const
+
+export type PaymentStatus = (typeof PaymentStatus)[keyof typeof PaymentStatus]
+
+
+export const ExpenseCategory = {
+  META_ADS: 'META_ADS',
+  SUBSCRIPTION: 'SUBSCRIPTION',
+  CLIENT_MEAL: 'CLIENT_MEAL',
+  OFFICE_REPAIR: 'OFFICE_REPAIR',
+  OFFICE_EXPENSE: 'OFFICE_EXPENSE',
+  TRAVEL: 'TRAVEL',
+  OTHER: 'OTHER'
+} as const
+
+export type ExpenseCategory = (typeof ExpenseCategory)[keyof typeof ExpenseCategory]
+
+
+export const ExpenseStatus = {
+  RECORDED: 'RECORDED',
+  VOIDED: 'VOIDED'
+} as const
+
+export type ExpenseStatus = (typeof ExpenseStatus)[keyof typeof ExpenseStatus]
+
+
+export const ExpenseSource = {
+  MANUAL: 'MANUAL',
+  CREDIT_CARD: 'CREDIT_CARD',
+  BANK_STATEMENT: 'BANK_STATEMENT'
+} as const
+
+export type ExpenseSource = (typeof ExpenseSource)[keyof typeof ExpenseSource]
+
+
+export const FinancialEntryKind = {
+  REVENUE: 'REVENUE',
+  PASS_THROUGH: 'PASS_THROUGH'
+} as const
+
+export type FinancialEntryKind = (typeof FinancialEntryKind)[keyof typeof FinancialEntryKind]
+
+
+export const FinancialEntryType = {
+  UNIVERSITY_COMMISSION: 'UNIVERSITY_COMMISSION',
+  FLIGHT_TICKET_MARGIN: 'FLIGHT_TICKET_MARGIN',
+  BLOCKED_ACCOUNT: 'BLOCKED_ACCOUNT',
+  EMBASSY_FEE: 'EMBASSY_FEE',
+  BIOMETRIC_FEE: 'BIOMETRIC_FEE',
+  TRAVEL_INSURANCE: 'TRAVEL_INSURANCE',
+  OTHER: 'OTHER'
+} as const
+
+export type FinancialEntryType = (typeof FinancialEntryType)[keyof typeof FinancialEntryType]
+
+
+export const FinancialEntryStatus = {
+  EXPECTED: 'EXPECTED',
+  COMPLETED: 'COMPLETED',
+  VOIDED: 'VOIDED'
+} as const
+
+export type FinancialEntryStatus = (typeof FinancialEntryStatus)[keyof typeof FinancialEntryStatus]
+
+
+export const PostVisaTaskType = {
+  FLIGHTS: 'FLIGHTS',
+  FOREX: 'FOREX',
+  ACCOMMODATION: 'ACCOMMODATION'
+} as const
+
+export type PostVisaTaskType = (typeof PostVisaTaskType)[keyof typeof PostVisaTaskType]
+
+
+export const PostVisaTaskStatus = {
+  PENDING: 'PENDING',
+  COMPLETED: 'COMPLETED',
+  NOT_REQUIRED: 'NOT_REQUIRED'
+} as const
+
+export type PostVisaTaskStatus = (typeof PostVisaTaskStatus)[keyof typeof PostVisaTaskStatus]
+
+
+export const WhatsAppConversationStatus = {
+  OPEN: 'OPEN',
+  PENDING: 'PENDING',
+  CLOSED: 'CLOSED'
+} as const
+
+export type WhatsAppConversationStatus = (typeof WhatsAppConversationStatus)[keyof typeof WhatsAppConversationStatus]
+
+
+export const WhatsAppMessageDirection = {
+  INBOUND: 'INBOUND',
+  OUTBOUND: 'OUTBOUND'
+} as const
+
+export type WhatsAppMessageDirection = (typeof WhatsAppMessageDirection)[keyof typeof WhatsAppMessageDirection]
+
+
+export const WhatsAppMessageType = {
+  TEXT: 'TEXT',
+  IMAGE: 'IMAGE',
+  DOCUMENT: 'DOCUMENT',
+  AUDIO: 'AUDIO',
+  VIDEO: 'VIDEO',
+  LOCATION: 'LOCATION',
+  INTERACTIVE: 'INTERACTIVE',
+  TEMPLATE: 'TEMPLATE',
+  OTHER: 'OTHER'
+} as const
+
+export type WhatsAppMessageType = (typeof WhatsAppMessageType)[keyof typeof WhatsAppMessageType]
+
+
+export const WhatsAppMessageStatus = {
+  RECEIVED: 'RECEIVED',
+  PENDING: 'PENDING',
+  SENT: 'SENT',
+  DELIVERED: 'DELIVERED',
+  READ: 'READ',
+  FAILED: 'FAILED'
+} as const
+
+export type WhatsAppMessageStatus = (typeof WhatsAppMessageStatus)[keyof typeof WhatsAppMessageStatus]
+
+
+export const LanguageCourseType = {
+  IELTS: 'IELTS',
+  PTE: 'PTE'
+} as const
+
+export type LanguageCourseType = (typeof LanguageCourseType)[keyof typeof LanguageCourseType]
+
+
+export const TeachingEnrollmentStatus = {
+  ACTIVE: 'ACTIVE',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type TeachingEnrollmentStatus = (typeof TeachingEnrollmentStatus)[keyof typeof TeachingEnrollmentStatus]
+
+
+export const TeachingAttendanceStatus = {
+  PRESENT: 'PRESENT',
+  ABSENT: 'ABSENT'
+} as const
+
+export type TeachingAttendanceStatus = (typeof TeachingAttendanceStatus)[keyof typeof TeachingAttendanceStatus]
+
+
+export const TeachingDeliveryMode = {
+  ONLINE: 'ONLINE',
+  OFFLINE: 'OFFLINE'
+} as const
+
+export type TeachingDeliveryMode = (typeof TeachingDeliveryMode)[keyof typeof TeachingDeliveryMode]
+
+
+export const TeachingStudyMode = {
+  GROUP: 'GROUP',
+  SPECIAL_ATTENTION: 'SPECIAL_ATTENTION'
+} as const
+
+export type TeachingStudyMode = (typeof TeachingStudyMode)[keyof typeof TeachingStudyMode]
+
+
+export const TouristPrepStatus = {
+  NOT_STARTED: 'NOT_STARTED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  COMPLETED: 'COMPLETED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type TouristPrepStatus = (typeof TouristPrepStatus)[keyof typeof TouristPrepStatus]

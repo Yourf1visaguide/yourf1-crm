@@ -7,7 +7,7 @@ import {
 
 export const OFFICE_TIME_ZONE = "Asia/Kolkata";
 
-export const DEFAULT_DATE_RANGE_DAYS = 30;
+export const DEFAULT_DATE_RANGE_DAYS = 7;
 
 export const DATE_RANGE_QUERY_KEYS = {
   from: "from",

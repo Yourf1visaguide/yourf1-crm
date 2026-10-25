@@ -7,28 +7,92 @@ import type {
   SortingState,
 } from "@tanstack/react-table";
 
-import { AlertCircle, RefreshCw } from "lucide-react";
+import {
+  AlertCircle,
+  RefreshCw,
+  X,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { DataTable } from "@/components/table/data-table";
 import { DataTableSkeleton } from "@/features/users/components/data-table-skelton";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
-// import { useLeads } from "../api/use-leads";
+import {
+  ApplicationType,
+  Country,
+  LeadStatus,
+} from "@/prisma/generated/prisma/enums";
+
 import { useLeadSheet } from "../store/use-lead-sheet";
-// import { leadsColumns } from "./leads-columns";
+import { useLeads } from "../api/use-leads";
+import { leadsColumns } from "./leads-columns";
+import CountTab from "./count-tab";
 
-type LeadsTableProps = {
-  from: string;
-  to: string;
-};
+type AssignmentScope =
+  | "ALL"
+  | "ASSIGNED"
+  | "UNASSIGNED";
+
+type StatusFilter = "ALL" | LeadStatus;
+
+const statusOptions: Array<{
+  value: StatusFilter;
+  label: string;
+  countKey: LeadStatus;
+}> = [
+  {
+    value: "NEW",
+    label: "New",
+    countKey: "NEW",
+  },
+  {
+    value: "NOT_PICKED",
+    label: "Not Picked",
+    countKey: "NOT_PICKED",
+  },
+  {
+    value: "JUST_INFO",
+    label: "Just Info",
+    countKey: "JUST_INFO",
+  },
+  {
+    value: "NOT_INTERESTED",
+    label: "Not Interested",
+    countKey: "NOT_INTERESTED",
+  },
+  {
+    value: "CONVERTED",
+    label: "Converted",
+    countKey: "CONVERTED",
+  },
+];
+
+function enumLabel(value: string) {
+  return value
+    .replaceAll("_", " ")
+    .toLowerCase()
+    .replace(/\b\w/g, (character) => character.toUpperCase());
+}
+
 
 export default function LeadsTable({
   from,
   to,
-}: LeadsTableProps) {
-  const onOpen = useLeadSheet(
-    (state) => state.onOpen,
-  );
+}: {
+  from: string;
+  to: string;
+}) {
+  const router = useRouter();
+  const onOpen = useLeadSheet((state) => state.onOpen);
 
   const [pagination, setPagination] =
     React.useState<PaginationState>({
@@ -37,68 +101,126 @@ export default function LeadsTable({
     });
 
   const [sorting, setSorting] =
-    React.useState<SortingState>([]);
+    React.useState<SortingState>([
+      {
+        id: "createdAt",
+        desc: true,
+      },
+    ]);
+
+  const [search, setSearch] = React.useState("");
+  const [debouncedSearch, setDebouncedSearch] =
+    React.useState("");
+
+  const [status, setStatus] =
+    React.useState<StatusFilter>("ALL");
+
+  const [assignmentScope, setAssignmentScope] =
+    React.useState<AssignmentScope>("ALL");
+
+  const [applicationType, setApplicationType] =
+    React.useState<"ALL" | ApplicationType>("ALL");
+
+  const [preferredCountry, setPreferredCountry] =
+    React.useState<"ALL" | Country>("ALL");
+
+  React.useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setDebouncedSearch(search.trim());
+    }, 350);
+
+    return () => window.clearTimeout(timer);
+  }, [search]);
 
   React.useEffect(() => {
     setPagination((previous) => ({
       ...previous,
       pageIndex: 0,
     }));
-  }, [from, to]);
+  }, [
+    from,
+    to,
+    status,
+    assignmentScope,
+    applicationType,
+    preferredCountry,
+    debouncedSearch,
+  ]);
 
   const sort = sorting[0];
-
   const sortBy = sort?.id ?? "createdAt";
   const sortOrder = sort?.desc ? "desc" : "asc";
 
-  // const {
-  //   data,
-  //   isPending,
-  //   isFetching,
-  //   isError,
-  //   refetch,
-  // } = useLeads({
-  //   from,
-  //   to,
-  //   pageIndex: pagination.pageIndex,
-  //   pageSize: pagination.pageSize,
-  //   sortBy,
-  //   sortOrder,
-  // });
+  const {
+    data,
+    isPending,
+    isFetching,
+    isError,
+    refetch,
+  } = useLeads({
+    from,
+    to,
+    pageIndex: pagination.pageIndex,
+    pageSize: pagination.pageSize,
+    search: debouncedSearch,
+    status: status === "ALL" ? undefined : status,
+    applicationType:
+      applicationType === "ALL"
+        ? undefined
+        : applicationType,
+    preferredCountry:
+      preferredCountry === "ALL"
+        ? undefined
+        : preferredCountry,
+    assignmentScope,
+    sortBy,
+    sortOrder,
+  });
 
-  // if (isPending) {
-  //   return <DataTableSkeleton />;
-  // }
+  const hasFilters =
+    applicationType !== "ALL" ||
+    preferredCountry !== "ALL";
 
-  // if (isError) {
-  //   return (
-  //     <div className="flex min-h-[320px] items-center justify-center rounded-xl border bg-card">
-  //       <div className="flex max-w-sm flex-col items-center px-6 py-10 text-center">
-  //         <div className="mb-4 flex size-11 items-center justify-center rounded-full bg-destructive/10">
-  //           <AlertCircle className="size-5 text-destructive" />
-  //         </div>
+  function clearFilters() {
+    setApplicationType("ALL");
+    setPreferredCountry("ALL");
+  }
 
-  //         <h3 className="text-sm font-semibold text-foreground">
-  //           Unable to load leads
-  //         </h3>
+  if (isPending) {
+    return <DataTableSkeleton columns={7} />;
+  }
 
-  //         <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
-  //           We couldn't retrieve the leads. Please try again.
-  //         </p>
+  if (isError) {
+    return (
+      <div className="flex min-h-[320px] items-center justify-center rounded-xl border bg-card">
+        <div className="flex max-w-sm flex-col items-center px-6 py-10 text-center">
+          <div className="mb-4 flex size-11 items-center justify-center rounded-full bg-destructive/10">
+            <AlertCircle className="size-5 text-destructive" />
+          </div>
 
-  //         <Button
-  //           variant="outline"
-  //           size="sm"
-  //           className="mt-5"
-  //           onClick={() => refetch()}
-  //         >
-  //           <RefreshCw className="mr-2 size-4" />
-  //           Try again
-  //         </Button>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+          <h3 className="text-sm font-semibold text-foreground">
+            Unable to load leads
+          </h3>
+
+          <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
+            We couldn't retrieve the leads. Please try again.
+          </p>
+
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-5"
+            onClick={() => refetch()}
+          >
+            <RefreshCw className="mr-2 size-4" />
+            Try again
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  const counts = data?.counts;
 
   return (
     <div>
@@ -122,7 +244,132 @@ export default function LeadsTable({
         </Button>
       </div>
 
-      {/* <DataTable
+      {/* Workload + status counts. Leads-specific; DataTable stays generic. */}
+      <div className="mb-5 space-y-2">
+        <div className="hidden overflow-x-auto lg:block">
+          <div className="inline-flex min-w-full items-center gap-1 rounded-xl  p-1">
+            <CountTab
+              active={status === "ALL"}
+              label="All"
+              count={counts?.all ?? 0}
+              onClick={() => setStatus("ALL")}
+            />
+
+            {statusOptions.map((option) => (
+              <CountTab
+                key={option.value}
+                active={status === option.value}
+                label={option.label}
+                count={
+                  counts?.status[option.countKey] ?? 0
+                }
+                onClick={() => setStatus(option.value)}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-2 lg:hidden">
+        
+
+          <Select
+            value={status}
+            onValueChange={(value) =>
+              setStatus(value as StatusFilter)
+            }
+          >
+            <SelectTrigger className="w-full">
+              <SelectValue placeholder="Lead status" />
+            </SelectTrigger>
+
+            <SelectContent>
+              <SelectItem value="ALL">
+                All statuses · {counts?.all ?? 0}
+              </SelectItem>
+
+              {statusOptions.map((option) => (
+                <SelectItem
+                  key={option.value}
+                  value={option.value}
+                >
+                  {option.label} ·{" "}
+                  {counts?.status[option.countKey] ?? 0}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {/* Leads-specific filters stay outside the generic DataTable. */}
+      <div className="mb-5 flex flex-col justify-end gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+        <Select
+          value={applicationType}
+          onValueChange={(value) =>
+            setApplicationType(
+              value as "ALL" | ApplicationType,
+            )
+          }
+        >
+          <SelectTrigger className="w-full sm:w-[180px]">
+            <SelectValue placeholder="Application" />
+          </SelectTrigger>
+
+          <SelectContent>
+            <SelectItem value="ALL">
+              All applications
+            </SelectItem>
+            <SelectItem value={ApplicationType.STUDY}>
+              Study Abroad
+            </SelectItem>
+            <SelectItem value={ApplicationType.TOURIST}>
+              Tourist Visa
+            </SelectItem>
+          </SelectContent>
+        </Select>
+
+        <Select
+          value={preferredCountry}
+          onValueChange={(value) =>
+            setPreferredCountry(
+              value as "ALL" | Country,
+            )
+          }
+        >
+          <SelectTrigger className="w-full sm:w-[220px]">
+            <SelectValue placeholder="Country" />
+          </SelectTrigger>
+
+          <SelectContent>
+            <SelectItem value="ALL">
+              All countries
+            </SelectItem>
+
+            {Object.values(Country).map((country) => (
+              <SelectItem
+                key={country}
+                value={country}
+              >
+                {enumLabel(country)}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        {hasFilters && (
+          <Button
+            type="button"
+            variant="ghost"
+            onClick={clearFilters}
+            className="w-full sm:w-auto"
+          >
+            <X className="mr-2 size-4" />
+            Clear filters
+          </Button>
+        )}
+      </div>
+
+      <DataTable
         columns={leadsColumns}
         data={data?.leads ?? []}
         emptyMessage="No leads found for the selected period."
@@ -149,10 +396,16 @@ export default function LeadsTable({
             pageIndex: 0,
           }));
         }}
+        search={search}
+        onSearchChange={setSearch}
+        searchPlaceholder="Search name, phone, email or country..."
         isFetching={isFetching}
-        showSearch={false}
+        showSearch
         showDeleteAction={false}
-      /> */}
+        onRowClick={(lead) => {
+          router.push(`/leads/${lead.id}`);
+        }}
+      />
     </div>
   );
 }

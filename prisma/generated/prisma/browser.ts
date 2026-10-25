@@ -18,6 +18,11 @@ export { Prisma }
 export * as $Enums from './enums'
 export * from './enums';
 /**
+ * Model Branch
+ * 
+ */
+export type Branch = Prisma.BranchModel
+/**
  * Model User
  * 
  */
@@ -58,6 +63,16 @@ export type EmployeeWorkSchedule = Prisma.EmployeeWorkScheduleModel
  */
 export type PayrollEntry = Prisma.PayrollEntryModel
 /**
+ * Model EmployeeAttendance
+ * 
+ */
+export type EmployeeAttendance = Prisma.EmployeeAttendanceModel
+/**
+ * Model EmployeeSalaryAdvance
+ * 
+ */
+export type EmployeeSalaryAdvance = Prisma.EmployeeSalaryAdvanceModel
+/**
  * Model OfficeDailyReport
  * 
  */
@@ -67,3 +82,158 @@ export type OfficeDailyReport = Prisma.OfficeDailyReportModel
  * 
  */
 export type OfficeDailyReportCheck = Prisma.OfficeDailyReportCheckModel
+/**
+ * Model Lead
+ * 
+ */
+export type Lead = Prisma.LeadModel
+/**
+ * Model LeadStatusHistory
+ * 
+ */
+export type LeadStatusHistory = Prisma.LeadStatusHistoryModel
+/**
+ * Model LeadAssignment
+ * 
+ */
+export type LeadAssignment = Prisma.LeadAssignmentModel
+/**
+ * Model Client
+ * 
+ */
+export type Client = Prisma.ClientModel
+/**
+ * Model ClientAddress
+ * 
+ */
+export type ClientAddress = Prisma.ClientAddressModel
+/**
+ * Model ClientFamilyMember
+ * 
+ */
+export type ClientFamilyMember = Prisma.ClientFamilyMemberModel
+/**
+ * Model ClientEducation
+ * 
+ */
+export type ClientEducation = Prisma.ClientEducationModel
+/**
+ * Model ClientTest
+ * 
+ */
+export type ClientTest = Prisma.ClientTestModel
+/**
+ * Model ClientWorkExperience
+ * 
+ */
+export type ClientWorkExperience = Prisma.ClientWorkExperienceModel
+/**
+ * Model ClientPassport
+ * 
+ */
+export type ClientPassport = Prisma.ClientPassportModel
+/**
+ * Model Application
+ * 
+ */
+export type Application = Prisma.ApplicationModel
+/**
+ * Model ApplicationCredential
+ * 
+ */
+export type ApplicationCredential = Prisma.ApplicationCredentialModel
+/**
+ * Model Registration
+ * 
+ */
+export type Registration = Prisma.RegistrationModel
+/**
+ * Model CommissionEntry
+ * 
+ */
+export type CommissionEntry = Prisma.CommissionEntryModel
+/**
+ * Model Task
+ * 
+ */
+export type Task = Prisma.TaskModel
+/**
+ * Model Notification
+ * 
+ */
+export type Notification = Prisma.NotificationModel
+/**
+ * Model AuditLog
+ * 
+ */
+export type AuditLog = Prisma.AuditLogModel
+/**
+ * Model DocumentRequirement
+ * 
+ */
+export type DocumentRequirement = Prisma.DocumentRequirementModel
+/**
+ * Model ApplicationDocument
+ * 
+ */
+export type ApplicationDocument = Prisma.ApplicationDocumentModel
+/**
+ * Model Invoice
+ * 
+ */
+export type Invoice = Prisma.InvoiceModel
+/**
+ * Model Payment
+ * 
+ */
+export type Payment = Prisma.PaymentModel
+/**
+ * Model Refund
+ * 
+ */
+export type Refund = Prisma.RefundModel
+/**
+ * Model Expense
+ * 
+ */
+export type Expense = Prisma.ExpenseModel
+/**
+ * Model FinancialEntry
+ * 
+ */
+export type FinancialEntry = Prisma.FinancialEntryModel
+/**
+ * Model PostVisaTask
+ * 
+ */
+export type PostVisaTask = Prisma.PostVisaTaskModel
+/**
+ * Model WhatsAppConversation
+ * 
+ */
+export type WhatsAppConversation = Prisma.WhatsAppConversationModel
+/**
+ * Model WhatsAppMessage
+ * 
+ */
+export type WhatsAppMessage = Prisma.WhatsAppMessageModel
+/**
+ * Model TeachingEnrollment
+ * 
+ */
+export type TeachingEnrollment = Prisma.TeachingEnrollmentModel
+/**
+ * Model TeachingDailyRecord
+ * 
+ */
+export type TeachingDailyRecord = Prisma.TeachingDailyRecordModel
+/**
+ * Model TeacherDailyProgress
+ * 
+ */
+export type TeacherDailyProgress = Prisma.TeacherDailyProgressModel
+/**
+ * Model TouristPrep
+ * 
+ */
+export type TouristPrep = Prisma.TouristPrepModel

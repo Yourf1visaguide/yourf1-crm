@@ -1,6 +1,6 @@
 "use client";
 
-import { Clock3, Users } from "lucide-react";
+import { Clock3 } from "lucide-react";
 
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 
@@ -9,20 +9,30 @@ import UserForm from "./UserForm";
 import { FormHeading } from "@/components/resuable-components/form-heading";
 import { useChangeSchedule } from "@/features/users/api/use-edit-employee-schedule";
 
-export default function EditUserSheet() {
+import type { WorkScheduleInput } from "@/features/users/schemas/user-schema";
+
+export default function EditUserScheduleSheet() {
   const isOpen = useUserSheet((state) => state.isOpen);
   const onClose = useUserSheet((state) => state.onClose);
+  const employee = useUserSheet((state) => state.employee);
+
   const mutation = useChangeSchedule();
 
-  async function handleSubmit(
-    values: Parameters<typeof mutation.mutate>[0],
-  ) {
-    await mutation.mutate(values, {
-      onSuccess: () => {
-        onClose();
-      },
-    });
+  if (!employee) {
+    return null;
   }
+
+  async function handleSubmit(
+    values: WorkScheduleInput,
+  ) {
+    // await mutation.mutateAsync({
+    //   employeeId: employee.id,
+    //   data: values,
+    // });
+
+    onClose();
+  }
+
   return (
     <Sheet
       open={isOpen}
@@ -34,7 +44,7 @@ export default function EditUserSheet() {
     >
       <SheetContent
         side="right"
-        className="flex  flex-col gap-0 overflow-hidden border-l border-border/70 bg-background p-0 !max-w-xl"
+        className="flex flex-col gap-0 overflow-hidden border-l border-border/70 bg-background p-0 !max-w-xl"
       >
         <FormHeading
           icon={<Clock3 className="size-5" />}

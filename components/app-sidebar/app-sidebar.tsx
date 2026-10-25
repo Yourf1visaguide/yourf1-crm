@@ -71,7 +71,7 @@ const mainNavigation: NavItem[] = [
   },
   {
     title: "Leads",
-    href: "/dashboard/leads",
+    href: "/leads",
     icon: UserRoundPlus,
     badge: "12",
   },

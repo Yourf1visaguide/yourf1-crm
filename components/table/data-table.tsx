@@ -76,6 +76,7 @@ interface DataTableProps<TData extends RowData, TValue = unknown> {
   onRowSelectionChange?: OnChangeFn<RowSelectionState>;
 
   getRowId?: (row: TData) => string;
+  onRowClick?: (row: TData) => void;
 
   onDeleteSelected?: (rows: TData[]) => void;
 
@@ -107,6 +108,7 @@ export function DataTable<TData extends RowData, TValue = unknown>({
   onRowSelectionChange,
 
   getRowId,
+  onRowClick,
 
   onDeleteSelected,
   deleteLabel = "Delete",
@@ -345,18 +347,20 @@ export function DataTable<TData extends RowData, TValue = unknown>({
               {rows.length > 0 ? (
                 rows.map((row) => (
                   <TableRow
-                    key={row.id}
-                    data-state={row.getIsSelected() ? "selected" : undefined}
-                    className="
-                    group
-                    border-b border-border/50
-                    transition-colors duration-150
-                    hover:bg-accent/50
-                    data-[state=selected]:bg-primary/5
-                    data-[state=selected]:hover:bg-primary/10
-                    last:border-b-0
-                  "
-                  >
+                  key={row.id}
+                  data-state={row.getIsSelected() ? "selected" : undefined}
+                  onClick={() => onRowClick?.(row.original)}
+                  className="
+                  group
+                  cursor-pointer
+                  border-b border-border/50
+                  transition-colors duration-150
+                  hover:bg-accent/50
+                  data-[state=selected]:bg-primary/5
+                  data-[state=selected]:hover:bg-primary/10
+                  last:border-b-0
+                "
+                >
                     {row.getVisibleCells().map((cell) => (
                       <TableCell
                         key={cell.id}
