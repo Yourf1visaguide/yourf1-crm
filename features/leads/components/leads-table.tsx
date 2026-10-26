@@ -403,8 +403,11 @@ export default function LeadsTable({
         showSearch
         showDeleteAction={false}
         onRowClick={(lead) => {
-          router.push(`/leads/${lead.id}`);
+          router.push(`/leads/demo`);
         }}
+        //  onRowClick={(lead) => {
+        //   router.push(`/leads/${lead.id}`);
+        // }}
       />
     </div>
   );
