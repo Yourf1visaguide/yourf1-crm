@@ -126,7 +126,7 @@ model User {
   tasksAssigned Task[] @relation("TaskAssignedTo")
 
   tasksCreated Task[] @relation("TaskCreatedBy")
-
+  leadCallAttemptBy LeadCallAttempt[]
   notifications Notification[] @relation("NotificationUser")
 
   notificationsResolved Notification[] @relation("NotificationResolvedBy")
@@ -162,6 +162,8 @@ model User {
   salaryAdvancesRecorded EmployeeSalaryAdvance[] @relation("SalaryAdvanceRecordedBy")
 
   leadStatusHistoryChanged LeadStatusHistory[] @relation("LeadStatusHistoryChangedBy")
+  leadVisitsCreated LeadVisit[] @relation("LeadVisitCreatedBy")
+leadVisitEvents   LeadVisitEvent[] @relation("LeadVisitEventChangedBy")
   @@unique([username])
   @@map("user")
 }
@@ -431,128 +433,6 @@ model OfficeDailyReportCheck {
   @@index([reportId, status])
 }
 
-enum LeadSource {
-  IVR
-  WALK_IN
-  WHATSAPP
-  REFERRAL
-  WEBSITE
-  INSTAGRAM
-  FACEBOOK
-  PARTNER
-  OTHER
-}
-
-enum LeadStatus {
-  NEW
-  NOT_PICKED
-  NOT_INTERESTED
-  JUST_INFO
-  CONVERTED
-}
-
-enum LeadRejectionReason {
-  FAKE
-  DUPLICATE
-  WRONG_NUMBER
-  OUT_OF_SCOPE
-  NOT_ELIGIBLE
-  OTHER
-}
-
-enum LeadStatusChangeSource {
-  USER
-  SYSTEM
-}
-model Lead {
-  id       String @id @default(cuid())
-  leadCode String @unique
-
-  source LeadSource
-  status LeadStatus @default(NEW)
-
-  rejectionReason LeadRejectionReason?
-
-  branchId String?
-  branch   Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
-
-  clientId String
-  client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  assignments       LeadAssignment[]
-  statusHistory     LeadStatusHistory[]
-  registration      Registration?
-  whatsappConversations WhatsAppConversation[]
-
-  @@index([source])
-  @@index([status])
-  @@index([clientId])
-  @@index([branchId])
-}
-
-model LeadStatusHistory {
-  id String @id @default(cuid())
-
-  leadId String
-  lead   Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
-
-  fromStatus LeadStatus?
-  toStatus   LeadStatus
-
-  changedById String?
-  changedBy   User? @relation( "LeadStatusHistoryChangedBy", fields: [changedById], references: [id], onDelete: Restrict )
-
-  source LeadStatusChangeSource @default(USER)
-
-  reason String?
-
-  changedAt DateTime @default(now())
-
-  @@index([leadId, changedAt])
-  @@index([changedById])
-  @@index([toStatus])
-}
-
-model LeadAssignment {
-  id String @id @default(cuid())
-
-  leadId       String
-  assignedToId String
-  assignedById String
-
-  assignedAt DateTime  @default(now())
-  endedAt    DateTime?
-
-  note String?
-
-  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
-
-  assignedTo User @relation("LeadAssignedTo", fields: [assignedToId], references: [id], onDelete: Restrict)
-
-  assignedBy User @relation("LeadAssignedBy", fields: [assignedById], references: [id], onDelete: Restrict)
-
-  @@index([leadId])
-  @@index([assignedToId])
-  @@index([leadId, endedAt])
-}
-
-enum ClientGender {
-  MALE
-  FEMALE
-  OTHER
-  PREFER_NOT_TO_SAY
-}
-
-enum MaritalStatus {
-  SINGLE
-  MARRIED
-  DIVORCED
-  WIDOWED
-  OTHER
-}
 
 enum Country {
   INDIA
@@ -608,6 +488,70 @@ enum Country {
   OTHER
 }
 
+enum LeadSource {
+  IVR
+  WALK_IN
+  WHATSAPP
+  REFERRAL
+  WEBSITE
+  INSTAGRAM
+  FACEBOOK
+  PARTNER
+  OTHER
+}
+
+enum LeadStatus {
+  NEW
+  ASSIGNED
+
+  // Telecalling outcomes
+  NOT_PICKED
+  NOT_INTERESTED
+  INTERESTED
+  JUST_INFO
+
+  // Counselling outcomes
+  COUNSELLING
+  COLD
+  CONVERTED
+  REJECTED
+}
+
+enum LeadRejectionReason {
+  FAKE
+  DUPLICATE
+  WRONG_NUMBER
+  OUT_OF_SCOPE
+  NOT_ELIGIBLE
+  OTHER
+}
+
+enum ClientGender {
+  MALE
+  FEMALE
+  OTHER
+  PREFER_NOT_TO_SAY
+}
+
+enum MaritalStatus {
+  SINGLE
+  MARRIED
+  DIVORCED
+  WIDOWED
+  OTHER
+}
+
+
+enum LeadStatusChangeSource {
+  USER
+  SYSTEM
+}
+
+enum LeadAssignmentType{
+  TELLICALLING
+  COUNSELLING
+}
+
 model Client {
   id         String @id @default(cuid())
   clientCode String @unique
@@ -619,7 +563,8 @@ model Client {
   email              String?
   communicationEmail String?
 
-  phone          String?
+  phone          String 
+  normalizedPhone String @unique
   alternatePhone String?
 
   dateOfBirth   DateTime?      @db.Date
@@ -653,6 +598,174 @@ model Client {
   updatedAt        DateTime               @updatedAt
 }
 
+model Lead {
+  id       String @id @default(cuid())
+  leadCode String @unique
+
+  source LeadSource
+  status LeadStatus @default(NEW)
+
+  rejectionReason LeadRejectionReason?
+
+  branchId String?
+  branch   Branch? @relation(fields: [branchId], references: [id], onDelete: Restrict)
+
+  clientId String
+  client   Client @relation(fields: [clientId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  assignments       LeadAssignment[]
+  statusHistory     LeadStatusHistory[]
+  registration      Registration?
+  whatsappConversations WhatsAppConversation[]
+  leadCallAttempts LeadCallAttempt[]
+  leadVisits LeadVisit[]
+  @@index([source])
+  @@index([status])
+  @@index([clientId])
+  @@index([branchId])
+}
+
+model LeadStatusHistory {
+  id String @id @default(cuid())
+
+  leadId String
+  lead   Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  fromStatus LeadStatus?
+  toStatus   LeadStatus
+
+  changedById String?
+  changedBy   User? @relation( "LeadStatusHistoryChangedBy", fields: [changedById], references: [id], onDelete: Restrict )
+
+  source LeadStatusChangeSource @default(USER)
+
+  reason String?
+
+  changedAt DateTime @default(now())
+
+  @@index([leadId, changedAt])
+  @@index([changedById])
+  @@index([toStatus])
+}
+
+model LeadAssignment {
+  id String @id @default(cuid())
+
+  leadId       String
+  assignedToId String
+  assignedById String
+
+  assignedAt DateTime  @default(now())
+  endedAt    DateTime?
+
+  note String?
+  
+  type LeadAssignmentType
+
+  lead Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  assignedTo User @relation("LeadAssignedTo", fields: [assignedToId], references: [id], onDelete: Restrict)
+
+  assignedBy User @relation("LeadAssignedBy", fields: [assignedById], references: [id], onDelete: Restrict)
+  @@index([leadId, type])
+  @@index([assignedToId, type])
+  @@index([leadId, endedAt])
+}
+
+model LeadCallAttempt {
+  id String @id @default(cuid())
+
+  leadId String
+  lead   Lead @relation(fields: [leadId], references: [id], onDelete: Restrict)
+
+  attemptedById String
+  attemptedBy   User @relation(fields: [attemptedById], references: [id], onDelete: Restrict)
+
+  attemptedAt DateTime @default(now())
+  outcome     LeadStatus
+  notes       String?
+
+  createdAt DateTime @default(now())
+
+  @@index([leadId, attemptedAt])
+  @@index([attemptedById, attemptedAt])
+  @@index([outcome, attemptedAt])
+}
+
+enum LeadVisitStatus {
+  SCHEDULED
+  CONFIRMED
+  NOT_CONFIRMED
+  COMPLETED
+  MISSED
+  CANCELLED
+}
+
+
+enum LeadVisitEventType {
+  CREATED
+  RESCHEDULED
+  CONFIRMED
+  NOT_CONFIRMED
+  COMPLETED
+  MISSED
+  CANCELLED
+  NOTE_ADDED
+}
+
+model LeadVisit {
+  id String @id @default(cuid())
+
+  leadId String
+  lead   Lead @relation(fields: [leadId], references: [id], onDelete: Restrict)
+
+  promisedAt DateTime
+  status     LeadVisitStatus @default(SCHEDULED)
+
+  confirmationAt DateTime?
+  actualVisitAt  DateTime?
+
+  notes String?
+
+  createdById String
+  createdBy   User @relation( "LeadVisitCreatedBy", fields: [createdById], references: [id], onDelete: Restrict )
+
+  events LeadVisitEvent[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([leadId, promisedAt])
+  @@index([status, promisedAt])
+}
+
+model LeadVisitEvent {
+  id String @id @default(cuid())
+
+  visitId String
+  visit   LeadVisit @relation(fields: [visitId], references: [id], onDelete: Restrict)
+
+  eventType LeadVisitEventType
+
+  previousPromisedAt DateTime?
+  newPromisedAt      DateTime?
+
+  previousStatus LeadVisitStatus?
+  newStatus      LeadVisitStatus?
+
+  note String?
+
+  changedById String
+  changedBy   User @relation( "LeadVisitEventChangedBy", fields: [changedById], references: [id], onDelete: Restrict )
+
+  createdAt DateTime @default(now())
+
+  @@index([visitId, createdAt])
+  @@index([changedById, createdAt])
+}
 enum ClientAddressType {
   PERMANENT
   CURRENT
@@ -858,6 +971,7 @@ enum ApplicationStatus {
   SUBMITTED
   VISA_STAMPED
   CANCELLED
+  DENIED
 }
 
 model Application {
@@ -1079,6 +1193,7 @@ enum NotificationSurface {
   BELL
   DASHBOARD
   SIDEBAR
+  DEPARTMENTPAGE
 }
 
 model Notification {

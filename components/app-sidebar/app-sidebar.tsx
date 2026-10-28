@@ -70,8 +70,8 @@ const mainNavigation: NavItem[] = [
     icon: LayoutDashboard,
   },
   {
-    title: "Leads",
-    href: "/leads",
+    title: "Clients",
+    href: "/clients",
     icon: UserRoundPlus,
     badge: "12",
   },

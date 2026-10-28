@@ -22,3 +22,14 @@ export default async function LeadProfilePage({ params }: LeadProfilePageProps) 
 
   return <LeadProfileWorkspace profile={demoLeadProfile} />;
 }
+
+
+
+// import {
+//   LeadProfileWorkspace,
+//   leadProfileDemoData,
+// } from "@/features/leads/components/profile";
+
+// export default function LeadProfilePreview() {
+//   return <LeadProfileWorkspace profile={leadProfileDemoData} />;
+// }
