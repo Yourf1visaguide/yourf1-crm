@@ -614,38 +614,6 @@ export type RegistrationUncheckedUpdateManyWithoutCancelledByNestedInput = {
   deleteMany?: Prisma.RegistrationScalarWhereInput | Prisma.RegistrationScalarWhereInput[]
 }
 
-export type RegistrationCreateNestedOneWithoutLeadInput = {
-  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
-  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
-  connect?: Prisma.RegistrationWhereUniqueInput
-}
-
-export type RegistrationUncheckedCreateNestedOneWithoutLeadInput = {
-  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
-  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
-  connect?: Prisma.RegistrationWhereUniqueInput
-}
-
-export type RegistrationUpdateOneWithoutLeadNestedInput = {
-  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
-  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
-  upsert?: Prisma.RegistrationUpsertWithoutLeadInput
-  disconnect?: Prisma.RegistrationWhereInput | boolean
-  delete?: Prisma.RegistrationWhereInput | boolean
-  connect?: Prisma.RegistrationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.RegistrationUpdateToOneWithWhereWithoutLeadInput, Prisma.RegistrationUpdateWithoutLeadInput>, Prisma.RegistrationUncheckedUpdateWithoutLeadInput>
-}
-
-export type RegistrationUncheckedUpdateOneWithoutLeadNestedInput = {
-  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
-  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
-  upsert?: Prisma.RegistrationUpsertWithoutLeadInput
-  disconnect?: Prisma.RegistrationWhereInput | boolean
-  delete?: Prisma.RegistrationWhereInput | boolean
-  connect?: Prisma.RegistrationWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.RegistrationUpdateToOneWithWhereWithoutLeadInput, Prisma.RegistrationUpdateWithoutLeadInput>, Prisma.RegistrationUncheckedUpdateWithoutLeadInput>
-}
-
 export type RegistrationCreateNestedManyWithoutClientInput = {
   create?: Prisma.XOR<Prisma.RegistrationCreateWithoutClientInput, Prisma.RegistrationUncheckedCreateWithoutClientInput> | Prisma.RegistrationCreateWithoutClientInput[] | Prisma.RegistrationUncheckedCreateWithoutClientInput[]
   connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutClientInput | Prisma.RegistrationCreateOrConnectWithoutClientInput[]
@@ -686,6 +654,38 @@ export type RegistrationUncheckedUpdateManyWithoutClientNestedInput = {
   update?: Prisma.RegistrationUpdateWithWhereUniqueWithoutClientInput | Prisma.RegistrationUpdateWithWhereUniqueWithoutClientInput[]
   updateMany?: Prisma.RegistrationUpdateManyWithWhereWithoutClientInput | Prisma.RegistrationUpdateManyWithWhereWithoutClientInput[]
   deleteMany?: Prisma.RegistrationScalarWhereInput | Prisma.RegistrationScalarWhereInput[]
+}
+
+export type RegistrationCreateNestedOneWithoutLeadInput = {
+  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
+  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
+  connect?: Prisma.RegistrationWhereUniqueInput
+}
+
+export type RegistrationUncheckedCreateNestedOneWithoutLeadInput = {
+  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
+  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
+  connect?: Prisma.RegistrationWhereUniqueInput
+}
+
+export type RegistrationUpdateOneWithoutLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
+  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
+  upsert?: Prisma.RegistrationUpsertWithoutLeadInput
+  disconnect?: Prisma.RegistrationWhereInput | boolean
+  delete?: Prisma.RegistrationWhereInput | boolean
+  connect?: Prisma.RegistrationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RegistrationUpdateToOneWithWhereWithoutLeadInput, Prisma.RegistrationUpdateWithoutLeadInput>, Prisma.RegistrationUncheckedUpdateWithoutLeadInput>
+}
+
+export type RegistrationUncheckedUpdateOneWithoutLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.RegistrationCreateWithoutLeadInput, Prisma.RegistrationUncheckedCreateWithoutLeadInput>
+  connectOrCreate?: Prisma.RegistrationCreateOrConnectWithoutLeadInput
+  upsert?: Prisma.RegistrationUpsertWithoutLeadInput
+  disconnect?: Prisma.RegistrationWhereInput | boolean
+  delete?: Prisma.RegistrationWhereInput | boolean
+  connect?: Prisma.RegistrationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.RegistrationUpdateToOneWithWhereWithoutLeadInput, Prisma.RegistrationUpdateWithoutLeadInput>, Prisma.RegistrationUncheckedUpdateWithoutLeadInput>
 }
 
 export type RegistrationCreateNestedOneWithoutApplicationsInput = {
@@ -929,6 +929,64 @@ export type RegistrationUpdateManyWithWhereWithoutCancelledByInput = {
   data: Prisma.XOR<Prisma.RegistrationUpdateManyMutationInput, Prisma.RegistrationUncheckedUpdateManyWithoutCancelledByInput>
 }
 
+export type RegistrationCreateWithoutClientInput = {
+  id?: string
+  registrationCode: string
+  status?: $Enums.RegistrationStatus
+  registeredAt?: Date | string
+  cancelledAt?: Date | string | null
+  cancellationReason?: string | null
+  lead: Prisma.LeadCreateNestedOneWithoutRegistrationInput
+  registeredBy: Prisma.UserCreateNestedOneWithoutRegistrationsInput
+  cancelledBy?: Prisma.UserCreateNestedOneWithoutRegistrationsCancelledInput
+  branch: Prisma.BranchCreateNestedOneWithoutRegistrationsInput
+  applications?: Prisma.ApplicationCreateNestedManyWithoutRegistrationInput
+  invoices?: Prisma.InvoiceCreateNestedManyWithoutRegistrationInput
+  commissions?: Prisma.CommissionEntryCreateNestedManyWithoutRegistrationInput
+}
+
+export type RegistrationUncheckedCreateWithoutClientInput = {
+  id?: string
+  registrationCode: string
+  leadId: string
+  status?: $Enums.RegistrationStatus
+  registeredById: string
+  registeredAt?: Date | string
+  cancelledAt?: Date | string | null
+  cancelledById?: string | null
+  cancellationReason?: string | null
+  branchId: string
+  applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutRegistrationInput
+  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutRegistrationInput
+  commissions?: Prisma.CommissionEntryUncheckedCreateNestedManyWithoutRegistrationInput
+}
+
+export type RegistrationCreateOrConnectWithoutClientInput = {
+  where: Prisma.RegistrationWhereUniqueInput
+  create: Prisma.XOR<Prisma.RegistrationCreateWithoutClientInput, Prisma.RegistrationUncheckedCreateWithoutClientInput>
+}
+
+export type RegistrationCreateManyClientInputEnvelope = {
+  data: Prisma.RegistrationCreateManyClientInput | Prisma.RegistrationCreateManyClientInput[]
+  skipDuplicates?: boolean
+}
+
+export type RegistrationUpsertWithWhereUniqueWithoutClientInput = {
+  where: Prisma.RegistrationWhereUniqueInput
+  update: Prisma.XOR<Prisma.RegistrationUpdateWithoutClientInput, Prisma.RegistrationUncheckedUpdateWithoutClientInput>
+  create: Prisma.XOR<Prisma.RegistrationCreateWithoutClientInput, Prisma.RegistrationUncheckedCreateWithoutClientInput>
+}
+
+export type RegistrationUpdateWithWhereUniqueWithoutClientInput = {
+  where: Prisma.RegistrationWhereUniqueInput
+  data: Prisma.XOR<Prisma.RegistrationUpdateWithoutClientInput, Prisma.RegistrationUncheckedUpdateWithoutClientInput>
+}
+
+export type RegistrationUpdateManyWithWhereWithoutClientInput = {
+  where: Prisma.RegistrationScalarWhereInput
+  data: Prisma.XOR<Prisma.RegistrationUpdateManyMutationInput, Prisma.RegistrationUncheckedUpdateManyWithoutClientInput>
+}
+
 export type RegistrationCreateWithoutLeadInput = {
   id?: string
   registrationCode: string
@@ -1007,64 +1065,6 @@ export type RegistrationUncheckedUpdateWithoutLeadInput = {
   applications?: Prisma.ApplicationUncheckedUpdateManyWithoutRegistrationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutRegistrationNestedInput
   commissions?: Prisma.CommissionEntryUncheckedUpdateManyWithoutRegistrationNestedInput
-}
-
-export type RegistrationCreateWithoutClientInput = {
-  id?: string
-  registrationCode: string
-  status?: $Enums.RegistrationStatus
-  registeredAt?: Date | string
-  cancelledAt?: Date | string | null
-  cancellationReason?: string | null
-  lead: Prisma.LeadCreateNestedOneWithoutRegistrationInput
-  registeredBy: Prisma.UserCreateNestedOneWithoutRegistrationsInput
-  cancelledBy?: Prisma.UserCreateNestedOneWithoutRegistrationsCancelledInput
-  branch: Prisma.BranchCreateNestedOneWithoutRegistrationsInput
-  applications?: Prisma.ApplicationCreateNestedManyWithoutRegistrationInput
-  invoices?: Prisma.InvoiceCreateNestedManyWithoutRegistrationInput
-  commissions?: Prisma.CommissionEntryCreateNestedManyWithoutRegistrationInput
-}
-
-export type RegistrationUncheckedCreateWithoutClientInput = {
-  id?: string
-  registrationCode: string
-  leadId: string
-  status?: $Enums.RegistrationStatus
-  registeredById: string
-  registeredAt?: Date | string
-  cancelledAt?: Date | string | null
-  cancelledById?: string | null
-  cancellationReason?: string | null
-  branchId: string
-  applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutRegistrationInput
-  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutRegistrationInput
-  commissions?: Prisma.CommissionEntryUncheckedCreateNestedManyWithoutRegistrationInput
-}
-
-export type RegistrationCreateOrConnectWithoutClientInput = {
-  where: Prisma.RegistrationWhereUniqueInput
-  create: Prisma.XOR<Prisma.RegistrationCreateWithoutClientInput, Prisma.RegistrationUncheckedCreateWithoutClientInput>
-}
-
-export type RegistrationCreateManyClientInputEnvelope = {
-  data: Prisma.RegistrationCreateManyClientInput | Prisma.RegistrationCreateManyClientInput[]
-  skipDuplicates?: boolean
-}
-
-export type RegistrationUpsertWithWhereUniqueWithoutClientInput = {
-  where: Prisma.RegistrationWhereUniqueInput
-  update: Prisma.XOR<Prisma.RegistrationUpdateWithoutClientInput, Prisma.RegistrationUncheckedUpdateWithoutClientInput>
-  create: Prisma.XOR<Prisma.RegistrationCreateWithoutClientInput, Prisma.RegistrationUncheckedCreateWithoutClientInput>
-}
-
-export type RegistrationUpdateWithWhereUniqueWithoutClientInput = {
-  where: Prisma.RegistrationWhereUniqueInput
-  data: Prisma.XOR<Prisma.RegistrationUpdateWithoutClientInput, Prisma.RegistrationUncheckedUpdateWithoutClientInput>
-}
-
-export type RegistrationUpdateManyWithWhereWithoutClientInput = {
-  where: Prisma.RegistrationScalarWhereInput
-  data: Prisma.XOR<Prisma.RegistrationUpdateManyMutationInput, Prisma.RegistrationUncheckedUpdateManyWithoutClientInput>
 }
 
 export type RegistrationCreateWithoutApplicationsInput = {

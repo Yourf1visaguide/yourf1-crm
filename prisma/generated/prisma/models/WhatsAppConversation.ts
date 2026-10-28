@@ -837,48 +837,6 @@ export type WhatsAppConversationUncheckedUpdateManyWithoutClosedByNestedInput = 
   deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
 }
 
-export type WhatsAppConversationCreateNestedManyWithoutLeadInput = {
-  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
-  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
-  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
-  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-}
-
-export type WhatsAppConversationUncheckedCreateNestedManyWithoutLeadInput = {
-  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
-  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
-  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
-  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-}
-
-export type WhatsAppConversationUpdateManyWithoutLeadNestedInput = {
-  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
-  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
-  upsert?: Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput[]
-  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
-  set?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  disconnect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  delete?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  update?: Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput[]
-  updateMany?: Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput | Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput[]
-  deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
-}
-
-export type WhatsAppConversationUncheckedUpdateManyWithoutLeadNestedInput = {
-  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
-  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
-  upsert?: Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput[]
-  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
-  set?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  disconnect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  delete?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
-  update?: Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput[]
-  updateMany?: Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput | Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput[]
-  deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
-}
-
 export type WhatsAppConversationCreateNestedManyWithoutClientInput = {
   create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutClientInput, Prisma.WhatsAppConversationUncheckedCreateWithoutClientInput> | Prisma.WhatsAppConversationCreateWithoutClientInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutClientInput[]
   connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutClientInput | Prisma.WhatsAppConversationCreateOrConnectWithoutClientInput[]
@@ -918,6 +876,48 @@ export type WhatsAppConversationUncheckedUpdateManyWithoutClientNestedInput = {
   connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
   update?: Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutClientInput | Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutClientInput[]
   updateMany?: Prisma.WhatsAppConversationUpdateManyWithWhereWithoutClientInput | Prisma.WhatsAppConversationUpdateManyWithWhereWithoutClientInput[]
+  deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
+}
+
+export type WhatsAppConversationCreateNestedManyWithoutLeadInput = {
+  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
+  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
+  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
+  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+}
+
+export type WhatsAppConversationUncheckedCreateNestedManyWithoutLeadInput = {
+  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
+  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
+  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
+  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+}
+
+export type WhatsAppConversationUpdateManyWithoutLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
+  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
+  upsert?: Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput[]
+  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
+  set?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  disconnect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  delete?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  update?: Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput[]
+  updateMany?: Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput | Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput[]
+  deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
+}
+
+export type WhatsAppConversationUncheckedUpdateManyWithoutLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput> | Prisma.WhatsAppConversationCreateWithoutLeadInput[] | Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput[]
+  connectOrCreate?: Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput | Prisma.WhatsAppConversationCreateOrConnectWithoutLeadInput[]
+  upsert?: Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput[]
+  createMany?: Prisma.WhatsAppConversationCreateManyLeadInputEnvelope
+  set?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  disconnect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  delete?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  connect?: Prisma.WhatsAppConversationWhereUniqueInput | Prisma.WhatsAppConversationWhereUniqueInput[]
+  update?: Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput | Prisma.WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput[]
+  updateMany?: Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput | Prisma.WhatsAppConversationUpdateManyWithWhereWithoutLeadInput[]
   deleteMany?: Prisma.WhatsAppConversationScalarWhereInput | Prisma.WhatsAppConversationScalarWhereInput[]
 }
 
@@ -1199,82 +1199,6 @@ export type WhatsAppConversationUpdateManyWithWhereWithoutClosedByInput = {
   data: Prisma.XOR<Prisma.WhatsAppConversationUpdateManyMutationInput, Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClosedByInput>
 }
 
-export type WhatsAppConversationCreateWithoutLeadInput = {
-  id?: string
-  contactWaId: string
-  contactPhone: string
-  contactName?: string | null
-  status?: $Enums.WhatsAppConversationStatus
-  assignedDepartment?: $Enums.DEPARTMENT | null
-  assignedAt?: Date | string | null
-  slaDueAt?: Date | string | null
-  firstResponseAt?: Date | string | null
-  slaBreachedAt?: Date | string | null
-  lastMessageAt?: Date | string | null
-  lastInboundAt?: Date | string | null
-  lastOutboundAt?: Date | string | null
-  lastMessagePreview?: string | null
-  closedAt?: Date | string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  client?: Prisma.ClientCreateNestedOneWithoutWhatsappConversationsInput
-  assignedTo?: Prisma.UserCreateNestedOneWithoutWhatsappConversationsAssignedInput
-  closedBy?: Prisma.UserCreateNestedOneWithoutWhatsappConversationsClosedInput
-  branch: Prisma.BranchCreateNestedOneWithoutWhatsappConversationsInput
-  messages?: Prisma.WhatsAppMessageCreateNestedManyWithoutConversationInput
-}
-
-export type WhatsAppConversationUncheckedCreateWithoutLeadInput = {
-  id?: string
-  contactWaId: string
-  contactPhone: string
-  contactName?: string | null
-  status?: $Enums.WhatsAppConversationStatus
-  clientId?: string | null
-  assignedDepartment?: $Enums.DEPARTMENT | null
-  assignedToId?: string | null
-  assignedAt?: Date | string | null
-  slaDueAt?: Date | string | null
-  firstResponseAt?: Date | string | null
-  slaBreachedAt?: Date | string | null
-  lastMessageAt?: Date | string | null
-  lastInboundAt?: Date | string | null
-  lastOutboundAt?: Date | string | null
-  lastMessagePreview?: string | null
-  closedAt?: Date | string | null
-  closedById?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  branchId: string
-  messages?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutConversationInput
-}
-
-export type WhatsAppConversationCreateOrConnectWithoutLeadInput = {
-  where: Prisma.WhatsAppConversationWhereUniqueInput
-  create: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput>
-}
-
-export type WhatsAppConversationCreateManyLeadInputEnvelope = {
-  data: Prisma.WhatsAppConversationCreateManyLeadInput | Prisma.WhatsAppConversationCreateManyLeadInput[]
-  skipDuplicates?: boolean
-}
-
-export type WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput = {
-  where: Prisma.WhatsAppConversationWhereUniqueInput
-  update: Prisma.XOR<Prisma.WhatsAppConversationUpdateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedUpdateWithoutLeadInput>
-  create: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput>
-}
-
-export type WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput = {
-  where: Prisma.WhatsAppConversationWhereUniqueInput
-  data: Prisma.XOR<Prisma.WhatsAppConversationUpdateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedUpdateWithoutLeadInput>
-}
-
-export type WhatsAppConversationUpdateManyWithWhereWithoutLeadInput = {
-  where: Prisma.WhatsAppConversationScalarWhereInput
-  data: Prisma.XOR<Prisma.WhatsAppConversationUpdateManyMutationInput, Prisma.WhatsAppConversationUncheckedUpdateManyWithoutLeadInput>
-}
-
 export type WhatsAppConversationCreateWithoutClientInput = {
   id?: string
   contactWaId: string
@@ -1349,6 +1273,82 @@ export type WhatsAppConversationUpdateWithWhereUniqueWithoutClientInput = {
 export type WhatsAppConversationUpdateManyWithWhereWithoutClientInput = {
   where: Prisma.WhatsAppConversationScalarWhereInput
   data: Prisma.XOR<Prisma.WhatsAppConversationUpdateManyMutationInput, Prisma.WhatsAppConversationUncheckedUpdateManyWithoutClientInput>
+}
+
+export type WhatsAppConversationCreateWithoutLeadInput = {
+  id?: string
+  contactWaId: string
+  contactPhone: string
+  contactName?: string | null
+  status?: $Enums.WhatsAppConversationStatus
+  assignedDepartment?: $Enums.DEPARTMENT | null
+  assignedAt?: Date | string | null
+  slaDueAt?: Date | string | null
+  firstResponseAt?: Date | string | null
+  slaBreachedAt?: Date | string | null
+  lastMessageAt?: Date | string | null
+  lastInboundAt?: Date | string | null
+  lastOutboundAt?: Date | string | null
+  lastMessagePreview?: string | null
+  closedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  client?: Prisma.ClientCreateNestedOneWithoutWhatsappConversationsInput
+  assignedTo?: Prisma.UserCreateNestedOneWithoutWhatsappConversationsAssignedInput
+  closedBy?: Prisma.UserCreateNestedOneWithoutWhatsappConversationsClosedInput
+  branch: Prisma.BranchCreateNestedOneWithoutWhatsappConversationsInput
+  messages?: Prisma.WhatsAppMessageCreateNestedManyWithoutConversationInput
+}
+
+export type WhatsAppConversationUncheckedCreateWithoutLeadInput = {
+  id?: string
+  contactWaId: string
+  contactPhone: string
+  contactName?: string | null
+  status?: $Enums.WhatsAppConversationStatus
+  clientId?: string | null
+  assignedDepartment?: $Enums.DEPARTMENT | null
+  assignedToId?: string | null
+  assignedAt?: Date | string | null
+  slaDueAt?: Date | string | null
+  firstResponseAt?: Date | string | null
+  slaBreachedAt?: Date | string | null
+  lastMessageAt?: Date | string | null
+  lastInboundAt?: Date | string | null
+  lastOutboundAt?: Date | string | null
+  lastMessagePreview?: string | null
+  closedAt?: Date | string | null
+  closedById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branchId: string
+  messages?: Prisma.WhatsAppMessageUncheckedCreateNestedManyWithoutConversationInput
+}
+
+export type WhatsAppConversationCreateOrConnectWithoutLeadInput = {
+  where: Prisma.WhatsAppConversationWhereUniqueInput
+  create: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput>
+}
+
+export type WhatsAppConversationCreateManyLeadInputEnvelope = {
+  data: Prisma.WhatsAppConversationCreateManyLeadInput | Prisma.WhatsAppConversationCreateManyLeadInput[]
+  skipDuplicates?: boolean
+}
+
+export type WhatsAppConversationUpsertWithWhereUniqueWithoutLeadInput = {
+  where: Prisma.WhatsAppConversationWhereUniqueInput
+  update: Prisma.XOR<Prisma.WhatsAppConversationUpdateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedUpdateWithoutLeadInput>
+  create: Prisma.XOR<Prisma.WhatsAppConversationCreateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedCreateWithoutLeadInput>
+}
+
+export type WhatsAppConversationUpdateWithWhereUniqueWithoutLeadInput = {
+  where: Prisma.WhatsAppConversationWhereUniqueInput
+  data: Prisma.XOR<Prisma.WhatsAppConversationUpdateWithoutLeadInput, Prisma.WhatsAppConversationUncheckedUpdateWithoutLeadInput>
+}
+
+export type WhatsAppConversationUpdateManyWithWhereWithoutLeadInput = {
+  where: Prisma.WhatsAppConversationScalarWhereInput
+  data: Prisma.XOR<Prisma.WhatsAppConversationUpdateManyMutationInput, Prisma.WhatsAppConversationUncheckedUpdateManyWithoutLeadInput>
 }
 
 export type WhatsAppConversationCreateWithoutMessagesInput = {
@@ -1761,104 +1761,6 @@ export type WhatsAppConversationUncheckedUpdateManyWithoutClosedByInput = {
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type WhatsAppConversationCreateManyLeadInput = {
-  id?: string
-  contactWaId: string
-  contactPhone: string
-  contactName?: string | null
-  status?: $Enums.WhatsAppConversationStatus
-  clientId?: string | null
-  assignedDepartment?: $Enums.DEPARTMENT | null
-  assignedToId?: string | null
-  assignedAt?: Date | string | null
-  slaDueAt?: Date | string | null
-  firstResponseAt?: Date | string | null
-  slaBreachedAt?: Date | string | null
-  lastMessageAt?: Date | string | null
-  lastInboundAt?: Date | string | null
-  lastOutboundAt?: Date | string | null
-  lastMessagePreview?: string | null
-  closedAt?: Date | string | null
-  closedById?: string | null
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  branchId: string
-}
-
-export type WhatsAppConversationUpdateWithoutLeadInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
-  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
-  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
-  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
-  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  client?: Prisma.ClientUpdateOneWithoutWhatsappConversationsNestedInput
-  assignedTo?: Prisma.UserUpdateOneWithoutWhatsappConversationsAssignedNestedInput
-  closedBy?: Prisma.UserUpdateOneWithoutWhatsappConversationsClosedNestedInput
-  branch?: Prisma.BranchUpdateOneRequiredWithoutWhatsappConversationsNestedInput
-  messages?: Prisma.WhatsAppMessageUpdateManyWithoutConversationNestedInput
-}
-
-export type WhatsAppConversationUncheckedUpdateWithoutLeadInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
-  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
-  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
-  clientId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
-  assignedToId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  closedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  branchId?: Prisma.StringFieldUpdateOperationsInput | string
-  messages?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutConversationNestedInput
-}
-
-export type WhatsAppConversationUncheckedUpdateManyWithoutLeadInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
-  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
-  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
-  clientId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
-  assignedToId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  closedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  branchId?: Prisma.StringFieldUpdateOperationsInput | string
-}
-
 export type WhatsAppConversationCreateManyClientInput = {
   id?: string
   contactWaId: string
@@ -1940,6 +1842,104 @@ export type WhatsAppConversationUncheckedUpdateManyWithoutClientInput = {
   contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
   leadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
+  assignedToId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  closedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branchId?: Prisma.StringFieldUpdateOperationsInput | string
+}
+
+export type WhatsAppConversationCreateManyLeadInput = {
+  id?: string
+  contactWaId: string
+  contactPhone: string
+  contactName?: string | null
+  status?: $Enums.WhatsAppConversationStatus
+  clientId?: string | null
+  assignedDepartment?: $Enums.DEPARTMENT | null
+  assignedToId?: string | null
+  assignedAt?: Date | string | null
+  slaDueAt?: Date | string | null
+  firstResponseAt?: Date | string | null
+  slaBreachedAt?: Date | string | null
+  lastMessageAt?: Date | string | null
+  lastInboundAt?: Date | string | null
+  lastOutboundAt?: Date | string | null
+  lastMessagePreview?: string | null
+  closedAt?: Date | string | null
+  closedById?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  branchId: string
+}
+
+export type WhatsAppConversationUpdateWithoutLeadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
+  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
+  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
+  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
+  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  client?: Prisma.ClientUpdateOneWithoutWhatsappConversationsNestedInput
+  assignedTo?: Prisma.UserUpdateOneWithoutWhatsappConversationsAssignedNestedInput
+  closedBy?: Prisma.UserUpdateOneWithoutWhatsappConversationsClosedNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutWhatsappConversationsNestedInput
+  messages?: Prisma.WhatsAppMessageUpdateManyWithoutConversationNestedInput
+}
+
+export type WhatsAppConversationUncheckedUpdateWithoutLeadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
+  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
+  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
+  clientId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
+  assignedToId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaDueAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  firstResponseAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  slaBreachedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessageAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastInboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastOutboundAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  lastMessagePreview?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  closedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  closedById?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  messages?: Prisma.WhatsAppMessageUncheckedUpdateManyWithoutConversationNestedInput
+}
+
+export type WhatsAppConversationUncheckedUpdateManyWithoutLeadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  contactWaId?: Prisma.StringFieldUpdateOperationsInput | string
+  contactPhone?: Prisma.StringFieldUpdateOperationsInput | string
+  contactName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.EnumWhatsAppConversationStatusFieldUpdateOperationsInput | $Enums.WhatsAppConversationStatus
+  clientId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   assignedDepartment?: Prisma.NullableEnumDEPARTMENTFieldUpdateOperationsInput | $Enums.DEPARTMENT | null
   assignedToId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   assignedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null

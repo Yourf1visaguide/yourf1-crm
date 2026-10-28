@@ -619,22 +619,6 @@ export type BranchUpdateOneRequiredWithoutEmployeeAttendanceNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutEmployeeAttendanceInput, Prisma.BranchUpdateWithoutEmployeeAttendanceInput>, Prisma.BranchUncheckedUpdateWithoutEmployeeAttendanceInput>
 }
 
-export type BranchCreateNestedOneWithoutLeadsInput = {
-  create?: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
-  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutLeadsInput
-  connect?: Prisma.BranchWhereUniqueInput
-}
-
-export type BranchUpdateOneWithoutLeadsNestedInput = {
-  create?: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
-  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutLeadsInput
-  upsert?: Prisma.BranchUpsertWithoutLeadsInput
-  disconnect?: Prisma.BranchWhereInput | boolean
-  delete?: Prisma.BranchWhereInput | boolean
-  connect?: Prisma.BranchWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutLeadsInput, Prisma.BranchUpdateWithoutLeadsInput>, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
-}
-
 export type BranchCreateNestedOneWithoutClientsInput = {
   create?: Prisma.XOR<Prisma.BranchCreateWithoutClientsInput, Prisma.BranchUncheckedCreateWithoutClientsInput>
   connectOrCreate?: Prisma.BranchCreateOrConnectWithoutClientsInput
@@ -649,6 +633,22 @@ export type BranchUpdateOneWithoutClientsNestedInput = {
   delete?: Prisma.BranchWhereInput | boolean
   connect?: Prisma.BranchWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutClientsInput, Prisma.BranchUpdateWithoutClientsInput>, Prisma.BranchUncheckedUpdateWithoutClientsInput>
+}
+
+export type BranchCreateNestedOneWithoutLeadsInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutLeadsInput
+  connect?: Prisma.BranchWhereUniqueInput
+}
+
+export type BranchUpdateOneWithoutLeadsNestedInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutLeadsInput
+  upsert?: Prisma.BranchUpsertWithoutLeadsInput
+  disconnect?: Prisma.BranchWhereInput | boolean
+  delete?: Prisma.BranchWhereInput | boolean
+  connect?: Prisma.BranchWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutLeadsInput, Prisma.BranchUpdateWithoutLeadsInput>, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
 }
 
 export type BranchCreateNestedOneWithoutApplicationsInput = {
@@ -1011,130 +1011,6 @@ export type BranchUncheckedUpdateWithoutEmployeeAttendanceInput = {
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
 }
 
-export type BranchCreateWithoutLeadsInput = {
-  id?: string
-  branchCode: string
-  name: string
-  phone?: string | null
-  email?: string | null
-  addressLine1?: string | null
-  addressLine2?: string | null
-  city?: string | null
-  state?: string | null
-  postalCode?: string | null
-  isActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  registrations?: Prisma.RegistrationCreateNestedManyWithoutBranchInput
-  applications?: Prisma.ApplicationCreateNestedManyWithoutBranchInput
-  invoices?: Prisma.InvoiceCreateNestedManyWithoutBranchInput
-  expenses?: Prisma.ExpenseCreateNestedManyWithoutBranchInput
-  financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutBranchInput
-  whatsappConversations?: Prisma.WhatsAppConversationCreateNestedManyWithoutBranchInput
-  tasks?: Prisma.TaskCreateNestedManyWithoutBranchInput
-  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
-  employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
-  payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
-  clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
-}
-
-export type BranchUncheckedCreateWithoutLeadsInput = {
-  id?: string
-  branchCode: string
-  name: string
-  phone?: string | null
-  email?: string | null
-  addressLine1?: string | null
-  addressLine2?: string | null
-  city?: string | null
-  state?: string | null
-  postalCode?: string | null
-  isActive?: boolean
-  createdAt?: Date | string
-  updatedAt?: Date | string
-  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutBranchInput
-  applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutBranchInput
-  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutBranchInput
-  expenses?: Prisma.ExpenseUncheckedCreateNestedManyWithoutBranchInput
-  financialEntries?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutBranchInput
-  whatsappConversations?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutBranchInput
-  tasks?: Prisma.TaskUncheckedCreateNestedManyWithoutBranchInput
-  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
-  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
-  payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
-  clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
-}
-
-export type BranchCreateOrConnectWithoutLeadsInput = {
-  where: Prisma.BranchWhereUniqueInput
-  create: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
-}
-
-export type BranchUpsertWithoutLeadsInput = {
-  update: Prisma.XOR<Prisma.BranchUpdateWithoutLeadsInput, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
-  create: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
-  where?: Prisma.BranchWhereInput
-}
-
-export type BranchUpdateToOneWithWhereWithoutLeadsInput = {
-  where?: Prisma.BranchWhereInput
-  data: Prisma.XOR<Prisma.BranchUpdateWithoutLeadsInput, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
-}
-
-export type BranchUpdateWithoutLeadsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  registrations?: Prisma.RegistrationUpdateManyWithoutBranchNestedInput
-  applications?: Prisma.ApplicationUpdateManyWithoutBranchNestedInput
-  invoices?: Prisma.InvoiceUpdateManyWithoutBranchNestedInput
-  expenses?: Prisma.ExpenseUpdateManyWithoutBranchNestedInput
-  financialEntries?: Prisma.FinancialEntryUpdateManyWithoutBranchNestedInput
-  whatsappConversations?: Prisma.WhatsAppConversationUpdateManyWithoutBranchNestedInput
-  tasks?: Prisma.TaskUpdateManyWithoutBranchNestedInput
-  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
-  employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
-  payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
-  clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
-}
-
-export type BranchUncheckedUpdateWithoutLeadsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutBranchNestedInput
-  applications?: Prisma.ApplicationUncheckedUpdateManyWithoutBranchNestedInput
-  invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutBranchNestedInput
-  expenses?: Prisma.ExpenseUncheckedUpdateManyWithoutBranchNestedInput
-  financialEntries?: Prisma.FinancialEntryUncheckedUpdateManyWithoutBranchNestedInput
-  whatsappConversations?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutBranchNestedInput
-  tasks?: Prisma.TaskUncheckedUpdateManyWithoutBranchNestedInput
-  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
-  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
-  payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
-  clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
-}
-
 export type BranchCreateWithoutClientsInput = {
   id?: string
   branchCode: string
@@ -1257,6 +1133,130 @@ export type BranchUncheckedUpdateWithoutClientsInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
+}
+
+export type BranchCreateWithoutLeadsInput = {
+  id?: string
+  branchCode: string
+  name: string
+  phone?: string | null
+  email?: string | null
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  postalCode?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutBranchInput
+  applications?: Prisma.ApplicationCreateNestedManyWithoutBranchInput
+  invoices?: Prisma.InvoiceCreateNestedManyWithoutBranchInput
+  expenses?: Prisma.ExpenseCreateNestedManyWithoutBranchInput
+  financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutBranchInput
+  whatsappConversations?: Prisma.WhatsAppConversationCreateNestedManyWithoutBranchInput
+  tasks?: Prisma.TaskCreateNestedManyWithoutBranchInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
+  employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
+  payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
+  clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+}
+
+export type BranchUncheckedCreateWithoutLeadsInput = {
+  id?: string
+  branchCode: string
+  name: string
+  phone?: string | null
+  email?: string | null
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  postalCode?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutBranchInput
+  applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutBranchInput
+  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutBranchInput
+  expenses?: Prisma.ExpenseUncheckedCreateNestedManyWithoutBranchInput
+  financialEntries?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutBranchInput
+  whatsappConversations?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutBranchInput
+  tasks?: Prisma.TaskUncheckedCreateNestedManyWithoutBranchInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
+  payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
+  clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+}
+
+export type BranchCreateOrConnectWithoutLeadsInput = {
+  where: Prisma.BranchWhereUniqueInput
+  create: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
+}
+
+export type BranchUpsertWithoutLeadsInput = {
+  update: Prisma.XOR<Prisma.BranchUpdateWithoutLeadsInput, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
+  create: Prisma.XOR<Prisma.BranchCreateWithoutLeadsInput, Prisma.BranchUncheckedCreateWithoutLeadsInput>
+  where?: Prisma.BranchWhereInput
+}
+
+export type BranchUpdateToOneWithWhereWithoutLeadsInput = {
+  where?: Prisma.BranchWhereInput
+  data: Prisma.XOR<Prisma.BranchUpdateWithoutLeadsInput, Prisma.BranchUncheckedUpdateWithoutLeadsInput>
+}
+
+export type BranchUpdateWithoutLeadsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  registrations?: Prisma.RegistrationUpdateManyWithoutBranchNestedInput
+  applications?: Prisma.ApplicationUpdateManyWithoutBranchNestedInput
+  invoices?: Prisma.InvoiceUpdateManyWithoutBranchNestedInput
+  expenses?: Prisma.ExpenseUpdateManyWithoutBranchNestedInput
+  financialEntries?: Prisma.FinancialEntryUpdateManyWithoutBranchNestedInput
+  whatsappConversations?: Prisma.WhatsAppConversationUpdateManyWithoutBranchNestedInput
+  tasks?: Prisma.TaskUpdateManyWithoutBranchNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
+  payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
+  clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+}
+
+export type BranchUncheckedUpdateWithoutLeadsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutBranchNestedInput
+  applications?: Prisma.ApplicationUncheckedUpdateManyWithoutBranchNestedInput
+  invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutBranchNestedInput
+  expenses?: Prisma.ExpenseUncheckedUpdateManyWithoutBranchNestedInput
+  financialEntries?: Prisma.FinancialEntryUncheckedUpdateManyWithoutBranchNestedInput
+  whatsappConversations?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutBranchNestedInput
+  tasks?: Prisma.TaskUncheckedUpdateManyWithoutBranchNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
+  payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
+  clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutApplicationsInput = {

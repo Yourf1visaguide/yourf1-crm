@@ -103,73 +103,6 @@ export const OFFICEREPORTCHECKSTATUS = {
 export type OFFICEREPORTCHECKSTATUS = (typeof OFFICEREPORTCHECKSTATUS)[keyof typeof OFFICEREPORTCHECKSTATUS]
 
 
-export const LeadSource = {
-  IVR: 'IVR',
-  WALK_IN: 'WALK_IN',
-  WHATSAPP: 'WHATSAPP',
-  REFERRAL: 'REFERRAL',
-  WEBSITE: 'WEBSITE',
-  INSTAGRAM: 'INSTAGRAM',
-  FACEBOOK: 'FACEBOOK',
-  PARTNER: 'PARTNER',
-  OTHER: 'OTHER'
-} as const
-
-export type LeadSource = (typeof LeadSource)[keyof typeof LeadSource]
-
-
-export const LeadStatus = {
-  NEW: 'NEW',
-  NOT_PICKED: 'NOT_PICKED',
-  NOT_INTERESTED: 'NOT_INTERESTED',
-  JUST_INFO: 'JUST_INFO',
-  CONVERTED: 'CONVERTED'
-} as const
-
-export type LeadStatus = (typeof LeadStatus)[keyof typeof LeadStatus]
-
-
-export const LeadRejectionReason = {
-  FAKE: 'FAKE',
-  DUPLICATE: 'DUPLICATE',
-  WRONG_NUMBER: 'WRONG_NUMBER',
-  OUT_OF_SCOPE: 'OUT_OF_SCOPE',
-  NOT_ELIGIBLE: 'NOT_ELIGIBLE',
-  OTHER: 'OTHER'
-} as const
-
-export type LeadRejectionReason = (typeof LeadRejectionReason)[keyof typeof LeadRejectionReason]
-
-
-export const LeadStatusChangeSource = {
-  USER: 'USER',
-  SYSTEM: 'SYSTEM'
-} as const
-
-export type LeadStatusChangeSource = (typeof LeadStatusChangeSource)[keyof typeof LeadStatusChangeSource]
-
-
-export const ClientGender = {
-  MALE: 'MALE',
-  FEMALE: 'FEMALE',
-  OTHER: 'OTHER',
-  PREFER_NOT_TO_SAY: 'PREFER_NOT_TO_SAY'
-} as const
-
-export type ClientGender = (typeof ClientGender)[keyof typeof ClientGender]
-
-
-export const MaritalStatus = {
-  SINGLE: 'SINGLE',
-  MARRIED: 'MARRIED',
-  DIVORCED: 'DIVORCED',
-  WIDOWED: 'WIDOWED',
-  OTHER: 'OTHER'
-} as const
-
-export type MaritalStatus = (typeof MaritalStatus)[keyof typeof MaritalStatus]
-
-
 export const Country = {
   INDIA: 'INDIA',
   UNITED_STATES: 'UNITED_STATES',
@@ -225,6 +158,127 @@ export const Country = {
 } as const
 
 export type Country = (typeof Country)[keyof typeof Country]
+
+
+export const LeadSource = {
+  IVR: 'IVR',
+  WALK_IN: 'WALK_IN',
+  WHATSAPP: 'WHATSAPP',
+  REFERRAL: 'REFERRAL',
+  WEBSITE: 'WEBSITE',
+  INSTAGRAM: 'INSTAGRAM',
+  FACEBOOK: 'FACEBOOK',
+  PARTNER: 'PARTNER',
+  OTHER: 'OTHER'
+} as const
+
+export type LeadSource = (typeof LeadSource)[keyof typeof LeadSource]
+
+
+export const LeadStatus = {
+  NEW: 'NEW',
+  TELECALLERASSIGNED: 'TELECALLERASSIGNED',
+  NOT_PICKED: 'NOT_PICKED',
+  NOT_INTERESTED: 'NOT_INTERESTED',
+  INTERESTED: 'INTERESTED',
+  JUST_INFO: 'JUST_INFO',
+  COUNSELORASSIGNED: 'COUNSELORASSIGNED',
+  COUNSELLING: 'COUNSELLING',
+  COLD: 'COLD',
+  CONVERTED: 'CONVERTED',
+  REJECTED: 'REJECTED'
+} as const
+
+export type LeadStatus = (typeof LeadStatus)[keyof typeof LeadStatus]
+
+
+export const LeadRejectionReason = {
+  FAKE: 'FAKE',
+  DUPLICATE: 'DUPLICATE',
+  WRONG_NUMBER: 'WRONG_NUMBER',
+  OUT_OF_SCOPE: 'OUT_OF_SCOPE',
+  NOT_ELIGIBLE: 'NOT_ELIGIBLE',
+  OTHER: 'OTHER'
+} as const
+
+export type LeadRejectionReason = (typeof LeadRejectionReason)[keyof typeof LeadRejectionReason]
+
+
+export const ClientGender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER',
+  PREFER_NOT_TO_SAY: 'PREFER_NOT_TO_SAY'
+} as const
+
+export type ClientGender = (typeof ClientGender)[keyof typeof ClientGender]
+
+
+export const MaritalStatus = {
+  SINGLE: 'SINGLE',
+  MARRIED: 'MARRIED',
+  DIVORCED: 'DIVORCED',
+  WIDOWED: 'WIDOWED',
+  OTHER: 'OTHER'
+} as const
+
+export type MaritalStatus = (typeof MaritalStatus)[keyof typeof MaritalStatus]
+
+
+export const LeadStatusChangeSource = {
+  USER: 'USER',
+  SYSTEM: 'SYSTEM'
+} as const
+
+export type LeadStatusChangeSource = (typeof LeadStatusChangeSource)[keyof typeof LeadStatusChangeSource]
+
+
+export const LeadAssignmentType = {
+  TELECALLING: 'TELECALLING',
+  COUNSELLING: 'COUNSELLING'
+} as const
+
+export type LeadAssignmentType = (typeof LeadAssignmentType)[keyof typeof LeadAssignmentType]
+
+
+export const LeadCallOutcome = {
+  NOT_PICKED: 'NOT_PICKED',
+  ANSWERED: 'ANSWERED',
+  CALLBACK_REQUESTED: 'CALLBACK_REQUESTED',
+  INTERESTED: 'INTERESTED',
+  NOT_INTERESTED: 'NOT_INTERESTED',
+  JUST_INFO: 'JUST_INFO',
+  WRONG_NUMBER: 'WRONG_NUMBER',
+  OTHER: 'OTHER'
+} as const
+
+export type LeadCallOutcome = (typeof LeadCallOutcome)[keyof typeof LeadCallOutcome]
+
+
+export const LeadVisitStatus = {
+  SCHEDULED: 'SCHEDULED',
+  CONFIRMED: 'CONFIRMED',
+  NOT_CONFIRMED: 'NOT_CONFIRMED',
+  COMPLETED: 'COMPLETED',
+  MISSED: 'MISSED',
+  CANCELLED: 'CANCELLED'
+} as const
+
+export type LeadVisitStatus = (typeof LeadVisitStatus)[keyof typeof LeadVisitStatus]
+
+
+export const LeadVisitEventType = {
+  CREATED: 'CREATED',
+  RESCHEDULED: 'RESCHEDULED',
+  CONFIRMED: 'CONFIRMED',
+  NOT_CONFIRMED: 'NOT_CONFIRMED',
+  COMPLETED: 'COMPLETED',
+  MISSED: 'MISSED',
+  CANCELLED: 'CANCELLED',
+  NOTE_ADDED: 'NOTE_ADDED'
+} as const
+
+export type LeadVisitEventType = (typeof LeadVisitEventType)[keyof typeof LeadVisitEventType]
 
 
 export const ClientAddressType = {
@@ -287,7 +341,8 @@ export const ApplicationStatus = {
   READY_FOR_SUBMISSION: 'READY_FOR_SUBMISSION',
   SUBMITTED: 'SUBMITTED',
   VISA_STAMPED: 'VISA_STAMPED',
-  CANCELLED: 'CANCELLED'
+  CANCELLED: 'CANCELLED',
+  DENIED: 'DENIED'
 } as const
 
 export type ApplicationStatus = (typeof ApplicationStatus)[keyof typeof ApplicationStatus]
@@ -380,7 +435,8 @@ export type NotificationPriority = (typeof NotificationPriority)[keyof typeof No
 export const NotificationSurface = {
   BELL: 'BELL',
   DASHBOARD: 'DASHBOARD',
-  SIDEBAR: 'SIDEBAR'
+  SIDEBAR: 'SIDEBAR',
+  DEPARTMENTPAGE: 'DEPARTMENTPAGE'
 } as const
 
 export type NotificationSurface = (typeof NotificationSurface)[keyof typeof NotificationSurface]

@@ -32,6 +32,7 @@ export type LeadAssignmentMinAggregateOutputType = {
   assignedAt: Date | null
   endedAt: Date | null
   note: string | null
+  type: $Enums.LeadAssignmentType | null
 }
 
 export type LeadAssignmentMaxAggregateOutputType = {
@@ -42,6 +43,7 @@ export type LeadAssignmentMaxAggregateOutputType = {
   assignedAt: Date | null
   endedAt: Date | null
   note: string | null
+  type: $Enums.LeadAssignmentType | null
 }
 
 export type LeadAssignmentCountAggregateOutputType = {
@@ -52,6 +54,7 @@ export type LeadAssignmentCountAggregateOutputType = {
   assignedAt: number
   endedAt: number
   note: number
+  type: number
   _all: number
 }
 
@@ -64,6 +67,7 @@ export type LeadAssignmentMinAggregateInputType = {
   assignedAt?: true
   endedAt?: true
   note?: true
+  type?: true
 }
 
 export type LeadAssignmentMaxAggregateInputType = {
@@ -74,6 +78,7 @@ export type LeadAssignmentMaxAggregateInputType = {
   assignedAt?: true
   endedAt?: true
   note?: true
+  type?: true
 }
 
 export type LeadAssignmentCountAggregateInputType = {
@@ -84,6 +89,7 @@ export type LeadAssignmentCountAggregateInputType = {
   assignedAt?: true
   endedAt?: true
   note?: true
+  type?: true
   _all?: true
 }
 
@@ -167,6 +173,7 @@ export type LeadAssignmentGroupByOutputType = {
   assignedAt: Date
   endedAt: Date | null
   note: string | null
+  type: $Enums.LeadAssignmentType
   _count: LeadAssignmentCountAggregateOutputType | null
   _min: LeadAssignmentMinAggregateOutputType | null
   _max: LeadAssignmentMaxAggregateOutputType | null
@@ -198,6 +205,7 @@ export type LeadAssignmentWhereInput = {
   assignedAt?: Prisma.DateTimeFilter<"LeadAssignment"> | Date | string
   endedAt?: Prisma.DateTimeNullableFilter<"LeadAssignment"> | Date | string | null
   note?: Prisma.StringNullableFilter<"LeadAssignment"> | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFilter<"LeadAssignment"> | $Enums.LeadAssignmentType
   lead?: Prisma.XOR<Prisma.LeadScalarRelationFilter, Prisma.LeadWhereInput>
   assignedTo?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   assignedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -211,6 +219,7 @@ export type LeadAssignmentOrderByWithRelationInput = {
   assignedAt?: Prisma.SortOrder
   endedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   note?: Prisma.SortOrderInput | Prisma.SortOrder
+  type?: Prisma.SortOrder
   lead?: Prisma.LeadOrderByWithRelationInput
   assignedTo?: Prisma.UserOrderByWithRelationInput
   assignedBy?: Prisma.UserOrderByWithRelationInput
@@ -227,6 +236,7 @@ export type LeadAssignmentWhereUniqueInput = Prisma.AtLeast<{
   assignedAt?: Prisma.DateTimeFilter<"LeadAssignment"> | Date | string
   endedAt?: Prisma.DateTimeNullableFilter<"LeadAssignment"> | Date | string | null
   note?: Prisma.StringNullableFilter<"LeadAssignment"> | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFilter<"LeadAssignment"> | $Enums.LeadAssignmentType
   lead?: Prisma.XOR<Prisma.LeadScalarRelationFilter, Prisma.LeadWhereInput>
   assignedTo?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   assignedBy?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -240,6 +250,7 @@ export type LeadAssignmentOrderByWithAggregationInput = {
   assignedAt?: Prisma.SortOrder
   endedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   note?: Prisma.SortOrderInput | Prisma.SortOrder
+  type?: Prisma.SortOrder
   _count?: Prisma.LeadAssignmentCountOrderByAggregateInput
   _max?: Prisma.LeadAssignmentMaxOrderByAggregateInput
   _min?: Prisma.LeadAssignmentMinOrderByAggregateInput
@@ -256,6 +267,7 @@ export type LeadAssignmentScalarWhereWithAggregatesInput = {
   assignedAt?: Prisma.DateTimeWithAggregatesFilter<"LeadAssignment"> | Date | string
   endedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"LeadAssignment"> | Date | string | null
   note?: Prisma.StringNullableWithAggregatesFilter<"LeadAssignment"> | string | null
+  type?: Prisma.EnumLeadAssignmentTypeWithAggregatesFilter<"LeadAssignment"> | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateInput = {
@@ -263,6 +275,7 @@ export type LeadAssignmentCreateInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
   lead: Prisma.LeadCreateNestedOneWithoutAssignmentsInput
   assignedTo: Prisma.UserCreateNestedOneWithoutLeadAssignedToInput
   assignedBy: Prisma.UserCreateNestedOneWithoutLeadAssignedByInput
@@ -276,6 +289,7 @@ export type LeadAssignmentUncheckedCreateInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpdateInput = {
@@ -283,6 +297,7 @@ export type LeadAssignmentUpdateInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
   lead?: Prisma.LeadUpdateOneRequiredWithoutAssignmentsNestedInput
   assignedTo?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedToNestedInput
   assignedBy?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedByNestedInput
@@ -296,6 +311,7 @@ export type LeadAssignmentUncheckedUpdateInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateManyInput = {
@@ -306,6 +322,7 @@ export type LeadAssignmentCreateManyInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpdateManyMutationInput = {
@@ -313,6 +330,7 @@ export type LeadAssignmentUpdateManyMutationInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUncheckedUpdateManyInput = {
@@ -323,6 +341,7 @@ export type LeadAssignmentUncheckedUpdateManyInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentListRelationFilter = {
@@ -343,6 +362,7 @@ export type LeadAssignmentCountOrderByAggregateInput = {
   assignedAt?: Prisma.SortOrder
   endedAt?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  type?: Prisma.SortOrder
 }
 
 export type LeadAssignmentMaxOrderByAggregateInput = {
@@ -353,6 +373,7 @@ export type LeadAssignmentMaxOrderByAggregateInput = {
   assignedAt?: Prisma.SortOrder
   endedAt?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  type?: Prisma.SortOrder
 }
 
 export type LeadAssignmentMinOrderByAggregateInput = {
@@ -363,6 +384,7 @@ export type LeadAssignmentMinOrderByAggregateInput = {
   assignedAt?: Prisma.SortOrder
   endedAt?: Prisma.SortOrder
   note?: Prisma.SortOrder
+  type?: Prisma.SortOrder
 }
 
 export type LeadAssignmentCreateNestedManyWithoutAssignedToInput = {
@@ -491,11 +513,16 @@ export type LeadAssignmentUncheckedUpdateManyWithoutLeadNestedInput = {
   deleteMany?: Prisma.LeadAssignmentScalarWhereInput | Prisma.LeadAssignmentScalarWhereInput[]
 }
 
+export type EnumLeadAssignmentTypeFieldUpdateOperationsInput = {
+  set?: $Enums.LeadAssignmentType
+}
+
 export type LeadAssignmentCreateWithoutAssignedToInput = {
   id?: string
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
   lead: Prisma.LeadCreateNestedOneWithoutAssignmentsInput
   assignedBy: Prisma.UserCreateNestedOneWithoutLeadAssignedByInput
 }
@@ -507,6 +534,7 @@ export type LeadAssignmentUncheckedCreateWithoutAssignedToInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateOrConnectWithoutAssignedToInput = {
@@ -524,6 +552,7 @@ export type LeadAssignmentCreateWithoutAssignedByInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
   lead: Prisma.LeadCreateNestedOneWithoutAssignmentsInput
   assignedTo: Prisma.UserCreateNestedOneWithoutLeadAssignedToInput
 }
@@ -535,6 +564,7 @@ export type LeadAssignmentUncheckedCreateWithoutAssignedByInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateOrConnectWithoutAssignedByInput = {
@@ -574,6 +604,7 @@ export type LeadAssignmentScalarWhereInput = {
   assignedAt?: Prisma.DateTimeFilter<"LeadAssignment"> | Date | string
   endedAt?: Prisma.DateTimeNullableFilter<"LeadAssignment"> | Date | string | null
   note?: Prisma.StringNullableFilter<"LeadAssignment"> | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFilter<"LeadAssignment"> | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpsertWithWhereUniqueWithoutAssignedByInput = {
@@ -597,6 +628,7 @@ export type LeadAssignmentCreateWithoutLeadInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
   assignedTo: Prisma.UserCreateNestedOneWithoutLeadAssignedToInput
   assignedBy: Prisma.UserCreateNestedOneWithoutLeadAssignedByInput
 }
@@ -608,6 +640,7 @@ export type LeadAssignmentUncheckedCreateWithoutLeadInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateOrConnectWithoutLeadInput = {
@@ -643,6 +676,7 @@ export type LeadAssignmentCreateManyAssignedToInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateManyAssignedByInput = {
@@ -652,6 +686,7 @@ export type LeadAssignmentCreateManyAssignedByInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpdateWithoutAssignedToInput = {
@@ -659,6 +694,7 @@ export type LeadAssignmentUpdateWithoutAssignedToInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
   lead?: Prisma.LeadUpdateOneRequiredWithoutAssignmentsNestedInput
   assignedBy?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedByNestedInput
 }
@@ -670,6 +706,7 @@ export type LeadAssignmentUncheckedUpdateWithoutAssignedToInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUncheckedUpdateManyWithoutAssignedToInput = {
@@ -679,6 +716,7 @@ export type LeadAssignmentUncheckedUpdateManyWithoutAssignedToInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpdateWithoutAssignedByInput = {
@@ -686,6 +724,7 @@ export type LeadAssignmentUpdateWithoutAssignedByInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
   lead?: Prisma.LeadUpdateOneRequiredWithoutAssignmentsNestedInput
   assignedTo?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedToNestedInput
 }
@@ -697,6 +736,7 @@ export type LeadAssignmentUncheckedUpdateWithoutAssignedByInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUncheckedUpdateManyWithoutAssignedByInput = {
@@ -706,6 +746,7 @@ export type LeadAssignmentUncheckedUpdateManyWithoutAssignedByInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentCreateManyLeadInput = {
@@ -715,6 +756,7 @@ export type LeadAssignmentCreateManyLeadInput = {
   assignedAt?: Date | string
   endedAt?: Date | string | null
   note?: string | null
+  type: $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUpdateWithoutLeadInput = {
@@ -722,6 +764,7 @@ export type LeadAssignmentUpdateWithoutLeadInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
   assignedTo?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedToNestedInput
   assignedBy?: Prisma.UserUpdateOneRequiredWithoutLeadAssignedByNestedInput
 }
@@ -733,6 +776,7 @@ export type LeadAssignmentUncheckedUpdateWithoutLeadInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 export type LeadAssignmentUncheckedUpdateManyWithoutLeadInput = {
@@ -742,6 +786,7 @@ export type LeadAssignmentUncheckedUpdateManyWithoutLeadInput = {
   assignedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   endedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   note?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumLeadAssignmentTypeFieldUpdateOperationsInput | $Enums.LeadAssignmentType
 }
 
 
@@ -754,6 +799,7 @@ export type LeadAssignmentSelect<ExtArgs extends runtime.Types.Extensions.Intern
   assignedAt?: boolean
   endedAt?: boolean
   note?: boolean
+  type?: boolean
   lead?: boolean | Prisma.LeadDefaultArgs<ExtArgs>
   assignedTo?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   assignedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -767,6 +813,7 @@ export type LeadAssignmentSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   assignedAt?: boolean
   endedAt?: boolean
   note?: boolean
+  type?: boolean
   lead?: boolean | Prisma.LeadDefaultArgs<ExtArgs>
   assignedTo?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   assignedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -780,6 +827,7 @@ export type LeadAssignmentSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   assignedAt?: boolean
   endedAt?: boolean
   note?: boolean
+  type?: boolean
   lead?: boolean | Prisma.LeadDefaultArgs<ExtArgs>
   assignedTo?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   assignedBy?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -793,9 +841,10 @@ export type LeadAssignmentSelectScalar = {
   assignedAt?: boolean
   endedAt?: boolean
   note?: boolean
+  type?: boolean
 }
 
-export type LeadAssignmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "leadId" | "assignedToId" | "assignedById" | "assignedAt" | "endedAt" | "note", ExtArgs["result"]["leadAssignment"]>
+export type LeadAssignmentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "leadId" | "assignedToId" | "assignedById" | "assignedAt" | "endedAt" | "note" | "type", ExtArgs["result"]["leadAssignment"]>
 export type LeadAssignmentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   lead?: boolean | Prisma.LeadDefaultArgs<ExtArgs>
   assignedTo?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -827,6 +876,7 @@ export type $LeadAssignmentPayload<ExtArgs extends runtime.Types.Extensions.Inte
     assignedAt: Date
     endedAt: Date | null
     note: string | null
+    type: $Enums.LeadAssignmentType
   }, ExtArgs["result"]["leadAssignment"]>
   composites: {}
 }
@@ -1260,6 +1310,7 @@ export interface LeadAssignmentFieldRefs {
   readonly assignedAt: Prisma.FieldRef<"LeadAssignment", 'DateTime'>
   readonly endedAt: Prisma.FieldRef<"LeadAssignment", 'DateTime'>
   readonly note: Prisma.FieldRef<"LeadAssignment", 'String'>
+  readonly type: Prisma.FieldRef<"LeadAssignment", 'LeadAssignmentType'>
 }
     
 

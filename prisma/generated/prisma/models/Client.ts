@@ -33,6 +33,7 @@ export type ClientMinAggregateOutputType = {
   email: string | null
   communicationEmail: string | null
   phone: string | null
+  normalizedPhone: string | null
   alternatePhone: string | null
   dateOfBirth: Date | null
   gender: $Enums.ClientGender | null
@@ -55,6 +56,7 @@ export type ClientMaxAggregateOutputType = {
   email: string | null
   communicationEmail: string | null
   phone: string | null
+  normalizedPhone: string | null
   alternatePhone: string | null
   dateOfBirth: Date | null
   gender: $Enums.ClientGender | null
@@ -77,6 +79,7 @@ export type ClientCountAggregateOutputType = {
   email: number
   communicationEmail: number
   phone: number
+  normalizedPhone: number
   alternatePhone: number
   dateOfBirth: number
   gender: number
@@ -101,6 +104,7 @@ export type ClientMinAggregateInputType = {
   email?: true
   communicationEmail?: true
   phone?: true
+  normalizedPhone?: true
   alternatePhone?: true
   dateOfBirth?: true
   gender?: true
@@ -123,6 +127,7 @@ export type ClientMaxAggregateInputType = {
   email?: true
   communicationEmail?: true
   phone?: true
+  normalizedPhone?: true
   alternatePhone?: true
   dateOfBirth?: true
   gender?: true
@@ -145,6 +150,7 @@ export type ClientCountAggregateInputType = {
   email?: true
   communicationEmail?: true
   phone?: true
+  normalizedPhone?: true
   alternatePhone?: true
   dateOfBirth?: true
   gender?: true
@@ -239,7 +245,8 @@ export type ClientGroupByOutputType = {
   surname: string | null
   email: string | null
   communicationEmail: string | null
-  phone: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone: string | null
   dateOfBirth: Date | null
   gender: $Enums.ClientGender | null
@@ -282,7 +289,8 @@ export type ClientWhereInput = {
   surname?: Prisma.StringNullableFilter<"Client"> | string | null
   email?: Prisma.StringNullableFilter<"Client"> | string | null
   communicationEmail?: Prisma.StringNullableFilter<"Client"> | string | null
-  phone?: Prisma.StringNullableFilter<"Client"> | string | null
+  phone?: Prisma.StringFilter<"Client"> | string
+  normalizedPhone?: Prisma.StringFilter<"Client"> | string
   alternatePhone?: Prisma.StringNullableFilter<"Client"> | string | null
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Client"> | Date | string | null
   gender?: Prisma.EnumClientGenderNullableFilter<"Client"> | $Enums.ClientGender | null
@@ -317,7 +325,8 @@ export type ClientOrderByWithRelationInput = {
   surname?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   communicationEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrder
+  normalizedPhone?: Prisma.SortOrder
   alternatePhone?: Prisma.SortOrderInput | Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -347,6 +356,7 @@ export type ClientOrderByWithRelationInput = {
 export type ClientWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   clientCode?: string
+  normalizedPhone?: string
   AND?: Prisma.ClientWhereInput | Prisma.ClientWhereInput[]
   OR?: Prisma.ClientWhereInput[]
   NOT?: Prisma.ClientWhereInput | Prisma.ClientWhereInput[]
@@ -355,7 +365,7 @@ export type ClientWhereUniqueInput = Prisma.AtLeast<{
   surname?: Prisma.StringNullableFilter<"Client"> | string | null
   email?: Prisma.StringNullableFilter<"Client"> | string | null
   communicationEmail?: Prisma.StringNullableFilter<"Client"> | string | null
-  phone?: Prisma.StringNullableFilter<"Client"> | string | null
+  phone?: Prisma.StringFilter<"Client"> | string
   alternatePhone?: Prisma.StringNullableFilter<"Client"> | string | null
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Client"> | Date | string | null
   gender?: Prisma.EnumClientGenderNullableFilter<"Client"> | $Enums.ClientGender | null
@@ -380,7 +390,7 @@ export type ClientWhereUniqueInput = Prisma.AtLeast<{
   registrations?: Prisma.RegistrationListRelationFilter
   financialEntries?: Prisma.FinancialEntryListRelationFilter
   whatsappConversations?: Prisma.WhatsAppConversationListRelationFilter
-}, "id" | "clientCode">
+}, "id" | "clientCode" | "normalizedPhone">
 
 export type ClientOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -390,7 +400,8 @@ export type ClientOrderByWithAggregationInput = {
   surname?: Prisma.SortOrderInput | Prisma.SortOrder
   email?: Prisma.SortOrderInput | Prisma.SortOrder
   communicationEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  phone?: Prisma.SortOrderInput | Prisma.SortOrder
+  phone?: Prisma.SortOrder
+  normalizedPhone?: Prisma.SortOrder
   alternatePhone?: Prisma.SortOrderInput | Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrderInput | Prisma.SortOrder
   gender?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -418,7 +429,8 @@ export type ClientScalarWhereWithAggregatesInput = {
   surname?: Prisma.StringNullableWithAggregatesFilter<"Client"> | string | null
   email?: Prisma.StringNullableWithAggregatesFilter<"Client"> | string | null
   communicationEmail?: Prisma.StringNullableWithAggregatesFilter<"Client"> | string | null
-  phone?: Prisma.StringNullableWithAggregatesFilter<"Client"> | string | null
+  phone?: Prisma.StringWithAggregatesFilter<"Client"> | string
+  normalizedPhone?: Prisma.StringWithAggregatesFilter<"Client"> | string
   alternatePhone?: Prisma.StringNullableWithAggregatesFilter<"Client"> | string | null
   dateOfBirth?: Prisma.DateTimeNullableWithAggregatesFilter<"Client"> | Date | string | null
   gender?: Prisma.EnumClientGenderNullableWithAggregatesFilter<"Client"> | $Enums.ClientGender | null
@@ -440,7 +452,8 @@ export type ClientCreateInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -474,7 +487,8 @@ export type ClientUncheckedCreateInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -508,7 +522,8 @@ export type ClientUpdateInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -542,7 +557,8 @@ export type ClientUncheckedUpdateInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -576,7 +592,8 @@ export type ClientCreateManyInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -598,7 +615,8 @@ export type ClientUpdateManyMutationInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -619,7 +637,8 @@ export type ClientUncheckedUpdateManyInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -643,11 +662,6 @@ export type ClientOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type ClientScalarRelationFilter = {
-  is?: Prisma.ClientWhereInput
-  isNot?: Prisma.ClientWhereInput
-}
-
 export type ClientCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   clientCode?: Prisma.SortOrder
@@ -657,6 +671,7 @@ export type ClientCountOrderByAggregateInput = {
   email?: Prisma.SortOrder
   communicationEmail?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  normalizedPhone?: Prisma.SortOrder
   alternatePhone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
@@ -679,6 +694,7 @@ export type ClientMaxOrderByAggregateInput = {
   email?: Prisma.SortOrder
   communicationEmail?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  normalizedPhone?: Prisma.SortOrder
   alternatePhone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
@@ -701,6 +717,7 @@ export type ClientMinOrderByAggregateInput = {
   email?: Prisma.SortOrder
   communicationEmail?: Prisma.SortOrder
   phone?: Prisma.SortOrder
+  normalizedPhone?: Prisma.SortOrder
   alternatePhone?: Prisma.SortOrder
   dateOfBirth?: Prisma.SortOrder
   gender?: Prisma.SortOrder
@@ -712,6 +729,11 @@ export type ClientMinOrderByAggregateInput = {
   branchId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+}
+
+export type ClientScalarRelationFilter = {
+  is?: Prisma.ClientWhereInput
+  isNot?: Prisma.ClientWhereInput
 }
 
 export type ClientNullableScalarRelationFilter = {
@@ -761,6 +783,18 @@ export type ClientUncheckedUpdateManyWithoutBranchNestedInput = {
   deleteMany?: Prisma.ClientScalarWhereInput | Prisma.ClientScalarWhereInput[]
 }
 
+export type NullableEnumClientGenderFieldUpdateOperationsInput = {
+  set?: $Enums.ClientGender | null
+}
+
+export type NullableEnumMaritalStatusFieldUpdateOperationsInput = {
+  set?: $Enums.MaritalStatus | null
+}
+
+export type NullableEnumCountryFieldUpdateOperationsInput = {
+  set?: $Enums.Country | null
+}
+
 export type ClientCreateNestedOneWithoutLeadsInput = {
   create?: Prisma.XOR<Prisma.ClientCreateWithoutLeadsInput, Prisma.ClientUncheckedCreateWithoutLeadsInput>
   connectOrCreate?: Prisma.ClientCreateOrConnectWithoutLeadsInput
@@ -773,18 +807,6 @@ export type ClientUpdateOneRequiredWithoutLeadsNestedInput = {
   upsert?: Prisma.ClientUpsertWithoutLeadsInput
   connect?: Prisma.ClientWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.ClientUpdateToOneWithWhereWithoutLeadsInput, Prisma.ClientUpdateWithoutLeadsInput>, Prisma.ClientUncheckedUpdateWithoutLeadsInput>
-}
-
-export type NullableEnumClientGenderFieldUpdateOperationsInput = {
-  set?: $Enums.ClientGender | null
-}
-
-export type NullableEnumMaritalStatusFieldUpdateOperationsInput = {
-  set?: $Enums.MaritalStatus | null
-}
-
-export type NullableEnumCountryFieldUpdateOperationsInput = {
-  set?: $Enums.Country | null
 }
 
 export type ClientCreateNestedOneWithoutAddressesInput = {
@@ -953,7 +975,8 @@ export type ClientCreateWithoutBranchInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -986,7 +1009,8 @@ export type ClientUncheckedCreateWithoutBranchInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1048,7 +1072,8 @@ export type ClientScalarWhereInput = {
   surname?: Prisma.StringNullableFilter<"Client"> | string | null
   email?: Prisma.StringNullableFilter<"Client"> | string | null
   communicationEmail?: Prisma.StringNullableFilter<"Client"> | string | null
-  phone?: Prisma.StringNullableFilter<"Client"> | string | null
+  phone?: Prisma.StringFilter<"Client"> | string
+  normalizedPhone?: Prisma.StringFilter<"Client"> | string
   alternatePhone?: Prisma.StringNullableFilter<"Client"> | string | null
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Client"> | Date | string | null
   gender?: Prisma.EnumClientGenderNullableFilter<"Client"> | $Enums.ClientGender | null
@@ -1070,7 +1095,8 @@ export type ClientCreateWithoutLeadsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1103,7 +1129,8 @@ export type ClientUncheckedCreateWithoutLeadsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1152,7 +1179,8 @@ export type ClientUpdateWithoutLeadsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1185,7 +1213,8 @@ export type ClientUncheckedUpdateWithoutLeadsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1218,7 +1247,8 @@ export type ClientCreateWithoutAddressesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1251,7 +1281,8 @@ export type ClientUncheckedCreateWithoutAddressesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1300,7 +1331,8 @@ export type ClientUpdateWithoutAddressesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1333,7 +1365,8 @@ export type ClientUncheckedUpdateWithoutAddressesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1366,7 +1399,8 @@ export type ClientCreateWithoutFamilyMembersInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1399,7 +1433,8 @@ export type ClientUncheckedCreateWithoutFamilyMembersInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1448,7 +1483,8 @@ export type ClientUpdateWithoutFamilyMembersInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1481,7 +1517,8 @@ export type ClientUncheckedUpdateWithoutFamilyMembersInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1514,7 +1551,8 @@ export type ClientCreateWithoutEducationRecordsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1547,7 +1585,8 @@ export type ClientUncheckedCreateWithoutEducationRecordsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1596,7 +1635,8 @@ export type ClientUpdateWithoutEducationRecordsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1629,7 +1669,8 @@ export type ClientUncheckedUpdateWithoutEducationRecordsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1662,7 +1703,8 @@ export type ClientCreateWithoutTestsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1695,7 +1737,8 @@ export type ClientUncheckedCreateWithoutTestsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1744,7 +1787,8 @@ export type ClientUpdateWithoutTestsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1777,7 +1821,8 @@ export type ClientUncheckedUpdateWithoutTestsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1810,7 +1855,8 @@ export type ClientCreateWithoutWorkExperiencesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1843,7 +1889,8 @@ export type ClientUncheckedCreateWithoutWorkExperiencesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1892,7 +1939,8 @@ export type ClientUpdateWithoutWorkExperiencesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1925,7 +1973,8 @@ export type ClientUncheckedUpdateWithoutWorkExperiencesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -1958,7 +2007,8 @@ export type ClientCreateWithoutPassportInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -1991,7 +2041,8 @@ export type ClientUncheckedCreateWithoutPassportInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2040,7 +2091,8 @@ export type ClientUpdateWithoutPassportInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2073,7 +2125,8 @@ export type ClientUncheckedUpdateWithoutPassportInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2106,7 +2159,8 @@ export type ClientCreateWithoutApplicationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2139,7 +2193,8 @@ export type ClientUncheckedCreateWithoutApplicationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2188,7 +2243,8 @@ export type ClientUpdateWithoutApplicationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2221,7 +2277,8 @@ export type ClientUncheckedUpdateWithoutApplicationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2254,7 +2311,8 @@ export type ClientCreateWithoutRegistrationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2287,7 +2345,8 @@ export type ClientUncheckedCreateWithoutRegistrationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2336,7 +2395,8 @@ export type ClientUpdateWithoutRegistrationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2369,7 +2429,8 @@ export type ClientUncheckedUpdateWithoutRegistrationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2402,7 +2463,8 @@ export type ClientCreateWithoutInvoicesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2435,7 +2497,8 @@ export type ClientUncheckedCreateWithoutInvoicesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2484,7 +2547,8 @@ export type ClientUpdateWithoutInvoicesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2517,7 +2581,8 @@ export type ClientUncheckedUpdateWithoutInvoicesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2550,7 +2615,8 @@ export type ClientCreateWithoutFinancialEntriesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2583,7 +2649,8 @@ export type ClientUncheckedCreateWithoutFinancialEntriesInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2632,7 +2699,8 @@ export type ClientUpdateWithoutFinancialEntriesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2665,7 +2733,8 @@ export type ClientUncheckedUpdateWithoutFinancialEntriesInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2698,7 +2767,8 @@ export type ClientCreateWithoutWhatsappConversationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2731,7 +2801,8 @@ export type ClientUncheckedCreateWithoutWhatsappConversationsInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2780,7 +2851,8 @@ export type ClientUpdateWithoutWhatsappConversationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2813,7 +2885,8 @@ export type ClientUncheckedUpdateWithoutWhatsappConversationsInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2846,7 +2919,8 @@ export type ClientCreateManyBranchInput = {
   surname?: string | null
   email?: string | null
   communicationEmail?: string | null
-  phone?: string | null
+  phone: string
+  normalizedPhone: string
   alternatePhone?: string | null
   dateOfBirth?: Date | string | null
   gender?: $Enums.ClientGender | null
@@ -2867,7 +2941,8 @@ export type ClientUpdateWithoutBranchInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2900,7 +2975,8 @@ export type ClientUncheckedUpdateWithoutBranchInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -2933,7 +3009,8 @@ export type ClientUncheckedUpdateManyWithoutBranchInput = {
   surname?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   communicationEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  phone?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedPhone?: Prisma.StringFieldUpdateOperationsInput | string
   alternatePhone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dateOfBirth?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   gender?: Prisma.NullableEnumClientGenderFieldUpdateOperationsInput | $Enums.ClientGender | null
@@ -3076,6 +3153,7 @@ export type ClientSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   email?: boolean
   communicationEmail?: boolean
   phone?: boolean
+  normalizedPhone?: boolean
   alternatePhone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
@@ -3112,6 +3190,7 @@ export type ClientSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
   email?: boolean
   communicationEmail?: boolean
   phone?: boolean
+  normalizedPhone?: boolean
   alternatePhone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
@@ -3135,6 +3214,7 @@ export type ClientSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
   email?: boolean
   communicationEmail?: boolean
   phone?: boolean
+  normalizedPhone?: boolean
   alternatePhone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
@@ -3158,6 +3238,7 @@ export type ClientSelectScalar = {
   email?: boolean
   communicationEmail?: boolean
   phone?: boolean
+  normalizedPhone?: boolean
   alternatePhone?: boolean
   dateOfBirth?: boolean
   gender?: boolean
@@ -3171,7 +3252,7 @@ export type ClientSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ClientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clientCode" | "givenName" | "middleName" | "surname" | "email" | "communicationEmail" | "phone" | "alternatePhone" | "dateOfBirth" | "gender" | "maritalStatus" | "nationality" | "nationalId" | "isPreviousVisaRefusal" | "previousVisaRefusalDetails" | "branchId" | "createdAt" | "updatedAt", ExtArgs["result"]["client"]>
+export type ClientOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "clientCode" | "givenName" | "middleName" | "surname" | "email" | "communicationEmail" | "phone" | "normalizedPhone" | "alternatePhone" | "dateOfBirth" | "gender" | "maritalStatus" | "nationality" | "nationalId" | "isPreviousVisaRefusal" | "previousVisaRefusalDetails" | "branchId" | "createdAt" | "updatedAt", ExtArgs["result"]["client"]>
 export type ClientInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   branch?: boolean | Prisma.Client$branchArgs<ExtArgs>
   addresses?: boolean | Prisma.Client$addressesArgs<ExtArgs>
@@ -3220,7 +3301,8 @@ export type $ClientPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     surname: string | null
     email: string | null
     communicationEmail: string | null
-    phone: string | null
+    phone: string
+    normalizedPhone: string
     alternatePhone: string | null
     dateOfBirth: Date | null
     gender: $Enums.ClientGender | null
@@ -3676,6 +3758,7 @@ export interface ClientFieldRefs {
   readonly email: Prisma.FieldRef<"Client", 'String'>
   readonly communicationEmail: Prisma.FieldRef<"Client", 'String'>
   readonly phone: Prisma.FieldRef<"Client", 'String'>
+  readonly normalizedPhone: Prisma.FieldRef<"Client", 'String'>
   readonly alternatePhone: Prisma.FieldRef<"Client", 'String'>
   readonly dateOfBirth: Prisma.FieldRef<"Client", 'DateTime'>
   readonly gender: Prisma.FieldRef<"Client", 'ClientGender'>

@@ -502,14 +502,14 @@ enum LeadSource {
 
 enum LeadStatus {
   NEW
-  ASSIGNED
+  TELECALLERASSIGNED
 
   // Telecalling outcomes
   NOT_PICKED
   NOT_INTERESTED
   INTERESTED
   JUST_INFO
-
+  COUNSELORASSIGNED
   // Counselling outcomes
   COUNSELLING
   COLD
@@ -548,7 +548,7 @@ enum LeadStatusChangeSource {
 }
 
 enum LeadAssignmentType{
-  TELLICALLING
+  TELECALLING
   COUNSELLING
 }
 
@@ -622,6 +622,9 @@ model Lead {
   whatsappConversations WhatsAppConversation[]
   leadCallAttempts LeadCallAttempt[]
   leadVisits LeadVisit[]
+  
+  // Existing fields and relations
+  originatedApplication Application? @relation("LeadOriginatingApplication")
   @@index([source])
   @@index([status])
   @@index([clientId])
@@ -675,6 +678,17 @@ model LeadAssignment {
   @@index([leadId, endedAt])
 }
 
+enum LeadCallOutcome {
+  NOT_PICKED
+  ANSWERED
+  CALLBACK_REQUESTED
+  INTERESTED
+  NOT_INTERESTED
+  JUST_INFO
+  WRONG_NUMBER
+  OTHER
+}
+
 model LeadCallAttempt {
   id String @id @default(cuid())
 
@@ -685,7 +699,7 @@ model LeadCallAttempt {
   attemptedBy   User @relation(fields: [attemptedById], references: [id], onDelete: Restrict)
 
   attemptedAt DateTime @default(now())
-  outcome     LeadStatus
+  outcome     LeadCallOutcome
   notes       String?
 
   createdAt DateTime @default(now())
@@ -1008,7 +1022,8 @@ model Application {
 
   branchId String 
   branch Branch @relation( fields: [branchId], references: [id], onDelete: Restrict )
-
+  originatingLeadId String? @unique 
+  originatingLead   Lead?   @relation( "LeadOriginatingApplication", fields: [originatingLeadId], references: [id], onDelete: SetNull )
    teachingEnrollment TeachingEnrollment?
    touristPrep TouristPrep?
 

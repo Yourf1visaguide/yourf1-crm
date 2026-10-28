@@ -44,6 +44,7 @@ export type ApplicationMinAggregateOutputType = {
   submittedAt: Date | null
   visaStampedAt: Date | null
   branchId: string | null
+  originatingLeadId: string | null
 }
 
 export type ApplicationMaxAggregateOutputType = {
@@ -66,6 +67,7 @@ export type ApplicationMaxAggregateOutputType = {
   submittedAt: Date | null
   visaStampedAt: Date | null
   branchId: string | null
+  originatingLeadId: string | null
 }
 
 export type ApplicationCountAggregateOutputType = {
@@ -88,6 +90,7 @@ export type ApplicationCountAggregateOutputType = {
   submittedAt: number
   visaStampedAt: number
   branchId: number
+  originatingLeadId: number
   _all: number
 }
 
@@ -112,6 +115,7 @@ export type ApplicationMinAggregateInputType = {
   submittedAt?: true
   visaStampedAt?: true
   branchId?: true
+  originatingLeadId?: true
 }
 
 export type ApplicationMaxAggregateInputType = {
@@ -134,6 +138,7 @@ export type ApplicationMaxAggregateInputType = {
   submittedAt?: true
   visaStampedAt?: true
   branchId?: true
+  originatingLeadId?: true
 }
 
 export type ApplicationCountAggregateInputType = {
@@ -156,6 +161,7 @@ export type ApplicationCountAggregateInputType = {
   submittedAt?: true
   visaStampedAt?: true
   branchId?: true
+  originatingLeadId?: true
   _all?: true
 }
 
@@ -251,6 +257,7 @@ export type ApplicationGroupByOutputType = {
   submittedAt: Date | null
   visaStampedAt: Date | null
   branchId: string
+  originatingLeadId: string | null
   _count: ApplicationCountAggregateOutputType | null
   _min: ApplicationMinAggregateOutputType | null
   _max: ApplicationMaxAggregateOutputType | null
@@ -294,6 +301,7 @@ export type ApplicationWhereInput = {
   submittedAt?: Prisma.DateTimeNullableFilter<"Application"> | Date | string | null
   visaStampedAt?: Prisma.DateTimeNullableFilter<"Application"> | Date | string | null
   branchId?: Prisma.StringFilter<"Application"> | string
+  originatingLeadId?: Prisma.StringNullableFilter<"Application"> | string | null
   applicationCredentials?: Prisma.ApplicationCredentialListRelationFilter
   documents?: Prisma.ApplicationDocumentListRelationFilter
   invoices?: Prisma.InvoiceListRelationFilter
@@ -302,6 +310,7 @@ export type ApplicationWhereInput = {
   client?: Prisma.XOR<Prisma.ClientScalarRelationFilter, Prisma.ClientWhereInput>
   registration?: Prisma.XOR<Prisma.RegistrationNullableScalarRelationFilter, Prisma.RegistrationWhereInput> | null
   branch?: Prisma.XOR<Prisma.BranchScalarRelationFilter, Prisma.BranchWhereInput>
+  originatingLead?: Prisma.XOR<Prisma.LeadNullableScalarRelationFilter, Prisma.LeadWhereInput> | null
   teachingEnrollment?: Prisma.XOR<Prisma.TeachingEnrollmentNullableScalarRelationFilter, Prisma.TeachingEnrollmentWhereInput> | null
   touristPrep?: Prisma.XOR<Prisma.TouristPrepNullableScalarRelationFilter, Prisma.TouristPrepWhereInput> | null
 }
@@ -326,6 +335,7 @@ export type ApplicationOrderByWithRelationInput = {
   submittedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   visaStampedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   branchId?: Prisma.SortOrder
+  originatingLeadId?: Prisma.SortOrderInput | Prisma.SortOrder
   applicationCredentials?: Prisma.ApplicationCredentialOrderByRelationAggregateInput
   documents?: Prisma.ApplicationDocumentOrderByRelationAggregateInput
   invoices?: Prisma.InvoiceOrderByRelationAggregateInput
@@ -334,6 +344,7 @@ export type ApplicationOrderByWithRelationInput = {
   client?: Prisma.ClientOrderByWithRelationInput
   registration?: Prisma.RegistrationOrderByWithRelationInput
   branch?: Prisma.BranchOrderByWithRelationInput
+  originatingLead?: Prisma.LeadOrderByWithRelationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentOrderByWithRelationInput
   touristPrep?: Prisma.TouristPrepOrderByWithRelationInput
 }
@@ -341,6 +352,7 @@ export type ApplicationOrderByWithRelationInput = {
 export type ApplicationWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   applicationCode?: string
+  originatingLeadId?: string
   AND?: Prisma.ApplicationWhereInput | Prisma.ApplicationWhereInput[]
   OR?: Prisma.ApplicationWhereInput[]
   NOT?: Prisma.ApplicationWhereInput | Prisma.ApplicationWhereInput[]
@@ -369,9 +381,10 @@ export type ApplicationWhereUniqueInput = Prisma.AtLeast<{
   client?: Prisma.XOR<Prisma.ClientScalarRelationFilter, Prisma.ClientWhereInput>
   registration?: Prisma.XOR<Prisma.RegistrationNullableScalarRelationFilter, Prisma.RegistrationWhereInput> | null
   branch?: Prisma.XOR<Prisma.BranchScalarRelationFilter, Prisma.BranchWhereInput>
+  originatingLead?: Prisma.XOR<Prisma.LeadNullableScalarRelationFilter, Prisma.LeadWhereInput> | null
   teachingEnrollment?: Prisma.XOR<Prisma.TeachingEnrollmentNullableScalarRelationFilter, Prisma.TeachingEnrollmentWhereInput> | null
   touristPrep?: Prisma.XOR<Prisma.TouristPrepNullableScalarRelationFilter, Prisma.TouristPrepWhereInput> | null
-}, "id" | "applicationCode">
+}, "id" | "applicationCode" | "originatingLeadId">
 
 export type ApplicationOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -393,6 +406,7 @@ export type ApplicationOrderByWithAggregationInput = {
   submittedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   visaStampedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   branchId?: Prisma.SortOrder
+  originatingLeadId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ApplicationCountOrderByAggregateInput
   _max?: Prisma.ApplicationMaxOrderByAggregateInput
   _min?: Prisma.ApplicationMinOrderByAggregateInput
@@ -421,6 +435,7 @@ export type ApplicationScalarWhereWithAggregatesInput = {
   submittedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Application"> | Date | string | null
   visaStampedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Application"> | Date | string | null
   branchId?: Prisma.StringWithAggregatesFilter<"Application"> | string
+  originatingLeadId?: Prisma.StringNullableWithAggregatesFilter<"Application"> | string | null
 }
 
 export type ApplicationCreateInput = {
@@ -448,6 +463,7 @@ export type ApplicationCreateInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -472,6 +488,7 @@ export type ApplicationUncheckedCreateInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -506,6 +523,7 @@ export type ApplicationUpdateInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -530,6 +548,7 @@ export type ApplicationUncheckedUpdateInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -559,6 +578,7 @@ export type ApplicationCreateManyInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
 }
 
 export type ApplicationUpdateManyMutationInput = {
@@ -600,6 +620,7 @@ export type ApplicationUncheckedUpdateManyInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ApplicationListRelationFilter = {
@@ -610,6 +631,11 @@ export type ApplicationListRelationFilter = {
 
 export type ApplicationOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type ApplicationNullableScalarRelationFilter = {
+  is?: Prisma.ApplicationWhereInput | null
+  isNot?: Prisma.ApplicationWhereInput | null
 }
 
 export type ApplicationCountOrderByAggregateInput = {
@@ -632,6 +658,7 @@ export type ApplicationCountOrderByAggregateInput = {
   submittedAt?: Prisma.SortOrder
   visaStampedAt?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
+  originatingLeadId?: Prisma.SortOrder
 }
 
 export type ApplicationMaxOrderByAggregateInput = {
@@ -654,6 +681,7 @@ export type ApplicationMaxOrderByAggregateInput = {
   submittedAt?: Prisma.SortOrder
   visaStampedAt?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
+  originatingLeadId?: Prisma.SortOrder
 }
 
 export type ApplicationMinOrderByAggregateInput = {
@@ -676,16 +704,12 @@ export type ApplicationMinOrderByAggregateInput = {
   submittedAt?: Prisma.SortOrder
   visaStampedAt?: Prisma.SortOrder
   branchId?: Prisma.SortOrder
+  originatingLeadId?: Prisma.SortOrder
 }
 
 export type ApplicationScalarRelationFilter = {
   is?: Prisma.ApplicationWhereInput
   isNot?: Prisma.ApplicationWhereInput
-}
-
-export type ApplicationNullableScalarRelationFilter = {
-  is?: Prisma.ApplicationWhereInput | null
-  isNot?: Prisma.ApplicationWhereInput | null
 }
 
 export type ApplicationCreateNestedManyWithoutBranchInput = {
@@ -770,6 +794,38 @@ export type ApplicationUncheckedUpdateManyWithoutClientNestedInput = {
   update?: Prisma.ApplicationUpdateWithWhereUniqueWithoutClientInput | Prisma.ApplicationUpdateWithWhereUniqueWithoutClientInput[]
   updateMany?: Prisma.ApplicationUpdateManyWithWhereWithoutClientInput | Prisma.ApplicationUpdateManyWithWhereWithoutClientInput[]
   deleteMany?: Prisma.ApplicationScalarWhereInput | Prisma.ApplicationScalarWhereInput[]
+}
+
+export type ApplicationCreateNestedOneWithoutOriginatingLeadInput = {
+  create?: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+  connectOrCreate?: Prisma.ApplicationCreateOrConnectWithoutOriginatingLeadInput
+  connect?: Prisma.ApplicationWhereUniqueInput
+}
+
+export type ApplicationUncheckedCreateNestedOneWithoutOriginatingLeadInput = {
+  create?: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+  connectOrCreate?: Prisma.ApplicationCreateOrConnectWithoutOriginatingLeadInput
+  connect?: Prisma.ApplicationWhereUniqueInput
+}
+
+export type ApplicationUpdateOneWithoutOriginatingLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+  connectOrCreate?: Prisma.ApplicationCreateOrConnectWithoutOriginatingLeadInput
+  upsert?: Prisma.ApplicationUpsertWithoutOriginatingLeadInput
+  disconnect?: Prisma.ApplicationWhereInput | boolean
+  delete?: Prisma.ApplicationWhereInput | boolean
+  connect?: Prisma.ApplicationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ApplicationUpdateToOneWithWhereWithoutOriginatingLeadInput, Prisma.ApplicationUpdateWithoutOriginatingLeadInput>, Prisma.ApplicationUncheckedUpdateWithoutOriginatingLeadInput>
+}
+
+export type ApplicationUncheckedUpdateOneWithoutOriginatingLeadNestedInput = {
+  create?: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+  connectOrCreate?: Prisma.ApplicationCreateOrConnectWithoutOriginatingLeadInput
+  upsert?: Prisma.ApplicationUpsertWithoutOriginatingLeadInput
+  disconnect?: Prisma.ApplicationWhereInput | boolean
+  delete?: Prisma.ApplicationWhereInput | boolean
+  connect?: Prisma.ApplicationWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ApplicationUpdateToOneWithWhereWithoutOriginatingLeadInput, Prisma.ApplicationUpdateWithoutOriginatingLeadInput>, Prisma.ApplicationUncheckedUpdateWithoutOriginatingLeadInput>
 }
 
 export type EnumApplicationTypeFieldUpdateOperationsInput = {
@@ -948,6 +1004,7 @@ export type ApplicationCreateWithoutBranchInput = {
   financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutApplicationInput
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -971,6 +1028,7 @@ export type ApplicationUncheckedCreateWithoutBranchInput = {
   status?: $Enums.ApplicationStatus
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1029,6 +1087,7 @@ export type ApplicationScalarWhereInput = {
   submittedAt?: Prisma.DateTimeNullableFilter<"Application"> | Date | string | null
   visaStampedAt?: Prisma.DateTimeNullableFilter<"Application"> | Date | string | null
   branchId?: Prisma.StringFilter<"Application"> | string
+  originatingLeadId?: Prisma.StringNullableFilter<"Application"> | string | null
 }
 
 export type ApplicationCreateWithoutClientInput = {
@@ -1055,6 +1114,7 @@ export type ApplicationCreateWithoutClientInput = {
   financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutApplicationInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1078,6 +1138,7 @@ export type ApplicationUncheckedCreateWithoutClientInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1113,6 +1174,138 @@ export type ApplicationUpdateManyWithWhereWithoutClientInput = {
   data: Prisma.XOR<Prisma.ApplicationUpdateManyMutationInput, Prisma.ApplicationUncheckedUpdateManyWithoutClientInput>
 }
 
+export type ApplicationCreateWithoutOriginatingLeadInput = {
+  id?: string
+  applicationCode: string
+  type: $Enums.ApplicationType
+  preferredCountry?: $Enums.Country | null
+  preferredCourseType?: string | null
+  otherCountry?: string | null
+  preferredCourseName?: string | null
+  targetUniversity?: string | null
+  accommodation?: string | null
+  notes?: string | null
+  preferredQualification?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  status?: $Enums.ApplicationStatus
+  submittedAt?: Date | string | null
+  visaStampedAt?: Date | string | null
+  applicationCredentials?: Prisma.ApplicationCredentialCreateNestedManyWithoutApplicationInput
+  documents?: Prisma.ApplicationDocumentCreateNestedManyWithoutApplicationInput
+  invoices?: Prisma.InvoiceCreateNestedManyWithoutApplicationInput
+  postVisaTasks?: Prisma.PostVisaTaskCreateNestedManyWithoutApplicationInput
+  financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutApplicationInput
+  client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
+  registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
+  branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
+  touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
+}
+
+export type ApplicationUncheckedCreateWithoutOriginatingLeadInput = {
+  id?: string
+  applicationCode: string
+  clientId: string
+  registrationId?: string | null
+  type: $Enums.ApplicationType
+  preferredCountry?: $Enums.Country | null
+  preferredCourseType?: string | null
+  otherCountry?: string | null
+  preferredCourseName?: string | null
+  targetUniversity?: string | null
+  accommodation?: string | null
+  notes?: string | null
+  preferredQualification?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  status?: $Enums.ApplicationStatus
+  submittedAt?: Date | string | null
+  visaStampedAt?: Date | string | null
+  branchId: string
+  applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
+  documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
+  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
+  postVisaTasks?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutApplicationInput
+  financialEntries?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutApplicationInput
+  teachingEnrollment?: Prisma.TeachingEnrollmentUncheckedCreateNestedOneWithoutApplicationInput
+  touristPrep?: Prisma.TouristPrepUncheckedCreateNestedOneWithoutApplicationInput
+}
+
+export type ApplicationCreateOrConnectWithoutOriginatingLeadInput = {
+  where: Prisma.ApplicationWhereUniqueInput
+  create: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+}
+
+export type ApplicationUpsertWithoutOriginatingLeadInput = {
+  update: Prisma.XOR<Prisma.ApplicationUpdateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedUpdateWithoutOriginatingLeadInput>
+  create: Prisma.XOR<Prisma.ApplicationCreateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedCreateWithoutOriginatingLeadInput>
+  where?: Prisma.ApplicationWhereInput
+}
+
+export type ApplicationUpdateToOneWithWhereWithoutOriginatingLeadInput = {
+  where?: Prisma.ApplicationWhereInput
+  data: Prisma.XOR<Prisma.ApplicationUpdateWithoutOriginatingLeadInput, Prisma.ApplicationUncheckedUpdateWithoutOriginatingLeadInput>
+}
+
+export type ApplicationUpdateWithoutOriginatingLeadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationCode?: Prisma.StringFieldUpdateOperationsInput | string
+  type?: Prisma.EnumApplicationTypeFieldUpdateOperationsInput | $Enums.ApplicationType
+  preferredCountry?: Prisma.NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
+  preferredCourseType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherCountry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  preferredCourseName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  targetUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  accommodation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  preferredQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  applicationCredentials?: Prisma.ApplicationCredentialUpdateManyWithoutApplicationNestedInput
+  documents?: Prisma.ApplicationDocumentUpdateManyWithoutApplicationNestedInput
+  invoices?: Prisma.InvoiceUpdateManyWithoutApplicationNestedInput
+  postVisaTasks?: Prisma.PostVisaTaskUpdateManyWithoutApplicationNestedInput
+  financialEntries?: Prisma.FinancialEntryUpdateManyWithoutApplicationNestedInput
+  client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
+  registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
+  branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
+  touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
+}
+
+export type ApplicationUncheckedUpdateWithoutOriginatingLeadInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationCode?: Prisma.StringFieldUpdateOperationsInput | string
+  clientId?: Prisma.StringFieldUpdateOperationsInput | string
+  registrationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  type?: Prisma.EnumApplicationTypeFieldUpdateOperationsInput | $Enums.ApplicationType
+  preferredCountry?: Prisma.NullableEnumCountryFieldUpdateOperationsInput | $Enums.Country | null
+  preferredCourseType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  otherCountry?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  preferredCourseName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  targetUniversity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  accommodation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  preferredQualification?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  status?: Prisma.EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
+  submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
+  documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
+  invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
+  postVisaTasks?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutApplicationNestedInput
+  financialEntries?: Prisma.FinancialEntryUncheckedUpdateManyWithoutApplicationNestedInput
+  teachingEnrollment?: Prisma.TeachingEnrollmentUncheckedUpdateOneWithoutApplicationNestedInput
+  touristPrep?: Prisma.TouristPrepUncheckedUpdateOneWithoutApplicationNestedInput
+}
+
 export type ApplicationCreateWithoutApplicationCredentialsInput = {
   id?: string
   applicationCode: string
@@ -1137,6 +1330,7 @@ export type ApplicationCreateWithoutApplicationCredentialsInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1161,6 +1355,7 @@ export type ApplicationUncheckedCreateWithoutApplicationCredentialsInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutApplicationInput
@@ -1209,6 +1404,7 @@ export type ApplicationUpdateWithoutApplicationCredentialsInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -1233,6 +1429,7 @@ export type ApplicationUncheckedUpdateWithoutApplicationCredentialsInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1265,6 +1462,7 @@ export type ApplicationCreateWithoutRegistrationInput = {
   financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutApplicationInput
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1288,6 +1486,7 @@ export type ApplicationUncheckedCreateWithoutRegistrationInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1347,6 +1546,7 @@ export type ApplicationCreateWithoutDocumentsInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1371,6 +1571,7 @@ export type ApplicationUncheckedCreateWithoutDocumentsInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutApplicationInput
@@ -1419,6 +1620,7 @@ export type ApplicationUpdateWithoutDocumentsInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -1443,6 +1645,7 @@ export type ApplicationUncheckedUpdateWithoutDocumentsInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1475,6 +1678,7 @@ export type ApplicationCreateWithoutInvoicesInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1499,6 +1703,7 @@ export type ApplicationUncheckedCreateWithoutInvoicesInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedCreateNestedManyWithoutApplicationInput
@@ -1547,6 +1752,7 @@ export type ApplicationUpdateWithoutInvoicesInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -1571,6 +1777,7 @@ export type ApplicationUncheckedUpdateWithoutInvoicesInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   postVisaTasks?: Prisma.PostVisaTaskUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1603,6 +1810,7 @@ export type ApplicationCreateWithoutFinancialEntriesInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1627,6 +1835,7 @@ export type ApplicationUncheckedCreateWithoutFinancialEntriesInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1675,6 +1884,7 @@ export type ApplicationUpdateWithoutFinancialEntriesInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -1699,6 +1909,7 @@ export type ApplicationUncheckedUpdateWithoutFinancialEntriesInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1731,6 +1942,7 @@ export type ApplicationCreateWithoutPostVisaTasksInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
@@ -1755,6 +1967,7 @@ export type ApplicationUncheckedCreateWithoutPostVisaTasksInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1803,6 +2016,7 @@ export type ApplicationUpdateWithoutPostVisaTasksInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -1827,6 +2041,7 @@ export type ApplicationUncheckedUpdateWithoutPostVisaTasksInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1860,6 +2075,7 @@ export type ApplicationCreateWithoutTeachingEnrollmentInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   touristPrep?: Prisma.TouristPrepCreateNestedOneWithoutApplicationInput
 }
 
@@ -1883,6 +2099,7 @@ export type ApplicationUncheckedCreateWithoutTeachingEnrollmentInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -1932,6 +2149,7 @@ export type ApplicationUpdateWithoutTeachingEnrollmentInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
 
@@ -1955,6 +2173,7 @@ export type ApplicationUncheckedUpdateWithoutTeachingEnrollmentInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -1988,6 +2207,7 @@ export type ApplicationCreateWithoutTouristPrepInput = {
   client: Prisma.ClientCreateNestedOneWithoutApplicationsInput
   registration?: Prisma.RegistrationCreateNestedOneWithoutApplicationsInput
   branch: Prisma.BranchCreateNestedOneWithoutApplicationsInput
+  originatingLead?: Prisma.LeadCreateNestedOneWithoutOriginatedApplicationInput
   teachingEnrollment?: Prisma.TeachingEnrollmentCreateNestedOneWithoutApplicationInput
 }
 
@@ -2011,6 +2231,7 @@ export type ApplicationUncheckedCreateWithoutTouristPrepInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedCreateNestedManyWithoutApplicationInput
   documents?: Prisma.ApplicationDocumentUncheckedCreateNestedManyWithoutApplicationInput
   invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutApplicationInput
@@ -2060,6 +2281,7 @@ export type ApplicationUpdateWithoutTouristPrepInput = {
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
 }
 
@@ -2083,6 +2305,7 @@ export type ApplicationUncheckedUpdateWithoutTouristPrepInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -2110,6 +2333,7 @@ export type ApplicationCreateManyBranchInput = {
   status?: $Enums.ApplicationStatus
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
+  originatingLeadId?: string | null
 }
 
 export type ApplicationUpdateWithoutBranchInput = {
@@ -2136,6 +2360,7 @@ export type ApplicationUpdateWithoutBranchInput = {
   financialEntries?: Prisma.FinancialEntryUpdateManyWithoutApplicationNestedInput
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -2159,6 +2384,7 @@ export type ApplicationUncheckedUpdateWithoutBranchInput = {
   status?: Prisma.EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -2187,6 +2413,7 @@ export type ApplicationUncheckedUpdateManyWithoutBranchInput = {
   status?: Prisma.EnumApplicationStatusFieldUpdateOperationsInput | $Enums.ApplicationStatus
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ApplicationCreateManyClientInput = {
@@ -2208,6 +2435,7 @@ export type ApplicationCreateManyClientInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
 }
 
 export type ApplicationUpdateWithoutClientInput = {
@@ -2234,6 +2462,7 @@ export type ApplicationUpdateWithoutClientInput = {
   financialEntries?: Prisma.FinancialEntryUpdateManyWithoutApplicationNestedInput
   registration?: Prisma.RegistrationUpdateOneWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -2257,6 +2486,7 @@ export type ApplicationUncheckedUpdateWithoutClientInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -2285,6 +2515,7 @@ export type ApplicationUncheckedUpdateManyWithoutClientInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type ApplicationCreateManyRegistrationInput = {
@@ -2306,6 +2537,7 @@ export type ApplicationCreateManyRegistrationInput = {
   submittedAt?: Date | string | null
   visaStampedAt?: Date | string | null
   branchId: string
+  originatingLeadId?: string | null
 }
 
 export type ApplicationUpdateWithoutRegistrationInput = {
@@ -2332,6 +2564,7 @@ export type ApplicationUpdateWithoutRegistrationInput = {
   financialEntries?: Prisma.FinancialEntryUpdateManyWithoutApplicationNestedInput
   client?: Prisma.ClientUpdateOneRequiredWithoutApplicationsNestedInput
   branch?: Prisma.BranchUpdateOneRequiredWithoutApplicationsNestedInput
+  originatingLead?: Prisma.LeadUpdateOneWithoutOriginatedApplicationNestedInput
   teachingEnrollment?: Prisma.TeachingEnrollmentUpdateOneWithoutApplicationNestedInput
   touristPrep?: Prisma.TouristPrepUpdateOneWithoutApplicationNestedInput
 }
@@ -2355,6 +2588,7 @@ export type ApplicationUncheckedUpdateWithoutRegistrationInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   applicationCredentials?: Prisma.ApplicationCredentialUncheckedUpdateManyWithoutApplicationNestedInput
   documents?: Prisma.ApplicationDocumentUncheckedUpdateManyWithoutApplicationNestedInput
   invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutApplicationNestedInput
@@ -2383,6 +2617,7 @@ export type ApplicationUncheckedUpdateManyWithoutRegistrationInput = {
   submittedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   visaStampedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   branchId?: Prisma.StringFieldUpdateOperationsInput | string
+  originatingLeadId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -2472,6 +2707,7 @@ export type ApplicationSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   submittedAt?: boolean
   visaStampedAt?: boolean
   branchId?: boolean
+  originatingLeadId?: boolean
   applicationCredentials?: boolean | Prisma.Application$applicationCredentialsArgs<ExtArgs>
   documents?: boolean | Prisma.Application$documentsArgs<ExtArgs>
   invoices?: boolean | Prisma.Application$invoicesArgs<ExtArgs>
@@ -2480,6 +2716,7 @@ export type ApplicationSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
   teachingEnrollment?: boolean | Prisma.Application$teachingEnrollmentArgs<ExtArgs>
   touristPrep?: boolean | Prisma.Application$touristPrepArgs<ExtArgs>
   _count?: boolean | Prisma.ApplicationCountOutputTypeDefaultArgs<ExtArgs>
@@ -2505,9 +2742,11 @@ export type ApplicationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   submittedAt?: boolean
   visaStampedAt?: boolean
   branchId?: boolean
+  originatingLeadId?: boolean
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
 }, ExtArgs["result"]["application"]>
 
 export type ApplicationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -2530,9 +2769,11 @@ export type ApplicationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   submittedAt?: boolean
   visaStampedAt?: boolean
   branchId?: boolean
+  originatingLeadId?: boolean
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
 }, ExtArgs["result"]["application"]>
 
 export type ApplicationSelectScalar = {
@@ -2555,9 +2796,10 @@ export type ApplicationSelectScalar = {
   submittedAt?: boolean
   visaStampedAt?: boolean
   branchId?: boolean
+  originatingLeadId?: boolean
 }
 
-export type ApplicationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "applicationCode" | "clientId" | "registrationId" | "type" | "preferredCountry" | "preferredCourseType" | "otherCountry" | "preferredCourseName" | "targetUniversity" | "accommodation" | "notes" | "preferredQualification" | "createdAt" | "updatedAt" | "status" | "submittedAt" | "visaStampedAt" | "branchId", ExtArgs["result"]["application"]>
+export type ApplicationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "applicationCode" | "clientId" | "registrationId" | "type" | "preferredCountry" | "preferredCourseType" | "otherCountry" | "preferredCourseName" | "targetUniversity" | "accommodation" | "notes" | "preferredQualification" | "createdAt" | "updatedAt" | "status" | "submittedAt" | "visaStampedAt" | "branchId" | "originatingLeadId", ExtArgs["result"]["application"]>
 export type ApplicationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   applicationCredentials?: boolean | Prisma.Application$applicationCredentialsArgs<ExtArgs>
   documents?: boolean | Prisma.Application$documentsArgs<ExtArgs>
@@ -2567,6 +2809,7 @@ export type ApplicationInclude<ExtArgs extends runtime.Types.Extensions.Internal
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
   teachingEnrollment?: boolean | Prisma.Application$teachingEnrollmentArgs<ExtArgs>
   touristPrep?: boolean | Prisma.Application$touristPrepArgs<ExtArgs>
   _count?: boolean | Prisma.ApplicationCountOutputTypeDefaultArgs<ExtArgs>
@@ -2575,11 +2818,13 @@ export type ApplicationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
 }
 export type ApplicationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   client?: boolean | Prisma.ClientDefaultArgs<ExtArgs>
   registration?: boolean | Prisma.Application$registrationArgs<ExtArgs>
   branch?: boolean | Prisma.BranchDefaultArgs<ExtArgs>
+  originatingLead?: boolean | Prisma.Application$originatingLeadArgs<ExtArgs>
 }
 
 export type $ApplicationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2593,6 +2838,7 @@ export type $ApplicationPayload<ExtArgs extends runtime.Types.Extensions.Interna
     client: Prisma.$ClientPayload<ExtArgs>
     registration: Prisma.$RegistrationPayload<ExtArgs> | null
     branch: Prisma.$BranchPayload<ExtArgs>
+    originatingLead: Prisma.$LeadPayload<ExtArgs> | null
     teachingEnrollment: Prisma.$TeachingEnrollmentPayload<ExtArgs> | null
     touristPrep: Prisma.$TouristPrepPayload<ExtArgs> | null
   }
@@ -2616,6 +2862,7 @@ export type $ApplicationPayload<ExtArgs extends runtime.Types.Extensions.Interna
     submittedAt: Date | null
     visaStampedAt: Date | null
     branchId: string
+    originatingLeadId: string | null
   }, ExtArgs["result"]["application"]>
   composites: {}
 }
@@ -3018,6 +3265,7 @@ export interface Prisma__ApplicationClient<T, Null = never, ExtArgs extends runt
   client<T extends Prisma.ClientDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClientDefaultArgs<ExtArgs>>): Prisma.Prisma__ClientClient<runtime.Types.Result.GetResult<Prisma.$ClientPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   registration<T extends Prisma.Application$registrationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Application$registrationArgs<ExtArgs>>): Prisma.Prisma__RegistrationClient<runtime.Types.Result.GetResult<Prisma.$RegistrationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   branch<T extends Prisma.BranchDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BranchDefaultArgs<ExtArgs>>): Prisma.Prisma__BranchClient<runtime.Types.Result.GetResult<Prisma.$BranchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  originatingLead<T extends Prisma.Application$originatingLeadArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Application$originatingLeadArgs<ExtArgs>>): Prisma.Prisma__LeadClient<runtime.Types.Result.GetResult<Prisma.$LeadPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   teachingEnrollment<T extends Prisma.Application$teachingEnrollmentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Application$teachingEnrollmentArgs<ExtArgs>>): Prisma.Prisma__TeachingEnrollmentClient<runtime.Types.Result.GetResult<Prisma.$TeachingEnrollmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   touristPrep<T extends Prisma.Application$touristPrepArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Application$touristPrepArgs<ExtArgs>>): Prisma.Prisma__TouristPrepClient<runtime.Types.Result.GetResult<Prisma.$TouristPrepPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
@@ -3068,6 +3316,7 @@ export interface ApplicationFieldRefs {
   readonly submittedAt: Prisma.FieldRef<"Application", 'DateTime'>
   readonly visaStampedAt: Prisma.FieldRef<"Application", 'DateTime'>
   readonly branchId: Prisma.FieldRef<"Application", 'String'>
+  readonly originatingLeadId: Prisma.FieldRef<"Application", 'String'>
 }
     
 
@@ -3605,6 +3854,25 @@ export type Application$registrationArgs<ExtArgs extends runtime.Types.Extension
    */
   include?: Prisma.RegistrationInclude<ExtArgs> | null
   where?: Prisma.RegistrationWhereInput
+}
+
+/**
+ * Application.originatingLead
+ */
+export type Application$originatingLeadArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Lead
+   */
+  select?: Prisma.LeadSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Lead
+   */
+  omit?: Prisma.LeadOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LeadInclude<ExtArgs> | null
+  where?: Prisma.LeadWhereInput
 }
 
 /**

@@ -83,6 +83,11 @@ export type OfficeDailyReport = Prisma.OfficeDailyReportModel
  */
 export type OfficeDailyReportCheck = Prisma.OfficeDailyReportCheckModel
 /**
+ * Model Client
+ * 
+ */
+export type Client = Prisma.ClientModel
+/**
  * Model Lead
  * 
  */
@@ -98,10 +103,20 @@ export type LeadStatusHistory = Prisma.LeadStatusHistoryModel
  */
 export type LeadAssignment = Prisma.LeadAssignmentModel
 /**
- * Model Client
+ * Model LeadCallAttempt
  * 
  */
-export type Client = Prisma.ClientModel
+export type LeadCallAttempt = Prisma.LeadCallAttemptModel
+/**
+ * Model LeadVisit
+ * 
+ */
+export type LeadVisit = Prisma.LeadVisitModel
+/**
+ * Model LeadVisitEvent
+ * 
+ */
+export type LeadVisitEvent = Prisma.LeadVisitEventModel
 /**
  * Model ClientAddress
  * 

@@ -64,10 +64,13 @@ export const ModelName = {
   EmployeeSalaryAdvance: 'EmployeeSalaryAdvance',
   OfficeDailyReport: 'OfficeDailyReport',
   OfficeDailyReportCheck: 'OfficeDailyReportCheck',
+  Client: 'Client',
   Lead: 'Lead',
   LeadStatusHistory: 'LeadStatusHistory',
   LeadAssignment: 'LeadAssignment',
-  Client: 'Client',
+  LeadCallAttempt: 'LeadCallAttempt',
+  LeadVisit: 'LeadVisit',
+  LeadVisitEvent: 'LeadVisitEvent',
   ClientAddress: 'ClientAddress',
   ClientFamilyMember: 'ClientFamilyMember',
   ClientEducation: 'ClientEducation',
@@ -313,6 +316,32 @@ export const OfficeDailyReportCheckScalarFieldEnum = {
 export type OfficeDailyReportCheckScalarFieldEnum = (typeof OfficeDailyReportCheckScalarFieldEnum)[keyof typeof OfficeDailyReportCheckScalarFieldEnum]
 
 
+export const ClientScalarFieldEnum = {
+  id: 'id',
+  clientCode: 'clientCode',
+  givenName: 'givenName',
+  middleName: 'middleName',
+  surname: 'surname',
+  email: 'email',
+  communicationEmail: 'communicationEmail',
+  phone: 'phone',
+  normalizedPhone: 'normalizedPhone',
+  alternatePhone: 'alternatePhone',
+  dateOfBirth: 'dateOfBirth',
+  gender: 'gender',
+  maritalStatus: 'maritalStatus',
+  nationality: 'nationality',
+  nationalId: 'nationalId',
+  isPreviousVisaRefusal: 'isPreviousVisaRefusal',
+  previousVisaRefusalDetails: 'previousVisaRefusalDetails',
+  branchId: 'branchId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClientScalarFieldEnum = (typeof ClientScalarFieldEnum)[keyof typeof ClientScalarFieldEnum]
+
+
 export const LeadScalarFieldEnum = {
   id: 'id',
   leadCode: 'leadCode',
@@ -349,35 +378,56 @@ export const LeadAssignmentScalarFieldEnum = {
   assignedById: 'assignedById',
   assignedAt: 'assignedAt',
   endedAt: 'endedAt',
-  note: 'note'
+  note: 'note',
+  type: 'type'
 } as const
 
 export type LeadAssignmentScalarFieldEnum = (typeof LeadAssignmentScalarFieldEnum)[keyof typeof LeadAssignmentScalarFieldEnum]
 
 
-export const ClientScalarFieldEnum = {
+export const LeadCallAttemptScalarFieldEnum = {
   id: 'id',
-  clientCode: 'clientCode',
-  givenName: 'givenName',
-  middleName: 'middleName',
-  surname: 'surname',
-  email: 'email',
-  communicationEmail: 'communicationEmail',
-  phone: 'phone',
-  alternatePhone: 'alternatePhone',
-  dateOfBirth: 'dateOfBirth',
-  gender: 'gender',
-  maritalStatus: 'maritalStatus',
-  nationality: 'nationality',
-  nationalId: 'nationalId',
-  isPreviousVisaRefusal: 'isPreviousVisaRefusal',
-  previousVisaRefusalDetails: 'previousVisaRefusalDetails',
-  branchId: 'branchId',
+  leadId: 'leadId',
+  attemptedById: 'attemptedById',
+  attemptedAt: 'attemptedAt',
+  outcome: 'outcome',
+  notes: 'notes',
+  createdAt: 'createdAt'
+} as const
+
+export type LeadCallAttemptScalarFieldEnum = (typeof LeadCallAttemptScalarFieldEnum)[keyof typeof LeadCallAttemptScalarFieldEnum]
+
+
+export const LeadVisitScalarFieldEnum = {
+  id: 'id',
+  leadId: 'leadId',
+  promisedAt: 'promisedAt',
+  status: 'status',
+  confirmationAt: 'confirmationAt',
+  actualVisitAt: 'actualVisitAt',
+  notes: 'notes',
+  createdById: 'createdById',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
-export type ClientScalarFieldEnum = (typeof ClientScalarFieldEnum)[keyof typeof ClientScalarFieldEnum]
+export type LeadVisitScalarFieldEnum = (typeof LeadVisitScalarFieldEnum)[keyof typeof LeadVisitScalarFieldEnum]
+
+
+export const LeadVisitEventScalarFieldEnum = {
+  id: 'id',
+  visitId: 'visitId',
+  eventType: 'eventType',
+  previousPromisedAt: 'previousPromisedAt',
+  newPromisedAt: 'newPromisedAt',
+  previousStatus: 'previousStatus',
+  newStatus: 'newStatus',
+  note: 'note',
+  changedById: 'changedById',
+  createdAt: 'createdAt'
+} as const
+
+export type LeadVisitEventScalarFieldEnum = (typeof LeadVisitEventScalarFieldEnum)[keyof typeof LeadVisitEventScalarFieldEnum]
 
 
 export const ClientAddressScalarFieldEnum = {
@@ -514,7 +564,8 @@ export const ApplicationScalarFieldEnum = {
   status: 'status',
   submittedAt: 'submittedAt',
   visaStampedAt: 'visaStampedAt',
-  branchId: 'branchId'
+  branchId: 'branchId',
+  originatingLeadId: 'originatingLeadId'
 } as const
 
 export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
