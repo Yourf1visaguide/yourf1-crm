@@ -2,19 +2,20 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "@/components/ui/toast";
+
 import { apiFetch } from "@/lib/api-fetch";
+import { leadKeys } from "./lead-query-keys";
 import type { CreateLeadInput } from "../schemas/leads-schema";
 import type { LeadCreatedResponse } from "../types";
-import { leadKeys } from "./lead-query-keys";
 
 export function useCreateLead() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (values: CreateLeadInput): Promise<LeadCreatedResponse> => {
+    mutationFn: async (input: CreateLeadInput): Promise<LeadCreatedResponse> => {
       const response = await apiFetch<LeadCreatedResponse>("/api/leads", {
         method: "POST",
-        body: JSON.stringify(values),
+        body: JSON.stringify(input),
       });
       return response.data;
     },

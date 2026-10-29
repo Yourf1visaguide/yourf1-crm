@@ -1,4 +1,8 @@
-import type { DEPARTMENT, ROLES } from "@/prisma/generated/prisma/enums";
+import type {
+  DEPARTMENT,
+  ROLES,
+  LeadAssignmentType,
+} from "@/prisma/generated/prisma/enums";
 
 export type BranchOption = {
   id: string;
@@ -27,8 +31,6 @@ export type LeadCreatedResponse = {
   status: string;
   source: string;
   createdAt: string;
-  assignedTo: {
-    id: string;
-    name: string;
-  };
+  assignmentType: LeadAssignmentType;
+  assignedTo: { id: string; name: string };
 };

@@ -1,7 +1,8 @@
+
 import "server-only";
 
 import { Prisma } from "@/prisma/generated/prisma/client";
-import { Country } from "@/prisma/generated/prisma/enums";
+import { Country, LeadStatus } from "@/prisma/generated/prisma/enums";
 import { prisma } from "@/lib/prisma";
 
 import type { LeadListItem, LeadListQuery } from "../schemas/lead-list-schema";
@@ -42,117 +43,47 @@ function getOrderBy(
 ): Prisma.LeadOrderByWithRelationInput {
   switch (sortBy) {
     case "clientName":
-      return {
-        client: {
-          givenName: sortOrder,
-        },
-      };
-
+      return { client: { givenName: sortOrder } };
     case "phone":
-      return {
-        client: {
-          phone: sortOrder,
-        },
-      };
-
+      return { client: { phone: sortOrder } };
     case "status":
-      return {
-        status: sortOrder,
-      };
-
+      return { status: sortOrder };
     case "source":
-      return {
-        source: sortOrder,
-      };
-
+      return { source: sortOrder };
     case "createdAt":
     default:
-      return {
-        createdAt: sortOrder,
-      };
+      return { createdAt: sortOrder };
   }
 }
 
 function buildSearchWhere(search?: string): Prisma.LeadWhereInput | undefined {
   const value = search?.trim();
-
-  if (!value) {
-    return undefined;
-  }
+  if (!value) return undefined;
 
   const matchedCountry = getSearchCountry(value);
 
   return {
     OR: [
+      { leadCode: { contains: value, mode: "insensitive" } },
+      { client: { givenName: { contains: value, mode: "insensitive" } } },
+      { client: { middleName: { contains: value, mode: "insensitive" } } },
+      { client: { surname: { contains: value, mode: "insensitive" } } },
+      { client: { phone: { contains: value, mode: "insensitive" } } },
+      { client: { email: { contains: value, mode: "insensitive" } } },
       {
-        leadCode: {
-          contains: value,
-          mode: "insensitive",
-        },
-      },
-      {
-        client: {
-          givenName: {
-            contains: value,
-            mode: "insensitive",
-          },
-        },
-      },
-      {
-        client: {
-          middleName: {
-            contains: value,
-            mode: "insensitive",
-          },
-        },
-      },
-      {
-        client: {
-          surname: {
-            contains: value,
-            mode: "insensitive",
-          },
-        },
-      },
-      {
-        client: {
-          phone: {
-            contains: value,
-            mode: "insensitive",
-          },
-        },
-      },
-      {
-        client: {
-          email: {
-            contains: value,
-            mode: "insensitive",
-          },
-        },
-      },
-      {
-        client: {
-          applications: {
-            some: {
-              otherCountry: {
-                contains: value,
-                mode: "insensitive",
-              },
-            },
+        originatedApplication: {
+          is: {
+            otherCountry: { contains: value, mode: "insensitive" },
           },
         },
       },
       ...(matchedCountry
         ? [
             {
-              client: {
-                applications: {
-                  some: {
-                    preferredCountry: matchedCountry,
-                  },
-                },
+              originatedApplication: {
+                is: { preferredCountry: matchedCountry },
               },
-            },
+            } satisfies Prisma.LeadWhereInput,
           ]
         : []),
     ],
@@ -184,9 +115,16 @@ function buildCommonWhere(
     }
 
     andConditions.push({
-      client: {
-        applications: {
-          some: applicationWhere,
+      originatedApplication: { is: applicationWhere },
+    });
+  }
+
+  if (query.assignmentType) {
+    andConditions.push({
+      assignments: {
+        some: {
+          type: query.assignmentType,
+          endedAt: null,
         },
       },
     });
@@ -198,6 +136,7 @@ function buildCommonWhere(
         some: {
           assignedToId: access.userId,
           endedAt: null,
+          ...(query.assignmentType ? { type: query.assignmentType } : {}),
         },
       },
     });
@@ -209,43 +148,25 @@ function buildCommonWhere(
     andConditions.push(searchWhere);
   }
 
-  return {
-    AND: andConditions,
-  };
+  return { AND: andConditions };
 }
 
 function addAssignmentCondition(
   where: Prisma.LeadWhereInput,
   scope: LeadListQuery["assignmentScope"],
+  assignmentType?: LeadListQuery["assignmentType"],
 ): Prisma.LeadWhereInput {
+  const activeAssignment = {
+    endedAt: null,
+    ...(assignmentType ? { type: assignmentType } : {}),
+  };
+
   if (scope === "ASSIGNED") {
-    return {
-      AND: [
-        where,
-        {
-          assignments: {
-            some: {
-              endedAt: null,
-            },
-          },
-        },
-      ],
-    };
+    return { AND: [where, { assignments: { some: activeAssignment } }] };
   }
 
   if (scope === "UNASSIGNED") {
-    return {
-      AND: [
-        where,
-        {
-          assignments: {
-            none: {
-              endedAt: null,
-            },
-          },
-        },
-      ],
-    };
+    return { AND: [where, { assignments: { none: activeAssignment } }] };
   }
 
   return where;
@@ -255,16 +176,7 @@ function addStatusCondition(
   where: Prisma.LeadWhereInput,
   status: LeadListQuery["status"],
 ): Prisma.LeadWhereInput {
-  return status
-    ? {
-        AND: [
-          where,
-          {
-            status,
-          },
-        ],
-      }
-    : where;
+  return status ? { AND: [where, { status }] } : where;
 }
 
 export async function getLeads(
@@ -282,13 +194,7 @@ export async function getLeads(
     all: number;
     assigned: number;
     unassigned: number;
-    status: {
-      NEW: number;
-      NOT_PICKED: number;
-      JUST_INFO: number;
-      NOT_INTERESTED: number;
-      CONVERTED: number;
-    };
+    status: Record<LeadStatus, number>;
   };
 }> {
   const commonWhere = buildCommonWhere(query, access);
@@ -296,19 +202,14 @@ export async function getLeads(
   const filteredWhere = addAssignmentCondition(
     addStatusCondition(commonWhere, query.status),
     query.assignmentScope,
+    query.assignmentType,
   );
 
   const orderBy = getOrderBy(query.sortBy, query.sortOrder);
 
-  const applicationWhereForList =
-    query.applicationType || query.preferredCountry
-      ? {
-          ...(query.applicationType ? { type: query.applicationType } : {}),
-          ...(query.preferredCountry
-            ? { preferredCountry: query.preferredCountry }
-            : {}),
-        }
-      : undefined;
+  const activeAssignmentType = query.assignmentType
+    ? { type: query.assignmentType }
+    : {};
 
   const [
     leads,
@@ -316,151 +217,112 @@ export async function getLeads(
     allCount,
     assignedCount,
     unassignedCount,
-    newCount,
-    notPickedCount,
-    justInfoCount,
-    notInterestedCount,
-    convertedCount,
+    statusGroups,
   ] = await prisma.$transaction([
-      prisma.lead.findMany({
-        where: filteredWhere,
-
-        select: {
-          id: true,
-          leadCode: true,
-          status: true,
-          source: true,
-          createdAt: true,
-
-          client: {
-            select: {
-              id: true,
-              givenName: true,
-              middleName: true,
-              surname: true,
-              phone: true,
-
-              applications: {
-                ...(applicationWhereForList
-                  ? { where: applicationWhereForList }
-                  : {}),
-                orderBy: {
-                  createdAt: "desc",
-                },
-                take: 1,
-                select: {
-                  type: true,
-                },
-              },
-            },
+    prisma.lead.findMany({
+      where: filteredWhere,
+      select: {
+        id: true,
+        leadCode: true,
+        status: true,
+        source: true,
+        createdAt: true,
+        client: {
+          select: {
+            id: true,
+            givenName: true,
+            middleName: true,
+            surname: true,
+            phone: true,
           },
-
-          assignments: {
-            where: {
-              endedAt: null,
-            },
-            orderBy: {
-              assignedAt: "desc",
-            },
-            take: 1,
-            select: {
-              assignedTo: {
-                select: {
-                  id: true,
-                  name: true,
-                },
+        },
+        originatedApplication: {
+          select: { type: true },
+        },
+        assignments: {
+          where: {
+            endedAt: null,
+            ...activeAssignmentType,
+          },
+          orderBy: { assignedAt: "desc" },
+          take: 1,
+          select: {
+            type: true,
+            assignedTo: {
+              select: {
+                id: true,
+                name: true,
               },
             },
           },
         },
+      },
+      orderBy: [orderBy, { id: "asc" }],
+      skip: (query.page - 1) * query.limit,
+      take: query.limit,
+    }),
 
-        orderBy: [
-          orderBy,
+    prisma.lead.count({ where: filteredWhere }),
+
+    prisma.lead.count({ where: commonWhere }),
+
+    prisma.lead.count({
+      where: {
+        AND: [
+          commonWhere,
           {
-            id: "asc",
+            assignments: {
+              some: {
+                endedAt: null,
+                ...activeAssignmentType,
+              },
+            },
           },
         ],
+      },
+    }),
 
-        skip: (query.page - 1) * query.limit,
-        take: query.limit,
-      }),
-
-      prisma.lead.count({
-        where: filteredWhere,
-      }),
-
-      prisma.lead.count({
-        where: commonWhere,
-      }),
-
-      prisma.lead.count({
-        where: {
-          AND: [
-            commonWhere,
-            {
-              assignments: {
-                some: {
-                  endedAt: null,
-                },
+    prisma.lead.count({
+      where: {
+        AND: [
+          commonWhere,
+          {
+            assignments: {
+              none: {
+                endedAt: null,
+                ...activeAssignmentType,
               },
             },
-          ],
-        },
-      }),
+          },
+        ],
+      },
+    }),
 
-      prisma.lead.count({
-        where: {
-          AND: [
-            commonWhere,
-            {
-              assignments: {
-                none: {
-                  endedAt: null,
-                },
-              },
-            },
-          ],
-        },
-      }),
+    prisma.lead.groupBy({
+      by: ["status"],
+      where: commonWhere,
+      _count: {
+        _all: true,
+      },
+      orderBy: {
+        status: "asc",
+      },
+    }),
+  ]);
 
-      prisma.lead.count({
-        where: {
-          AND: [commonWhere, { status: "NEW" }],
-        },
-      }),
+  const statusCountMap = Object.fromEntries(
+    Object.values(LeadStatus).map((status) => [status, 0]),
+  ) as Record<LeadStatus, number>;
 
-      prisma.lead.count({
-        where: {
-          AND: [commonWhere, { status: "NOT_PICKED" }],
-        },
-      }),
+  for (const group of statusGroups) {
+    // Prisma's generated groupBy result may infer _count as a boolean
+    // or a count object. Narrow the union before accessing _all.
+    const count = group._count;
 
-      prisma.lead.count({
-        where: {
-          AND: [commonWhere, { status: "JUST_INFO" }],
-        },
-      }),
-
-      prisma.lead.count({
-        where: {
-          AND: [commonWhere, { status: "NOT_INTERESTED" }],
-        },
-      }),
-
-      prisma.lead.count({
-        where: {
-          AND: [commonWhere, { status: "CONVERTED" }],
-        },
-      }),
-    ]);
-
-  const statusCounts = {
-    NEW: newCount,
-    NOT_PICKED: notPickedCount,
-    JUST_INFO: justInfoCount,
-    NOT_INTERESTED: notInterestedCount,
-    CONVERTED: convertedCount,
-  };
+    if (count && typeof count === "object" && "_all" in count) {
+      statusCountMap[group.status] = count._all ?? 0;
+    }
+  }
 
   return {
     leads: leads.map((lead) => {
@@ -476,18 +338,14 @@ export async function getLeads(
       return {
         id: lead.id,
         leadCode: lead.leadCode,
-
         clientId: lead.client.id,
         clientName: name || "Unnamed client",
         phone: lead.client.phone,
-
-        applicationType: lead.client.applications[0]?.type ?? null,
-
+        applicationType: lead.originatedApplication?.type ?? null,
         status: lead.status,
         source: lead.source,
-
+        assignmentType: lead.assignments[0]?.type ?? null,
         assignedTo: lead.assignments[0]?.assignedTo ?? null,
-
         createdAt: lead.createdAt.toISOString(),
       };
     }),
@@ -503,7 +361,7 @@ export async function getLeads(
       all: allCount,
       assigned: assignedCount,
       unassigned: unassignedCount,
-      status: statusCounts,
+      status: statusCountMap,
     },
   };
 }

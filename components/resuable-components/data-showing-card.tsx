@@ -14,56 +14,56 @@ const variants = {
     icon: "bg-secondary/70 text-primary",
     accent: "bg-primary",
     border: "border-indigo-500",
-    bg: "bg-indigo-50/70",
+    bg: "not-dark:bg-indigo-50/70",
   },
 
   success: {
     icon: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
     accent: "bg-emerald-500",
     border: "border-emerald-500",
-    bg: "bg-emerald-50/70",
+    bg: "not-dark:bg-emerald-50/70",
   },
 
   danger: {
     icon: "bg-rose-600/10 text-rose-600 dark:text-rose-400",
     accent: "bg-rose-600",
     border: "border-rose-600",
-    bg: "bg-rose-50/70",
+    bg: "not-dark:bg-rose-50/70",
   },
   
   danger2: {
     icon: "bg-red-600/30 text-red-700 dark:text-red-400",
     accent: "bg-red-600",
     border: "border-red-700",
-    bg: "bg-red-50/70",
+    bg: "not-dark:bg-red-50/70",
   },
 
   warning: {
     icon: "bg-amber-500/15 text-amber-600 dark:text-amber-400",
     accent: "bg-amber-500",
     border: "border-amber-500",
-    bg: "bg-amber-50/70",
+    bg: "not-dark:bg-amber-50/70",
   },
 
   info: {
     icon: "bg-zinc-500/15 text-zinc-600 dark:text-zinc-400",
     accent: "bg-zinc-500",
     border: "border-zinc-600",
-    bg: "bg-zinc-50/70",
+    bg: "not-dark:bg-zinc-50/70",
   },
 
   violet: {
     icon: "bg-violet-500/15 text-violet-600 dark:text-violet-400",
     accent: "bg-violet-500",
     border: "border-violet-500",
-    bg: "bg-violet-50/70",
+    bg: "not-dark:bg-violet-50/70",
   },
 
   neutral: {
     icon: "bg-slate-500/15 text-slate-600 dark:text-slate-400",
     accent: "bg-slate-500",
     border: "border-slate-500",
-    bg: "bg-slate-50/70",
+    bg: "not-dark:bg-slate-50/70",
   },
 };
 
@@ -80,7 +80,7 @@ export function DataShowingCard({
   return (
     <div
       className={cn(
-        "group relative isolate overflow-hidden rounded-md shadow-sm transition-all duration-300 ease-out  hover:-translate-y-0.5 hover:shadow-md border-t-2 backdrop-blur-md  bg-card",colors.border, )}
+        "group relative isolate overflow-hidden rounded-md shadow-sm transition-all duration-300 ease-out  hover:-translate-y-0.5 not-dark: hover:shadow-md border-t-2 backdrop-blur-md  bg-card",colors.border, colors.bg )}
     >
       {/* Subtle accent along the top */}
       {/* <div
@@ -91,11 +91,11 @@ export function DataShowingCard({
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0 space-y-1.5">
-            <h3 className="text-xl font-semibold tracking-normal text-foreground">
+            <h3 className="text-xl font-semibold tracking-normal text-card-foreground">
               {title}
             </h3>
 
-            <p className="text-sm font-medium text-foreground/70">
+            <p className="text-sm font-medium text-card-foreground/70">
               {dateRange}
             </p>
           </div>
@@ -114,11 +114,11 @@ export function DataShowingCard({
 
         {/* Value and comparison */}
         <div className="mt-7 space-y-1">
-          <p className="text-lg font-semibold tracking-tight tabular-nums sm:text-2xl">
+          <p className="text-lg font-semibold tracking-tight tabular-nums sm:text-2xl text-card-foreground">
             {value}
           </p>
 
-          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1.5 text-sm text-card-foreground/70">
             <span>{change}</span>
           </div>
         </div>

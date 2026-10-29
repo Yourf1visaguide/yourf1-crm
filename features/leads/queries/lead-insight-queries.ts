@@ -3,9 +3,7 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 import { LeadSource } from "@/prisma/generated/prisma/enums";
 
-import type {
-  LeadInsightsQuery,
-} from "../schemas/lead-insights-schema";
+import type { LeadInsightsQuery } from "../schemas/lead-insights-schema";
 import type { LeadListAccess } from "./lead-queries";
 
 function officeDateStart(value: string) {
@@ -33,11 +31,7 @@ function getCountryLabel(
     return otherCountry?.trim() || "Other";
   }
 
-  if (preferredCountry) {
-    return enumLabel(preferredCountry);
-  }
-
-  return null;
+  return preferredCountry ? enumLabel(preferredCountry) : null;
 }
 
 function getSourceLabel(source: LeadSource) {
@@ -54,7 +48,6 @@ export async function getLeadInsights(
         gte: officeDateStart(query.from),
         lt: officeDateEndExclusive(query.to),
       },
-
       ...(access.canReadAll
         ? {}
         : {
@@ -66,23 +59,15 @@ export async function getLeadInsights(
             },
           }),
     },
-
     select: {
       source: true,
-
-      client: {
+      // Use the application explicitly linked to this lead. A client's
+      // latest application may belong to another lead and misclassify this one.
+      originatedApplication: {
         select: {
-          applications: {
-            orderBy: {
-              createdAt: "desc",
-            },
-            take: 1,
-            select: {
-              type: true,
-              preferredCountry: true,
-              otherCountry: true,
-            },
-          },
+          type: true,
+          preferredCountry: true,
+          otherCountry: true,
         },
       },
     },
@@ -90,7 +75,6 @@ export async function getLeadInsights(
 
   let studyAbroad = 0;
   let touristVisa = 0;
-
   const sourceCounts = new Map<LeadSource, number>();
   const countryCounts = new Map<string, number>();
 
@@ -100,7 +84,7 @@ export async function getLeadInsights(
       (sourceCounts.get(lead.source) ?? 0) + 1,
     );
 
-    const application = lead.client.applications[0];
+    const application = lead.originatedApplication;
 
     if (application?.type === "STUDY") {
       studyAbroad += 1;
@@ -114,10 +98,7 @@ export async function getLeadInsights(
     );
 
     if (country) {
-      countryCounts.set(
-        country,
-        (countryCounts.get(country) ?? 0) + 1,
-      );
+      countryCounts.set(country, (countryCounts.get(country) ?? 0) + 1);
     }
   }
 
@@ -127,22 +108,13 @@ export async function getLeadInsights(
       label: getSourceLabel(source),
       count,
     }))
-    .sort(
-      (a, b) =>
-        b.count - a.count ||
-        a.label.localeCompare(b.label),
-    );
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
-  const topCountry = Array.from(countryCounts.entries())
-    .map(([country, count]) => ({
-      country,
-      count,
-    }))
-    .sort(
-      (a, b) =>
-        b.count - a.count ||
-        a.country.localeCompare(b.country),
-    )[0] ?? null;
+  const topCountry =
+    Array.from(countryCounts.entries())
+      .map(([country, count]) => ({ country, count }))
+      .sort((a, b) => b.count - a.count || a.country.localeCompare(b.country))[0] ??
+    null;
 
   return {
     studyAbroad,

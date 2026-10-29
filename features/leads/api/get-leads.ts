@@ -1,8 +1,5 @@
 import { apiFetch } from "@/lib/api-fetch";
-
-import type {
-  LeadListResponse,
-} from "../schemas/lead-list-schema";
+import type { LeadListQuery, LeadListResponse } from "../schemas/lead-list-schema";
 
 export type GetLeadsParams = {
   from: string;
@@ -10,12 +7,13 @@ export type GetLeadsParams = {
   pageIndex: number;
   pageSize: number;
   search?: string;
-  status?: string;
-  applicationType?: string;
-  preferredCountry?: string;
-  assignmentScope?: "ALL" | "ASSIGNED" | "UNASSIGNED";
-  sortBy?: string;
-  sortOrder?: "asc" | "desc";
+  status?: LeadListQuery["status"];
+  assignmentType?: LeadListQuery["assignmentType"];
+  applicationType?: LeadListQuery["applicationType"];
+  preferredCountry?: LeadListQuery["preferredCountry"];
+  assignmentScope?: LeadListQuery["assignmentScope"];
+  sortBy?: LeadListQuery["sortBy"];
+  sortOrder?: LeadListQuery["sortOrder"];
 };
 
 export async function getLeads({
@@ -25,6 +23,7 @@ export async function getLeads({
   pageSize,
   search = "",
   status,
+  assignmentType,
   applicationType,
   preferredCountry,
   assignmentScope = "ALL",
@@ -38,32 +37,15 @@ export async function getLeads({
     limit: String(pageSize),
     sortBy,
     sortOrder,
+    assignmentScope,
   });
 
-  if (search.trim()) {
-    params.set("search", search.trim());
-  }
+  if (search.trim()) params.set("search", search.trim());
+  if (status) params.set("status", status);
+  if (assignmentType) params.set("assignmentType", assignmentType);
+  if (applicationType) params.set("applicationType", applicationType);
+  if (preferredCountry) params.set("preferredCountry", preferredCountry);
 
-  if (status) {
-    params.set("status", status);
-  }
-
-  if (applicationType) {
-    params.set("applicationType", applicationType);
-  }
-
-  if (preferredCountry) {
-    params.set("preferredCountry", preferredCountry);
-  }
-
-  if (assignmentScope !== "ALL") {
-    params.set("assignmentScope", assignmentScope);
-  }
-
-  const response =
-    await apiFetch<LeadListResponse>(
-      `/api/leads/list?${params.toString()}`,
-    );
-
+  const response = await apiFetch<LeadListResponse>(`/api/leads/list?${params.toString()}`);
   return response.data;
 }

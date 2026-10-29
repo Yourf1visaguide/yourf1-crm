@@ -3,8 +3,9 @@ import { z } from "zod";
 import {
   ApplicationType,
   Country,
-  LeadStatus,
+  LeadAssignmentType,
   LeadSource,
+  LeadStatus,
 } from "@/prisma/generated/prisma/enums";
 
 const dateOnly = z
@@ -15,7 +16,6 @@ const dateOnly = z
     const date = new Date(0);
     date.setUTCHours(0, 0, 0, 0);
     date.setUTCFullYear(year, month - 1, day);
-
     return (
       date.getUTCFullYear() === year &&
       date.getUTCMonth() === month - 1 &&
@@ -27,23 +27,17 @@ export const leadListQuerySchema = z
   .object({
     from: dateOnly,
     to: dateOnly,
-
     page: z.coerce.number().int().min(1).default(1),
     limit: z.coerce.number().int().min(1).max(100).default(10),
-
     search: z.string().trim().max(200).optional().or(z.literal("")),
-
     status: z.enum(LeadStatus).optional(),
+    assignmentType: z.enum(LeadAssignmentType).optional(),
     applicationType: z.enum(ApplicationType).optional(),
     preferredCountry: z.enum(Country).optional(),
-    assignmentScope: z
-      .enum(["ALL", "ASSIGNED", "UNASSIGNED"])
-      .default("ALL"),
-
+    assignmentScope: z.enum(["ALL", "ASSIGNED", "UNASSIGNED"]).default("ALL"),
     sortBy: z
       .enum(["clientName", "phone", "status", "source", "createdAt"])
       .default("createdAt"),
-
     sortOrder: z.enum(["asc", "desc"]).default("desc"),
   })
   .superRefine((data, ctx) => {
@@ -62,23 +56,19 @@ export const leadListItemSchema = z
   .object({
     id: z.string(),
     leadCode: z.string(),
-
     clientId: z.string(),
     clientName: z.string(),
     phone: z.string().nullable(),
-
     applicationType: z.enum(ApplicationType).nullable(),
-
     status: z.enum(LeadStatus),
     source: z.enum(LeadSource),
-
+    assignmentType: z.enum(LeadAssignmentType).nullable(),
     assignedTo: z
       .object({
         id: z.string(),
         name: z.string(),
       })
       .nullable(),
-
     createdAt: z.string(),
   })
   .strict();
@@ -101,15 +91,7 @@ export const leadListResponseSchema = z
         all: z.number(),
         assigned: z.number(),
         unassigned: z.number(),
-        status: z
-          .object({
-            NEW: z.number(),
-            NOT_PICKED: z.number(),
-            JUST_INFO: z.number(),
-            NOT_INTERESTED: z.number(),
-            CONVERTED: z.number(),
-          })
-          .strict(),
+        status: z.record(z.enum(LeadStatus), z.number()),
       })
       .strict(),
   })

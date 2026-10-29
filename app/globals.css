@@ -54,7 +54,7 @@
 
   /* Main surfaces */
   --background: #f9faff;
-  --foreground: #1e1a4d;
+  --foreground: #372aac;
   
   /* Primary violet */
   --primary: #372aac;
@@ -68,10 +68,10 @@
   --muted-foreground: oklch(0.48 0.035 275);
 
   --card: #f7f9ff;
-  --card-foreground: #1e1a4d;
+  --card-foreground: #392f96;
 
   --popover: #fafbff;
-  --popover-foreground: #1e1a4d;
+  --popover-foreground: #372aac;
 
   /* Hover / selected surfaces */
   --accent: #a3b3ff;
@@ -88,7 +88,7 @@
 
   /* Sidebar */
   --sidebar: #f9faff;
-  --sidebar-foreground: #1e1a4d;
+  --sidebar-foreground: #372aac;
 
 
   --sidebar-border: oklch(93.275% 0.02927 273.1);

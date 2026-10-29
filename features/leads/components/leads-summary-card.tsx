@@ -3,8 +3,10 @@
 import {
   AlertCircle,
   BadgeCheck,
+  ChartNoAxesCombined,
   RefreshCw,
   UserRoundX,
+  Users,
 } from "lucide-react";
 
 import { DataShowingCard } from "@/components/resuable-components/data-showing-card";
@@ -29,21 +31,15 @@ export function LeadsSummaryCard({
     isPending,
     isError,
     refetch,
-  } = useLeadSummary({
-    from,
-    to,
-  });
+  } = useLeadSummary({ from, to });
 
-  const dateRangeLabel =
-    formatDateRangeLabel({
-      from,
-      to,
-    });
+  const dateRangeLabel = formatDateRangeLabel({ from, to });
 
   if (isPending) {
     return (
       <section>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <Skeleton className="h-44 rounded-xl" />
           <Skeleton className="h-44 rounded-xl" />
           <Skeleton className="h-44 rounded-xl" />
         </div>
@@ -59,10 +55,7 @@ export function LeadsSummaryCard({
             <AlertCircle className="size-5 text-destructive" />
           </div>
 
-          <h3 className="text-sm font-semibold">
-            Unable to load lead summary
-          </h3>
-
+          <h3 className="text-sm font-semibold">Unable to load lead summary</h3>
           <p className="mt-1.5 text-sm leading-6 text-muted-foreground">
             We couldn't retrieve the summary for the selected period.
           </p>
@@ -83,12 +76,21 @@ export function LeadsSummaryCard({
 
   return (
     <section>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <DataShowingCard
+          title="Total Leads"
+          dateRange={dateRangeLabel}
+          value={data.total.toLocaleString()}
+          change="Leads created during this period"
+          icon={Users}
+          variant="primary"
+        />
+
         <DataShowingCard
           title="Converted"
           dateRange={dateRangeLabel}
           value={data.converted.toLocaleString()}
-          change={`${data.conversionRatePercent.toFixed(1)}% conversion rate`}
+          change={`${data.conversionRatePercent.toFixed(1)}% of leads created in this period are currently converted`}
           icon={BadgeCheck}
           variant="success"
         />
@@ -97,7 +99,7 @@ export function LeadsSummaryCard({
           title="Unassigned"
           dateRange={dateRangeLabel}
           value={data.unassigned.toLocaleString()}
-          change="Leads still waiting for ownership"
+          change="Leads created in this period with no active assignment"
           icon={UserRoundX}
           variant="danger"
         />

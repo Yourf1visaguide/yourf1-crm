@@ -48,41 +48,42 @@ export async function getLeadSummary(
   };
 
   const accessWhere = buildAccessWhere(access);
-
   const baseWhere: Prisma.LeadWhereInput = {
     createdAt,
     ...(accessWhere ?? {}),
   };
+const [total, converted, unassigned] = await prisma.$transaction(
+  async (tx) => {
+    const totalPromise = tx.lead.count({
+      where: baseWhere,
+    });
 
-  const [total, converted, unassigned] =
-    await prisma.$transaction([
-      prisma.lead.count({
-        where: baseWhere,
-      }),
+    const convertedPromise = tx.lead.count({
+      where: {
+        AND: [baseWhere, { status: LeadStatus.CONVERTED }],
+      },
+    });
 
-      prisma.lead.count({
-        where: {
-          ...baseWhere,
-          status: LeadStatus.CONVERTED,
-        },
-      }),
-
-      prisma.lead.count({
-        where: {
-          ...baseWhere,
-          assignments: {
-            none: {
-              endedAt: null,
+    const unassignedPromise = access.canReadAll
+      ? tx.lead.count({
+          where: {
+            createdAt,
+            assignments: {
+              none: { endedAt: null },
             },
           },
-        },
-      }),
-    ]);
+        })
+      : Promise.resolve(0);
 
+    return Promise.all([
+      totalPromise,
+      convertedPromise,
+      unassignedPromise,
+    ]);
+  },
+);
   const conversionRatePercent =
-    total > 0
-      ? Number(((converted / total) * 100).toFixed(1))
-      : 0;
+    total > 0 ? Number(((converted / total) * 100).toFixed(1)) : 0;
 
   return {
     total,
