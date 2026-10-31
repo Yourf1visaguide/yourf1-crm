@@ -2,15 +2,9 @@ import "server-only";
 
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@/prisma/generated/prisma/client";
-import "server-only";
 
 import type { EmployeeListQuery } from "@/features/users/schemas/employee-list-schema";
 
-type GetEmployeesParams = {
-  page: number;
-  limit: number;
-  search?: string;
-};
 
 function getOrderBy(
   sortBy: EmployeeListQuery["sortBy"],
@@ -105,6 +99,14 @@ export async function getEmployees({
             isActive: true,
             roles: true,
             name: true,
+            branchId: true,
+            branch: {
+              select: {
+                id: true,
+                name: true,
+                branchCode: true,
+              },
+            },
           },
         },
       },
@@ -140,6 +142,8 @@ export async function getEmployees({
         email: employee.user.email,
         isActive: employee.user.isActive,
         roles: employee.user.roles,
+        branchId: employee.user.branchId,
+        branch: employee.user.branch,
       },
     })),
 

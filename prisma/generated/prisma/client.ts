@@ -47,6 +47,11 @@ export { Prisma }
  */
 export type Branch = Prisma.BranchModel
 /**
+ * Model UserBranchAccess
+ * 
+ */
+export type UserBranchAccess = Prisma.UserBranchAccessModel
+/**
  * Model User
  * 
  */

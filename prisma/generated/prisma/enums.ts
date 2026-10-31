@@ -571,6 +571,16 @@ export const PostVisaTaskStatus = {
 export type PostVisaTaskStatus = (typeof PostVisaTaskStatus)[keyof typeof PostVisaTaskStatus]
 
 
+export const WhatsAppChannelProvider = {
+  AISENSY: 'AISENSY',
+  FACEBOOK_ADS: 'FACEBOOK_ADS',
+  INSTAGRAM_ADS: 'INSTAGRAM_ADS',
+  WHATSAPP: 'WHATSAPP'
+} as const
+
+export type WhatsAppChannelProvider = (typeof WhatsAppChannelProvider)[keyof typeof WhatsAppChannelProvider]
+
+
 export const WhatsAppConversationStatus = {
   OPEN: 'OPEN',
   PENDING: 'PENDING',

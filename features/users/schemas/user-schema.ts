@@ -25,6 +25,7 @@ export const employeeSchema = z.object({
   joiningDate: z.string().min(1, "Joining date is required"),
 
   employmentStatus: z.enum(EmploymentStatus),
+  branchId: z.string().trim().min(1, "Select a primary branch"),
 });
 export type EmployeeInput = z.infer<typeof employeeSchema>;
 
@@ -95,6 +96,7 @@ export const editEmployeeFormSchema = z
       .max(128, "Password is too long")
       .optional()
       .or(z.literal("")),
+      branchId: z.string().trim().min(1, "Select a primary branch"),
   })
   .strict();
 

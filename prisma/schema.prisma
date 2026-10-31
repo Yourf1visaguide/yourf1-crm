@@ -35,8 +35,8 @@ model Branch {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  // employees Employee[]
-
+  primaryUsers User[] @relation("UserPrimaryBranch")
+  userAccess UserBranchAccess[]
   leads              Lead[]
   registrations      Registration[]
   applications       Application[]
@@ -54,6 +54,21 @@ model Branch {
   @@index([isActive])
 }
 
+model UserBranchAccess {
+  id String @id @default(cuid())
+
+  userId String
+  branchId String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  branch Branch @relation(fields: [branchId], references: [id], onDelete: Restrict)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, branchId])
+  @@index([branchId])
+}
 
 enum DEPARTMENT {
   ADMIN
@@ -108,6 +123,10 @@ model User {
 
   sessions Session[]
   accounts Account[]
+  branchId String
+  branch Branch? @relation("UserPrimaryBranch", fields: [branchId], references: [id], onDelete:Restrict  )
+  
+  branchAccesses UserBranchAccess[]
 
   officeReportsCreated OfficeDailyReport[] @relation("OfficeReportCreatedBy")
 
@@ -163,7 +182,7 @@ model User {
 
   leadStatusHistoryChanged LeadStatusHistory[] @relation("LeadStatusHistoryChangedBy")
   leadVisitsCreated LeadVisit[] @relation("LeadVisitCreatedBy")
-leadVisitEvents   LeadVisitEvent[] @relation("LeadVisitEventChangedBy")
+  leadVisitEvents   LeadVisitEvent[] @relation("LeadVisitEventChangedBy")
   @@unique([username])
   @@map("user")
 }
@@ -1621,7 +1640,25 @@ model PostVisaTask {
 
 //third part
 
+enum WhatsAppChannelProvider {
+  AISENSY
+  FACEBOOK_ADS
+  INSTAGRAM_ADS
+  WHATSAPP
+}
 
+
+// model WhatsAppChannel {
+// id String @id @default(cuid())
+// branchId String
+// name String
+// provider WhatsAppChannelProvider
+// phoneNumber 
+
+// createdAt DateTime @default(now())
+// updatedAt DateTime @updatedAt
+
+// }
 
 enum WhatsAppConversationStatus {
   OPEN

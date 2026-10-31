@@ -6,15 +6,15 @@ import { prisma } from "@/lib/prisma";
 import { ApiError } from "@/lib/api-error";
 import { auth } from "@/lib/auth";
 
-import type { CompensationInput, CreateEmployeeFormValues, WorkScheduleInput } from "@/features/users/schemas/user-schema";
+import type {
+  CompensationInput,
+  CreateEmployeeFormValues,
+  WorkScheduleInput,
+} from "@/features/users/schemas/user-schema";
 import { hashPassword } from "better-auth/crypto";
 
-import type {
-  EditEmployeeFormValues,
-} from "@/features/users/schemas/user-schema";
+import type { EditEmployeeFormValues } from "@/features/users/schemas/user-schema";
 import { ROLE_PERMISSIONS } from "@/lib/auth/role-permission-mapping";
-
-
 
 function dateOnly(value: string) {
   return new Date(`${value}T00:00:00.000Z`);
@@ -153,6 +153,23 @@ export async function createEmployee(data: CreateEmployeeFormValues) {
    */
   try {
     const employee = await prisma.$transaction(async (tx) => {
+      const branch = await tx.branch.findFirst({
+        where: {
+          id: data.branchId,
+          isActive: true,
+        },
+        select: {
+          id: true,
+        },
+      });
+
+      if (!branch) {
+        throw new ApiError(
+          "BAD_REQUEST",
+          "Selected branch does not exist or is inactive.",
+          400,
+        );
+      }
       await tx.user.update({
         where: {
           id: authUserId,
@@ -162,6 +179,7 @@ export async function createEmployee(data: CreateEmployeeFormValues) {
             set: data.roles,
           },
           isActive: true,
+          branchId: data.branchId,
         },
       });
 
@@ -299,8 +317,7 @@ export async function updateEmployee(
 ) {
   const email = data.email.trim().toLowerCase();
   const name = data.name.trim();
-  const employeeCode =
-    data.employeeCode.trim().toUpperCase();
+  const employeeCode = data.employeeCode.trim().toUpperCase();
 
   return prisma.$transaction(async (tx) => {
     const employee = await tx.employee.findUnique({
@@ -324,11 +341,7 @@ export async function updateEmployee(
     });
 
     if (!employee) {
-      throw new ApiError(
-        "NOT_FOUND",
-        "Employee not found.",
-        404,
-      );
+      throw new ApiError("NOT_FOUND", "Employee not found.", 404);
     }
 
     /*
@@ -341,9 +354,7 @@ export async function updateEmployee(
     if (
       rolesChanged &&
       !actor.roles.some((role) =>
-        ROLE_PERMISSIONS[role].includes(
-          "EMPLOYEE_ROLE_MANAGE",
-        ),
+        ROLE_PERMISSIONS[role].includes("EMPLOYEE_ROLE_MANAGE"),
       )
     ) {
       throw new ApiError(
@@ -359,9 +370,7 @@ export async function updateEmployee(
     if (
       data.password &&
       !actor.roles.some((role) =>
-        ROLE_PERMISSIONS[role].includes(
-          "EMPLOYEE_CREDENTIAL_MANAGE",
-        ),
+        ROLE_PERMISSIONS[role].includes("EMPLOYEE_CREDENTIAL_MANAGE"),
       )
     ) {
       throw new ApiError(
@@ -377,8 +386,7 @@ export async function updateEmployee(
      */
     if (
       actor.employeeId === employeeId &&
-      data.employmentStatus !==
-        employee.employmentStatus
+      data.employmentStatus !== employee.employmentStatus
     ) {
       throw new ApiError(
         "SELF_DEACTIVATION_NOT_ALLOWED",
@@ -391,20 +399,16 @@ export async function updateEmployee(
      * Email uniqueness.
      */
     if (email !== employee.user.email) {
-      const existingUser =
-        await tx.user.findUnique({
-          where: {
-            email,
-          },
-          select: {
-            id: true,
-          },
-        });
+      const existingUser = await tx.user.findUnique({
+        where: {
+          email,
+        },
+        select: {
+          id: true,
+        },
+      });
 
-      if (
-        existingUser &&
-        existingUser.id !== employee.userId
-      ) {
+      if (existingUser && existingUser.id !== employee.userId) {
         throw new ApiError(
           "EMAIL_ALREADY_EXISTS",
           "This email address is already associated with another account.",
@@ -438,11 +442,9 @@ export async function updateEmployee(
       data: {
         employeeCode,
         department: data.department,
-        designation:
-          data.designation.trim() || null,
+        designation: data.designation.trim() || null,
         joiningDate: dateOnly(data.joiningDate),
-        employmentStatus:
-          data.employmentStatus,
+        employmentStatus: data.employmentStatus,
       },
     });
 
@@ -450,21 +452,18 @@ export async function updateEmployee(
      * Optional password update.
      */
     if (data.password) {
-      const passwordHash = await hashPassword(
-        data.password,
-      );
+      const passwordHash = await hashPassword(data.password);
 
-      const credentialAccount =
-        await tx.account.findFirst({
-          where: {
-            userId: employee.userId,
-            providerId: "credential",
-          },
+      const credentialAccount = await tx.account.findFirst({
+        where: {
+          userId: employee.userId,
+          providerId: "credential",
+        },
 
-          select: {
-            id: true,
-          },
-        });
+        select: {
+          id: true,
+        },
+      });
 
       if (!credentialAccount) {
         throw new ApiError(
@@ -525,44 +524,33 @@ export async function changeEmployeeSalary(
   employeeId: string,
   data: CompensationInput,
 ) {
-  const effectiveFrom = dateOnly(
-    data.salaryEffectiveFrom,
-  );
+  const effectiveFrom = dateOnly(data.salaryEffectiveFrom);
 
   return prisma.$transaction(async (tx) => {
-    const employee =
-      await tx.employee.findUnique({
-        where: {
-          id: employeeId,
-        },
-        select: {
-          id: true,
-        },
-      });
+    const employee = await tx.employee.findUnique({
+      where: {
+        id: employeeId,
+      },
+      select: {
+        id: true,
+      },
+    });
 
     if (!employee) {
-      throw new ApiError(
-        "NOT_FOUND",
-        "Employee not found.",
-        404,
-      );
+      throw new ApiError("NOT_FOUND", "Employee not found.", 404);
     }
 
-    const latest =
-      await tx.employeeCompensation.findFirst({
-        where: {
-          employeeId,
-        },
+    const latest = await tx.employeeCompensation.findFirst({
+      where: {
+        employeeId,
+      },
 
-        orderBy: {
-          effectiveFrom: "desc",
-        },
-      });
+      orderBy: {
+        effectiveFrom: "desc",
+      },
+    });
 
-    if (
-      latest &&
-      effectiveFrom <= latest.effectiveFrom
-    ) {
+    if (latest && effectiveFrom <= latest.effectiveFrom) {
       throw new ApiError(
         "CONFLICT",
         "The new salary effective date must be later than the current salary record.",
@@ -571,12 +559,9 @@ export async function changeEmployeeSalary(
     }
 
     if (latest) {
-      const effectiveTo =
-        new Date(effectiveFrom);
+      const effectiveTo = new Date(effectiveFrom);
 
-      effectiveTo.setUTCDate(
-        effectiveTo.getUTCDate() - 1,
-      );
+      effectiveTo.setUTCDate(effectiveTo.getUTCDate() - 1);
 
       await tx.employeeCompensation.update({
         where: {
@@ -593,10 +578,7 @@ export async function changeEmployeeSalary(
       data: {
         employeeId,
 
-        monthlySalary:
-          new Prisma.Decimal(
-            data.monthlySalary,
-          ),
+        monthlySalary: new Prisma.Decimal(data.monthlySalary),
 
         effectiveFrom,
       },
@@ -611,50 +593,38 @@ export async function changeEmployeeSalary(
   });
 }
 
-
 export async function changeEmployeeSchedule(
   employeeId: string,
   data: WorkScheduleInput,
 ) {
-  const effectiveFrom = dateOnly(
-    data.scheduleEffectiveFrom,
-  );
+  const effectiveFrom = dateOnly(data.scheduleEffectiveFrom);
 
   return prisma.$transaction(async (tx) => {
-    const employee =
-      await tx.employee.findUnique({
-        where: {
-          id: employeeId,
-        },
+    const employee = await tx.employee.findUnique({
+      where: {
+        id: employeeId,
+      },
 
-        select: {
-          id: true,
-        },
-      });
+      select: {
+        id: true,
+      },
+    });
 
     if (!employee) {
-      throw new ApiError(
-        "NOT_FOUND",
-        "Employee not found.",
-        404,
-      );
+      throw new ApiError("NOT_FOUND", "Employee not found.", 404);
     }
 
-    const latest =
-      await tx.employeeWorkSchedule.findFirst({
-        where: {
-          employeeId,
-        },
+    const latest = await tx.employeeWorkSchedule.findFirst({
+      where: {
+        employeeId,
+      },
 
-        orderBy: {
-          effectiveFrom: "desc",
-        },
-      });
+      orderBy: {
+        effectiveFrom: "desc",
+      },
+    });
 
-    if (
-      latest &&
-      effectiveFrom <= latest.effectiveFrom
-    ) {
+    if (latest && effectiveFrom <= latest.effectiveFrom) {
       throw new ApiError(
         "CONFLICT",
         "The new schedule effective date must be later than the current schedule record.",
@@ -663,12 +633,9 @@ export async function changeEmployeeSchedule(
     }
 
     if (latest) {
-      const effectiveTo =
-        new Date(effectiveFrom);
+      const effectiveTo = new Date(effectiveFrom);
 
-      effectiveTo.setUTCDate(
-        effectiveTo.getUTCDate() - 1,
-      );
+      effectiveTo.setUTCDate(effectiveTo.getUTCDate() - 1);
 
       await tx.employeeWorkSchedule.update({
         where: {

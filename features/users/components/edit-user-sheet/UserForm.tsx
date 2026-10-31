@@ -63,6 +63,7 @@ export default function UserForm({
       designation: employee.designation ?? "",
       joiningDate: employee.joiningDate,
       employmentStatus: employee.employmentStatus,
+      branchId: employee.branchId,
     },
   });
 

@@ -3,7 +3,9 @@
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useQuery } from "@tanstack/react-query";
 
+import { getBranches } from "@/features/branches/api/get-branches";
 import {
   DEPARTMENT,
   EmploymentStatus,
@@ -49,6 +51,17 @@ export default function UserForm({
 }: UserFormProps) {
   const today = todayLocalDate();
 
+  const {
+    data: branches = [],
+    isLoading: isBranchesLoading,
+    isError: isBranchesError,
+  } = useQuery({
+    queryKey: ["branches", "active"],
+    queryFn: getBranches,
+    staleTime: 5 * 60 * 1000,
+    retry: false,
+  });
+
   const form = useForm<CreateEmployeeFormValues>({
     resolver: zodResolver(employeeFormSchema),
     defaultValues: {
@@ -66,6 +79,7 @@ export default function UserForm({
       startTime: "09:30",
       endTime: "05:30",
       scheduleEffectiveFrom: today,
+      branchId: "",
     },
   });
 
@@ -92,8 +106,10 @@ export default function UserForm({
       <div className="flex-1 space-y-7 overflow-y-auto px-6 py-6">
         {/* Account information */}
         <section className="space-y-4">
-          <FormSubHeading title="Account information" description="Login credentials for the employee." />
-          
+          <FormSubHeading
+            title="Account information"
+            description="Login credentials for the employee."
+          />
 
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Email address" error={fieldError("email")}>
@@ -121,13 +137,14 @@ export default function UserForm({
         <Separator />
 
         {/* Employee information */}
-        <FormSubHeading title="Employee information" description="Employment details and organizational assignment." />
+        <FormSubHeading
+          title="Employee information"
+          description="Employment details and organizational assignment."
+        />
         <section className="space-y-4">
           <div>
             <h3 className="text-sm font-semibold"></h3>
-            <p className="text-sm text-muted-foreground">
-              
-            </p>
+            <p className="text-sm text-muted-foreground"></p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -245,16 +262,43 @@ export default function UserForm({
                 )}
               </select>
             </Field>
+            <Field label="Primary branch" error={fieldError("branchId")}>
+              <select
+                className={
+                  inputClassName +
+                  " h-9 rounded-md border bg-background px-3 text-sm"
+                }
+                disabled={isDisabled || isBranchesLoading || isBranchesError}
+                {...register("branchId")}
+              >
+                <option value="">
+                  {isBranchesLoading ? "Loading branches..." : "Select branch"}
+                </option>
+
+                {branches.map((branch) => (
+                  <option key={branch.id} value={branch.id}>
+                    {branch.name} ({branch.branchCode})
+                  </option>
+                ))}
+              </select>
+
+              {isBranchesError && (
+                <p className="text-sm text-destructive">
+                  Unable to load branches. Please refresh and try again.
+                </p>
+              )}
+            </Field>
           </div>
         </section>
 
         <Separator />
 
         {/* Compensation */}
-        <FormSubHeading title="Initial compensation" description="Set the employee&apos;s starting monthly salary." />
+        <FormSubHeading
+          title="Initial compensation"
+          description="Set the employee's starting monthly salary."
+        />
         <section className="space-y-4">
-          
-
           <div className="grid gap-4 sm:grid-cols-2">
             <Field
               label="Monthly salary (₹)"
@@ -286,13 +330,14 @@ export default function UserForm({
         <Separator />
 
         {/* Work schedule */}
-        <FormSubHeading title="Initial work schedule" description="Set the employee&apos;s daily working hours." />
+        <FormSubHeading
+          title="Initial work schedule"
+          description="Set the employee's daily working hours."
+        />
         <section className="space-y-4">
           <div>
             <h3 className="text-sm font-semibold"></h3>
-            <p className="text-sm text-muted-foreground">
-              
-            </p>
+            <p className="text-sm text-muted-foreground"></p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3">
@@ -359,5 +404,3 @@ export default function UserForm({
     </form>
   );
 }
-
-

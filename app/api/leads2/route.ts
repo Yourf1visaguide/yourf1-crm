@@ -3,8 +3,8 @@ import { NextRequest } from "next/server";
 import { handleApiError, successResponse } from "@/lib/api-response";
 import { ApiError } from "@/lib/api-error";
 import { requirePermission } from "@/lib/auth/require-permission";
-import { createLeadSchema } from "@/features/leads/schemas/leads-schema";
-import { createLead } from "@/features/leads/services/lead-service";
+import { createLeadSchema } from "@/features/clients/schemas/leads-schema";
+import { createLead } from "@/features/clients/services/lead-service";
 
 export async function POST(request: NextRequest) {
   try {

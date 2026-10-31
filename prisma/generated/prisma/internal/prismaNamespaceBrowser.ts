@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   Branch: 'Branch',
+  UserBranchAccess: 'UserBranchAccess',
   User: 'User',
   Session: 'Session',
   Account: 'Account',
@@ -135,6 +136,16 @@ export const BranchScalarFieldEnum = {
 export type BranchScalarFieldEnum = (typeof BranchScalarFieldEnum)[keyof typeof BranchScalarFieldEnum]
 
 
+export const UserBranchAccessScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  branchId: 'branchId',
+  createdAt: 'createdAt'
+} as const
+
+export type UserBranchAccessScalarFieldEnum = (typeof UserBranchAccessScalarFieldEnum)[keyof typeof UserBranchAccessScalarFieldEnum]
+
+
 export const UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
@@ -145,7 +156,8 @@ export const UserScalarFieldEnum = {
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  username: 'username'
+  username: 'username',
+  branchId: 'branchId'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]

@@ -6,7 +6,7 @@ import { useLeadSheet } from "../store/use-lead-sheet";
 import { FullScreenLoader, LineLoader } from "@/components/resuable-components/loader";
 
 
-const NewLeadSheet = dynamic(() => import("@/features/leads/components/new-lead-sheet"), {
+const NewLeadSheet = dynamic(() => import("@/features/clients/components/new-lead-sheet"), {
   loading:() => (
     <FullScreenLoader loader={<LineLoader />} text="Loading lead form" />
   )

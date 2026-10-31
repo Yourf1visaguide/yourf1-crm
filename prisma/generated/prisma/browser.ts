@@ -23,6 +23,11 @@ export * from './enums';
  */
 export type Branch = Prisma.BranchModel
 /**
+ * Model UserBranchAccess
+ * 
+ */
+export type UserBranchAccess = Prisma.UserBranchAccessModel
+/**
  * Model User
  * 
  */

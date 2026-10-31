@@ -9,14 +9,17 @@ import {
   CalendarDays,
   CreditCard,
   Cross,
+  FilePenLine,
   FileText,
   FolderKanban,
   Headset,
+  HeadsetIcon,
   LayoutDashboard,
   LogOut,
   MessageCircle,
   Settings,
   ShieldCheck,
+  Speech,
   UserRound,
   UserRoundPlus,
   Users,
@@ -74,6 +77,27 @@ const mainNavigation: NavItem[] = [
     href: "/clients",
     icon: UserRoundPlus,
     badge: "12",
+  },
+  
+  {
+    title: "Telecalling",
+    href: "/telecalling",
+    icon: HeadsetIcon,
+    badge: "7",
+  },
+  
+  {
+    title: "Counselling",
+    href: "/counselling",
+    icon: Speech,
+    badge: "8",
+  },
+  
+  {
+    title: "Filling",
+    href: "/filling",
+    icon: FilePenLine,
+    badge: "2",
   },
   {
     title: "Students",

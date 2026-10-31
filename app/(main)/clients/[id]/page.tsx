@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
-import { LeadProfileWorkspace } from "@/features/leads/components/profile";
-import { demoLeadProfile } from "@/features/leads/components/profile/lead-profile-demo-data";
+import { LeadProfileWorkspace } from "@/features/clients/components/profile";
+import { demoLeadProfile } from "@/features/clients/components/profile/lead-profile-demo-data";
 
 type LeadProfilePageProps = {
   params: Promise<{ id: string }>;

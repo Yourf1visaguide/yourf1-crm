@@ -9,10 +9,10 @@ import { requirePermission } from "@/lib/auth/require-permission";
 
 import {
   getLeadInsights,
-} from "@/features/leads/queries/lead-insight-queries";
+} from "@/features/clients/queries/lead-insight-queries";
 import {
   leadInsightsQuerySchema,
-} from "@/features/leads/schemas/lead-insights-schema";
+} from "@/features/clients/schemas/lead-insights-schema";
 
 async function requireLeadReadAccess() {
   try {

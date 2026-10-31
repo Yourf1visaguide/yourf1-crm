@@ -398,6 +398,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   Branch: 'Branch',
+  UserBranchAccess: 'UserBranchAccess',
   User: 'User',
   Session: 'Session',
   Account: 'Account',
@@ -459,7 +460,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "branch" | "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry" | "employeeAttendance" | "employeeSalaryAdvance" | "officeDailyReport" | "officeDailyReportCheck" | "client" | "lead" | "leadStatusHistory" | "leadAssignment" | "leadCallAttempt" | "leadVisit" | "leadVisitEvent" | "clientAddress" | "clientFamilyMember" | "clientEducation" | "clientTest" | "clientWorkExperience" | "clientPassport" | "application" | "applicationCredential" | "registration" | "commissionEntry" | "task" | "notification" | "auditLog" | "documentRequirement" | "applicationDocument" | "invoice" | "payment" | "refund" | "expense" | "financialEntry" | "postVisaTask" | "whatsAppConversation" | "whatsAppMessage" | "teachingEnrollment" | "teachingDailyRecord" | "teacherDailyProgress" | "touristPrep"
+    modelProps: "branch" | "userBranchAccess" | "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry" | "employeeAttendance" | "employeeSalaryAdvance" | "officeDailyReport" | "officeDailyReportCheck" | "client" | "lead" | "leadStatusHistory" | "leadAssignment" | "leadCallAttempt" | "leadVisit" | "leadVisitEvent" | "clientAddress" | "clientFamilyMember" | "clientEducation" | "clientTest" | "clientWorkExperience" | "clientPassport" | "application" | "applicationCredential" | "registration" | "commissionEntry" | "task" | "notification" | "auditLog" | "documentRequirement" | "applicationDocument" | "invoice" | "payment" | "refund" | "expense" | "financialEntry" | "postVisaTask" | "whatsAppConversation" | "whatsAppMessage" | "teachingEnrollment" | "teachingDailyRecord" | "teacherDailyProgress" | "touristPrep"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -534,6 +535,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.BranchCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.BranchCountAggregateOutputType> | number
+        }
+      }
+    }
+    UserBranchAccess: {
+      payload: Prisma.$UserBranchAccessPayload<ExtArgs>
+      fields: Prisma.UserBranchAccessFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserBranchAccessFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserBranchAccessFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        findFirst: {
+          args: Prisma.UserBranchAccessFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserBranchAccessFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        findMany: {
+          args: Prisma.UserBranchAccessFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>[]
+        }
+        create: {
+          args: Prisma.UserBranchAccessCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        createMany: {
+          args: Prisma.UserBranchAccessCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.UserBranchAccessCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>[]
+        }
+        delete: {
+          args: Prisma.UserBranchAccessDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        update: {
+          args: Prisma.UserBranchAccessUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        deleteMany: {
+          args: Prisma.UserBranchAccessDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserBranchAccessUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.UserBranchAccessUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>[]
+        }
+        upsert: {
+          args: Prisma.UserBranchAccessUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserBranchAccessPayload>
+        }
+        aggregate: {
+          args: Prisma.UserBranchAccessAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUserBranchAccess>
+        }
+        groupBy: {
+          args: Prisma.UserBranchAccessGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserBranchAccessGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserBranchAccessCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserBranchAccessCountAggregateOutputType> | number
         }
       }
     }
@@ -3999,6 +4074,16 @@ export const BranchScalarFieldEnum = {
 export type BranchScalarFieldEnum = (typeof BranchScalarFieldEnum)[keyof typeof BranchScalarFieldEnum]
 
 
+export const UserBranchAccessScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  branchId: 'branchId',
+  createdAt: 'createdAt'
+} as const
+
+export type UserBranchAccessScalarFieldEnum = (typeof UserBranchAccessScalarFieldEnum)[keyof typeof UserBranchAccessScalarFieldEnum]
+
+
 export const UserScalarFieldEnum = {
   id: 'id',
   email: 'email',
@@ -4009,7 +4094,8 @@ export const UserScalarFieldEnum = {
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  username: 'username'
+  username: 'username',
+  branchId: 'branchId'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -5902,6 +5988,7 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
   branch?: Prisma.BranchOmit
+  userBranchAccess?: Prisma.UserBranchAccessOmit
   user?: Prisma.UserOmit
   session?: Prisma.SessionOmit
   account?: Prisma.AccountOmit

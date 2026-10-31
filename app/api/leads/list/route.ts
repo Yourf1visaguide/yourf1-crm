@@ -3,8 +3,8 @@ import { NextRequest } from "next/server";
 import { handleApiError, successResponse } from "@/lib/api-response";
 import { ApiError } from "@/lib/api-error";
 import { requirePermission } from "@/lib/auth/require-permission";
-import { getLeads } from "@/features/leads/queries/lead-queries";
-import { leadListQuerySchema } from "@/features/leads/schemas/lead-list-schema";
+import { getLeads } from "@/features/clients/queries/lead-queries";
+import { leadListQuerySchema } from "@/features/clients/schemas/lead-list-schema";
 
 export async function GET(request: NextRequest) {
   try {

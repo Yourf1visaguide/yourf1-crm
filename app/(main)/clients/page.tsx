@@ -1,8 +1,8 @@
 import { resolveDateRange } from "@/lib/date-range";
 import Container from "@/components/resuable-components/container";
-import LeadsTable from "@/features/leads/components/leads-table";
-import { LeadsSummaryCard } from "@/features/leads/components/leads-summary-card";
-import LeadInsights from "@/features/leads/components/lead-insights";
+import LeadsTable from "@/features/clients/components/leads-table";
+import { LeadsSummaryCard } from "@/features/clients/components/leads-summary-card";
+import LeadInsights from "@/features/clients/components/lead-insights";
 
 type ReportsPageProps = {
   searchParams: Promise<{
