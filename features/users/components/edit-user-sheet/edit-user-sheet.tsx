@@ -34,6 +34,7 @@ export default function EditUserSheet() {
     joiningDate: employee.joiningDate.slice(0, 10),
     employmentStatus: employee.employmentStatus,
     password: "",
+    branchId: employee.user.branchId ?? "",
   };
 
   async function handleSubmit(

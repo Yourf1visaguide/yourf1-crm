@@ -123,7 +123,7 @@ model User {
 
   sessions Session[]
   accounts Account[]
-  branchId String
+  branchId String?
   branch Branch? @relation("UserPrimaryBranch", fields: [branchId], references: [id], onDelete:Restrict  )
   
   branchAccesses UserBranchAccess[]

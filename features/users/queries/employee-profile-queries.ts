@@ -18,6 +18,17 @@ export type EmployeeProfileData = {
 
   accountActive: boolean;
   roles: string[];
+  primaryBranch: {
+  id: string;
+  name: string;
+  branchCode: string;
+} | null;
+
+additionalBranches: {
+  id: string;
+  name: string;
+  branchCode: string;
+}[];
 };
 
 export async function getEmployeeProfile(
@@ -44,6 +55,25 @@ export async function getEmployeeProfile(
           isActive: true,
           roles: true,
           name: true,
+          branch: {
+  select: {
+    id: true,
+    name: true,
+    branchCode: true,
+  },
+},
+
+branchAccesses: {
+  select: {
+    branch: {
+      select: {
+        id: true,
+        name: true,
+        branchCode: true,
+      },
+    },
+  },
+},
         },
       },
     },
@@ -69,5 +99,11 @@ export async function getEmployeeProfile(
 
     accountActive: employee.user.isActive,
     roles: employee.user.roles,
+    primaryBranch: employee.user.branch,
+
+additionalBranches:
+  employee.user.branchAccesses.map(
+    (item) => item.branch,
+  ),
   };
 }

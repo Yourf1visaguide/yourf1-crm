@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    await requirePermission("EMPLOYEE_READ");
+    const actor = await requirePermission("EMPLOYEE_READ");
 
     const searchParams = request.nextUrl.searchParams;
 
@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
       sortOrder: searchParams.get("sortOrder") ?? undefined,
     });
 
-    const result = await getEmployees(query);
+    const result = await getEmployees(query, actor);
 
     return successResponse(result, {
       message: "Employees fetched successfully.",

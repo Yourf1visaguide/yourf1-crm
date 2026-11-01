@@ -1,7 +1,8 @@
 import "server-only";
 
 import { prisma } from "@/lib/prisma";
-import { Prisma } from "@/prisma/generated/prisma/client";
+import { Prisma, ROLES } from "@/prisma/generated/prisma/client";
+import { getAccessibleBranchIds } from "@/lib/auth/branch-access";
 
 import type { EmployeeListQuery } from "@/features/users/schemas/employee-list-schema";
 
@@ -46,16 +47,50 @@ function getOrderBy(
   }
 }
 
-export async function getEmployees({
-  page,
-  limit,
-  search,
-  sortBy,
-  sortOrder,
-}: EmployeeListQuery) {
+
+type EmployeeListActor = {
+  id: string;
+  email: string;
+  employeeId: string | null;
+  roles: ROLES[];
+  branchId: string | null;
+  branchAccesses: {
+    branchId: string;
+  }[];
+};
+
+
+export async function getEmployees(
+  query: EmployeeListQuery,
+  actor: EmployeeListActor,
+) {
+  const {
+    page,
+    limit,
+    search,
+    sortBy,
+    sortOrder,
+  } = query;
+
   const normalizedSearch = search?.trim();
 
-  const where: Prisma.EmployeeWhereInput = normalizedSearch
+const accessibleBranchIds = getAccessibleBranchIds(actor);
+
+const branchWhere: Prisma.EmployeeWhereInput =
+  accessibleBranchIds === null
+    ? {}
+    : {
+        user: {
+          is: {
+            branchId: {
+              in: accessibleBranchIds,
+            },
+          },
+        },
+      };
+
+const searchWhere: Prisma.EmployeeWhereInput =
+  normalizedSearch
     ? {
         OR: [
           {
@@ -74,9 +109,23 @@ export async function getEmployees({
               },
             },
           },
+          {
+            user: {
+              is: {
+                name: {
+                  contains: normalizedSearch,
+                  mode: "insensitive",
+                },
+              },
+            },
+          },
         ],
       }
     : {};
+
+const where: Prisma.EmployeeWhereInput = {
+  AND: [branchWhere, searchWhere],
+};
 
   const orderBy = getOrderBy(sortBy, sortOrder);
 

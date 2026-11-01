@@ -3,20 +3,17 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUserId } from "./get-current-user-id";
 import { ApiError } from "@/lib/api-error";
-import {  type Permission } from "./permissions";
+import { type Permission } from "./permissions";
 import { ROLE_PERMISSIONS } from "./role-permission-mapping";
 
-
-export async function requirePermission(
-  permission: Permission
-) {
+export async function requirePermission(permission: Permission) {
   const userId = await getCurrentUserId();
 
   if (!userId) {
     throw new ApiError(
       "UNAUTHENTICATED",
       "You do not have permission to create employees.",
-      401
+      401,
     );
   }
 
@@ -30,6 +27,13 @@ export async function requirePermission(
       email: true,
       isActive: true,
       roles: true,
+      branchId: true,
+
+      branchAccesses: {
+        select: {
+          branchId: true,
+        },
+      },
 
       employee: {
         select: {
@@ -43,22 +47,21 @@ export async function requirePermission(
     throw new ApiError(
       "UNAUTHENTICATED",
       "User is not authenticated or active",
-      401
+      401,
     );
   }
 
   const roles = user?.roles ?? [];
 
   const hasPermission = roles.some((role) =>
-    ROLE_PERMISSIONS[role].includes(permission)
+    ROLE_PERMISSIONS[role].includes(permission),
   );
-
 
   if (!hasPermission) {
     throw new ApiError(
       "FORBIDDEN",
       "You do not have permission to perform this action",
-      403
+      403,
     );
   }
 
@@ -67,5 +70,8 @@ export async function requirePermission(
     email: user.email,
     employeeId: user.employee?.id ?? null,
     roles,
+    branchId: user.branchId,
+
+    branchAccesses: user.branchAccesses,
   };
 }

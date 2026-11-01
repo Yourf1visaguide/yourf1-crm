@@ -5,6 +5,7 @@ import { Prisma, ROLES } from "@/prisma/generated/prisma/client";
 import { prisma } from "@/lib/prisma";
 import { ApiError } from "@/lib/api-error";
 import { auth } from "@/lib/auth";
+import { assertActiveBranch, hasPermission } from "@/lib/auth/branch-access";
 
 import type {
   CompensationInput,
@@ -335,6 +336,7 @@ export async function updateEmployee(
             email: true,
             isActive: true,
             roles: true,
+            branchId: true,
           },
         },
       },
@@ -342,6 +344,20 @@ export async function updateEmployee(
 
     if (!employee) {
       throw new ApiError("NOT_FOUND", "Employee not found.", 404);
+    }
+
+    const branchChanged = employee.user.branchId !== data.branchId;
+
+    if (branchChanged && !hasPermission(actor.roles, "BRANCH_ACCESS_MANAGE")) {
+      throw new ApiError(
+        "FORBIDDEN",
+        "You do not have permission to reassign an employee's primary branch.",
+        403,
+      );
+    }
+
+    if (branchChanged) {
+      await assertActiveBranch(tx, data.branchId);
     }
 
     /*
@@ -428,6 +444,7 @@ export async function updateEmployee(
       data: {
         name,
         email,
+         branchId: data.branchId,
         roles: {
           set: data.roles,
         },

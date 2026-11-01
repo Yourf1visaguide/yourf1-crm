@@ -21,22 +21,25 @@ export default async function ProfilePage() {
   }
 
   const employee: EmployeeProfileData = {
-    employeeId: user.employee.id,
-    userId: user.id,
+  employeeId: user.employee.id,
+  userId: user.id,
 
-    name: user.name,
-    email: user.email,
-    username: user.username,
+  name: user.name,
+  email: user.email,
+  username: user.username,
 
-    employeeCode: user.employee.employeeCode,
-    department: user.employee.department,
-    designation: user.employee.designation,
-    joiningDate: user.employee.joiningDate,
-    employmentStatus: user.employee.employmentStatus,
+  employeeCode: user.employee.employeeCode,
+  department: user.employee.department,
+  designation: user.employee.designation,
+  joiningDate: user.employee.joiningDate,
+  employmentStatus: user.employee.employmentStatus,
 
-    accountActive: user.isActive,
-    roles: user.roles,
-  };
+  accountActive: user.isActive,
+  roles: user.roles,
+
+  primaryBranch: null,
+  additionalBranches: [],
+};
 
   return (
     <EmployeeProfile
