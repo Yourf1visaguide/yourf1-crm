@@ -1,12 +1,15 @@
 "use client";
 
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { useBranchContext } from "@/providers/branch-provider";
 import { leadKeys } from "./lead-query-keys";
 import { getLeads, type GetLeadsParams } from "./get-leads";
 
 export function useLeads(params: GetLeadsParams) {
+  const { selectedBranchId, isReady } = useBranchContext();
+
   return useQuery({
-    queryKey: leadKeys.list({
+    queryKey: leadKeys.list(selectedBranchId ?? "__unselected__", {
       ...params,
       status: params.status ?? null,
       assignmentType: params.assignmentType ?? null,
@@ -14,8 +17,11 @@ export function useLeads(params: GetLeadsParams) {
       preferredCountry: params.preferredCountry ?? null,
     }),
     queryFn: () => getLeads(params),
-    placeholderData: keepPreviousData,
-    staleTime: 30 * 1000,
+    // Do not show rows from the previously selected branch while the new
+    // branch request is loading.
+    enabled: isReady && selectedBranchId !== null,
+    staleTime: 0,
+    refetchOnMount: "always",
     retry: false,
   });
 }

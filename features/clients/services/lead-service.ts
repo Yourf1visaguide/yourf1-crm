@@ -17,6 +17,7 @@ import {
 import { ApiError } from "@/lib/api-error";
 import { prisma } from "@/lib/prisma";
 import { dateOnlyUTC } from "@/lib/utils";
+import { getAccessibleBranchIds } from "@/lib/auth/branch-access";
 
 import type { CreateLeadInput } from "../schemas/leads-schema";
 
@@ -123,6 +124,8 @@ export async function createLead(data: CreateLeadInput, actor: Actor) {
         name: true,
         isActive: true,
         roles: true,
+        branchId: true,
+        branchAccesses: { select: { branchId: true } },
         employee: {
           select: {
             employmentStatus: true,
@@ -151,6 +154,16 @@ export async function createLead(data: CreateLeadInput, actor: Actor) {
             (isAdmin && assignee?.isActive),
         ) && (isAdmin || isActiveEmployee);
 
+  const assigneeBranchIds = assignee
+    ? getAccessibleBranchIds({
+        branchId: assignee.branchId,
+        branchAccesses: assignee.branchAccesses,
+        roles: assignee.roles,
+      })
+    : [];
+  const assigneeCanAccessBranch =
+    assigneeBranchIds === null || assigneeBranchIds.includes(data.branchId);
+
   if (!assignee?.isActive || !validAssignee) {
     const roleLabel =
       assignmentType === LeadAssignmentType.TELECALLING
@@ -160,6 +173,14 @@ export async function createLead(data: CreateLeadInput, actor: Actor) {
     throw new ApiError(
       "BAD_REQUEST",
       `The selected assignee is not an ${roleLabel}.`,
+      400,
+    );
+  }
+
+  if (!assigneeCanAccessBranch) {
+    throw new ApiError(
+      "BAD_REQUEST",
+      "The selected assignee does not have access to this branch.",
       400,
     );
   }
@@ -217,6 +238,14 @@ export async function createLead(data: CreateLeadInput, actor: Actor) {
 
   try {
     return await prisma.$transaction(async (tx) => {
+      const activeBranch = await tx.branch.findFirst({
+        where: { id: data.branchId, isActive: true },
+        select: { id: true },
+      });
+      if (!activeBranch) {
+        throw new ApiError("BAD_REQUEST", "The selected branch is not available.", 400);
+      }
+
       const client = await tx.client.create({
         data: {
           clientCode: code("CLI"),
