@@ -1,9 +1,6 @@
 import { NextRequest } from "next/server";
 
-import {
-  handleApiError,
-  successResponse,
-} from "@/lib/api-response";
+import { handleApiError, successResponse } from "@/lib/api-response";
 
 import { ApiError } from "@/lib/api-error";
 import { requirePermission } from "@/lib/auth/require-permission";
@@ -12,10 +9,11 @@ import { employeeFormSchema } from "@/features/users/schemas/user-schema";
 import { createEmployee } from "@/features/users/services/employee-service";
 import { getEmployees } from "@/features/users/queries/employee-queries";
 import { employeeListQuerySchema } from "@/features/users/schemas/employee-list-schema";
+import { ROLE_PERMISSIONS } from "@/lib/auth/role-permission-mapping";
 
 export async function POST(request: NextRequest) {
   try {
-    await requirePermission("EMPLOYEE_CREATE");
+    const actor = await requirePermission("EMPLOYEE_CREATE");
 
     let body: unknown;
 
@@ -23,15 +21,15 @@ export async function POST(request: NextRequest) {
       body = await request.json();
     } catch {
       return handleApiError(
-        new ApiError(
-          "INVALID_JSON",
-          "Invalid JSON body.",
-          400,
-        ),
+        new ApiError("INVALID_JSON", "Invalid JSON body.", 400),
       );
     }
 
     const data = employeeFormSchema.parse(body);
+
+    if (data.additionalBranchIds.length > 0) {
+      await requirePermission("BRANCH_ACCESS_MANAGE");
+    }
 
     const employee = await createEmployee(data);
 
@@ -67,4 +65,3 @@ export async function GET(request: NextRequest) {
     return handleApiError(error);
   }
 }
-

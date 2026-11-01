@@ -26,6 +26,10 @@ export const employeeSchema = z.object({
 
   employmentStatus: z.enum(EmploymentStatus),
   branchId: z.string().trim().min(1, "Select a primary branch"),
+  additionalBranchIds: z
+  .array(z.string().trim().min(1))
+  .max(100)
+  .default([]),
 });
 export type EmployeeInput = z.infer<typeof employeeSchema>;
 

@@ -35,6 +35,7 @@ import {
 import { todayLocalDate } from "@/lib/utils";
 import Field from "@/components/resuable-components/form-field";
 import FormSubHeading from "@/components/resuable-components/form-subheading";
+import z from "zod";
 
 const inputClassName = "w-full";
 
@@ -62,7 +63,11 @@ export default function UserForm({
     retry: false,
   });
 
-  const form = useForm<CreateEmployeeFormValues>({
+  const form  = useForm<
+  z.input<typeof employeeFormSchema>,
+  unknown,
+  CreateEmployeeFormValues
+>({
     resolver: zodResolver(employeeFormSchema),
     defaultValues: {
       email: "",
@@ -80,6 +85,7 @@ export default function UserForm({
       endTime: "05:30",
       scheduleEffectiveFrom: today,
       branchId: "",
+      additionalBranchIds: [],
     },
   });
 
@@ -87,14 +93,35 @@ export default function UserForm({
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    watch,
   } = form;
 
   const isDisabled = disabled || isSubmitting;
+  const primaryBranchId = watch("branchId");
+  const additionalBranches = branches.filter(
+    (branch) => branch.id !== primaryBranchId,
+  );
+
+  React.useEffect(() => {
+  const currentIds = form.getValues("additionalBranchIds") ?? [];
+
+  const validIds = currentIds.filter(
+    (id) => id !== primaryBranchId,
+  );
+
+  if (validIds.length !== currentIds.length) {
+    form.setValue("additionalBranchIds", validIds, {
+      shouldDirty: true,
+      shouldValidate: true,
+    });
+  }
+}, [primaryBranchId, form]);
 
   function fieldError(name: keyof CreateEmployeeFormValues) {
     return errors[name]?.message;
   }
   const anchor = useComboboxAnchor();
+  const branchAnchor = useComboboxAnchor();
 
   return (
     <form
@@ -288,6 +315,76 @@ export default function UserForm({
                 </p>
               )}
             </Field>
+            <Controller
+              name="additionalBranchIds"
+              control={form.control}
+              render={({ field }) => {
+                const selectedBranches = branches.filter((branch) =>
+                  field.value?.includes(branch.id),
+                );
+
+                return (
+                  <Field
+                    label="Additional branch access"
+                    error={fieldError("additionalBranchIds")}
+                  >
+                    <Combobox
+                      multiple
+                      autoHighlight
+                      items={additionalBranches.map((branch) => ({
+                        value: branch.id,
+                        label: `${branch.name} (${branch.branchCode})`,
+                      }))}
+                      value={field.value ?? []}
+                      onValueChange={field.onChange}
+                      disabled={
+                        isDisabled || isBranchesLoading || isBranchesError
+                      }
+                    >
+                      <ComboboxChips ref={branchAnchor} className="w-full">
+                        <ComboboxValue>
+                          {() => (
+                            <>
+                              {selectedBranches.map((branch) => (
+                                <ComboboxChip key={branch.id}>
+                                  {branch.name}
+                                </ComboboxChip>
+                              ))}
+
+                              <ComboboxChipsInput
+                                placeholder="Select additional branches..."
+                                disabled={
+                                  isDisabled ||
+                                  isBranchesLoading ||
+                                  isBranchesError
+                                }
+                              />
+                            </>
+                          )}
+                        </ComboboxValue>
+                      </ComboboxChips>
+
+                      <ComboboxContent anchor={branchAnchor}>
+                        <ComboboxEmpty>No branches found.</ComboboxEmpty>
+
+                        <ComboboxList>
+                          {(item) => (
+                            <ComboboxItem key={item.value} value={item.value}>
+                              {item.label}
+                            </ComboboxItem>
+                          )}
+                        </ComboboxList>
+                      </ComboboxContent>
+                    </Combobox>
+
+                    <p className="text-xs text-muted-foreground">
+                      Select other branches this employee can access. The
+                      primary branch is excluded.
+                    </p>
+                  </Field>
+                );
+              }}
+            />
           </div>
         </section>
 

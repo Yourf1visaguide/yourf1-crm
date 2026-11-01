@@ -171,6 +171,38 @@ export async function createEmployee(data: CreateEmployeeFormValues) {
           400,
         );
       }
+
+      const additionalBranchIds = [...new Set(data.additionalBranchIds ?? [])];
+
+      if (additionalBranchIds.includes(data.branchId)) {
+        throw new ApiError(
+          "BAD_REQUEST",
+          "Primary branch cannot also be an additional branch.",
+          400,
+        );
+      }
+
+      if (additionalBranchIds.length > 0) {
+        const activeBranches = await tx.branch.findMany({
+          where: {
+            id: {
+              in: additionalBranchIds,
+            },
+            isActive: true,
+          },
+          select: {
+            id: true,
+          },
+        });
+
+        if (activeBranches.length !== additionalBranchIds.length) {
+          throw new ApiError(
+            "BAD_REQUEST",
+            "One or more additional branches do not exist or are inactive.",
+            400,
+          );
+        }
+      }
       await tx.user.update({
         where: {
           id: authUserId,
@@ -183,6 +215,15 @@ export async function createEmployee(data: CreateEmployeeFormValues) {
           branchId: data.branchId,
         },
       });
+
+      if (additionalBranchIds.length > 0) {
+        await tx.userBranchAccess.createMany({
+          data: additionalBranchIds.map((branchId) => ({
+            userId: authUserId,
+            branchId,
+          })),
+        });
+      }
 
       return tx.employee.create({
         data: {
@@ -444,7 +485,7 @@ export async function updateEmployee(
       data: {
         name,
         email,
-         branchId: data.branchId,
+        branchId: data.branchId,
         roles: {
           set: data.roles,
         },
