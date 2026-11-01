@@ -1,33 +1,16 @@
 import { NextResponse } from "next/server";
 import { handleApiError, successResponse } from "@/lib/api-response";
-import { getCurrentUserId } from "@/lib/auth/get-current-user-id";
+import { getCurrentUser } from "@/lib/auth/get-current-user-server-side";
 import { getAccessibleBranchIds, hasPermission } from "@/lib/auth/branch-access";
 import { PERMISSIONS } from "@/lib/auth/permissions";
 import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   try {
-    const userId = await getCurrentUserId();
-    if (!userId) {
-      return NextResponse.json(
-        { success: false, error: { code: "UNAUTHENTICATED", message: "Authentication is required." } },
-        { status: 401 },
-      );
-    }
-
-    const actor = await prisma.user.findFirst({
-      where: { id: userId, isActive: true },
-      select: {
-        id: true,
-        branchId: true,
-        roles: true,
-        branchAccesses: { select: { branchId: true } },
-      },
-    });
-
+    const actor = await getCurrentUser();
     if (!actor) {
       return NextResponse.json(
-        { success: false, error: { code: "UNAUTHENTICATED", message: "User is not active." } },
+        { success: false, error: { code: "UNAUTHENTICATED", message: "Authentication is required." } },
         { status: 401 },
       );
     }

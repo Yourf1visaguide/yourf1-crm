@@ -26,6 +26,8 @@ export async function getCurrentUser() {
       username: true,
       isActive: true,
       roles: true,
+      branchId: true,
+      branchAccesses: { select: { branchId: true } },
 
       employee: {
         select: {

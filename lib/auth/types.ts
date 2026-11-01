@@ -7,6 +7,8 @@ export type CurrentUser = {
   username: string | null;
   isActive: boolean;
   roles: ROLES[];
+  branchId: string | null;
+  branchAccesses: { branchId: string }[];
 
   employee: {
     id: string;
