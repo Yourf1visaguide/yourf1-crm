@@ -257,3 +257,8 @@ export type TeacherDailyProgress = Prisma.TeacherDailyProgressModel
  * 
  */
 export type TouristPrep = Prisma.TouristPrepModel
+/**
+ * Model BranchIntegrationEndpoint
+ * 
+ */
+export type BranchIntegrationEndpoint = Prisma.BranchIntegrationEndpointModel

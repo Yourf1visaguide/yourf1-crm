@@ -98,7 +98,8 @@ export const ModelName = {
   TeachingEnrollment: 'TeachingEnrollment',
   TeachingDailyRecord: 'TeachingDailyRecord',
   TeacherDailyProgress: 'TeacherDailyProgress',
-  TouristPrep: 'TouristPrep'
+  TouristPrep: 'TouristPrep',
+  BranchIntegrationEndpoint: 'BranchIntegrationEndpoint'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -961,6 +962,23 @@ export const TouristPrepScalarFieldEnum = {
 } as const
 
 export type TouristPrepScalarFieldEnum = (typeof TouristPrepScalarFieldEnum)[keyof typeof TouristPrepScalarFieldEnum]
+
+
+export const BranchIntegrationEndpointScalarFieldEnum = {
+  id: 'id',
+  branchId: 'branchId',
+  provider: 'provider',
+  displayName: 'displayName',
+  phoneNumber: 'phoneNumber',
+  providerEndpointId: 'providerEndpointId',
+  providerAccountId: 'providerAccountId',
+  credentialsEncrypted: 'credentialsEncrypted',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BranchIntegrationEndpointScalarFieldEnum = (typeof BranchIntegrationEndpointScalarFieldEnum)[keyof typeof BranchIntegrationEndpointScalarFieldEnum]
 
 
 export const SortOrder = {

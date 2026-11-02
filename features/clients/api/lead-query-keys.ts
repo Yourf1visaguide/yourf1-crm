@@ -4,8 +4,8 @@ export const leadKeys = {
   list: (branchId: string, filters: Record<string, unknown>) =>
     [...leadKeys.lists(), branchId, filters] as const,
   branches: () => [...leadKeys.all, "branches"] as const,
-  assignees: (type: "TELECALLING" | "COUNSELLING" = "COUNSELLING") =>
-    [...leadKeys.all, "assignees", type] as const,
+  assignees: (branchId: string, type: "TELECALLING" | "COUNSELLING" = "COUNSELLING") =>
+    [...leadKeys.all, "assignees", branchId, type] as const,
   details: () => [...leadKeys.all, "detail"] as const,
   detail: (id: string) => [...leadKeys.details(), id] as const,
   summaries: () => [...leadKeys.all, "summary"] as const,

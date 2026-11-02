@@ -674,3 +674,11 @@ export const TouristPrepStatus = {
 } as const
 
 export type TouristPrepStatus = (typeof TouristPrepStatus)[keyof typeof TouristPrepStatus]
+
+
+export const IntegrationProvider = {
+  SUKAM_IVR: 'SUKAM_IVR',
+  META_WHATSAPP: 'META_WHATSAPP'
+} as const
+
+export type IntegrationProvider = (typeof IntegrationProvider)[keyof typeof IntegrationProvider]

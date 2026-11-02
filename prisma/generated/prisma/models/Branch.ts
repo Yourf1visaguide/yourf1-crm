@@ -260,6 +260,7 @@ export type BranchWhereInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceListRelationFilter
   payrollEntries?: Prisma.PayrollEntryListRelationFilter
   clients?: Prisma.ClientListRelationFilter
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointListRelationFilter
 }
 
 export type BranchOrderByWithRelationInput = {
@@ -290,6 +291,7 @@ export type BranchOrderByWithRelationInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceOrderByRelationAggregateInput
   payrollEntries?: Prisma.PayrollEntryOrderByRelationAggregateInput
   clients?: Prisma.ClientOrderByRelationAggregateInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointOrderByRelationAggregateInput
 }
 
 export type BranchWhereUniqueInput = Prisma.AtLeast<{
@@ -323,6 +325,7 @@ export type BranchWhereUniqueInput = Prisma.AtLeast<{
   employeeAttendance?: Prisma.EmployeeAttendanceListRelationFilter
   payrollEntries?: Prisma.PayrollEntryListRelationFilter
   clients?: Prisma.ClientListRelationFilter
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointListRelationFilter
 }, "id" | "branchCode">
 
 export type BranchOrderByWithAggregationInput = {
@@ -391,6 +394,7 @@ export type BranchCreateInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateInput = {
@@ -421,6 +425,7 @@ export type BranchUncheckedCreateInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUpdateInput = {
@@ -451,6 +456,7 @@ export type BranchUpdateInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateInput = {
@@ -481,6 +487,7 @@ export type BranchUncheckedUpdateInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateManyInput = {
@@ -807,6 +814,20 @@ export type BranchUpdateOneRequiredWithoutTeachingEnrollmentsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutTeachingEnrollmentsInput, Prisma.BranchUpdateWithoutTeachingEnrollmentsInput>, Prisma.BranchUncheckedUpdateWithoutTeachingEnrollmentsInput>
 }
 
+export type BranchCreateNestedOneWithoutIntegrationEndpointsInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedCreateWithoutIntegrationEndpointsInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutIntegrationEndpointsInput
+  connect?: Prisma.BranchWhereUniqueInput
+}
+
+export type BranchUpdateOneRequiredWithoutIntegrationEndpointsNestedInput = {
+  create?: Prisma.XOR<Prisma.BranchCreateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedCreateWithoutIntegrationEndpointsInput>
+  connectOrCreate?: Prisma.BranchCreateOrConnectWithoutIntegrationEndpointsInput
+  upsert?: Prisma.BranchUpsertWithoutIntegrationEndpointsInput
+  connect?: Prisma.BranchWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.BranchUpdateToOneWithWhereWithoutIntegrationEndpointsInput, Prisma.BranchUpdateWithoutIntegrationEndpointsInput>, Prisma.BranchUncheckedUpdateWithoutIntegrationEndpointsInput>
+}
+
 export type BranchCreateWithoutUserAccessInput = {
   id?: string
   branchCode: string
@@ -834,6 +855,7 @@ export type BranchCreateWithoutUserAccessInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutUserAccessInput = {
@@ -863,6 +885,7 @@ export type BranchUncheckedCreateWithoutUserAccessInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutUserAccessInput = {
@@ -908,6 +931,7 @@ export type BranchUpdateWithoutUserAccessInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutUserAccessInput = {
@@ -937,6 +961,7 @@ export type BranchUncheckedUpdateWithoutUserAccessInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutPrimaryUsersInput = {
@@ -966,6 +991,7 @@ export type BranchCreateWithoutPrimaryUsersInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutPrimaryUsersInput = {
@@ -995,6 +1021,7 @@ export type BranchUncheckedCreateWithoutPrimaryUsersInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutPrimaryUsersInput = {
@@ -1040,6 +1067,7 @@ export type BranchUpdateWithoutPrimaryUsersInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutPrimaryUsersInput = {
@@ -1069,6 +1097,7 @@ export type BranchUncheckedUpdateWithoutPrimaryUsersInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutPayrollEntriesInput = {
@@ -1098,6 +1127,7 @@ export type BranchCreateWithoutPayrollEntriesInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutPayrollEntriesInput = {
@@ -1127,6 +1157,7 @@ export type BranchUncheckedCreateWithoutPayrollEntriesInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutPayrollEntriesInput = {
@@ -1172,6 +1203,7 @@ export type BranchUpdateWithoutPayrollEntriesInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutPayrollEntriesInput = {
@@ -1201,6 +1233,7 @@ export type BranchUncheckedUpdateWithoutPayrollEntriesInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutEmployeeAttendanceInput = {
@@ -1230,6 +1263,7 @@ export type BranchCreateWithoutEmployeeAttendanceInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutEmployeeAttendanceInput = {
@@ -1259,6 +1293,7 @@ export type BranchUncheckedCreateWithoutEmployeeAttendanceInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutEmployeeAttendanceInput = {
@@ -1304,6 +1339,7 @@ export type BranchUpdateWithoutEmployeeAttendanceInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutEmployeeAttendanceInput = {
@@ -1333,6 +1369,7 @@ export type BranchUncheckedUpdateWithoutEmployeeAttendanceInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutClientsInput = {
@@ -1362,6 +1399,7 @@ export type BranchCreateWithoutClientsInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutClientsInput = {
@@ -1391,6 +1429,7 @@ export type BranchUncheckedCreateWithoutClientsInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutClientsInput = {
@@ -1436,6 +1475,7 @@ export type BranchUpdateWithoutClientsInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutClientsInput = {
@@ -1465,6 +1505,7 @@ export type BranchUncheckedUpdateWithoutClientsInput = {
   teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutLeadsInput = {
@@ -1494,6 +1535,7 @@ export type BranchCreateWithoutLeadsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutLeadsInput = {
@@ -1523,6 +1565,7 @@ export type BranchUncheckedCreateWithoutLeadsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutLeadsInput = {
@@ -1568,6 +1611,7 @@ export type BranchUpdateWithoutLeadsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutLeadsInput = {
@@ -1597,6 +1641,7 @@ export type BranchUncheckedUpdateWithoutLeadsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutApplicationsInput = {
@@ -1626,6 +1671,7 @@ export type BranchCreateWithoutApplicationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutApplicationsInput = {
@@ -1655,6 +1701,7 @@ export type BranchUncheckedCreateWithoutApplicationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutApplicationsInput = {
@@ -1700,6 +1747,7 @@ export type BranchUpdateWithoutApplicationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutApplicationsInput = {
@@ -1729,6 +1777,7 @@ export type BranchUncheckedUpdateWithoutApplicationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutRegistrationsInput = {
@@ -1758,6 +1807,7 @@ export type BranchCreateWithoutRegistrationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutRegistrationsInput = {
@@ -1787,6 +1837,7 @@ export type BranchUncheckedCreateWithoutRegistrationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutRegistrationsInput = {
@@ -1832,6 +1883,7 @@ export type BranchUpdateWithoutRegistrationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutRegistrationsInput = {
@@ -1861,6 +1913,7 @@ export type BranchUncheckedUpdateWithoutRegistrationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutTasksInput = {
@@ -1890,6 +1943,7 @@ export type BranchCreateWithoutTasksInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutTasksInput = {
@@ -1919,6 +1973,7 @@ export type BranchUncheckedCreateWithoutTasksInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutTasksInput = {
@@ -1964,6 +2019,7 @@ export type BranchUpdateWithoutTasksInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutTasksInput = {
@@ -1993,6 +2049,7 @@ export type BranchUncheckedUpdateWithoutTasksInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutInvoicesInput = {
@@ -2022,6 +2079,7 @@ export type BranchCreateWithoutInvoicesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutInvoicesInput = {
@@ -2051,6 +2109,7 @@ export type BranchUncheckedCreateWithoutInvoicesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutInvoicesInput = {
@@ -2096,6 +2155,7 @@ export type BranchUpdateWithoutInvoicesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutInvoicesInput = {
@@ -2125,6 +2185,7 @@ export type BranchUncheckedUpdateWithoutInvoicesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutExpensesInput = {
@@ -2154,6 +2215,7 @@ export type BranchCreateWithoutExpensesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutExpensesInput = {
@@ -2183,6 +2245,7 @@ export type BranchUncheckedCreateWithoutExpensesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutExpensesInput = {
@@ -2228,6 +2291,7 @@ export type BranchUpdateWithoutExpensesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutExpensesInput = {
@@ -2257,6 +2321,7 @@ export type BranchUncheckedUpdateWithoutExpensesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutFinancialEntriesInput = {
@@ -2286,6 +2351,7 @@ export type BranchCreateWithoutFinancialEntriesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutFinancialEntriesInput = {
@@ -2315,6 +2381,7 @@ export type BranchUncheckedCreateWithoutFinancialEntriesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutFinancialEntriesInput = {
@@ -2360,6 +2427,7 @@ export type BranchUpdateWithoutFinancialEntriesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutFinancialEntriesInput = {
@@ -2389,6 +2457,7 @@ export type BranchUncheckedUpdateWithoutFinancialEntriesInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutWhatsappConversationsInput = {
@@ -2418,6 +2487,7 @@ export type BranchCreateWithoutWhatsappConversationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutWhatsappConversationsInput = {
@@ -2447,6 +2517,7 @@ export type BranchUncheckedCreateWithoutWhatsappConversationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutWhatsappConversationsInput = {
@@ -2492,6 +2563,7 @@ export type BranchUpdateWithoutWhatsappConversationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutWhatsappConversationsInput = {
@@ -2521,6 +2593,7 @@ export type BranchUncheckedUpdateWithoutWhatsappConversationsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchCreateWithoutTeachingEnrollmentsInput = {
@@ -2550,6 +2623,7 @@ export type BranchCreateWithoutTeachingEnrollmentsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointCreateNestedManyWithoutBranchInput
 }
 
 export type BranchUncheckedCreateWithoutTeachingEnrollmentsInput = {
@@ -2579,6 +2653,7 @@ export type BranchUncheckedCreateWithoutTeachingEnrollmentsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
   payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
   clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedCreateNestedManyWithoutBranchInput
 }
 
 export type BranchCreateOrConnectWithoutTeachingEnrollmentsInput = {
@@ -2624,6 +2699,7 @@ export type BranchUpdateWithoutTeachingEnrollmentsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUpdateManyWithoutBranchNestedInput
 }
 
 export type BranchUncheckedUpdateWithoutTeachingEnrollmentsInput = {
@@ -2653,6 +2729,143 @@ export type BranchUncheckedUpdateWithoutTeachingEnrollmentsInput = {
   employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
   payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
   clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
+  integrationEndpoints?: Prisma.BranchIntegrationEndpointUncheckedUpdateManyWithoutBranchNestedInput
+}
+
+export type BranchCreateWithoutIntegrationEndpointsInput = {
+  id?: string
+  branchCode: string
+  name: string
+  phone?: string | null
+  email?: string | null
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  postalCode?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  primaryUsers?: Prisma.UserCreateNestedManyWithoutBranchInput
+  userAccess?: Prisma.UserBranchAccessCreateNestedManyWithoutBranchInput
+  leads?: Prisma.LeadCreateNestedManyWithoutBranchInput
+  registrations?: Prisma.RegistrationCreateNestedManyWithoutBranchInput
+  applications?: Prisma.ApplicationCreateNestedManyWithoutBranchInput
+  invoices?: Prisma.InvoiceCreateNestedManyWithoutBranchInput
+  expenses?: Prisma.ExpenseCreateNestedManyWithoutBranchInput
+  financialEntries?: Prisma.FinancialEntryCreateNestedManyWithoutBranchInput
+  whatsappConversations?: Prisma.WhatsAppConversationCreateNestedManyWithoutBranchInput
+  tasks?: Prisma.TaskCreateNestedManyWithoutBranchInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentCreateNestedManyWithoutBranchInput
+  employeeAttendance?: Prisma.EmployeeAttendanceCreateNestedManyWithoutBranchInput
+  payrollEntries?: Prisma.PayrollEntryCreateNestedManyWithoutBranchInput
+  clients?: Prisma.ClientCreateNestedManyWithoutBranchInput
+}
+
+export type BranchUncheckedCreateWithoutIntegrationEndpointsInput = {
+  id?: string
+  branchCode: string
+  name: string
+  phone?: string | null
+  email?: string | null
+  addressLine1?: string | null
+  addressLine2?: string | null
+  city?: string | null
+  state?: string | null
+  postalCode?: string | null
+  isActive?: boolean
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  primaryUsers?: Prisma.UserUncheckedCreateNestedManyWithoutBranchInput
+  userAccess?: Prisma.UserBranchAccessUncheckedCreateNestedManyWithoutBranchInput
+  leads?: Prisma.LeadUncheckedCreateNestedManyWithoutBranchInput
+  registrations?: Prisma.RegistrationUncheckedCreateNestedManyWithoutBranchInput
+  applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutBranchInput
+  invoices?: Prisma.InvoiceUncheckedCreateNestedManyWithoutBranchInput
+  expenses?: Prisma.ExpenseUncheckedCreateNestedManyWithoutBranchInput
+  financialEntries?: Prisma.FinancialEntryUncheckedCreateNestedManyWithoutBranchInput
+  whatsappConversations?: Prisma.WhatsAppConversationUncheckedCreateNestedManyWithoutBranchInput
+  tasks?: Prisma.TaskUncheckedCreateNestedManyWithoutBranchInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedCreateNestedManyWithoutBranchInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedCreateNestedManyWithoutBranchInput
+  payrollEntries?: Prisma.PayrollEntryUncheckedCreateNestedManyWithoutBranchInput
+  clients?: Prisma.ClientUncheckedCreateNestedManyWithoutBranchInput
+}
+
+export type BranchCreateOrConnectWithoutIntegrationEndpointsInput = {
+  where: Prisma.BranchWhereUniqueInput
+  create: Prisma.XOR<Prisma.BranchCreateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedCreateWithoutIntegrationEndpointsInput>
+}
+
+export type BranchUpsertWithoutIntegrationEndpointsInput = {
+  update: Prisma.XOR<Prisma.BranchUpdateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedUpdateWithoutIntegrationEndpointsInput>
+  create: Prisma.XOR<Prisma.BranchCreateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedCreateWithoutIntegrationEndpointsInput>
+  where?: Prisma.BranchWhereInput
+}
+
+export type BranchUpdateToOneWithWhereWithoutIntegrationEndpointsInput = {
+  where?: Prisma.BranchWhereInput
+  data: Prisma.XOR<Prisma.BranchUpdateWithoutIntegrationEndpointsInput, Prisma.BranchUncheckedUpdateWithoutIntegrationEndpointsInput>
+}
+
+export type BranchUpdateWithoutIntegrationEndpointsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  primaryUsers?: Prisma.UserUpdateManyWithoutBranchNestedInput
+  userAccess?: Prisma.UserBranchAccessUpdateManyWithoutBranchNestedInput
+  leads?: Prisma.LeadUpdateManyWithoutBranchNestedInput
+  registrations?: Prisma.RegistrationUpdateManyWithoutBranchNestedInput
+  applications?: Prisma.ApplicationUpdateManyWithoutBranchNestedInput
+  invoices?: Prisma.InvoiceUpdateManyWithoutBranchNestedInput
+  expenses?: Prisma.ExpenseUpdateManyWithoutBranchNestedInput
+  financialEntries?: Prisma.FinancialEntryUpdateManyWithoutBranchNestedInput
+  whatsappConversations?: Prisma.WhatsAppConversationUpdateManyWithoutBranchNestedInput
+  tasks?: Prisma.TaskUpdateManyWithoutBranchNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUpdateManyWithoutBranchNestedInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUpdateManyWithoutBranchNestedInput
+  payrollEntries?: Prisma.PayrollEntryUpdateManyWithoutBranchNestedInput
+  clients?: Prisma.ClientUpdateManyWithoutBranchNestedInput
+}
+
+export type BranchUncheckedUpdateWithoutIntegrationEndpointsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  branchCode?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  phone?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  addressLine2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  primaryUsers?: Prisma.UserUncheckedUpdateManyWithoutBranchNestedInput
+  userAccess?: Prisma.UserBranchAccessUncheckedUpdateManyWithoutBranchNestedInput
+  leads?: Prisma.LeadUncheckedUpdateManyWithoutBranchNestedInput
+  registrations?: Prisma.RegistrationUncheckedUpdateManyWithoutBranchNestedInput
+  applications?: Prisma.ApplicationUncheckedUpdateManyWithoutBranchNestedInput
+  invoices?: Prisma.InvoiceUncheckedUpdateManyWithoutBranchNestedInput
+  expenses?: Prisma.ExpenseUncheckedUpdateManyWithoutBranchNestedInput
+  financialEntries?: Prisma.FinancialEntryUncheckedUpdateManyWithoutBranchNestedInput
+  whatsappConversations?: Prisma.WhatsAppConversationUncheckedUpdateManyWithoutBranchNestedInput
+  tasks?: Prisma.TaskUncheckedUpdateManyWithoutBranchNestedInput
+  teachingEnrollments?: Prisma.TeachingEnrollmentUncheckedUpdateManyWithoutBranchNestedInput
+  employeeAttendance?: Prisma.EmployeeAttendanceUncheckedUpdateManyWithoutBranchNestedInput
+  payrollEntries?: Prisma.PayrollEntryUncheckedUpdateManyWithoutBranchNestedInput
+  clients?: Prisma.ClientUncheckedUpdateManyWithoutBranchNestedInput
 }
 
 
@@ -2675,6 +2888,7 @@ export type BranchCountOutputType = {
   employeeAttendance: number
   payrollEntries: number
   clients: number
+  integrationEndpoints: number
 }
 
 export type BranchCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2692,6 +2906,7 @@ export type BranchCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions
   employeeAttendance?: boolean | BranchCountOutputTypeCountEmployeeAttendanceArgs
   payrollEntries?: boolean | BranchCountOutputTypeCountPayrollEntriesArgs
   clients?: boolean | BranchCountOutputTypeCountClientsArgs
+  integrationEndpoints?: boolean | BranchCountOutputTypeCountIntegrationEndpointsArgs
 }
 
 /**
@@ -2802,6 +3017,13 @@ export type BranchCountOutputTypeCountClientsArgs<ExtArgs extends runtime.Types.
   where?: Prisma.ClientWhereInput
 }
 
+/**
+ * BranchCountOutputType without action
+ */
+export type BranchCountOutputTypeCountIntegrationEndpointsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.BranchIntegrationEndpointWhereInput
+}
+
 
 export type BranchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2831,6 +3053,7 @@ export type BranchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   employeeAttendance?: boolean | Prisma.Branch$employeeAttendanceArgs<ExtArgs>
   payrollEntries?: boolean | Prisma.Branch$payrollEntriesArgs<ExtArgs>
   clients?: boolean | Prisma.Branch$clientsArgs<ExtArgs>
+  integrationEndpoints?: boolean | Prisma.Branch$integrationEndpointsArgs<ExtArgs>
   _count?: boolean | Prisma.BranchCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["branch"]>
 
@@ -2898,6 +3121,7 @@ export type BranchInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   employeeAttendance?: boolean | Prisma.Branch$employeeAttendanceArgs<ExtArgs>
   payrollEntries?: boolean | Prisma.Branch$payrollEntriesArgs<ExtArgs>
   clients?: boolean | Prisma.Branch$clientsArgs<ExtArgs>
+  integrationEndpoints?: boolean | Prisma.Branch$integrationEndpointsArgs<ExtArgs>
   _count?: boolean | Prisma.BranchCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type BranchIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -2920,6 +3144,7 @@ export type $BranchPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     employeeAttendance: Prisma.$EmployeeAttendancePayload<ExtArgs>[]
     payrollEntries: Prisma.$PayrollEntryPayload<ExtArgs>[]
     clients: Prisma.$ClientPayload<ExtArgs>[]
+    integrationEndpoints: Prisma.$BranchIntegrationEndpointPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -3343,6 +3568,7 @@ export interface Prisma__BranchClient<T, Null = never, ExtArgs extends runtime.T
   employeeAttendance<T extends Prisma.Branch$employeeAttendanceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$employeeAttendanceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmployeeAttendancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   payrollEntries<T extends Prisma.Branch$payrollEntriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$payrollEntriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PayrollEntryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   clients<T extends Prisma.Branch$clientsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$clientsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClientPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  integrationEndpoints<T extends Prisma.Branch$integrationEndpointsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Branch$integrationEndpointsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$BranchIntegrationEndpointPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4111,6 +4337,30 @@ export type Branch$clientsArgs<ExtArgs extends runtime.Types.Extensions.Internal
   take?: number
   skip?: number
   distinct?: Prisma.ClientScalarFieldEnum | Prisma.ClientScalarFieldEnum[]
+}
+
+/**
+ * Branch.integrationEndpoints
+ */
+export type Branch$integrationEndpointsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the BranchIntegrationEndpoint
+   */
+  select?: Prisma.BranchIntegrationEndpointSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the BranchIntegrationEndpoint
+   */
+  omit?: Prisma.BranchIntegrationEndpointOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.BranchIntegrationEndpointInclude<ExtArgs> | null
+  where?: Prisma.BranchIntegrationEndpointWhereInput
+  orderBy?: Prisma.BranchIntegrationEndpointOrderByWithRelationInput | Prisma.BranchIntegrationEndpointOrderByWithRelationInput[]
+  cursor?: Prisma.BranchIntegrationEndpointWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.BranchIntegrationEndpointScalarFieldEnum | Prisma.BranchIntegrationEndpointScalarFieldEnum[]
 }
 
 /**

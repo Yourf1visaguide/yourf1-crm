@@ -356,7 +356,7 @@ export type ClientOrderByWithRelationInput = {
 export type ClientWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   clientCode?: string
-  normalizedPhone?: string
+  branchId_normalizedPhone?: Prisma.ClientBranchIdNormalizedPhoneCompoundUniqueInput
   AND?: Prisma.ClientWhereInput | Prisma.ClientWhereInput[]
   OR?: Prisma.ClientWhereInput[]
   NOT?: Prisma.ClientWhereInput | Prisma.ClientWhereInput[]
@@ -366,6 +366,7 @@ export type ClientWhereUniqueInput = Prisma.AtLeast<{
   email?: Prisma.StringNullableFilter<"Client"> | string | null
   communicationEmail?: Prisma.StringNullableFilter<"Client"> | string | null
   phone?: Prisma.StringFilter<"Client"> | string
+  normalizedPhone?: Prisma.StringFilter<"Client"> | string
   alternatePhone?: Prisma.StringNullableFilter<"Client"> | string | null
   dateOfBirth?: Prisma.DateTimeNullableFilter<"Client"> | Date | string | null
   gender?: Prisma.EnumClientGenderNullableFilter<"Client"> | $Enums.ClientGender | null
@@ -390,7 +391,7 @@ export type ClientWhereUniqueInput = Prisma.AtLeast<{
   registrations?: Prisma.RegistrationListRelationFilter
   financialEntries?: Prisma.FinancialEntryListRelationFilter
   whatsappConversations?: Prisma.WhatsAppConversationListRelationFilter
-}, "id" | "clientCode" | "normalizedPhone">
+}, "id" | "clientCode" | "branchId_normalizedPhone">
 
 export type ClientOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -660,6 +661,11 @@ export type ClientListRelationFilter = {
 
 export type ClientOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type ClientBranchIdNormalizedPhoneCompoundUniqueInput = {
+  branchId: string
+  normalizedPhone: string
 }
 
 export type ClientCountOrderByAggregateInput = {

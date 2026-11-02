@@ -444,7 +444,8 @@ export const ModelName = {
   TeachingEnrollment: 'TeachingEnrollment',
   TeachingDailyRecord: 'TeachingDailyRecord',
   TeacherDailyProgress: 'TeacherDailyProgress',
-  TouristPrep: 'TouristPrep'
+  TouristPrep: 'TouristPrep',
+  BranchIntegrationEndpoint: 'BranchIntegrationEndpoint'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -460,7 +461,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "branch" | "userBranchAccess" | "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry" | "employeeAttendance" | "employeeSalaryAdvance" | "officeDailyReport" | "officeDailyReportCheck" | "client" | "lead" | "leadStatusHistory" | "leadAssignment" | "leadCallAttempt" | "leadVisit" | "leadVisitEvent" | "clientAddress" | "clientFamilyMember" | "clientEducation" | "clientTest" | "clientWorkExperience" | "clientPassport" | "application" | "applicationCredential" | "registration" | "commissionEntry" | "task" | "notification" | "auditLog" | "documentRequirement" | "applicationDocument" | "invoice" | "payment" | "refund" | "expense" | "financialEntry" | "postVisaTask" | "whatsAppConversation" | "whatsAppMessage" | "teachingEnrollment" | "teachingDailyRecord" | "teacherDailyProgress" | "touristPrep"
+    modelProps: "branch" | "userBranchAccess" | "user" | "session" | "account" | "verification" | "employee" | "employeeCompensation" | "employeeWorkSchedule" | "payrollEntry" | "employeeAttendance" | "employeeSalaryAdvance" | "officeDailyReport" | "officeDailyReportCheck" | "client" | "lead" | "leadStatusHistory" | "leadAssignment" | "leadCallAttempt" | "leadVisit" | "leadVisitEvent" | "clientAddress" | "clientFamilyMember" | "clientEducation" | "clientTest" | "clientWorkExperience" | "clientPassport" | "application" | "applicationCredential" | "registration" | "commissionEntry" | "task" | "notification" | "auditLog" | "documentRequirement" | "applicationDocument" | "invoice" | "payment" | "refund" | "expense" | "financialEntry" | "postVisaTask" | "whatsAppConversation" | "whatsAppMessage" | "teachingEnrollment" | "teachingDailyRecord" | "teacherDailyProgress" | "touristPrep" | "branchIntegrationEndpoint"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -4016,6 +4017,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    BranchIntegrationEndpoint: {
+      payload: Prisma.$BranchIntegrationEndpointPayload<ExtArgs>
+      fields: Prisma.BranchIntegrationEndpointFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.BranchIntegrationEndpointFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.BranchIntegrationEndpointFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        findFirst: {
+          args: Prisma.BranchIntegrationEndpointFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.BranchIntegrationEndpointFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        findMany: {
+          args: Prisma.BranchIntegrationEndpointFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>[]
+        }
+        create: {
+          args: Prisma.BranchIntegrationEndpointCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        createMany: {
+          args: Prisma.BranchIntegrationEndpointCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.BranchIntegrationEndpointCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>[]
+        }
+        delete: {
+          args: Prisma.BranchIntegrationEndpointDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        update: {
+          args: Prisma.BranchIntegrationEndpointUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        deleteMany: {
+          args: Prisma.BranchIntegrationEndpointDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.BranchIntegrationEndpointUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.BranchIntegrationEndpointUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>[]
+        }
+        upsert: {
+          args: Prisma.BranchIntegrationEndpointUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$BranchIntegrationEndpointPayload>
+        }
+        aggregate: {
+          args: Prisma.BranchIntegrationEndpointAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateBranchIntegrationEndpoint>
+        }
+        groupBy: {
+          args: Prisma.BranchIntegrationEndpointGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BranchIntegrationEndpointGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.BranchIntegrationEndpointCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.BranchIntegrationEndpointCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -4899,6 +4974,23 @@ export const TouristPrepScalarFieldEnum = {
 } as const
 
 export type TouristPrepScalarFieldEnum = (typeof TouristPrepScalarFieldEnum)[keyof typeof TouristPrepScalarFieldEnum]
+
+
+export const BranchIntegrationEndpointScalarFieldEnum = {
+  id: 'id',
+  branchId: 'branchId',
+  provider: 'provider',
+  displayName: 'displayName',
+  phoneNumber: 'phoneNumber',
+  providerEndpointId: 'providerEndpointId',
+  providerAccountId: 'providerAccountId',
+  credentialsEncrypted: 'credentialsEncrypted',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BranchIntegrationEndpointScalarFieldEnum = (typeof BranchIntegrationEndpointScalarFieldEnum)[keyof typeof BranchIntegrationEndpointScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -5824,6 +5916,20 @@ export type ListEnumTouristPrepStatusFieldRefInput<$PrismaModel> = FieldRefInput
 
 
 /**
+ * Reference to a field of type 'IntegrationProvider'
+ */
+export type EnumIntegrationProviderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'IntegrationProvider'>
+    
+
+
+/**
+ * Reference to a field of type 'IntegrationProvider[]'
+ */
+export type ListEnumIntegrationProviderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'IntegrationProvider[]'>
+    
+
+
+/**
  * Reference to a field of type 'Float'
  */
 export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -6035,6 +6141,7 @@ export type GlobalOmitConfig = {
   teachingDailyRecord?: Prisma.TeachingDailyRecordOmit
   teacherDailyProgress?: Prisma.TeacherDailyProgressOmit
   touristPrep?: Prisma.TouristPrepOmit
+  branchIntegrationEndpoint?: Prisma.BranchIntegrationEndpointOmit
 }
 
 /* Types for Logging */
