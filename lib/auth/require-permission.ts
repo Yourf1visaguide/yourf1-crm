@@ -71,7 +71,7 @@ export async function requirePermission(permission: Permission) {
     employeeId: user.employee?.id ?? null,
     roles,
     branchId: user.branchId,
-
     branchAccesses: user.branchAccesses,
   };
 }
+

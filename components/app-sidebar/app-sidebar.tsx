@@ -199,7 +199,7 @@ const settingsNavigation: NavGroup = {
     },
     {
       title: "Integrations",
-      href: "/settings/integration",
+      href: "/settings/integrations",
       icon: Cross,
     },
   ],

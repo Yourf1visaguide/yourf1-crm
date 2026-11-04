@@ -1,9 +1,5 @@
-import React from 'react'
+import BranchIntegrationsPage from "@/features/branch-integrations/components/branch-integrations-page";
 
-function page() {
-  return (
-    <div>page</div>
-  )
+export default function IntegrationsPage() {
+  return <BranchIntegrationsPage />;
 }
-
-export default page
