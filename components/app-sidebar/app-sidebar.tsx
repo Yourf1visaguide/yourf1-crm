@@ -186,12 +186,24 @@ const managementNavigation: NavItem[] = [
     href: "/dashboard/activity",
     icon: Activity,
   },
-  {
-    title: "Settings",
-    href: "/dashboard/settings",
-    icon: Settings,
-  },
 ];
+
+const settingsNavigation: NavGroup = {
+  title: "Settings",
+  icon: Settings,
+  items: [
+    {
+      title: "General",
+      href: "/settings",
+      icon: Settings,
+    },
+    {
+      title: "Integrations",
+      href: "/settings/integration",
+      icon: Cross,
+    },
+  ],
+};
 
 export default function AppSidebar() {
   const { setOpenMobile, openMobile, state } = useSidebar();
@@ -235,6 +247,13 @@ export default function AppSidebar() {
           <SidebarGroupLabel>Operations</SidebarGroupLabel>
           <SidebarMenu>
             <SidebarNavGroup group={operationsNavigation} />
+          </SidebarMenu>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Settings</SidebarGroupLabel>
+          <SidebarMenu>
+            <SidebarNavGroup group={settingsNavigation} />
           </SidebarMenu>
         </SidebarGroup>
 

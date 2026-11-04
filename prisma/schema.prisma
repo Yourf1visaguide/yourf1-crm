@@ -1995,6 +1995,6 @@ model BranchIntegrationEndpoint {
   updatedAt DateTime @updatedAt
 
   @@unique([branchId, provider, phoneNumber])
-  @@unique([provider, providerEndpointId])
+  @@unique([branchId, provider, providerEndpointId])
   @@index([branchId, provider, isActive])
 }

@@ -57,9 +57,9 @@ export function encryptIntegrationCredentials(
 
   return [
     "v1",
-    iv.toString("base64"),
-    authTag.toString("base64"),
-    encrypted.toString("base64"),
+    iv.toString("base64url"),
+    authTag.toString("base64url"),
+    encrypted.toString("base64url"),
   ].join(".");
 }
 
@@ -82,9 +82,9 @@ export function decryptIntegrationCredentials(
     );
   }
 
-  const iv = Buffer.from(encodedIv, "base64");
-  const authTag = Buffer.from(encodedAuthTag, "base64");
-  const encrypted = Buffer.from(encodedData, "base64");
+  const iv = Buffer.from(encodedIv, "base64url");
+  const authTag = Buffer.from(encodedAuthTag, "base64url");
+  const encrypted = Buffer.from(encodedData, "base64url");
 
   if (
     iv.length !== IV_LENGTH ||
